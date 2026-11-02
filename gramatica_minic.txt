@@ -1,0 +1,39 @@
+# ------------------------------------------------------------
+# Gramatica LL(1) de MiniC (subconjunto de C)
+# Formato:   NoTerminal -> alternativa1 | alternativa2
+#   - 'eps' es epsilon (cadena vacia)
+#   - Los terminales son nombres de tokens definidos en minic/lexer.py
+#   - El simbolo inicial es el de la primera regla
+# Referencia: sintaxis de C en el Anexo A de ISO C99/C11 y K&R, apendice A13.
+# ------------------------------------------------------------
+
+Program     -> StmtList
+StmtList    -> Stmt StmtList | eps
+Stmt        -> Decl | Assign | If | While | For
+
+# declaraciones y asignaciones
+Decl        -> INT ID DeclTail SEMI
+DeclTail    -> ASSIGN Expr | eps
+Assign      -> AssignCore SEMI
+AssignCore  -> ID ASSIGN Expr
+
+# estructuras de control (el cuerpo siempre va entre llaves)
+If          -> IF LPAREN Cond RPAREN Block ElsePart
+ElsePart    -> ELSE ElseTail | eps
+ElseTail    -> Block | If
+While       -> WHILE LPAREN Cond RPAREN Block
+For         -> FOR LPAREN ForInit SEMI Cond SEMI ForStep RPAREN Block
+ForInit     -> INT ID DeclTail | AssignCore | eps
+ForStep     -> AssignCore | eps
+Block       -> LBRACE StmtList RBRACE
+
+# condiciones
+Cond        -> Expr RelOp Expr
+RelOp       -> LT | GT | EQ | LE | GE | NE
+
+# expresiones aritmeticas (sin recursion izquierda; * y / ligan mas que + y -)
+Expr        -> Term ExprP
+ExprP       -> PLUS Term ExprP | MINUS Term ExprP | eps
+Term        -> Factor TermP
+TermP       -> TIMES Factor TermP | DIVIDE Factor TermP | eps
+Factor      -> LPAREN Expr RPAREN | ID | NUM
