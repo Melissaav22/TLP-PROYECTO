@@ -5,7 +5,10 @@
   archivo indica donde se espera el primer error:
       // ESPERA: error en linea N
 
-Uso (desde la carpeta parser_formal):  python tests/run_tests.py
+Con --es corre los casos de tests/es usando el lexico del espanol.
+Ambos suites usan la misma gramatica unificada (gramatica_minic.txt).
+
+Uso (desde la raiz del proyecto):  python tests/run_tests.py [--es]
 """
 import glob
 import os
@@ -25,23 +28,39 @@ def primera_linea_de_error(errores):
     return int(m.group(1)) if m else None
 
 
-def main():
-    g = Grammar(os.path.join(RAIZ, 'gramatica_minic.txt'))
+def main(argv=None):
+    argv = sys.argv[1:] if argv is None else argv
+    desconocidos = [a for a in argv if a != '--es']
+    if desconocidos:
+        print(f'Argumento no reconocido: {desconocidos[0]}')
+        print('Uso: python tests/run_tests.py [--es]')
+        return 2
+
+    es = '--es' in argv
+    ruta_gramatica = os.path.join(RAIZ, 'gramatica_minic.txt')
+    if es:
+        base = os.path.join(AQUI, 'es')
+        patron = '*.txt'
+    else:
+        base = AQUI
+        patron = '*.c'
+
+    g = Grammar(ruta_gramatica)
     filas = []
 
-    for ruta in sorted(glob.glob(os.path.join(AQUI, 'validos', '*.c'))):
+    for ruta in sorted(glob.glob(os.path.join(base, 'validos', patron))):
         with open(ruta, encoding='utf-8') as f:
-            _, errores = parse(f.read(), g)
+            _, errores = parse(f.read(), g, spanish=es)
         ok = not errores
         filas.append((os.path.basename(ruta), 'aceptar',
                       'aceptado' if ok else f'rechazado ({errores[0]})', ok))
 
-    for ruta in sorted(glob.glob(os.path.join(AQUI, 'invalidos', '*.c'))):
+    for ruta in sorted(glob.glob(os.path.join(base, 'invalidos', patron))):
         with open(ruta, encoding='utf-8') as f:
             texto = f.read()
         m = re.search(r'ESPERA: error en linea (\d+)', texto.splitlines()[0])
         esperada = int(m.group(1)) if m else None
-        _, errores = parse(texto, g)
+        _, errores = parse(texto, g, spanish=es)
         if not errores:
             filas.append((os.path.basename(ruta),
                           f'rechazar (linea {esperada})', 'aceptado', False))

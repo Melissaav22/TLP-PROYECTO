@@ -5,14 +5,17 @@ from .grammar import EPS
 from .lexer import tokenize
 
 
-def parse(source, grammar):
+def parse(source, grammar, spanish=False):
     """Analiza `source`. Devuelve (arbol, errores).
 
     errores es una lista de textos; si esta vacia, la entrada es valida.
     Con errores, el arbol es parcial (los nodos fallidos tienen la hoja
     '<error>').
+
+    Con spanish=False se usa el lexico de MiniC (las palabras son ID).
+    Con spanish=True se usa el lexico del espanol (tokens con rasgos).
     """
-    toks, lex_errors = tokenize(source)
+    toks, lex_errors = tokenize(source, spanish)
     errors = [f'Linea {ln}: caracter ilegal {ch!r}' for ln, ch in lex_errors]
 
     root = Tree(grammar.start, [])

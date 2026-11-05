@@ -1,13 +1,14 @@
 # ------------------------------------------------------------
-# Gramatica LL(1) de MiniC (subconjunto de C)
+# Gramatica LL(1) unificada: MiniC (subconjunto de C) + espanol
 # Formato:   NoTerminal -> alternativa1 | alternativa2
 #   - 'eps' es epsilon (cadena vacia)
 #   - Los terminales son nombres de tokens definidos en minic/lexer.py
-#   - El simbolo inicial es el de la primera regla
+#     y en minic/lexicon_es.py
+#   - El simbolo inicial es el de la primera regla (Program)
 # Referencia: sintaxis de C en el Anexo A de ISO C99/C11 y K&R, apendice A13.
 # ------------------------------------------------------------
 
-Program     -> StmtList
+Program     -> StmtList | Oracion
 StmtList    -> Stmt StmtList | eps
 Stmt        -> Decl | Assign | If | While | For
 
@@ -37,3 +38,59 @@ ExprP       -> PLUS Term ExprP | MINUS Term ExprP | eps
 Term        -> Factor TermP
 TermP       -> TIMES Factor TermP | DIVIDE Factor TermP | eps
 Factor      -> LPAREN Expr RPAREN | ID | NUM
+
+# ------------------------------------------------------------
+# Extension al espanol
+# La primera regla admite tanto Programas MiniC como Oraciones.
+# Los rasgos morfologicos van en los nombres de los tokens y de los
+# no terminales (MS/FS/MP/FP = masculino/femenino singular/plural).
+# Para analizar una oracion hay que activar el lexico espanol con --es.
+# ------------------------------------------------------------
+
+Oracion     -> OracionSG | OracionPL
+OracionSG   -> SN_MS SV_MS | SN_FS SV_FS
+OracionPL   -> SN_MP SV_MP | SN_FP SV_FP
+
+# sintagma nominal (con determinante obligatorio)
+SN          -> SN_MS | SN_FS | SN_MP | SN_FP
+SN_MS       -> DET_MS SUST_MS AdjMS
+SN_FS       -> DET_FS SUST_FS AdjFS
+SN_MP       -> DET_MP SUST_MP AdjMP
+SN_FP       -> DET_FP SUST_FP AdjFP
+
+# adjetivos pospuestos
+AdjMS       -> ADJ_MS AdjMS | eps
+AdjFS       -> ADJ_FS AdjFS | eps
+AdjMP       -> ADJ_MP AdjMP | eps
+AdjFP       -> ADJ_FP AdjFP | eps
+
+# frase preposicional
+PP          -> PREP SN
+
+# sintagma verbal: verbo pleno (+ subordinada o modificadores) o copula
+# (+ atributo y modificadores). El verbo concuerda en numero con el sujeto.
+SV_MS       -> VERB_3S Cpl_MS | COP_3S PredCpl_MS
+SV_FS       -> VERB_3S Cpl_FS | COP_3S PredCpl_FS
+SV_MP       -> VERB_3P Cpl_MP | COP_3P PredCpl_MP
+SV_FP       -> VERB_3P Cpl_FP | COP_3P PredCpl_FP
+
+# complemento del verbo: subordinada con "que" o solo modificadores
+Cpl_MS      -> QUE Oracion | ModsS
+Cpl_FS      -> QUE Oracion | ModsS
+Cpl_MP      -> QUE Oracion | ModsP
+Cpl_FP      -> QUE Oracion | ModsP
+
+# complemento de la copula: atributo (adjetivo concordado) y modificadores
+PredCpl_MS  -> PredMS ModsS | ModsS
+PredCpl_FS  -> PredFS ModsS | ModsS
+PredCpl_MP  -> PredMP ModsP | ModsP
+PredCpl_FP  -> PredFP ModsP | ModsP
+
+PredMS      -> ADJ_MS
+PredFS      -> ADJ_FS
+PredMP      -> ADJ_MP
+PredFP      -> ADJ_FP
+
+# modificadores del sintagma verbal (adverbios y frases preposicionales)
+ModsS       -> ADV ModsS | PP ModsS | eps
+ModsP       -> ADV ModsP | PP ModsP | eps

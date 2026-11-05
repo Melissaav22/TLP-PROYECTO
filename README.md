@@ -1,8 +1,9 @@
-# Parser LL(1) para MiniC (Proyecto TLP02-2026, Fase 1)
+# Parser LL(1) para MiniC y español (Proyecto TLP02-2026, Fase 1)
 
-Parser predictivo descendente (LL(1)) dirigido por tabla para **MiniC**, un
-subconjunto de C. Construye el árbol de análisis como `nltk.Tree` y reporta
-errores léxicos y sintácticos con línea y columna.
+Parser predictivo descendente (LL(1)) dirigido por tabla para **MiniC** (un
+subconjunto de C) y para **oraciones del español**, con una sola gramática
+unificada. Construye el árbol de análisis como `nltk.Tree` y reporta errores
+léxicos y sintácticos con línea y columna.
 
 **Integrantes:** 
 
@@ -19,31 +20,40 @@ pip install -r requirements.txt
 ## Uso
 
 ```bash
-python main.py programa.c             # analiza y dibuja el árbol
+python main.py programa.c             # analiza código MiniC
 python main.py programa.c --compacto  # árbol en formato de corchetes
 python main.py --tabla                # muestra FIRST, FOLLOW y la tabla LL(1)
-python tests/run_tests.py             # corre todos los casos de prueba
+python main.py frase.txt --es         # analiza una oración (léxico español)
+python tests/run_tests.py             # corre todos los casos de MiniC
+python tests/run_tests.py --es        # corre los casos de español
 ```
+
+`--es` es **obligatorio** para analizar oraciones: activa el lexicón español.
+Sin `--es`, el parser trata todas las palabras como identificadores de MiniC.
+La gramática es la misma en ambos casos (`gramatica_minic.txt`).
 
 Código de salida: `0` si el análisis es exitoso, `1` si hay errores.
 
 ## Estructura
 
 ```
-gramatica_minic.txt   gramática LL(1) (datos; el motor no depende de ella)
+gramatica_minic.txt   gramática LL(1) unificada MiniC + español (datos)
 main.py               interfaz de línea de comandos
 minic/lexer.py        analizador léxico (PLY)
+minic/lexicon_es.py   lexicón español: palabra -> token con rasgos
 minic/grammar.py      lee la gramática; calcula FIRST, FOLLOW y la tabla M[A,t]
 minic/parser.py       parser con pila; construye el árbol; recupera errores
 tests/validos/        programas que deben ser aceptados
 tests/invalidos/      programas que deben ser rechazados (línea de error esperada
                       en la primera línea de cada archivo)
+tests/es/             casos del español (.txt, misma convención)
 tests/run_tests.py    ejecuta los casos y muestra una tabla de resultados
 ```
 
-La gramática está separada del motor: cambiar el lenguaje implica editar
-`gramatica_minic.txt`, no el parser. Si la gramática no es LL(1), `Grammar`
-lanza un error indicando la celda `M[A,t]` en conflicto.
+La gramática está separada del motor y es una sola: la primera regla es
+`Program -> StmtList | Oracion`, de modo que se extendió la gramática original
+de MiniC en vez de crear otra. Si la gramática no es LL(1), `Grammar` lanza un
+error indicando la celda `M[A,t]` en conflicto.
 
 ## El subconjunto MiniC
 
@@ -62,6 +72,35 @@ MiniC acepta menos programas, no cambia el significado de ninguno):
 - Solo el tipo `int`, una variable por declaración.
 - La asignación es una sentencia, no una expresión (no se acepta `a = b = 3`).
 - No hay funciones, `return`, `do-while`, `&&`, `||`, ni comentarios `/* */`.
+
+## Extensión al español
+
+La gramática original de MiniC se extendió en el mismo archivo: la primera
+regla pasó de `Program -> StmtList` a `Program -> StmtList | Oracion`, y al
+final se añadieron las reglas del español. Ambas ramas son LL(1) porque sus
+primeros tokens son disjuntos (`INT/ID/IF/WHILE/FOR` frente a `DET_*`).
+
+El léxico se selecciona por CLI: con `--es`, el lexer consulta
+`minic/lexicon_es.py` y emite tokens que ya llevan rasgos morfológicos; sin
+`--es`, todas las palabras son `ID` y se analizan como MiniC.
+
+Fenómenos cubiertos y cómo se codifican:
+
+| Fenómeno | Cómo se codifica |
+|---|---|
+| Concordancia sustantivo-adjetivo | tokens `SUST_MS/FS/MP/FP` y `ADJ_MS/FS/MP/FP`; los no terminales `SN_*` y `Adj*` solo combinan rasgos iguales |
+| Concordancia sujeto-verbo | `SV_MS/FS` solo admiten `VERB_3S/COP_3S`; `SV_MP/FP` solo `VERB_3P/COP_3P` |
+| Modificadores | adjetivos pospuestos (`AdjMS -> ADJ_MS AdjMS`), adverbios y FPs (`ModsS -> ADV ModsS \| PP ModsS \| eps`) |
+| Subordinada | sustantiva de complemento con `que`: `Cpl_MS -> QUE Oracion \| ModsS` |
+| Concordancia determinante-sustantivo | `SN_MS -> DET_MS SUST_MS ...` (y las otras tres combinaciones) |
+
+Los verbos son de tercera persona; las oraciones se escriben sin punto final
+(el lexer no lo acepta). El lexicón es deliberadamente pequeño: cambiarlo no
+requiere tocar la gramática.
+
+**Limitaciones:** no hay objetos directos con sintagma nominal, pronombres,
+coordinación, tiempos verbales ni concordancia a larga distancia; el atributo
+adjetival solo se admite tras cópula (`ser`/`estar`).
 
 ## Decisiones de diseño
 
