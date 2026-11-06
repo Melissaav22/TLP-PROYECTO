@@ -1,0 +1,3172 @@
+{
+  "metadata": {
+    "created_utc": "2026-11-06T16:04:15.379926+00:00",
+    "commit": "c2dcd47f3d173a148cf3ecc9d9c2a68c13983bc3",
+    "hash_policy": "SHA-256; texto UTF-8 con saltos LF, binarios sin transformacion",
+    "source_hashes": {
+      "experimentos\\__init__.py": "1af49503f294837ba9215f0a0f3c41925111d28b2ea1130ce5b04d9dc2d84c7f",
+      "experimentos\\adaptadores.py": "33f7e133ff470c38d00b0cad93f3a6df7e05e3e3862bfaf6e68fb22c8eb99fde",
+      "experimentos\\ambiguedad.py": "6be7a7a1a9af9465b0a0b0532bbbcd16daf17f6727878702e71aaefaa7b3e17a",
+      "experimentos\\common.py": "40523eaefc18210d446c505b588791d20c213c803e4ee09e53ab2b7488beba87",
+      "experimentos\\comparar_nlp.py": "f5a0120f6f278671e2ae3b81da2e0d86c2e0933e04a3fd67125f918420776c26",
+      "experimentos\\demo_fase1.py": "3f780a85516024d9bb2009d4f3ed54b9a3ea8779b4b73298ccc0a831c90179a1",
+      "experimentos\\metricas.py": "47b8bcf060de8ed9eedc258e411ba352b4f6b857cb481e7b50279a546132d766",
+      "experimentos\\registro_fallos.py": "07808652e58c77274eafb402bc34de1bcd2477210a0aee273f7a676a3dff1845",
+      "main.py": "8e40b3cfbd7dc94e6f008d49caca37f24f4384747d47eb28f68e0485678beb93",
+      "minic\\__init__.py": "acf5d7d08e80102a69942e0ca6b238232c063b7772748533da274c3fe32ddda3",
+      "minic\\diagnostics.py": "2047c88075a8b6fbeb496288abf8a93ae667a62b81b3713f779e65d513a40a2f",
+      "minic\\grammar.py": "50d2346daffe58561f08b16d274cc92c2cf638a48d58d25653b92d5b0a45e2df",
+      "minic\\lexer.py": "7614c895a8ce8d545764d0f9daf48004c95f148160af4c902b616ec180f63720",
+      "minic\\lexicon_es.py": "1bfdeb6a805de14676889275a82a4fc6318244656a9252de5a4d4398bfb54eb4",
+      "minic\\parser.py": "772e085c5d8442eac57953a6a11508964d9e37d4e7a1d396dc11ed21072835ac",
+      "minic\\trees.py": "5c18d6b216bb6b85a1d8c1eb711281ecab2202be5efb9a14ed510c00eeab4161"
+    },
+    "tracked_changes": true,
+    "grammar_sha256": "e7147cb30ece6bbd64c7d401151c4bcb6e83a2e23f48654d49e4a0a8984aebc0",
+    "corpus_sha256": "9a06d89f8d18c2ab5557078f331778a11762061956600d430a85d7dd0eb47a55"
+  },
+  "tools": {
+    "parser": {
+      "tool": "parser",
+      "model": "CFG LL(1)",
+      "version": "e7147cb30ece6bbd64c7d401151c4bcb6e83a2e23f48654d49e4a0a8984aebc0",
+      "initialization_seconds": 0.003418899985263124
+    },
+    "nltk": {
+      "tool": "nltk",
+      "version": "3.10.4",
+      "model": "CESS-ESP unigram + sufijos -3 + NOUN",
+      "training_sentences": 6030,
+      "training_tokens": 192686,
+      "training_sha256": "ae5b12898039e51911ae16d25c4822cb92adcfc034a2e12b57676d21d3c94884",
+      "initialization_seconds": 16.720167200022843
+    },
+    "spacy": {
+      "tool": "spacy",
+      "version": "3.8.18",
+      "model": "es_core_news_sm",
+      "model_version": "3.8.0",
+      "initialization_seconds": 4.274530899972888
+    }
+  },
+  "results": [
+    {
+      "id": "ES-001",
+      "tool": "parser",
+      "text": "El niño corre",
+      "level": "simple",
+      "tokens": [
+        "El",
+        "niño",
+        "corre"
+      ],
+      "pos": [
+        "DET",
+        "NOUN",
+        "VERB"
+      ],
+      "lexical_tokens": [
+        [
+          "DET_MS",
+          "El",
+          1,
+          1
+        ],
+        [
+          "SUST_MS",
+          "niño",
+          1,
+          4
+        ],
+        [
+          "VERB_3S",
+          "corre",
+          1,
+          9
+        ]
+      ],
+      "accepted": true,
+      "tree": "(Oracion (OracionSG (SN_MS El niño (AdjMS eps)) (SV_MS corre (Cpl_MS (ModsS eps)))))",
+      "diagnostics": [],
+      "productions": [
+        {
+          "nonterminal": "Oracion",
+          "production": [
+            "OracionSG"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "nonterminal": "OracionSG",
+          "production": [
+            "SN_MS",
+            "SV_MS"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "nonterminal": "SN_MS",
+          "production": [
+            "DET_MS",
+            "SUST_MS",
+            "AdjMS"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "nonterminal": "AdjMS",
+          "production": [
+            "eps"
+          ],
+          "lookahead": "VERB_3S",
+          "line": 1,
+          "column": 9
+        },
+        {
+          "nonterminal": "SV_MS",
+          "production": [
+            "VERB_3S",
+            "Cpl_MS"
+          ],
+          "lookahead": "VERB_3S",
+          "line": 1,
+          "column": 9
+        },
+        {
+          "nonterminal": "Cpl_MS",
+          "production": [
+            "ModsS"
+          ],
+          "lookahead": "$",
+          "line": 1,
+          "column": 14
+        },
+        {
+          "nonterminal": "ModsS",
+          "production": [
+            "eps"
+          ],
+          "lookahead": "$",
+          "line": 1,
+          "column": 14
+        }
+      ],
+      "execution_error": null,
+      "seconds": 0.001066600001649931
+    },
+    {
+      "id": "ES-005",
+      "tool": "parser",
+      "text": "El niño lee el libro",
+      "level": "simple",
+      "tokens": [
+        "El",
+        "niño",
+        "lee",
+        "el",
+        "libro"
+      ],
+      "pos": [
+        "DET",
+        "NOUN",
+        "VERB",
+        "DET",
+        "NOUN"
+      ],
+      "lexical_tokens": [
+        [
+          "DET_MS",
+          "El",
+          1,
+          1
+        ],
+        [
+          "SUST_MS",
+          "niño",
+          1,
+          4
+        ],
+        [
+          "VERB_3S",
+          "lee",
+          1,
+          9
+        ],
+        [
+          "DET_MS",
+          "el",
+          1,
+          13
+        ],
+        [
+          "SUST_MS",
+          "libro",
+          1,
+          16
+        ]
+      ],
+      "accepted": false,
+      "tree": "(Oracion (OracionSG (SN_MS El niño (AdjMS eps)) (SV_MS lee (Cpl_MS <error>))))",
+      "diagnostics": [
+        {
+          "line": 1,
+          "column": 13,
+          "offset": 12,
+          "stage": "syntactic",
+          "code": "unexpected_token",
+          "message": "no se esperaba 'el' al analizar Cpl_MS. Se esperaba: ['$', 'ADV', 'PREP', 'QUE']",
+          "nonterminal": "Cpl_MS"
+        }
+      ],
+      "productions": [
+        {
+          "nonterminal": "Oracion",
+          "production": [
+            "OracionSG"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "nonterminal": "OracionSG",
+          "production": [
+            "SN_MS",
+            "SV_MS"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "nonterminal": "SN_MS",
+          "production": [
+            "DET_MS",
+            "SUST_MS",
+            "AdjMS"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "nonterminal": "AdjMS",
+          "production": [
+            "eps"
+          ],
+          "lookahead": "VERB_3S",
+          "line": 1,
+          "column": 9
+        },
+        {
+          "nonterminal": "SV_MS",
+          "production": [
+            "VERB_3S",
+            "Cpl_MS"
+          ],
+          "lookahead": "VERB_3S",
+          "line": 1,
+          "column": 9
+        }
+      ],
+      "execution_error": null,
+      "seconds": 0.0006587000098079443
+    },
+    {
+      "id": "ES-013",
+      "tool": "parser",
+      "text": "El niños corre",
+      "level": "simple",
+      "tokens": [
+        "El",
+        "niños",
+        "corre"
+      ],
+      "pos": [
+        "DET",
+        "NOUN",
+        "VERB"
+      ],
+      "lexical_tokens": [
+        [
+          "DET_MS",
+          "El",
+          1,
+          1
+        ],
+        [
+          "SUST_MP",
+          "niños",
+          1,
+          4
+        ],
+        [
+          "VERB_3S",
+          "corre",
+          1,
+          10
+        ]
+      ],
+      "accepted": false,
+      "tree": "(Oracion (OracionSG (SN_MS El <falta SUST_MS> (AdjMS <error>)) (SV_MS corre (Cpl_MS (ModsS eps)))))",
+      "diagnostics": [
+        {
+          "line": 1,
+          "column": 4,
+          "offset": 3,
+          "stage": "syntactic",
+          "code": "missing_terminal",
+          "message": "se esperaba SUST_MS pero llego 'niños'",
+          "nonterminal": null
+        },
+        {
+          "line": 1,
+          "column": 4,
+          "offset": 3,
+          "stage": "syntactic",
+          "code": "unexpected_token",
+          "message": "no se esperaba 'niños' al analizar AdjMS. Se esperaba: ['$', 'ADJ_MS', 'ADV', 'COP_3S', 'PREP', 'VERB_3S']",
+          "nonterminal": "AdjMS"
+        }
+      ],
+      "productions": [
+        {
+          "nonterminal": "Oracion",
+          "production": [
+            "OracionSG"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "nonterminal": "OracionSG",
+          "production": [
+            "SN_MS",
+            "SV_MS"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "nonterminal": "SN_MS",
+          "production": [
+            "DET_MS",
+            "SUST_MS",
+            "AdjMS"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "nonterminal": "SV_MS",
+          "production": [
+            "VERB_3S",
+            "Cpl_MS"
+          ],
+          "lookahead": "VERB_3S",
+          "line": 1,
+          "column": 10
+        },
+        {
+          "nonterminal": "Cpl_MS",
+          "production": [
+            "ModsS"
+          ],
+          "lookahead": "$",
+          "line": 1,
+          "column": 15
+        },
+        {
+          "nonterminal": "ModsS",
+          "production": [
+            "eps"
+          ],
+          "lookahead": "$",
+          "line": 1,
+          "column": 15
+        }
+      ],
+      "execution_error": null,
+      "seconds": 0.0006269000004976988
+    },
+    {
+      "id": "ES-014",
+      "tool": "parser",
+      "text": "La niño corre",
+      "level": "simple",
+      "tokens": [
+        "La",
+        "niño",
+        "corre"
+      ],
+      "pos": [
+        "DET",
+        "NOUN",
+        "VERB"
+      ],
+      "lexical_tokens": [
+        [
+          "DET_FS",
+          "La",
+          1,
+          1
+        ],
+        [
+          "SUST_MS",
+          "niño",
+          1,
+          4
+        ],
+        [
+          "VERB_3S",
+          "corre",
+          1,
+          9
+        ]
+      ],
+      "accepted": false,
+      "tree": "(Oracion (OracionSG (SN_FS La <falta SUST_FS> (AdjFS <error>)) (SV_FS corre (Cpl_FS (ModsS eps)))))",
+      "diagnostics": [
+        {
+          "line": 1,
+          "column": 4,
+          "offset": 3,
+          "stage": "syntactic",
+          "code": "missing_terminal",
+          "message": "se esperaba SUST_FS pero llego 'niño'",
+          "nonterminal": null
+        },
+        {
+          "line": 1,
+          "column": 4,
+          "offset": 3,
+          "stage": "syntactic",
+          "code": "unexpected_token",
+          "message": "no se esperaba 'niño' al analizar AdjFS. Se esperaba: ['$', 'ADJ_FS', 'ADV', 'COP_3S', 'PREP', 'VERB_3S']",
+          "nonterminal": "AdjFS"
+        }
+      ],
+      "productions": [
+        {
+          "nonterminal": "Oracion",
+          "production": [
+            "OracionSG"
+          ],
+          "lookahead": "DET_FS",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "nonterminal": "OracionSG",
+          "production": [
+            "SN_FS",
+            "SV_FS"
+          ],
+          "lookahead": "DET_FS",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "nonterminal": "SN_FS",
+          "production": [
+            "DET_FS",
+            "SUST_FS",
+            "AdjFS"
+          ],
+          "lookahead": "DET_FS",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "nonterminal": "SV_FS",
+          "production": [
+            "VERB_3S",
+            "Cpl_FS"
+          ],
+          "lookahead": "VERB_3S",
+          "line": 1,
+          "column": 9
+        },
+        {
+          "nonterminal": "Cpl_FS",
+          "production": [
+            "ModsS"
+          ],
+          "lookahead": "$",
+          "line": 1,
+          "column": 14
+        },
+        {
+          "nonterminal": "ModsS",
+          "production": [
+            "eps"
+          ],
+          "lookahead": "$",
+          "line": 1,
+          "column": 14
+        }
+      ],
+      "execution_error": null,
+      "seconds": 0.0005864000122528523
+    },
+    {
+      "id": "ES-015",
+      "tool": "parser",
+      "text": "Los niños corre",
+      "level": "simple",
+      "tokens": [
+        "Los",
+        "niños",
+        "corre"
+      ],
+      "pos": [
+        "DET",
+        "NOUN",
+        "VERB"
+      ],
+      "lexical_tokens": [
+        [
+          "DET_MP",
+          "Los",
+          1,
+          1
+        ],
+        [
+          "SUST_MP",
+          "niños",
+          1,
+          5
+        ],
+        [
+          "VERB_3S",
+          "corre",
+          1,
+          11
+        ]
+      ],
+      "accepted": false,
+      "tree": "(Oracion (OracionPL (SN_MP Los niños (AdjMP <error>)) (SV_MP <error>)))",
+      "diagnostics": [
+        {
+          "line": 1,
+          "column": 11,
+          "offset": 10,
+          "stage": "syntactic",
+          "code": "unexpected_token",
+          "message": "no se esperaba 'corre' al analizar AdjMP. Se esperaba: ['$', 'ADJ_MP', 'ADV', 'COP_3P', 'PREP', 'VERB_3P']",
+          "nonterminal": "AdjMP"
+        },
+        {
+          "line": 1,
+          "column": 16,
+          "offset": 15,
+          "stage": "syntactic",
+          "code": "unexpected_token",
+          "message": "no se esperaba '$' al analizar SV_MP. Se esperaba: ['COP_3P', 'VERB_3P']",
+          "nonterminal": "SV_MP"
+        }
+      ],
+      "productions": [
+        {
+          "nonterminal": "Oracion",
+          "production": [
+            "OracionPL"
+          ],
+          "lookahead": "DET_MP",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "nonterminal": "OracionPL",
+          "production": [
+            "SN_MP",
+            "SV_MP"
+          ],
+          "lookahead": "DET_MP",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "nonterminal": "SN_MP",
+          "production": [
+            "DET_MP",
+            "SUST_MP",
+            "AdjMP"
+          ],
+          "lookahead": "DET_MP",
+          "line": 1,
+          "column": 1
+        }
+      ],
+      "execution_error": null,
+      "seconds": 0.0005843999970238656
+    },
+    {
+      "id": "ES-021",
+      "tool": "parser",
+      "text": "El niño alto corre rápidamente en el parque",
+      "level": "intermedio",
+      "tokens": [
+        "El",
+        "niño",
+        "alto",
+        "corre",
+        "rápidamente",
+        "en",
+        "el",
+        "parque"
+      ],
+      "pos": [
+        "DET",
+        "NOUN",
+        "ADJ",
+        "VERB",
+        "ADV",
+        "ADP",
+        "DET",
+        "NOUN"
+      ],
+      "lexical_tokens": [
+        [
+          "DET_MS",
+          "El",
+          1,
+          1
+        ],
+        [
+          "SUST_MS",
+          "niño",
+          1,
+          4
+        ],
+        [
+          "ADJ_MS",
+          "alto",
+          1,
+          9
+        ],
+        [
+          "VERB_3S",
+          "corre",
+          1,
+          14
+        ],
+        [
+          "ADV",
+          "rápidamente",
+          1,
+          20
+        ],
+        [
+          "PREP",
+          "en",
+          1,
+          32
+        ],
+        [
+          "DET_MS",
+          "el",
+          1,
+          35
+        ],
+        [
+          "SUST_MS",
+          "parque",
+          1,
+          38
+        ]
+      ],
+      "accepted": true,
+      "tree": "(Oracion (OracionSG (SN_MS El niño (AdjMS alto (AdjMS eps))) (SV_MS corre (Cpl_MS (ModsS rápidamente (ModsS (PP en (SN (SN_MS el parque (AdjMS eps)))) (ModsS eps)))))))",
+      "diagnostics": [],
+      "productions": [
+        {
+          "nonterminal": "Oracion",
+          "production": [
+            "OracionSG"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "nonterminal": "OracionSG",
+          "production": [
+            "SN_MS",
+            "SV_MS"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "nonterminal": "SN_MS",
+          "production": [
+            "DET_MS",
+            "SUST_MS",
+            "AdjMS"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "nonterminal": "AdjMS",
+          "production": [
+            "ADJ_MS",
+            "AdjMS"
+          ],
+          "lookahead": "ADJ_MS",
+          "line": 1,
+          "column": 9
+        },
+        {
+          "nonterminal": "AdjMS",
+          "production": [
+            "eps"
+          ],
+          "lookahead": "VERB_3S",
+          "line": 1,
+          "column": 14
+        },
+        {
+          "nonterminal": "SV_MS",
+          "production": [
+            "VERB_3S",
+            "Cpl_MS"
+          ],
+          "lookahead": "VERB_3S",
+          "line": 1,
+          "column": 14
+        },
+        {
+          "nonterminal": "Cpl_MS",
+          "production": [
+            "ModsS"
+          ],
+          "lookahead": "ADV",
+          "line": 1,
+          "column": 20
+        },
+        {
+          "nonterminal": "ModsS",
+          "production": [
+            "ADV",
+            "ModsS"
+          ],
+          "lookahead": "ADV",
+          "line": 1,
+          "column": 20
+        },
+        {
+          "nonterminal": "ModsS",
+          "production": [
+            "PP",
+            "ModsS"
+          ],
+          "lookahead": "PREP",
+          "line": 1,
+          "column": 32
+        },
+        {
+          "nonterminal": "PP",
+          "production": [
+            "PREP",
+            "SN"
+          ],
+          "lookahead": "PREP",
+          "line": 1,
+          "column": 32
+        },
+        {
+          "nonterminal": "SN",
+          "production": [
+            "SN_MS"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 35
+        },
+        {
+          "nonterminal": "SN_MS",
+          "production": [
+            "DET_MS",
+            "SUST_MS",
+            "AdjMS"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 35
+        },
+        {
+          "nonterminal": "AdjMS",
+          "production": [
+            "eps"
+          ],
+          "lookahead": "$",
+          "line": 1,
+          "column": 44
+        },
+        {
+          "nonterminal": "ModsS",
+          "production": [
+            "eps"
+          ],
+          "lookahead": "$",
+          "line": 1,
+          "column": 44
+        }
+      ],
+      "execution_error": null,
+      "seconds": 0.0006142000202089548
+    },
+    {
+      "id": "ES-025",
+      "tool": "parser",
+      "text": "La mujer vive en la casa de la ciudad",
+      "level": "intermedio",
+      "tokens": [
+        "La",
+        "mujer",
+        "vive",
+        "en",
+        "la",
+        "casa",
+        "de",
+        "la",
+        "ciudad"
+      ],
+      "pos": [
+        "DET",
+        "NOUN",
+        "VERB",
+        "ADP",
+        "DET",
+        "NOUN",
+        "ADP",
+        "DET",
+        "NOUN"
+      ],
+      "lexical_tokens": [
+        [
+          "DET_FS",
+          "La",
+          1,
+          1
+        ],
+        [
+          "SUST_FS",
+          "mujer",
+          1,
+          4
+        ],
+        [
+          "VERB_3S",
+          "vive",
+          1,
+          10
+        ],
+        [
+          "PREP",
+          "en",
+          1,
+          15
+        ],
+        [
+          "DET_FS",
+          "la",
+          1,
+          18
+        ],
+        [
+          "SUST_FS",
+          "casa",
+          1,
+          21
+        ],
+        [
+          "PREP",
+          "de",
+          1,
+          26
+        ],
+        [
+          "DET_FS",
+          "la",
+          1,
+          29
+        ],
+        [
+          "SUST_FS",
+          "ciudad",
+          1,
+          32
+        ]
+      ],
+      "accepted": true,
+      "tree": "(Oracion (OracionSG (SN_FS La mujer (AdjFS eps)) (SV_FS vive (Cpl_FS (ModsS (PP en (SN (SN_FS la casa (AdjFS eps)))) (ModsS (PP de (SN (SN_FS la ciudad (AdjFS eps)))) (ModsS eps)))))))",
+      "diagnostics": [],
+      "productions": [
+        {
+          "nonterminal": "Oracion",
+          "production": [
+            "OracionSG"
+          ],
+          "lookahead": "DET_FS",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "nonterminal": "OracionSG",
+          "production": [
+            "SN_FS",
+            "SV_FS"
+          ],
+          "lookahead": "DET_FS",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "nonterminal": "SN_FS",
+          "production": [
+            "DET_FS",
+            "SUST_FS",
+            "AdjFS"
+          ],
+          "lookahead": "DET_FS",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "nonterminal": "AdjFS",
+          "production": [
+            "eps"
+          ],
+          "lookahead": "VERB_3S",
+          "line": 1,
+          "column": 10
+        },
+        {
+          "nonterminal": "SV_FS",
+          "production": [
+            "VERB_3S",
+            "Cpl_FS"
+          ],
+          "lookahead": "VERB_3S",
+          "line": 1,
+          "column": 10
+        },
+        {
+          "nonterminal": "Cpl_FS",
+          "production": [
+            "ModsS"
+          ],
+          "lookahead": "PREP",
+          "line": 1,
+          "column": 15
+        },
+        {
+          "nonterminal": "ModsS",
+          "production": [
+            "PP",
+            "ModsS"
+          ],
+          "lookahead": "PREP",
+          "line": 1,
+          "column": 15
+        },
+        {
+          "nonterminal": "PP",
+          "production": [
+            "PREP",
+            "SN"
+          ],
+          "lookahead": "PREP",
+          "line": 1,
+          "column": 15
+        },
+        {
+          "nonterminal": "SN",
+          "production": [
+            "SN_FS"
+          ],
+          "lookahead": "DET_FS",
+          "line": 1,
+          "column": 18
+        },
+        {
+          "nonterminal": "SN_FS",
+          "production": [
+            "DET_FS",
+            "SUST_FS",
+            "AdjFS"
+          ],
+          "lookahead": "DET_FS",
+          "line": 1,
+          "column": 18
+        },
+        {
+          "nonterminal": "AdjFS",
+          "production": [
+            "eps"
+          ],
+          "lookahead": "PREP",
+          "line": 1,
+          "column": 26
+        },
+        {
+          "nonterminal": "ModsS",
+          "production": [
+            "PP",
+            "ModsS"
+          ],
+          "lookahead": "PREP",
+          "line": 1,
+          "column": 26
+        },
+        {
+          "nonterminal": "PP",
+          "production": [
+            "PREP",
+            "SN"
+          ],
+          "lookahead": "PREP",
+          "line": 1,
+          "column": 26
+        },
+        {
+          "nonterminal": "SN",
+          "production": [
+            "SN_FS"
+          ],
+          "lookahead": "DET_FS",
+          "line": 1,
+          "column": 29
+        },
+        {
+          "nonterminal": "SN_FS",
+          "production": [
+            "DET_FS",
+            "SUST_FS",
+            "AdjFS"
+          ],
+          "lookahead": "DET_FS",
+          "line": 1,
+          "column": 29
+        },
+        {
+          "nonterminal": "AdjFS",
+          "production": [
+            "eps"
+          ],
+          "lookahead": "$",
+          "line": 1,
+          "column": 38
+        },
+        {
+          "nonterminal": "ModsS",
+          "production": [
+            "eps"
+          ],
+          "lookahead": "$",
+          "line": 1,
+          "column": 38
+        }
+      ],
+      "execution_error": null,
+      "seconds": 0.000628299982054159
+    },
+    {
+      "id": "ES-033",
+      "tool": "parser",
+      "text": "El niño alta corre",
+      "level": "intermedio",
+      "tokens": [
+        "El",
+        "niño",
+        "alta",
+        "corre"
+      ],
+      "pos": [
+        "DET",
+        "NOUN",
+        "ADJ",
+        "VERB"
+      ],
+      "lexical_tokens": [
+        [
+          "DET_MS",
+          "El",
+          1,
+          1
+        ],
+        [
+          "SUST_MS",
+          "niño",
+          1,
+          4
+        ],
+        [
+          "ADJ_FS",
+          "alta",
+          1,
+          9
+        ],
+        [
+          "VERB_3S",
+          "corre",
+          1,
+          14
+        ]
+      ],
+      "accepted": false,
+      "tree": "(Oracion (OracionSG (SN_MS El niño (AdjMS <error>)) (SV_MS corre (Cpl_MS (ModsS eps)))))",
+      "diagnostics": [
+        {
+          "line": 1,
+          "column": 9,
+          "offset": 8,
+          "stage": "syntactic",
+          "code": "unexpected_token",
+          "message": "no se esperaba 'alta' al analizar AdjMS. Se esperaba: ['$', 'ADJ_MS', 'ADV', 'COP_3S', 'PREP', 'VERB_3S']",
+          "nonterminal": "AdjMS"
+        }
+      ],
+      "productions": [
+        {
+          "nonterminal": "Oracion",
+          "production": [
+            "OracionSG"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "nonterminal": "OracionSG",
+          "production": [
+            "SN_MS",
+            "SV_MS"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "nonterminal": "SN_MS",
+          "production": [
+            "DET_MS",
+            "SUST_MS",
+            "AdjMS"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "nonterminal": "SV_MS",
+          "production": [
+            "VERB_3S",
+            "Cpl_MS"
+          ],
+          "lookahead": "VERB_3S",
+          "line": 1,
+          "column": 14
+        },
+        {
+          "nonterminal": "Cpl_MS",
+          "production": [
+            "ModsS"
+          ],
+          "lookahead": "$",
+          "line": 1,
+          "column": 19
+        },
+        {
+          "nonterminal": "ModsS",
+          "production": [
+            "eps"
+          ],
+          "lookahead": "$",
+          "line": 1,
+          "column": 19
+        }
+      ],
+      "execution_error": null,
+      "seconds": 0.000586000009207055
+    },
+    {
+      "id": "ES-041",
+      "tool": "parser",
+      "text": "La profesora sabe que el niño lee el libro",
+      "level": "complejo",
+      "tokens": [
+        "La",
+        "profesora",
+        "sabe",
+        "que",
+        "el",
+        "niño",
+        "lee",
+        "el",
+        "libro"
+      ],
+      "pos": [
+        "DET",
+        "NOUN",
+        "VERB",
+        "SCONJ",
+        "DET",
+        "NOUN",
+        "VERB",
+        "DET",
+        "NOUN"
+      ],
+      "lexical_tokens": [
+        [
+          "DET_FS",
+          "La",
+          1,
+          1
+        ],
+        [
+          "SUST_FS",
+          "profesora",
+          1,
+          4
+        ],
+        [
+          "VERB_3S",
+          "sabe",
+          1,
+          14
+        ],
+        [
+          "QUE",
+          "que",
+          1,
+          19
+        ],
+        [
+          "DET_MS",
+          "el",
+          1,
+          23
+        ],
+        [
+          "SUST_MS",
+          "niño",
+          1,
+          26
+        ],
+        [
+          "VERB_3S",
+          "lee",
+          1,
+          31
+        ],
+        [
+          "DET_MS",
+          "el",
+          1,
+          35
+        ],
+        [
+          "SUST_MS",
+          "libro",
+          1,
+          38
+        ]
+      ],
+      "accepted": false,
+      "tree": "(Oracion (OracionSG (SN_FS La profesora (AdjFS eps)) (SV_FS sabe (Cpl_FS que (Oracion (OracionSG (SN_MS el niño (AdjMS eps)) (SV_MS lee (Cpl_MS <error>))))))))",
+      "diagnostics": [
+        {
+          "line": 1,
+          "column": 35,
+          "offset": 34,
+          "stage": "syntactic",
+          "code": "unexpected_token",
+          "message": "no se esperaba 'el' al analizar Cpl_MS. Se esperaba: ['$', 'ADV', 'PREP', 'QUE']",
+          "nonterminal": "Cpl_MS"
+        }
+      ],
+      "productions": [
+        {
+          "nonterminal": "Oracion",
+          "production": [
+            "OracionSG"
+          ],
+          "lookahead": "DET_FS",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "nonterminal": "OracionSG",
+          "production": [
+            "SN_FS",
+            "SV_FS"
+          ],
+          "lookahead": "DET_FS",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "nonterminal": "SN_FS",
+          "production": [
+            "DET_FS",
+            "SUST_FS",
+            "AdjFS"
+          ],
+          "lookahead": "DET_FS",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "nonterminal": "AdjFS",
+          "production": [
+            "eps"
+          ],
+          "lookahead": "VERB_3S",
+          "line": 1,
+          "column": 14
+        },
+        {
+          "nonterminal": "SV_FS",
+          "production": [
+            "VERB_3S",
+            "Cpl_FS"
+          ],
+          "lookahead": "VERB_3S",
+          "line": 1,
+          "column": 14
+        },
+        {
+          "nonterminal": "Cpl_FS",
+          "production": [
+            "QUE",
+            "Oracion"
+          ],
+          "lookahead": "QUE",
+          "line": 1,
+          "column": 19
+        },
+        {
+          "nonterminal": "Oracion",
+          "production": [
+            "OracionSG"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 23
+        },
+        {
+          "nonterminal": "OracionSG",
+          "production": [
+            "SN_MS",
+            "SV_MS"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 23
+        },
+        {
+          "nonterminal": "SN_MS",
+          "production": [
+            "DET_MS",
+            "SUST_MS",
+            "AdjMS"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 23
+        },
+        {
+          "nonterminal": "AdjMS",
+          "production": [
+            "eps"
+          ],
+          "lookahead": "VERB_3S",
+          "line": 1,
+          "column": 31
+        },
+        {
+          "nonterminal": "SV_MS",
+          "production": [
+            "VERB_3S",
+            "Cpl_MS"
+          ],
+          "lookahead": "VERB_3S",
+          "line": 1,
+          "column": 31
+        }
+      ],
+      "execution_error": null,
+      "seconds": 0.000621199986198917
+    },
+    {
+      "id": "ES-049",
+      "tool": "parser",
+      "text": "El profesor sabe que los niños lee el libro",
+      "level": "complejo",
+      "tokens": [
+        "El",
+        "profesor",
+        "sabe",
+        "que",
+        "los",
+        "niños",
+        "lee",
+        "el",
+        "libro"
+      ],
+      "pos": [
+        "DET",
+        "NOUN",
+        "VERB",
+        "SCONJ",
+        "DET",
+        "NOUN",
+        "VERB",
+        "DET",
+        "NOUN"
+      ],
+      "lexical_tokens": [
+        [
+          "DET_MS",
+          "El",
+          1,
+          1
+        ],
+        [
+          "SUST_MS",
+          "profesor",
+          1,
+          4
+        ],
+        [
+          "VERB_3S",
+          "sabe",
+          1,
+          13
+        ],
+        [
+          "QUE",
+          "que",
+          1,
+          18
+        ],
+        [
+          "DET_MP",
+          "los",
+          1,
+          22
+        ],
+        [
+          "SUST_MP",
+          "niños",
+          1,
+          26
+        ],
+        [
+          "VERB_3S",
+          "lee",
+          1,
+          32
+        ],
+        [
+          "DET_MS",
+          "el",
+          1,
+          36
+        ],
+        [
+          "SUST_MS",
+          "libro",
+          1,
+          39
+        ]
+      ],
+      "accepted": false,
+      "tree": "(Oracion (OracionSG (SN_MS El profesor (AdjMS eps)) (SV_MS sabe (Cpl_MS que (Oracion (OracionPL (SN_MP los niños (AdjMP <error>)) (SV_MP <error>)))))))",
+      "diagnostics": [
+        {
+          "line": 1,
+          "column": 32,
+          "offset": 31,
+          "stage": "syntactic",
+          "code": "unexpected_token",
+          "message": "no se esperaba 'lee' al analizar AdjMP. Se esperaba: ['$', 'ADJ_MP', 'ADV', 'COP_3P', 'PREP', 'VERB_3P']",
+          "nonterminal": "AdjMP"
+        },
+        {
+          "line": 1,
+          "column": 44,
+          "offset": 43,
+          "stage": "syntactic",
+          "code": "unexpected_token",
+          "message": "no se esperaba '$' al analizar SV_MP. Se esperaba: ['COP_3P', 'VERB_3P']",
+          "nonterminal": "SV_MP"
+        }
+      ],
+      "productions": [
+        {
+          "nonterminal": "Oracion",
+          "production": [
+            "OracionSG"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "nonterminal": "OracionSG",
+          "production": [
+            "SN_MS",
+            "SV_MS"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "nonterminal": "SN_MS",
+          "production": [
+            "DET_MS",
+            "SUST_MS",
+            "AdjMS"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "nonterminal": "AdjMS",
+          "production": [
+            "eps"
+          ],
+          "lookahead": "VERB_3S",
+          "line": 1,
+          "column": 13
+        },
+        {
+          "nonterminal": "SV_MS",
+          "production": [
+            "VERB_3S",
+            "Cpl_MS"
+          ],
+          "lookahead": "VERB_3S",
+          "line": 1,
+          "column": 13
+        },
+        {
+          "nonterminal": "Cpl_MS",
+          "production": [
+            "QUE",
+            "Oracion"
+          ],
+          "lookahead": "QUE",
+          "line": 1,
+          "column": 18
+        },
+        {
+          "nonterminal": "Oracion",
+          "production": [
+            "OracionPL"
+          ],
+          "lookahead": "DET_MP",
+          "line": 1,
+          "column": 22
+        },
+        {
+          "nonterminal": "OracionPL",
+          "production": [
+            "SN_MP",
+            "SV_MP"
+          ],
+          "lookahead": "DET_MP",
+          "line": 1,
+          "column": 22
+        },
+        {
+          "nonterminal": "SN_MP",
+          "production": [
+            "DET_MP",
+            "SUST_MP",
+            "AdjMP"
+          ],
+          "lookahead": "DET_MP",
+          "line": 1,
+          "column": 22
+        }
+      ],
+      "execution_error": null,
+      "seconds": 0.0006461000011768192
+    },
+    {
+      "id": "ES-053",
+      "tool": "parser",
+      "text": "El niño y la niña corren",
+      "level": "complejo",
+      "tokens": [
+        "El",
+        "niño",
+        "y",
+        "la",
+        "niña",
+        "corren"
+      ],
+      "pos": [
+        "DET",
+        "NOUN",
+        "X",
+        "DET",
+        "NOUN",
+        "VERB"
+      ],
+      "lexical_tokens": [
+        [
+          "DET_MS",
+          "El",
+          1,
+          1
+        ],
+        [
+          "SUST_MS",
+          "niño",
+          1,
+          4
+        ],
+        [
+          "ID",
+          "y",
+          1,
+          9
+        ],
+        [
+          "DET_FS",
+          "la",
+          1,
+          11
+        ],
+        [
+          "SUST_FS",
+          "niña",
+          1,
+          14
+        ],
+        [
+          "VERB_3P",
+          "corren",
+          1,
+          19
+        ]
+      ],
+      "accepted": false,
+      "tree": "(Oracion (OracionSG (SN_MS El niño (AdjMS <error>)) (SV_MS <error>)))",
+      "diagnostics": [
+        {
+          "line": 1,
+          "column": 9,
+          "offset": 8,
+          "stage": "lexical",
+          "code": "unknown_word",
+          "message": "palabra fuera del vocabulario 'y'",
+          "nonterminal": null
+        },
+        {
+          "line": 1,
+          "column": 9,
+          "offset": 8,
+          "stage": "syntactic",
+          "code": "unexpected_token",
+          "message": "no se esperaba 'y' al analizar AdjMS. Se esperaba: ['$', 'ADJ_MS', 'ADV', 'COP_3S', 'PREP', 'VERB_3S']",
+          "nonterminal": "AdjMS"
+        },
+        {
+          "line": 1,
+          "column": 25,
+          "offset": 24,
+          "stage": "syntactic",
+          "code": "unexpected_token",
+          "message": "no se esperaba '$' al analizar SV_MS. Se esperaba: ['COP_3S', 'VERB_3S']",
+          "nonterminal": "SV_MS"
+        }
+      ],
+      "productions": [
+        {
+          "nonterminal": "Oracion",
+          "production": [
+            "OracionSG"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "nonterminal": "OracionSG",
+          "production": [
+            "SN_MS",
+            "SV_MS"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "nonterminal": "SN_MS",
+          "production": [
+            "DET_MS",
+            "SUST_MS",
+            "AdjMS"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 1
+        }
+      ],
+      "execution_error": null,
+      "seconds": 0.0005949999904260039
+    },
+    {
+      "id": "ES-056",
+      "tool": "parser",
+      "text": "El astronauta lee el libro",
+      "level": "complejo",
+      "tokens": [
+        "El",
+        "astronauta",
+        "lee",
+        "el",
+        "libro"
+      ],
+      "pos": [
+        "DET",
+        "X",
+        "VERB",
+        "DET",
+        "NOUN"
+      ],
+      "lexical_tokens": [
+        [
+          "DET_MS",
+          "El",
+          1,
+          1
+        ],
+        [
+          "ID",
+          "astronauta",
+          1,
+          4
+        ],
+        [
+          "VERB_3S",
+          "lee",
+          1,
+          15
+        ],
+        [
+          "DET_MS",
+          "el",
+          1,
+          19
+        ],
+        [
+          "SUST_MS",
+          "libro",
+          1,
+          22
+        ]
+      ],
+      "accepted": false,
+      "tree": "(Oracion (OracionSG (SN_MS El <falta SUST_MS> (AdjMS <error>)) (SV_MS lee (Cpl_MS <error>))))",
+      "diagnostics": [
+        {
+          "line": 1,
+          "column": 4,
+          "offset": 3,
+          "stage": "lexical",
+          "code": "unknown_word",
+          "message": "palabra fuera del vocabulario 'astronauta'",
+          "nonterminal": null
+        },
+        {
+          "line": 1,
+          "column": 4,
+          "offset": 3,
+          "stage": "syntactic",
+          "code": "missing_terminal",
+          "message": "se esperaba SUST_MS pero llego 'astronauta'",
+          "nonterminal": null
+        },
+        {
+          "line": 1,
+          "column": 4,
+          "offset": 3,
+          "stage": "syntactic",
+          "code": "unexpected_token",
+          "message": "no se esperaba 'astronauta' al analizar AdjMS. Se esperaba: ['$', 'ADJ_MS', 'ADV', 'COP_3S', 'PREP', 'VERB_3S']",
+          "nonterminal": "AdjMS"
+        },
+        {
+          "line": 1,
+          "column": 19,
+          "offset": 18,
+          "stage": "syntactic",
+          "code": "unexpected_token",
+          "message": "no se esperaba 'el' al analizar Cpl_MS. Se esperaba: ['$', 'ADV', 'PREP', 'QUE']",
+          "nonterminal": "Cpl_MS"
+        }
+      ],
+      "productions": [
+        {
+          "nonterminal": "Oracion",
+          "production": [
+            "OracionSG"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "nonterminal": "OracionSG",
+          "production": [
+            "SN_MS",
+            "SV_MS"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "nonterminal": "SN_MS",
+          "production": [
+            "DET_MS",
+            "SUST_MS",
+            "AdjMS"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "nonterminal": "SV_MS",
+          "production": [
+            "VERB_3S",
+            "Cpl_MS"
+          ],
+          "lookahead": "VERB_3S",
+          "line": 1,
+          "column": 15
+        }
+      ],
+      "execution_error": null,
+      "seconds": 0.0005906999867875129
+    },
+    {
+      "id": "ES-057",
+      "tool": "parser",
+      "text": "El niño leyó el libro.",
+      "level": "complejo",
+      "tokens": [
+        "El",
+        "niño",
+        "leyó",
+        "el",
+        "libro",
+        "."
+      ],
+      "pos": [
+        "DET",
+        "NOUN",
+        "X",
+        "DET",
+        "NOUN",
+        "X"
+      ],
+      "lexical_tokens": [
+        [
+          "DET_MS",
+          "El",
+          1,
+          1
+        ],
+        [
+          "SUST_MS",
+          "niño",
+          1,
+          4
+        ],
+        [
+          "ID",
+          "leyó",
+          1,
+          9
+        ],
+        [
+          "DET_MS",
+          "el",
+          1,
+          14
+        ],
+        [
+          "SUST_MS",
+          "libro",
+          1,
+          17
+        ]
+      ],
+      "accepted": false,
+      "tree": "(Oracion (OracionSG (SN_MS El niño (AdjMS <error>)) (SV_MS <error>)))",
+      "diagnostics": [
+        {
+          "line": 1,
+          "column": 9,
+          "offset": 8,
+          "stage": "lexical",
+          "code": "unknown_word",
+          "message": "palabra fuera del vocabulario 'leyó'",
+          "nonterminal": null
+        },
+        {
+          "line": 1,
+          "column": 9,
+          "offset": 8,
+          "stage": "syntactic",
+          "code": "unexpected_token",
+          "message": "no se esperaba 'leyó' al analizar AdjMS. Se esperaba: ['$', 'ADJ_MS', 'ADV', 'COP_3S', 'PREP', 'VERB_3S']",
+          "nonterminal": "AdjMS"
+        },
+        {
+          "line": 1,
+          "column": 22,
+          "offset": 21,
+          "stage": "lexical",
+          "code": "illegal_character",
+          "message": "caracter ilegal '.'",
+          "nonterminal": null
+        },
+        {
+          "line": 1,
+          "column": 23,
+          "offset": 22,
+          "stage": "syntactic",
+          "code": "unexpected_token",
+          "message": "no se esperaba '$' al analizar SV_MS. Se esperaba: ['COP_3S', 'VERB_3S']",
+          "nonterminal": "SV_MS"
+        }
+      ],
+      "productions": [
+        {
+          "nonterminal": "Oracion",
+          "production": [
+            "OracionSG"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "nonterminal": "OracionSG",
+          "production": [
+            "SN_MS",
+            "SV_MS"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "nonterminal": "SN_MS",
+          "production": [
+            "DET_MS",
+            "SUST_MS",
+            "AdjMS"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 1
+        }
+      ],
+      "execution_error": null,
+      "seconds": 0.0006138000171631575
+    },
+    {
+      "id": "ES-001",
+      "tool": "nltk",
+      "text": "El niño corre",
+      "level": "simple",
+      "tokens": [
+        "El",
+        "niño",
+        "corre"
+      ],
+      "pos": [
+        "DET",
+        "NOUN",
+        "VERB"
+      ],
+      "accepted": null,
+      "execution_error": null,
+      "seconds": 0.0002789999998640269
+    },
+    {
+      "id": "ES-005",
+      "tool": "nltk",
+      "text": "El niño lee el libro",
+      "level": "simple",
+      "tokens": [
+        "El",
+        "niño",
+        "lee",
+        "el",
+        "libro"
+      ],
+      "pos": [
+        "DET",
+        "NOUN",
+        "VERB",
+        "DET",
+        "NOUN"
+      ],
+      "accepted": null,
+      "execution_error": null,
+      "seconds": 8.769999840296805e-05
+    },
+    {
+      "id": "ES-013",
+      "tool": "nltk",
+      "text": "El niños corre",
+      "level": "simple",
+      "tokens": [
+        "El",
+        "niños",
+        "corre"
+      ],
+      "pos": [
+        "DET",
+        "NOUN",
+        "VERB"
+      ],
+      "accepted": null,
+      "execution_error": null,
+      "seconds": 2.2599997464567423e-05
+    },
+    {
+      "id": "ES-014",
+      "tool": "nltk",
+      "text": "La niño corre",
+      "level": "simple",
+      "tokens": [
+        "La",
+        "niño",
+        "corre"
+      ],
+      "pos": [
+        "DET",
+        "NOUN",
+        "VERB"
+      ],
+      "accepted": null,
+      "execution_error": null,
+      "seconds": 1.71000137925148e-05
+    },
+    {
+      "id": "ES-015",
+      "tool": "nltk",
+      "text": "Los niños corre",
+      "level": "simple",
+      "tokens": [
+        "Los",
+        "niños",
+        "corre"
+      ],
+      "pos": [
+        "DET",
+        "NOUN",
+        "VERB"
+      ],
+      "accepted": null,
+      "execution_error": null,
+      "seconds": 1.6200006939470768e-05
+    },
+    {
+      "id": "ES-021",
+      "tool": "nltk",
+      "text": "El niño alto corre rápidamente en el parque",
+      "level": "intermedio",
+      "tokens": [
+        "El",
+        "niño",
+        "alto",
+        "corre",
+        "rápidamente",
+        "en",
+        "el",
+        "parque"
+      ],
+      "pos": [
+        "DET",
+        "NOUN",
+        "ADJ",
+        "VERB",
+        "ADV",
+        "ADP",
+        "DET",
+        "NOUN"
+      ],
+      "accepted": null,
+      "execution_error": null,
+      "seconds": 3.2499985536560416e-05
+    },
+    {
+      "id": "ES-025",
+      "tool": "nltk",
+      "text": "La mujer vive en la casa de la ciudad",
+      "level": "intermedio",
+      "tokens": [
+        "La",
+        "mujer",
+        "vive",
+        "en",
+        "la",
+        "casa",
+        "de",
+        "la",
+        "ciudad"
+      ],
+      "pos": [
+        "DET",
+        "NOUN",
+        "VERB",
+        "ADP",
+        "DET",
+        "NOUN",
+        "ADP",
+        "DET",
+        "NOUN"
+      ],
+      "accepted": null,
+      "execution_error": null,
+      "seconds": 2.9699993319809437e-05
+    },
+    {
+      "id": "ES-033",
+      "tool": "nltk",
+      "text": "El niño alta corre",
+      "level": "intermedio",
+      "tokens": [
+        "El",
+        "niño",
+        "alta",
+        "corre"
+      ],
+      "pos": [
+        "DET",
+        "NOUN",
+        "ADJ",
+        "VERB"
+      ],
+      "accepted": null,
+      "execution_error": null,
+      "seconds": 1.6000005416572094e-05
+    },
+    {
+      "id": "ES-041",
+      "tool": "nltk",
+      "text": "La profesora sabe que el niño lee el libro",
+      "level": "complejo",
+      "tokens": [
+        "La",
+        "profesora",
+        "sabe",
+        "que",
+        "el",
+        "niño",
+        "lee",
+        "el",
+        "libro"
+      ],
+      "pos": [
+        "DET",
+        "ADV",
+        "VERB",
+        "PRON",
+        "DET",
+        "NOUN",
+        "VERB",
+        "DET",
+        "NOUN"
+      ],
+      "accepted": null,
+      "execution_error": null,
+      "seconds": 3.259998629800975e-05
+    },
+    {
+      "id": "ES-049",
+      "tool": "nltk",
+      "text": "El profesor sabe que los niños lee el libro",
+      "level": "complejo",
+      "tokens": [
+        "El",
+        "profesor",
+        "sabe",
+        "que",
+        "los",
+        "niños",
+        "lee",
+        "el",
+        "libro"
+      ],
+      "pos": [
+        "DET",
+        "NOUN",
+        "VERB",
+        "PRON",
+        "DET",
+        "NOUN",
+        "VERB",
+        "DET",
+        "NOUN"
+      ],
+      "accepted": null,
+      "execution_error": null,
+      "seconds": 3.2800016924738884e-05
+    },
+    {
+      "id": "ES-053",
+      "tool": "nltk",
+      "text": "El niño y la niña corren",
+      "level": "complejo",
+      "tokens": [
+        "El",
+        "niño",
+        "y",
+        "la",
+        "niña",
+        "corren"
+      ],
+      "pos": [
+        "DET",
+        "NOUN",
+        "CCONJ",
+        "DET",
+        "NOUN",
+        "VERB"
+      ],
+      "accepted": null,
+      "execution_error": null,
+      "seconds": 3.0199997127056122e-05
+    },
+    {
+      "id": "ES-056",
+      "tool": "nltk",
+      "text": "El astronauta lee el libro",
+      "level": "complejo",
+      "tokens": [
+        "El",
+        "astronauta",
+        "lee",
+        "el",
+        "libro"
+      ],
+      "pos": [
+        "DET",
+        "NOUN",
+        "VERB",
+        "DET",
+        "NOUN"
+      ],
+      "accepted": null,
+      "execution_error": null,
+      "seconds": 1.7499987734481692e-05
+    },
+    {
+      "id": "ES-057",
+      "tool": "nltk",
+      "text": "El niño leyó el libro.",
+      "level": "complejo",
+      "tokens": [
+        "El",
+        "niño",
+        "leyó",
+        "el",
+        "libro",
+        "."
+      ],
+      "pos": [
+        "DET",
+        "NOUN",
+        "VERB",
+        "DET",
+        "NOUN",
+        "PUNCT"
+      ],
+      "accepted": null,
+      "execution_error": null,
+      "seconds": 2.1299987565726042e-05
+    },
+    {
+      "id": "ES-001",
+      "tool": "spacy",
+      "text": "El niño corre",
+      "level": "simple",
+      "tokens": [
+        "El",
+        "niño",
+        "corre"
+      ],
+      "pos": [
+        "DET",
+        "NOUN",
+        "VERB"
+      ],
+      "accepted": null,
+      "dependencies": [
+        {
+          "text": "El",
+          "head": 1,
+          "dep": "det",
+          "lemma": "el",
+          "morph": "Definite=Def|Gender=Masc|Number=Sing|PronType=Art"
+        },
+        {
+          "text": "niño",
+          "head": 2,
+          "dep": "nsubj",
+          "lemma": "niño",
+          "morph": "Gender=Masc|Number=Sing"
+        },
+        {
+          "text": "corre",
+          "head": 2,
+          "dep": "ROOT",
+          "lemma": "correr",
+          "morph": "Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin"
+        }
+      ],
+      "execution_error": null,
+      "seconds": 0.017167699988931417
+    },
+    {
+      "id": "ES-005",
+      "tool": "spacy",
+      "text": "El niño lee el libro",
+      "level": "simple",
+      "tokens": [
+        "El",
+        "niño",
+        "lee",
+        "el",
+        "libro"
+      ],
+      "pos": [
+        "DET",
+        "NOUN",
+        "VERB",
+        "DET",
+        "NOUN"
+      ],
+      "accepted": null,
+      "dependencies": [
+        {
+          "text": "El",
+          "head": 1,
+          "dep": "det",
+          "lemma": "el",
+          "morph": "Definite=Def|Gender=Masc|Number=Sing|PronType=Art"
+        },
+        {
+          "text": "niño",
+          "head": 2,
+          "dep": "nsubj",
+          "lemma": "niño",
+          "morph": "Gender=Masc|Number=Sing"
+        },
+        {
+          "text": "lee",
+          "head": 2,
+          "dep": "ROOT",
+          "lemma": "leer",
+          "morph": "Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin"
+        },
+        {
+          "text": "el",
+          "head": 4,
+          "dep": "det",
+          "lemma": "el",
+          "morph": "Definite=Def|Gender=Masc|Number=Sing|PronType=Art"
+        },
+        {
+          "text": "libro",
+          "head": 2,
+          "dep": "obj",
+          "lemma": "libro",
+          "morph": "Gender=Masc|Number=Sing"
+        }
+      ],
+      "execution_error": null,
+      "seconds": 0.012494700000388548
+    },
+    {
+      "id": "ES-013",
+      "tool": "spacy",
+      "text": "El niños corre",
+      "level": "simple",
+      "tokens": [
+        "El",
+        "niños",
+        "corre"
+      ],
+      "pos": [
+        "DET",
+        "NOUN",
+        "VERB"
+      ],
+      "accepted": null,
+      "dependencies": [
+        {
+          "text": "El",
+          "head": 1,
+          "dep": "det",
+          "lemma": "el",
+          "morph": "Definite=Def|Gender=Masc|Number=Sing|PronType=Art"
+        },
+        {
+          "text": "niños",
+          "head": 2,
+          "dep": "nsubj",
+          "lemma": "niño",
+          "morph": "Gender=Masc|Number=Plur"
+        },
+        {
+          "text": "corre",
+          "head": 2,
+          "dep": "ROOT",
+          "lemma": "correr",
+          "morph": "Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin"
+        }
+      ],
+      "execution_error": null,
+      "seconds": 0.014347199990879744
+    },
+    {
+      "id": "ES-014",
+      "tool": "spacy",
+      "text": "La niño corre",
+      "level": "simple",
+      "tokens": [
+        "La",
+        "niño",
+        "corre"
+      ],
+      "pos": [
+        "DET",
+        "NOUN",
+        "VERB"
+      ],
+      "accepted": null,
+      "dependencies": [
+        {
+          "text": "La",
+          "head": 1,
+          "dep": "det",
+          "lemma": "el",
+          "morph": "Definite=Def|Gender=Fem|Number=Sing|PronType=Art"
+        },
+        {
+          "text": "niño",
+          "head": 2,
+          "dep": "nsubj",
+          "lemma": "niño",
+          "morph": "Gender=Masc|Number=Sing"
+        },
+        {
+          "text": "corre",
+          "head": 2,
+          "dep": "ROOT",
+          "lemma": "correr",
+          "morph": "Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin"
+        }
+      ],
+      "execution_error": null,
+      "seconds": 0.012319700006628409
+    },
+    {
+      "id": "ES-015",
+      "tool": "spacy",
+      "text": "Los niños corre",
+      "level": "simple",
+      "tokens": [
+        "Los",
+        "niños",
+        "corre"
+      ],
+      "pos": [
+        "DET",
+        "NOUN",
+        "VERB"
+      ],
+      "accepted": null,
+      "dependencies": [
+        {
+          "text": "Los",
+          "head": 1,
+          "dep": "det",
+          "lemma": "el",
+          "morph": "Definite=Def|Gender=Masc|Number=Plur|PronType=Art"
+        },
+        {
+          "text": "niños",
+          "head": 2,
+          "dep": "nsubj",
+          "lemma": "niño",
+          "morph": "Gender=Masc|Number=Plur"
+        },
+        {
+          "text": "corre",
+          "head": 2,
+          "dep": "ROOT",
+          "lemma": "correr",
+          "morph": "Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin"
+        }
+      ],
+      "execution_error": null,
+      "seconds": 0.012366699986159801
+    },
+    {
+      "id": "ES-021",
+      "tool": "spacy",
+      "text": "El niño alto corre rápidamente en el parque",
+      "level": "intermedio",
+      "tokens": [
+        "El",
+        "niño",
+        "alto",
+        "corre",
+        "rápidamente",
+        "en",
+        "el",
+        "parque"
+      ],
+      "pos": [
+        "DET",
+        "NOUN",
+        "ADJ",
+        "VERB",
+        "ADV",
+        "ADP",
+        "DET",
+        "NOUN"
+      ],
+      "accepted": null,
+      "dependencies": [
+        {
+          "text": "El",
+          "head": 1,
+          "dep": "det",
+          "lemma": "el",
+          "morph": "Definite=Def|Gender=Masc|Number=Sing|PronType=Art"
+        },
+        {
+          "text": "niño",
+          "head": 3,
+          "dep": "nsubj",
+          "lemma": "niño",
+          "morph": "Gender=Masc|Number=Sing"
+        },
+        {
+          "text": "alto",
+          "head": 1,
+          "dep": "amod",
+          "lemma": "alto",
+          "morph": "Gender=Masc|Number=Sing"
+        },
+        {
+          "text": "corre",
+          "head": 3,
+          "dep": "ROOT",
+          "lemma": "correr",
+          "morph": "Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin"
+        },
+        {
+          "text": "rápidamente",
+          "head": 3,
+          "dep": "advmod",
+          "lemma": "rápidamente",
+          "morph": ""
+        },
+        {
+          "text": "en",
+          "head": 7,
+          "dep": "case",
+          "lemma": "en",
+          "morph": ""
+        },
+        {
+          "text": "el",
+          "head": 7,
+          "dep": "det",
+          "lemma": "el",
+          "morph": "Definite=Def|Gender=Masc|Number=Sing|PronType=Art"
+        },
+        {
+          "text": "parque",
+          "head": 3,
+          "dep": "obl",
+          "lemma": "parque",
+          "morph": "Gender=Masc|Number=Sing"
+        }
+      ],
+      "execution_error": null,
+      "seconds": 0.015046900021843612
+    },
+    {
+      "id": "ES-025",
+      "tool": "spacy",
+      "text": "La mujer vive en la casa de la ciudad",
+      "level": "intermedio",
+      "tokens": [
+        "La",
+        "mujer",
+        "vive",
+        "en",
+        "la",
+        "casa",
+        "de",
+        "la",
+        "ciudad"
+      ],
+      "pos": [
+        "DET",
+        "NOUN",
+        "VERB",
+        "ADP",
+        "DET",
+        "NOUN",
+        "ADP",
+        "DET",
+        "NOUN"
+      ],
+      "accepted": null,
+      "dependencies": [
+        {
+          "text": "La",
+          "head": 1,
+          "dep": "det",
+          "lemma": "el",
+          "morph": "Definite=Def|Gender=Fem|Number=Sing|PronType=Art"
+        },
+        {
+          "text": "mujer",
+          "head": 2,
+          "dep": "nsubj",
+          "lemma": "mujer",
+          "morph": "Gender=Fem|Number=Sing"
+        },
+        {
+          "text": "vive",
+          "head": 2,
+          "dep": "ROOT",
+          "lemma": "vivir",
+          "morph": "Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin"
+        },
+        {
+          "text": "en",
+          "head": 5,
+          "dep": "case",
+          "lemma": "en",
+          "morph": ""
+        },
+        {
+          "text": "la",
+          "head": 5,
+          "dep": "det",
+          "lemma": "el",
+          "morph": "Definite=Def|Gender=Fem|Number=Sing|PronType=Art"
+        },
+        {
+          "text": "casa",
+          "head": 2,
+          "dep": "obl",
+          "lemma": "casa",
+          "morph": "Gender=Fem|Number=Sing"
+        },
+        {
+          "text": "de",
+          "head": 8,
+          "dep": "case",
+          "lemma": "de",
+          "morph": ""
+        },
+        {
+          "text": "la",
+          "head": 8,
+          "dep": "det",
+          "lemma": "el",
+          "morph": "Definite=Def|Gender=Fem|Number=Sing|PronType=Art"
+        },
+        {
+          "text": "ciudad",
+          "head": 5,
+          "dep": "nmod",
+          "lemma": "ciudad",
+          "morph": "Gender=Fem|Number=Sing"
+        }
+      ],
+      "execution_error": null,
+      "seconds": 0.016733700002077967
+    },
+    {
+      "id": "ES-033",
+      "tool": "spacy",
+      "text": "El niño alta corre",
+      "level": "intermedio",
+      "tokens": [
+        "El",
+        "niño",
+        "alta",
+        "corre"
+      ],
+      "pos": [
+        "DET",
+        "NOUN",
+        "NOUN",
+        "VERB"
+      ],
+      "accepted": null,
+      "dependencies": [
+        {
+          "text": "El",
+          "head": 1,
+          "dep": "det",
+          "lemma": "el",
+          "morph": "Definite=Def|Gender=Masc|Number=Sing|PronType=Art"
+        },
+        {
+          "text": "niño",
+          "head": 3,
+          "dep": "nsubj",
+          "lemma": "niño",
+          "morph": "Gender=Masc|Number=Sing"
+        },
+        {
+          "text": "alta",
+          "head": 1,
+          "dep": "amod",
+          "lemma": "alta",
+          "morph": ""
+        },
+        {
+          "text": "corre",
+          "head": 3,
+          "dep": "ROOT",
+          "lemma": "correr",
+          "morph": "Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin"
+        }
+      ],
+      "execution_error": null,
+      "seconds": 0.01473010002519004
+    },
+    {
+      "id": "ES-041",
+      "tool": "spacy",
+      "text": "La profesora sabe que el niño lee el libro",
+      "level": "complejo",
+      "tokens": [
+        "La",
+        "profesora",
+        "sabe",
+        "que",
+        "el",
+        "niño",
+        "lee",
+        "el",
+        "libro"
+      ],
+      "pos": [
+        "DET",
+        "NOUN",
+        "VERB",
+        "SCONJ",
+        "DET",
+        "NOUN",
+        "VERB",
+        "DET",
+        "NOUN"
+      ],
+      "accepted": null,
+      "dependencies": [
+        {
+          "text": "La",
+          "head": 1,
+          "dep": "det",
+          "lemma": "el",
+          "morph": "Definite=Def|Gender=Fem|Number=Sing|PronType=Art"
+        },
+        {
+          "text": "profesora",
+          "head": 2,
+          "dep": "nsubj",
+          "lemma": "profesora",
+          "morph": "Gender=Fem|Number=Sing"
+        },
+        {
+          "text": "sabe",
+          "head": 2,
+          "dep": "ROOT",
+          "lemma": "saber",
+          "morph": "Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin"
+        },
+        {
+          "text": "que",
+          "head": 6,
+          "dep": "mark",
+          "lemma": "que",
+          "morph": ""
+        },
+        {
+          "text": "el",
+          "head": 5,
+          "dep": "det",
+          "lemma": "el",
+          "morph": "Definite=Def|Gender=Masc|Number=Sing|PronType=Art"
+        },
+        {
+          "text": "niño",
+          "head": 6,
+          "dep": "nsubj",
+          "lemma": "niño",
+          "morph": "Gender=Masc|Number=Sing"
+        },
+        {
+          "text": "lee",
+          "head": 2,
+          "dep": "ccomp",
+          "lemma": "leer",
+          "morph": "Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin"
+        },
+        {
+          "text": "el",
+          "head": 8,
+          "dep": "det",
+          "lemma": "el",
+          "morph": "Definite=Def|Gender=Masc|Number=Sing|PronType=Art"
+        },
+        {
+          "text": "libro",
+          "head": 6,
+          "dep": "obj",
+          "lemma": "libro",
+          "morph": "Gender=Masc|Number=Sing"
+        }
+      ],
+      "execution_error": null,
+      "seconds": 0.016847599996253848
+    },
+    {
+      "id": "ES-049",
+      "tool": "spacy",
+      "text": "El profesor sabe que los niños lee el libro",
+      "level": "complejo",
+      "tokens": [
+        "El",
+        "profesor",
+        "sabe",
+        "que",
+        "los",
+        "niños",
+        "lee",
+        "el",
+        "libro"
+      ],
+      "pos": [
+        "DET",
+        "NOUN",
+        "VERB",
+        "SCONJ",
+        "DET",
+        "NOUN",
+        "VERB",
+        "DET",
+        "NOUN"
+      ],
+      "accepted": null,
+      "dependencies": [
+        {
+          "text": "El",
+          "head": 1,
+          "dep": "det",
+          "lemma": "el",
+          "morph": "Definite=Def|Gender=Masc|Number=Sing|PronType=Art"
+        },
+        {
+          "text": "profesor",
+          "head": 2,
+          "dep": "nsubj",
+          "lemma": "profesor",
+          "morph": "Gender=Masc|Number=Sing"
+        },
+        {
+          "text": "sabe",
+          "head": 2,
+          "dep": "ROOT",
+          "lemma": "saber",
+          "morph": "Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin"
+        },
+        {
+          "text": "que",
+          "head": 6,
+          "dep": "mark",
+          "lemma": "que",
+          "morph": ""
+        },
+        {
+          "text": "los",
+          "head": 5,
+          "dep": "det",
+          "lemma": "el",
+          "morph": "Definite=Def|Gender=Masc|Number=Plur|PronType=Art"
+        },
+        {
+          "text": "niños",
+          "head": 6,
+          "dep": "nsubj",
+          "lemma": "niño",
+          "morph": "Gender=Masc|Number=Plur"
+        },
+        {
+          "text": "lee",
+          "head": 2,
+          "dep": "ccomp",
+          "lemma": "leer",
+          "morph": "Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin"
+        },
+        {
+          "text": "el",
+          "head": 8,
+          "dep": "det",
+          "lemma": "el",
+          "morph": "Definite=Def|Gender=Masc|Number=Sing|PronType=Art"
+        },
+        {
+          "text": "libro",
+          "head": 6,
+          "dep": "obj",
+          "lemma": "libro",
+          "morph": "Gender=Masc|Number=Sing"
+        }
+      ],
+      "execution_error": null,
+      "seconds": 0.014635500003350899
+    },
+    {
+      "id": "ES-053",
+      "tool": "spacy",
+      "text": "El niño y la niña corren",
+      "level": "complejo",
+      "tokens": [
+        "El",
+        "niño",
+        "y",
+        "la",
+        "niña",
+        "corren"
+      ],
+      "pos": [
+        "DET",
+        "NOUN",
+        "CCONJ",
+        "DET",
+        "NOUN",
+        "VERB"
+      ],
+      "accepted": null,
+      "dependencies": [
+        {
+          "text": "El",
+          "head": 1,
+          "dep": "det",
+          "lemma": "el",
+          "morph": "Definite=Def|Gender=Masc|Number=Sing|PronType=Art"
+        },
+        {
+          "text": "niño",
+          "head": 5,
+          "dep": "nsubj",
+          "lemma": "niño",
+          "morph": "Gender=Masc|Number=Sing"
+        },
+        {
+          "text": "y",
+          "head": 4,
+          "dep": "cc",
+          "lemma": "y",
+          "morph": ""
+        },
+        {
+          "text": "la",
+          "head": 4,
+          "dep": "det",
+          "lemma": "el",
+          "morph": "Definite=Def|Gender=Fem|Number=Sing|PronType=Art"
+        },
+        {
+          "text": "niña",
+          "head": 1,
+          "dep": "conj",
+          "lemma": "niña",
+          "morph": "Gender=Fem|Number=Sing"
+        },
+        {
+          "text": "corren",
+          "head": 5,
+          "dep": "ROOT",
+          "lemma": "correr",
+          "morph": "Mood=Ind|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin"
+        }
+      ],
+      "execution_error": null,
+      "seconds": 0.014163900021230802
+    },
+    {
+      "id": "ES-056",
+      "tool": "spacy",
+      "text": "El astronauta lee el libro",
+      "level": "complejo",
+      "tokens": [
+        "El",
+        "astronauta",
+        "lee",
+        "el",
+        "libro"
+      ],
+      "pos": [
+        "DET",
+        "NOUN",
+        "VERB",
+        "DET",
+        "NOUN"
+      ],
+      "accepted": null,
+      "dependencies": [
+        {
+          "text": "El",
+          "head": 1,
+          "dep": "det",
+          "lemma": "el",
+          "morph": "Definite=Def|Gender=Masc|Number=Sing|PronType=Art"
+        },
+        {
+          "text": "astronauta",
+          "head": 2,
+          "dep": "nsubj",
+          "lemma": "astronauta",
+          "morph": "Number=Sing"
+        },
+        {
+          "text": "lee",
+          "head": 2,
+          "dep": "ROOT",
+          "lemma": "leer",
+          "morph": "Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin"
+        },
+        {
+          "text": "el",
+          "head": 4,
+          "dep": "det",
+          "lemma": "el",
+          "morph": "Definite=Def|Gender=Masc|Number=Sing|PronType=Art"
+        },
+        {
+          "text": "libro",
+          "head": 2,
+          "dep": "obj",
+          "lemma": "libro",
+          "morph": "Gender=Masc|Number=Sing"
+        }
+      ],
+      "execution_error": null,
+      "seconds": 0.012086100003216416
+    },
+    {
+      "id": "ES-057",
+      "tool": "spacy",
+      "text": "El niño leyó el libro.",
+      "level": "complejo",
+      "tokens": [
+        "El",
+        "niño",
+        "leyó",
+        "el",
+        "libro",
+        "."
+      ],
+      "pos": [
+        "DET",
+        "NOUN",
+        "VERB",
+        "DET",
+        "NOUN",
+        "PUNCT"
+      ],
+      "accepted": null,
+      "dependencies": [
+        {
+          "text": "El",
+          "head": 1,
+          "dep": "det",
+          "lemma": "el",
+          "morph": "Definite=Def|Gender=Masc|Number=Sing|PronType=Art"
+        },
+        {
+          "text": "niño",
+          "head": 2,
+          "dep": "nsubj",
+          "lemma": "niño",
+          "morph": "Gender=Masc|Number=Sing"
+        },
+        {
+          "text": "leyó",
+          "head": 2,
+          "dep": "ROOT",
+          "lemma": "leer",
+          "morph": "Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin"
+        },
+        {
+          "text": "el",
+          "head": 4,
+          "dep": "det",
+          "lemma": "el",
+          "morph": "Definite=Def|Gender=Masc|Number=Sing|PronType=Art"
+        },
+        {
+          "text": "libro",
+          "head": 2,
+          "dep": "obj",
+          "lemma": "libro",
+          "morph": "Gender=Masc|Number=Sing"
+        },
+        {
+          "text": ".",
+          "head": 2,
+          "dep": "punct",
+          "lemma": ".",
+          "morph": "PunctType=Peri"
+        }
+      ],
+      "execution_error": null,
+      "seconds": 0.014128999988315627
+    }
+  ]
+}

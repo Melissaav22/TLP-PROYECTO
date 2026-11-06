@@ -1,0 +1,735 @@
+{
+  "python": "3.14.8",
+  "dependencies": {
+    "ply": "3.11",
+    "nltk": "3.10.4"
+  },
+  "grammar": {
+    "nonterminals": 22,
+    "productions": 44,
+    "table_cells": 82
+  },
+  "total": 90,
+  "passed": 71,
+  "failed": 19,
+  "results": [
+    {
+      "id": "accept_declaration_plain",
+      "expected": true,
+      "actual": true,
+      "ok": true
+    },
+    {
+      "id": "accept_declaration_initialized",
+      "expected": true,
+      "actual": true,
+      "ok": true
+    },
+    {
+      "id": "accept_assignment",
+      "expected": true,
+      "actual": true,
+      "ok": true
+    },
+    {
+      "id": "accept_arithmetic",
+      "expected": true,
+      "actual": true,
+      "ok": true
+    },
+    {
+      "id": "accept_if",
+      "expected": true,
+      "actual": true,
+      "ok": true
+    },
+    {
+      "id": "accept_else_if_else",
+      "expected": true,
+      "actual": true,
+      "ok": true
+    },
+    {
+      "id": "accept_while",
+      "expected": true,
+      "actual": true,
+      "ok": true
+    },
+    {
+      "id": "accept_for_full",
+      "expected": true,
+      "actual": true,
+      "ok": true
+    },
+    {
+      "id": "accept_for_assignment_init",
+      "expected": true,
+      "actual": true,
+      "ok": true
+    },
+    {
+      "id": "accept_for_empty_init_step",
+      "expected": true,
+      "actual": true,
+      "ok": true
+    },
+    {
+      "id": "accept_nested",
+      "expected": true,
+      "actual": true,
+      "ok": true
+    },
+    {
+      "id": "accept_empty",
+      "expected": true,
+      "actual": true,
+      "ok": true
+    },
+    {
+      "id": "accept_comments",
+      "expected": true,
+      "actual": true,
+      "ok": true
+    },
+    {
+      "id": "accept_comment_between_statements",
+      "expected": true,
+      "actual": true,
+      "ok": true
+    },
+    {
+      "id": "accept_keyword_prefix_ids",
+      "expected": true,
+      "actual": true,
+      "ok": true
+    },
+    {
+      "id": "accept_no_semantic_check",
+      "expected": true,
+      "actual": true,
+      "ok": true
+    },
+    {
+      "id": "relop_<",
+      "expected": true,
+      "actual": true,
+      "ok": true
+    },
+    {
+      "id": "relop_>",
+      "expected": true,
+      "actual": true,
+      "ok": true
+    },
+    {
+      "id": "relop_==",
+      "expected": true,
+      "actual": true,
+      "ok": true
+    },
+    {
+      "id": "relop_<=",
+      "expected": true,
+      "actual": true,
+      "ok": true
+    },
+    {
+      "id": "relop_>=",
+      "expected": true,
+      "actual": true,
+      "ok": true
+    },
+    {
+      "id": "relop_!=",
+      "expected": true,
+      "actual": true,
+      "ok": true
+    },
+    {
+      "id": "reject_missing_semi",
+      "expected": false,
+      "actual": false,
+      "ok": true
+    },
+    {
+      "id": "reject_missing_paren",
+      "expected": false,
+      "actual": false,
+      "ok": true
+    },
+    {
+      "id": "reject_if_no_braces",
+      "expected": false,
+      "actual": false,
+      "ok": true
+    },
+    {
+      "id": "reject_else_no_braces",
+      "expected": false,
+      "actual": false,
+      "ok": true
+    },
+    {
+      "id": "reject_while_no_braces",
+      "expected": false,
+      "actual": false,
+      "ok": true
+    },
+    {
+      "id": "reject_for_no_braces",
+      "expected": false,
+      "actual": false,
+      "ok": true
+    },
+    {
+      "id": "reject_condition_no_relation",
+      "expected": false,
+      "actual": false,
+      "ok": true
+    },
+    {
+      "id": "reject_multiple_variables",
+      "expected": false,
+      "actual": false,
+      "ok": true
+    },
+    {
+      "id": "reject_other_type",
+      "expected": false,
+      "actual": false,
+      "ok": true
+    },
+    {
+      "id": "reject_chained_assignment",
+      "expected": false,
+      "actual": false,
+      "ok": true
+    },
+    {
+      "id": "reject_assignment_in_condition",
+      "expected": false,
+      "actual": false,
+      "ok": true
+    },
+    {
+      "id": "reject_function",
+      "expected": false,
+      "actual": false,
+      "ok": true
+    },
+    {
+      "id": "reject_return_statement",
+      "expected": false,
+      "actual": false,
+      "ok": true
+    },
+    {
+      "id": "reject_do_while",
+      "expected": false,
+      "actual": false,
+      "ok": true
+    },
+    {
+      "id": "reject_logical_and",
+      "expected": false,
+      "actual": false,
+      "ok": true
+    },
+    {
+      "id": "reject_logical_or",
+      "expected": false,
+      "actual": false,
+      "ok": true
+    },
+    {
+      "id": "reject_block_comment",
+      "expected": false,
+      "actual": false,
+      "ok": true
+    },
+    {
+      "id": "reject_extra_brace",
+      "expected": false,
+      "actual": false,
+      "ok": true
+    },
+    {
+      "id": "reject_reserved_minic_id",
+      "expected": false,
+      "actual": false,
+      "ok": true
+    },
+    {
+      "id": "reject_invalid_character",
+      "expected": false,
+      "actual": false,
+      "ok": true
+    },
+    {
+      "id": "tree_type",
+      "expected": true,
+      "actual": true,
+      "ok": true
+    },
+    {
+      "id": "tree_root",
+      "expected": "Program",
+      "actual": "Program",
+      "ok": true
+    },
+    {
+      "id": "tree_precedence",
+      "expected": {
+        "sum": "+",
+        "rhs_term_operator": "*",
+        "lhs_factor": "1"
+      },
+      "actual": {
+        "sum": "+",
+        "rhs_term_operator": "*",
+        "lhs_factor": "1"
+      },
+      "ok": true
+    },
+    {
+      "id": "tree_multiplication_inside_term",
+      "expected": true,
+      "actual": true,
+      "ok": true
+    },
+    {
+      "id": "tree_right_recursive_subtraction",
+      "expected": true,
+      "actual": true,
+      "ok": true
+    },
+    {
+      "id": "lexer_positions",
+      "expected": [
+        "ID",
+        "x",
+        2,
+        3
+      ],
+      "actual": [
+        "ID",
+        "x",
+        2,
+        3
+      ],
+      "ok": true
+    },
+    {
+      "id": "lexer_longest_relop",
+      "expected": "LE",
+      "actual": "LE",
+      "ok": true
+    },
+    {
+      "id": "lexer_eof",
+      "expected": [
+        "$",
+        "$",
+        3,
+        1
+      ],
+      "actual": [
+        "$",
+        "$",
+        3,
+        1
+      ],
+      "ok": true
+    },
+    {
+      "id": "lexer_reset_between_calls",
+      "expected": 1,
+      "actual": 1,
+      "ok": true
+    },
+    {
+      "id": "lexical_error_has_column",
+      "expected": true,
+      "actual": false,
+      "ok": false
+    },
+    {
+      "id": "syntax_error_has_position",
+      "expected": true,
+      "actual": true,
+      "ok": true
+    },
+    {
+      "id": "first_error_source_order",
+      "expected": 1,
+      "actual": 2,
+      "ok": false
+    },
+    {
+      "id": "panic_recovers_following_statement",
+      "expected": true,
+      "actual": true,
+      "ok": true
+    },
+    {
+      "id": "first_oracle",
+      "expected": [
+        "ID",
+        "NUM",
+        "eps"
+      ],
+      "actual": [
+        "ID",
+        "NUM",
+        "eps"
+      ],
+      "ok": true
+    },
+    {
+      "id": "follow_oracle_a",
+      "expected": [
+        "$",
+        "NUM"
+      ],
+      "actual": [
+        "$",
+        "NUM"
+      ],
+      "ok": true
+    },
+    {
+      "id": "follow_oracle_b",
+      "expected": [
+        "$"
+      ],
+      "actual": [
+        "$"
+      ],
+      "ok": true
+    },
+    {
+      "id": "nullable_table_oracle",
+      "expected": [
+        "A",
+        "B"
+      ],
+      "actual": [
+        "A",
+        "B"
+      ],
+      "ok": true
+    },
+    {
+      "id": "custom_grammar_same_tokens",
+      "expected": true,
+      "actual": true,
+      "ok": true
+    },
+    {
+      "id": "custom_grammar_empty_source",
+      "expected": true,
+      "actual": true,
+      "ok": true
+    },
+    {
+      "id": "conflict_first_first",
+      "expected": true,
+      "actual": true,
+      "ok": true
+    },
+    {
+      "id": "conflict_first_follow",
+      "expected": true,
+      "actual": true,
+      "ok": true
+    },
+    {
+      "id": "grammar_unknown_symbol",
+      "expected": true,
+      "actual": true,
+      "ok": true
+    },
+    {
+      "id": "grammar_missing_arrow",
+      "expected": true,
+      "actual": true,
+      "ok": true
+    },
+    {
+      "id": "grammar_empty_alt",
+      "expected": true,
+      "actual": true,
+      "ok": true
+    },
+    {
+      "id": "grammar_duplicate_lhs",
+      "expected": true,
+      "actual": true,
+      "ok": true
+    },
+    {
+      "id": "grammar_empty_controlled",
+      "expected": true,
+      "actual": {
+        "exception": "KeyError",
+        "message": "None"
+      },
+      "ok": false
+    },
+    {
+      "id": "grammar_mixed_eps_rejected",
+      "expected": true,
+      "actual": false,
+      "ok": false
+    },
+    {
+      "id": "grammar_empty_lhs_rejected",
+      "expected": true,
+      "actual": false,
+      "ok": false
+    },
+    {
+      "id": "c_keyword_return",
+      "expected": false,
+      "actual": true,
+      "ok": false
+    },
+    {
+      "id": "c_keyword_float",
+      "expected": false,
+      "actual": true,
+      "ok": false
+    },
+    {
+      "id": "c_keyword_do",
+      "expected": false,
+      "actual": true,
+      "ok": false
+    },
+    {
+      "id": "c_keyword_switch",
+      "expected": false,
+      "actual": true,
+      "ok": false
+    },
+    {
+      "id": "c_invalid_octal_rejected",
+      "expected": false,
+      "actual": true,
+      "ok": false
+    },
+    {
+      "id": "c_unicode_digit_rejected",
+      "expected": false,
+      "actual": true,
+      "ok": false
+    },
+    {
+      "id": "number_lexeme_preserved",
+      "expected": "010",
+      "actual": "10",
+      "ok": false
+    },
+    {
+      "id": "cli_pretty_valid",
+      "expected": {
+        "code": 0,
+        "traceback": false
+      },
+      "actual": {
+        "code": 0,
+        "traceback": false
+      },
+      "ok": true
+    },
+    {
+      "id": "cli_compact_valid",
+      "expected": {
+        "code": 0,
+        "traceback": false
+      },
+      "actual": {
+        "code": 0,
+        "traceback": false
+      },
+      "ok": true
+    },
+    {
+      "id": "cli_invalid",
+      "expected": {
+        "code": 1,
+        "traceback": false
+      },
+      "actual": {
+        "code": 1,
+        "traceback": false
+      },
+      "ok": true
+    },
+    {
+      "id": "cli_table",
+      "expected": true,
+      "actual": true,
+      "ok": true
+    },
+    {
+      "id": "cli_outside_repo",
+      "expected": {
+        "code": 0,
+        "traceback": false
+      },
+      "actual": {
+        "code": 0,
+        "traceback": false
+      },
+      "ok": true
+    },
+    {
+      "id": "cli_custom_grammar",
+      "expected": {
+        "code": 0,
+        "traceback": false
+      },
+      "actual": {
+        "code": 0,
+        "traceback": false
+      },
+      "ok": true
+    },
+    {
+      "id": "cli_grammar_error_contract",
+      "expected": {
+        "code": 1,
+        "traceback": false
+      },
+      "actual": {
+        "code": 2,
+        "traceback": false
+      },
+      "ok": false
+    },
+    {
+      "id": "cli_missing_file_controlled",
+      "expected": {
+        "code": 1,
+        "traceback": false
+      },
+      "actual": {
+        "code": 1,
+        "traceback": true
+      },
+      "ok": false
+    },
+    {
+      "id": "cli_missing_grammar_controlled",
+      "expected": {
+        "code": 1,
+        "traceback": false
+      },
+      "actual": {
+        "code": 1,
+        "traceback": true
+      },
+      "ok": false
+    },
+    {
+      "id": "cli_empty_grammar_controlled",
+      "expected": {
+        "code": 1,
+        "traceback": false
+      },
+      "actual": {
+        "code": 1,
+        "traceback": true
+      },
+      "ok": false
+    },
+    {
+      "id": "large_number_controlled",
+      "expected": {
+        "code": 1,
+        "traceback": false
+      },
+      "actual": {
+        "code": 1,
+        "traceback": true
+      },
+      "ok": false
+    },
+    {
+      "id": "long_valid_source_compact",
+      "expected": {
+        "code": 0,
+        "traceback": false
+      },
+      "actual": {
+        "code": 1,
+        "traceback": true
+      },
+      "ok": false
+    },
+    {
+      "id": "long_valid_source_pretty",
+      "expected": {
+        "code": 0,
+        "traceback": false
+      },
+      "actual": {
+        "code": 1,
+        "traceback": true
+      },
+      "ok": false
+    }
+  ],
+  "observations": {
+    "for_empty_condition_accepted": false,
+    "unary_minus_accepted": false,
+    "standalone_block_accepted": false,
+    "grammar_nonproductive_accepted": true,
+    "lexical_then_syntactic_errors": [
+      "Linea 2: caracter ilegal '@'",
+      "Linea 1, col 5: se esperaba ID pero llego '='"
+    ],
+    "long_source_parse_without_render": true,
+    "example_octal_tokens": [
+      [
+        "INT",
+        "int",
+        1,
+        1
+      ],
+      [
+        "ID",
+        "x",
+        1,
+        5
+      ],
+      [
+        "ASSIGN",
+        "=",
+        1,
+        7
+      ],
+      [
+        "NUM",
+        "10",
+        1,
+        9
+      ],
+      [
+        "SEMI",
+        ";",
+        1,
+        12
+      ],
+      [
+        "$",
+        "$",
+        1,
+        13
+      ]
+    ],
+    "large_number_cli_exception": "ValueError: Exceeds the limit (4300 digits) for integer string conversion: value has 5000 digits; use sys.set_int_max_str_digits() to increase the limit",
+    "long_source_cli_exception": "RecursionError: maximum recursion depth exceeded"
+  }
+}
