@@ -69,16 +69,21 @@ PP          -> PREP SN
 
 # sintagma verbal: verbo pleno (+ subordinada o modificadores) o copula
 # (+ atributo y modificadores). El verbo concuerda en numero con el sujeto.
-SV_MS       -> VERB_3S Cpl_MS | COP_3S PredCpl_MS
-SV_FS       -> VERB_3S Cpl_FS | COP_3S PredCpl_FS
-SV_MP       -> VERB_3P Cpl_MP | COP_3P PredCpl_MP
-SV_FP       -> VERB_3P Cpl_FP | COP_3P PredCpl_FP
+SV_MS       -> VerboSG Cpl_MS | CopulaSG PredCpl_MS
+SV_FS       -> VerboSG Cpl_FS | CopulaSG PredCpl_FS
+SV_MP       -> VerboPL Cpl_MP | CopulaPL PredCpl_MP
+SV_FP       -> VerboPL Cpl_FP | CopulaPL PredCpl_FP
+VerboSG     -> VERB_3S | VERB_PAST_3S
+VerboPL     -> VERB_3P | VERB_PAST_3P
+CopulaSG    -> COP_3S | COP_PAST_3S
+CopulaPL    -> COP_3P | COP_PAST_3P
 
 # complemento del verbo: subordinada con "que" o solo modificadores
-Cpl_MS      -> QUE Oracion | ModsS
-Cpl_FS      -> QUE Oracion | ModsS
-Cpl_MP      -> QUE Oracion | ModsP
-Cpl_FP      -> QUE Oracion | ModsP
+Cpl_MS      -> QUE Oracion | Objeto ModsS
+Cpl_FS      -> QUE Oracion | Objeto ModsS
+Cpl_MP      -> QUE Oracion | Objeto ModsP
+Cpl_FP      -> QUE Oracion | Objeto ModsP
+Objeto      -> SN | eps
 
 # complemento de la copula: atributo (adjetivo concordado) y modificadores
 PredCpl_MS  -> PredMS ModsS | ModsS

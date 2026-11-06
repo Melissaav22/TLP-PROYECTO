@@ -25,8 +25,12 @@ ADJ_FP = 'ADJ_FP'
 
 VERB_3S = 'VERB_3S'
 VERB_3P = 'VERB_3P'
+VERB_PAST_3S = 'VERB_PAST_3S'
+VERB_PAST_3P = 'VERB_PAST_3P'
 COP_3S = 'COP_3S'
 COP_3P = 'COP_3P'
+COP_PAST_3S = 'COP_PAST_3S'
+COP_PAST_3P = 'COP_PAST_3P'
 
 ADV = 'ADV'
 PREP = 'PREP'
@@ -36,7 +40,8 @@ TOKENS = [
     DET_MS, DET_FS, DET_MP, DET_FP,
     SUST_MS, SUST_FS, SUST_MP, SUST_FP,
     ADJ_MS, ADJ_FS, ADJ_MP, ADJ_FP,
-    VERB_3S, VERB_3P, COP_3S, COP_3P,
+    VERB_3S, VERB_3P, VERB_PAST_3S, VERB_PAST_3P,
+    COP_3S, COP_3P, COP_PAST_3S, COP_PAST_3P,
     ADV, PREP, QUE,
 ]
 
@@ -122,3 +127,19 @@ LEXICON = {
     # complementizador / relativo
     'que': QUE,
 }
+
+# Pretérito perfecto simple. Se conserva el tiempo en el tipo del token.
+PAST_FORMS = [
+    ('corrió', 'corrieron'), ('caminó', 'caminaron'), ('compró', 'compraron'),
+    ('leyó', 'leyeron'), ('escribió', 'escribieron'), ('comió', 'comieron'),
+    ('vivió', 'vivieron'), ('estudió', 'estudiaron'), ('trabajó', 'trabajaron'),
+    ('cantó', 'cantaron'), ('bailó', 'bailaron'), ('supo', 'supieron'),
+    ('dijo', 'dijeron'), ('miró', 'miraron'), ('buscó', 'buscaron'),
+    ('quiso', 'quisieron'), ('durmió', 'durmieron'), ('abrió', 'abrieron'),
+    ('cerró', 'cerraron'),
+]
+for singular, plural in PAST_FORMS:
+    LEXICON[singular] = VERB_PAST_3S
+    LEXICON[plural] = VERB_PAST_3P
+LEXICON.update({'fue': COP_PAST_3S, 'fueron': COP_PAST_3P,
+                'estuvo': COP_PAST_3S, 'estuvieron': COP_PAST_3P})

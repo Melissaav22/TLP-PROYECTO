@@ -37,6 +37,18 @@ class Contracts(unittest.TestCase):
             self.assertTrue(parse(source, self.g, True)[1])
         self.assertFalse(parse('El a\u0301rbol es alto', self.g, True)[1])
 
+    def test_svo_tenses_and_agreement(self):
+        for source in ['El niño lee el libro', 'Los niños leyeron los libros',
+                       'La niña compró la flor', 'Las niñas compran las flores',
+                       'La casa fue blanca', 'Las casas fueron blancas']:
+            self.assertFalse(parse(source, self.g, True)[1], source)
+        for source in ['Los niños leyó el libro', 'La niña compraron la flor',
+                       'Las casas fue blanca', 'El niño lee las libro']:
+            self.assertTrue(parse(source, self.g, True)[1], source)
+        self.assertEqual(tokenize('leyó', True)[0][0][0], 'VERB_PAST_3S')
+        tree, _ = parse('El niño lee el libro', self.g, True)
+        self.assertTrue(any(n.label() == 'Objeto' and n[0].label() == 'SN' for n in tree.subtrees() if n.label() == 'Objeto'))
+
     def test_structure(self):
         tree, _ = parse('int x=1+2*3;', self.g)
         expr = next(n for n in tree.subtrees() if n.label() == 'Expr')
@@ -74,7 +86,7 @@ class Contracts(unittest.TestCase):
     def test_cli_normal_and_errors(self):
         with tempfile.TemporaryDirectory() as directory:
             source = Path(directory) / 'source.txt'
-            source.write_text('El niño corre', encoding='utf-8')
+            source.write_text('El niño lee el libro', encoding='utf-8')
             svg = Path(directory) / 'tree.svg'
             command = [sys.executable, str(ROOT / 'main.py')]
             good = subprocess.run(command + [str(source), '--es', '--compacto', '--svg', str(svg)], capture_output=True, timeout=20)
