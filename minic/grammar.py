@@ -1,5 +1,6 @@
 """Carga la gramatica desde archivo y calcula FIRST, FOLLOW y la tabla LL(1)."""
 from . import lexer
+import re
 
 EPS = 'eps'
 
@@ -9,12 +10,19 @@ class GrammarError(Exception):
 
 
 class Grammar:
-    def __init__(self, path):
+    def __init__(self, path, start=None):
         self.rules = {}          # no terminal -> lista de alternativas
         self.start = None
         self._load(path)
+        if not self.rules:
+            raise GrammarError('La gramatica esta vacia')
+        if start is not None:
+            if start not in self.rules:
+                raise GrammarError(f'Simbolo inicial desconocido {start!r}')
+            self.start = start
         self.nonterminals = set(self.rules)
         self._check_terminals()
+        self._check_productivity()
         self.first = self._compute_first()
         self.follow = self._compute_follow()
         self.table = self._build_table()
@@ -29,10 +37,14 @@ class Grammar:
                 if '->' not in line:
                     raise GrammarError(f'{path}:{n}: falta "->"')
                 lhs, rhs = (p.strip() for p in line.split('->', 1))
+                if not re.fullmatch(r'[A-Za-z_][A-Za-z_0-9]*', lhs) or lhs == EPS or lhs in lexer.tokens:
+                    raise GrammarError(f'{path}:{n}: no terminal invalido {lhs!r}')
                 alts = [alt.split() for alt in rhs.split('|')]
                 if any(not a for a in alts):
                     raise GrammarError(f'{path}:{n}: alternativa vacia '
                                        f'(usa "{EPS}")')
+                if any(EPS in alt and alt != [EPS] for alt in alts):
+                    raise GrammarError(f'{path}:{n}: eps debe ser una alternativa completa')
                 if lhs in self.rules:
                     raise GrammarError(f'{path}:{n}: "{lhs}" repetido')
                 self.rules[lhs] = alts
@@ -66,6 +78,34 @@ class Grammar:
                 return result
         result.add(EPS)
         return result
+
+    def _check_productivity(self):
+        productive = set()
+        while True:
+            new = {lhs for lhs, alts in self.rules.items() if any(
+                all(sym not in self.nonterminals or sym in productive for sym in alt)
+                for alt in alts)}
+            if new <= productive:
+                break
+            productive |= new
+        missing = self.nonterminals - productive
+        if missing:
+            raise GrammarError(f'No terminales sin derivacion terminal: {sorted(missing)}')
+
+    def for_start(self, start):
+        """Reutiliza producciones y FIRST, recalculando FOLLOW/tabla para la raiz."""
+        if start == self.start:
+            return self
+        if start not in self.rules:
+            raise GrammarError(f'Simbolo inicial desconocido {start!r}')
+        grammar = object.__new__(Grammar)
+        grammar.rules = self.rules
+        grammar.start = start
+        grammar.nonterminals = self.nonterminals
+        grammar.first = self.first
+        grammar.follow = grammar._compute_follow()
+        grammar.table = grammar._build_table()
+        return grammar
 
     def _compute_first(self):
         FIRST = {A: set() for A in self.rules}
