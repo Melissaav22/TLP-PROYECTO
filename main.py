@@ -12,6 +12,7 @@ import sys
 
 from minic.grammar import Grammar, GrammarError
 from minic.parser import parse
+from minic.trees import bracketed, print_tree, write_svg
 
 AQUI = os.path.dirname(os.path.abspath(__file__))
 
@@ -26,6 +27,7 @@ def main():
                     help='mostrar FIRST, FOLLOW y la tabla LL(1)')
     ap.add_argument('--compacto', action='store_true',
                     help='imprimir el arbol en formato de corchetes')
+    ap.add_argument('--svg', help='guardar el arbol como SVG')
     args = ap.parse_args()
 
     ruta_gramatica = args.gramatica or os.path.join(AQUI, 'gramatica_minic.txt')
@@ -34,23 +36,36 @@ def main():
         g = Grammar(ruta_gramatica)
     except GrammarError as e:
         print(f'Error en la gramatica: {e}', file=sys.stderr)
-        return 2
+        return 1
+    except (OSError, UnicodeError) as e:
+        print(f'Error al leer la gramatica: {e}', file=sys.stderr)
+        return 1
     if args.tabla:
         g.show()
     if not args.archivo:
         return 0
 
-    with open(args.archivo, encoding='utf-8') as f:
-        tree, errors = parse(f.read(), g, spanish=args.es)
+    try:
+        with open(args.archivo, encoding='utf-8') as f:
+            tree, errors = parse(f.read(), g, spanish=args.es)
+    except (OSError, UnicodeError, GrammarError, ValueError) as e:
+        print(f'Error de entrada: {e}', file=sys.stderr)
+        return 1
     if errors:
         print(f'{len(errors)} error(es):')
         for e in errors:
             print('  ', e)
         return 1
-    if args.compacto:
-        print(tree)
-    else:
-        tree.pretty_print()
+    try:
+        if args.svg:
+            write_svg(tree, args.svg)
+        if args.compacto:
+            print(bracketed(tree))
+        else:
+            print_tree(tree)
+    except (OSError, ValueError) as e:
+        print(f'Error de salida: {e}', file=sys.stderr)
+        return 1
     print('Analisis exitoso.')
     return 0
 
