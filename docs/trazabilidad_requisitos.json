@@ -1,7 +1,7 @@
 {
   "date": "2026-11-06",
   "baseline_commit": "c2dcd47f3d173a148cf3ecc9d9c2a68c13983bc3",
-  "academic_completion": "Fase 1: pendiente de revisión del grupo, autoría, ensayo y entrega/defensa",
+  "academic_completion": "Pendiente de revisión del grupo, ejecución LLM postergada y entrega/defensa",
   "requirements": [
     {
       "id": "F1-REQ-01",
@@ -209,6 +209,371 @@
         "resultados/fase1/comparacion.json",
         "resultados/fase1/fallos.json",
         "docs/informe_fase1.pdf"
+      ]
+    },
+    {
+      "id": "F2-REQ-01",
+      "title": "CFG explícita para un español controlado",
+      "status": "Verificado en código o resultados locales",
+      "evidence": [
+        "tests/test_contratos.py",
+        "tests/test_experimentos.py",
+        "README.md",
+        "datos/corpus_es.json",
+        "resultados/nlp/comparacion.json",
+        "resultados/metricas/resumen.json"
+      ]
+    },
+    {
+      "id": "F2-REQ-02",
+      "title": "Oraciones sujeto-verbo-objeto con objeto directo",
+      "status": "Verificado en código o resultados locales",
+      "evidence": [
+        "tests/test_contratos.py",
+        "tests/test_experimentos.py",
+        "README.md",
+        "datos/corpus_es.json",
+        "resultados/nlp/comparacion.json",
+        "resultados/metricas/resumen.json"
+      ]
+    },
+    {
+      "id": "F2-REQ-03",
+      "title": "Modificadores adjetivales",
+      "status": "Verificado en código o resultados locales",
+      "evidence": [
+        "tests/test_contratos.py",
+        "tests/test_experimentos.py",
+        "README.md",
+        "datos/corpus_es.json",
+        "resultados/nlp/comparacion.json",
+        "resultados/metricas/resumen.json"
+      ]
+    },
+    {
+      "id": "F2-REQ-04",
+      "title": "Modificadores adverbiales",
+      "status": "Verificado en código o resultados locales",
+      "evidence": [
+        "tests/test_contratos.py",
+        "tests/test_experimentos.py",
+        "README.md",
+        "datos/corpus_es.json",
+        "resultados/nlp/comparacion.json",
+        "resultados/metricas/resumen.json"
+      ]
+    },
+    {
+      "id": "F2-REQ-05",
+      "title": "Modificadores preposicionales",
+      "status": "Verificado en código o resultados locales",
+      "evidence": [
+        "tests/test_contratos.py",
+        "tests/test_experimentos.py",
+        "README.md",
+        "datos/corpus_es.json",
+        "resultados/nlp/comparacion.json",
+        "resultados/metricas/resumen.json"
+      ]
+    },
+    {
+      "id": "F2-REQ-06",
+      "title": "Al menos dos tiempos verbales",
+      "status": "Verificado en código o resultados locales",
+      "evidence": [
+        "tests/test_contratos.py",
+        "tests/test_experimentos.py",
+        "README.md",
+        "datos/corpus_es.json",
+        "resultados/nlp/comparacion.json",
+        "resultados/metricas/resumen.json"
+      ]
+    },
+    {
+      "id": "F2-REQ-07",
+      "title": "Concordancia básica",
+      "status": "Verificado en código o resultados locales",
+      "evidence": [
+        "tests/test_contratos.py",
+        "tests/test_experimentos.py",
+        "README.md",
+        "datos/corpus_es.json",
+        "resultados/nlp/comparacion.json",
+        "resultados/metricas/resumen.json"
+      ]
+    },
+    {
+      "id": "F2-REQ-08",
+      "title": "Vocabulario reducido definido y variado",
+      "status": "Verificado en código o resultados locales",
+      "evidence": [
+        "tests/test_contratos.py",
+        "tests/test_experimentos.py",
+        "README.md",
+        "datos/corpus_es.json",
+        "resultados/nlp/comparacion.json",
+        "resultados/metricas/resumen.json"
+      ]
+    },
+    {
+      "id": "F2-REQ-09",
+      "title": "Parser propio LL(1) que valide frases",
+      "status": "Verificado en código o resultados locales",
+      "evidence": [
+        "tests/test_contratos.py",
+        "tests/test_experimentos.py",
+        "README.md",
+        "datos/corpus_es.json",
+        "resultados/nlp/comparacion.json",
+        "resultados/metricas/resumen.json"
+      ]
+    },
+    {
+      "id": "F2-REQ-10",
+      "title": "Árboles sintácticos visuales por oración",
+      "status": "Verificado en código o resultados locales",
+      "evidence": [
+        "tests/test_contratos.py",
+        "tests/test_experimentos.py",
+        "README.md",
+        "datos/corpus_es.json",
+        "resultados/nlp/comparacion.json",
+        "resultados/metricas/resumen.json"
+      ]
+    },
+    {
+      "id": "F2-REQ-11",
+      "title": "Corpus de al menos 60 oraciones",
+      "status": "Verificado en código o resultados locales",
+      "evidence": [
+        "tests/test_contratos.py",
+        "tests/test_experimentos.py",
+        "README.md",
+        "datos/corpus_es.json",
+        "resultados/nlp/comparacion.json",
+        "resultados/metricas/resumen.json"
+      ]
+    },
+    {
+      "id": "F2-REQ-12",
+      "title": "Corpus organizado en tres niveles de complejidad",
+      "status": "Verificado en código o resultados locales",
+      "evidence": [
+        "tests/test_contratos.py",
+        "tests/test_experimentos.py",
+        "README.md",
+        "datos/corpus_es.json",
+        "resultados/nlp/comparacion.json",
+        "resultados/metricas/resumen.json"
+      ]
+    },
+    {
+      "id": "F2-REQ-13",
+      "title": "Salida esperada etiquetada en el corpus",
+      "status": "Etiquetas preparadas; revisión humana pendiente",
+      "evidence": [
+        "tests/test_contratos.py",
+        "tests/test_experimentos.py",
+        "README.md",
+        "datos/corpus_es.json",
+        "resultados/nlp/comparacion.json",
+        "resultados/metricas/resumen.json"
+      ]
+    },
+    {
+      "id": "F2-REQ-14",
+      "title": "Al menos dos herramientas modernas de NLP",
+      "status": "Verificado en código o resultados locales",
+      "evidence": [
+        "tests/test_contratos.py",
+        "tests/test_experimentos.py",
+        "README.md",
+        "datos/corpus_es.json",
+        "resultados/nlp/comparacion.json",
+        "resultados/metricas/resumen.json"
+      ]
+    },
+    {
+      "id": "F2-REQ-15",
+      "title": "Procesar y comparar el mismo conjunto entre sistemas",
+      "status": "Verificado en código o resultados locales",
+      "evidence": [
+        "tests/test_contratos.py",
+        "tests/test_experimentos.py",
+        "README.md",
+        "datos/corpus_es.json",
+        "resultados/nlp/comparacion.json",
+        "resultados/metricas/resumen.json"
+      ]
+    },
+    {
+      "id": "F2-REQ-16",
+      "title": "Métrica de precisión",
+      "status": "Verificado en código o resultados locales",
+      "evidence": [
+        "tests/test_contratos.py",
+        "tests/test_experimentos.py",
+        "README.md",
+        "datos/corpus_es.json",
+        "resultados/nlp/comparacion.json",
+        "resultados/metricas/resumen.json"
+      ]
+    },
+    {
+      "id": "F2-REQ-17",
+      "title": "Métrica de cobertura o recall",
+      "status": "Verificado en código o resultados locales",
+      "evidence": [
+        "tests/test_contratos.py",
+        "tests/test_experimentos.py",
+        "README.md",
+        "datos/corpus_es.json",
+        "resultados/nlp/comparacion.json",
+        "resultados/metricas/resumen.json"
+      ]
+    },
+    {
+      "id": "F2-REQ-18",
+      "title": "Tasa de rechazo correcto",
+      "status": "Verificado en código o resultados locales",
+      "evidence": [
+        "tests/test_contratos.py",
+        "tests/test_experimentos.py",
+        "README.md",
+        "datos/corpus_es.json",
+        "resultados/nlp/comparacion.json",
+        "resultados/metricas/resumen.json"
+      ]
+    },
+    {
+      "id": "F2-REQ-19",
+      "title": "Clasificación de falsos positivos, falsos negativos y errores de etiquetado",
+      "status": "Verificado en código o resultados locales",
+      "evidence": [
+        "tests/test_contratos.py",
+        "tests/test_experimentos.py",
+        "README.md",
+        "datos/corpus_es.json",
+        "resultados/nlp/comparacion.json",
+        "resultados/metricas/resumen.json"
+      ]
+    },
+    {
+      "id": "F2-REQ-20",
+      "title": "Tablas y gráficas de resultados cuantitativos",
+      "status": "Verificado en código o resultados locales",
+      "evidence": [
+        "tests/test_contratos.py",
+        "tests/test_experimentos.py",
+        "README.md",
+        "datos/corpus_es.json",
+        "resultados/nlp/comparacion.json",
+        "resultados/metricas/resumen.json"
+      ]
+    },
+    {
+      "id": "F2-REQ-21",
+      "title": "Experimento con LLM mediante API",
+      "status": "Integración implementada; ejecución API pendiente por decisión del usuario",
+      "evidence": [
+        "experimentos/llm.py",
+        "experimentos/validar_derivacion.py",
+        "prompts/zero_shot.txt",
+        "prompts/few_shot.txt",
+        "resultados/llm/estado.json"
+      ]
+    },
+    {
+      "id": "F2-REQ-22",
+      "title": "Prompt con reglas explícitas de producción",
+      "status": "Integración implementada; ejecución API pendiente por decisión del usuario",
+      "evidence": [
+        "experimentos/llm.py",
+        "experimentos/validar_derivacion.py",
+        "prompts/zero_shot.txt",
+        "prompts/few_shot.txt",
+        "resultados/llm/estado.json"
+      ]
+    },
+    {
+      "id": "F2-REQ-23",
+      "title": "Comparación few-shot frente a zero-shot",
+      "status": "Integración implementada; ejecución API pendiente por decisión del usuario",
+      "evidence": [
+        "experimentos/llm.py",
+        "experimentos/validar_derivacion.py",
+        "prompts/zero_shot.txt",
+        "prompts/few_shot.txt",
+        "resultados/llm/estado.json"
+      ]
+    },
+    {
+      "id": "F2-REQ-24",
+      "title": "Evaluar adhesión a reglas y aciertos/fallos del LLM",
+      "status": "Integración implementada; ejecución API pendiente por decisión del usuario",
+      "evidence": [
+        "experimentos/llm.py",
+        "experimentos/validar_derivacion.py",
+        "prompts/zero_shot.txt",
+        "prompts/few_shot.txt",
+        "resultados/llm/estado.json"
+      ]
+    },
+    {
+      "id": "F2-REQ-25",
+      "title": "Logs de prompts y respuestas obtenidas",
+      "status": "Integración implementada; ejecución API pendiente por decisión del usuario",
+      "evidence": [
+        "experimentos/llm.py",
+        "experimentos/validar_derivacion.py",
+        "prompts/zero_shot.txt",
+        "prompts/few_shot.txt",
+        "resultados/llm/estado.json"
+      ]
+    },
+    {
+      "id": "F2-REQ-26",
+      "title": "Comparación de robustez, ambigüedad, escalabilidad y costo",
+      "status": "Evidencia local preparada; cierre LLM y revisión del grupo pendientes",
+      "evidence": [
+        "tests/test_contratos.py",
+        "tests/test_experimentos.py",
+        "README.md",
+        "datos/corpus_es.json",
+        "resultados/nlp/comparacion.json",
+        "resultados/metricas/resumen.json",
+        "docs/informe_fase2.pdf",
+        "docs/presentacion_fase2.pptx"
+      ]
+    },
+    {
+      "id": "F2-REQ-27",
+      "title": "Código y README para reproducir los experimentos",
+      "status": "Evidencia local preparada; cierre LLM y revisión del grupo pendientes",
+      "evidence": [
+        "tests/test_contratos.py",
+        "tests/test_experimentos.py",
+        "README.md",
+        "datos/corpus_es.json",
+        "resultados/nlp/comparacion.json",
+        "resultados/metricas/resumen.json",
+        "docs/informe_fase2.pdf",
+        "docs/presentacion_fase2.pptx"
+      ]
+    },
+    {
+      "id": "F2-REQ-28",
+      "title": "Informe final Fase 2 de 7–10 páginas con resultados",
+      "status": "Evidencia local preparada; cierre LLM y revisión del grupo pendientes",
+      "evidence": [
+        "tests/test_contratos.py",
+        "tests/test_experimentos.py",
+        "README.md",
+        "datos/corpus_es.json",
+        "resultados/nlp/comparacion.json",
+        "resultados/metricas/resumen.json",
+        "docs/informe_fase2.pdf",
+        "docs/presentacion_fase2.pptx"
       ]
     }
   ]

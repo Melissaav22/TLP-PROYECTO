@@ -5,9 +5,9 @@
     "nltk": "3.10.4"
   },
   "grammar": {
-    "nonterminals": 53,
-    "productions": 102,
-    "table_cells": 177
+    "nonterminals": 58,
+    "productions": 112,
+    "table_cells": 224
   },
   "total": 90,
   "passed": 90,

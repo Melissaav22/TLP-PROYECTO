@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1460" height="735" viewBox="0 0 1460 735">
+<svg xmlns="http://www.w3.org/2000/svg" width="1570" height="735" viewBox="0 0 1570 735">
 <rect width="100%" height="100%" fill="white"/>
-<text x="415.625" y="35" text-anchor="middle" font-family="Arial" font-size="13" fill="#172a45"><title>Oracion</title>Oracion</text>
-<line x1="415.625" y1="42" x2="415.625" y2="82" stroke="#93a5ba"/>
-<text x="415.625" y="100" text-anchor="middle" font-family="Arial" font-size="13" fill="#172a45"><title>OracionSG</title>OracionSG</text>
-<line x1="415.625" y1="107" x2="175.0" y2="147" stroke="#93a5ba"/>
+<text x="377.8125" y="35" text-anchor="middle" font-family="Arial" font-size="13" fill="#172a45"><title>Oracion</title>Oracion</text>
+<line x1="377.8125" y1="42" x2="377.8125" y2="82" stroke="#93a5ba"/>
+<text x="377.8125" y="100" text-anchor="middle" font-family="Arial" font-size="13" fill="#172a45"><title>OracionSG</title>OracionSG</text>
+<line x1="377.8125" y1="107" x2="175.0" y2="147" stroke="#93a5ba"/>
 <text x="175.0" y="165" text-anchor="middle" font-family="Arial" font-size="13" fill="#172a45"><title>SN_FS</title>SN_FS</text>
 <line x1="175.0" y1="172" x2="65" y2="212" stroke="#93a5ba"/>
 <text x="65" y="230" text-anchor="middle" font-family="Arial" font-size="13" fill="#172a45"><title>La</title>La</text>
@@ -13,50 +13,56 @@
 <text x="285.0" y="230" text-anchor="middle" font-family="Arial" font-size="13" fill="#172a45"><title>AdjFS</title>AdjFS</text>
 <line x1="285.0" y1="237" x2="285" y2="277" stroke="#93a5ba"/>
 <text x="285" y="295" text-anchor="middle" font-family="Arial" font-size="13" fill="#172a45"><title>eps</title>eps</text>
-<line x1="415.625" y1="107" x2="656.25" y2="147" stroke="#93a5ba"/>
-<text x="656.25" y="165" text-anchor="middle" font-family="Arial" font-size="13" fill="#172a45"><title>SV_FS</title>SV_FS</text>
-<line x1="656.25" y1="172" x2="395" y2="212" stroke="#93a5ba"/>
-<text x="395" y="230" text-anchor="middle" font-family="Arial" font-size="13" fill="#172a45"><title>vive</title>vive</text>
-<line x1="656.25" y1="172" x2="917.5" y2="212" stroke="#93a5ba"/>
-<text x="917.5" y="230" text-anchor="middle" font-family="Arial" font-size="13" fill="#172a45"><title>Cpl_FS</title>Cpl_FS</text>
-<line x1="917.5" y1="237" x2="917.5" y2="277" stroke="#93a5ba"/>
-<text x="917.5" y="295" text-anchor="middle" font-family="Arial" font-size="13" fill="#172a45"><title>ModsS</title>ModsS</text>
-<line x1="917.5" y1="302" x2="615.0" y2="342" stroke="#93a5ba"/>
-<text x="615.0" y="360" text-anchor="middle" font-family="Arial" font-size="13" fill="#172a45"><title>PP</title>PP</text>
-<line x1="615.0" y1="367" x2="505" y2="407" stroke="#93a5ba"/>
-<text x="505" y="425" text-anchor="middle" font-family="Arial" font-size="13" fill="#172a45"><title>en</title>en</text>
-<line x1="615.0" y1="367" x2="725.0" y2="407" stroke="#93a5ba"/>
-<text x="725.0" y="425" text-anchor="middle" font-family="Arial" font-size="13" fill="#172a45"><title>SN</title>SN</text>
-<line x1="725.0" y1="432" x2="725.0" y2="472" stroke="#93a5ba"/>
-<text x="725.0" y="490" text-anchor="middle" font-family="Arial" font-size="13" fill="#172a45"><title>SN_FS</title>SN_FS</text>
-<line x1="725.0" y1="497" x2="615" y2="537" stroke="#93a5ba"/>
-<text x="615" y="555" text-anchor="middle" font-family="Arial" font-size="13" fill="#172a45"><title>la</title>la</text>
-<line x1="725.0" y1="497" x2="725" y2="537" stroke="#93a5ba"/>
-<text x="725" y="555" text-anchor="middle" font-family="Arial" font-size="13" fill="#172a45"><title>casa</title>casa</text>
-<line x1="725.0" y1="497" x2="835.0" y2="537" stroke="#93a5ba"/>
-<text x="835.0" y="555" text-anchor="middle" font-family="Arial" font-size="13" fill="#172a45"><title>AdjFS</title>AdjFS</text>
-<line x1="835.0" y1="562" x2="835" y2="602" stroke="#93a5ba"/>
-<text x="835" y="620" text-anchor="middle" font-family="Arial" font-size="13" fill="#172a45"><title>eps</title>eps</text>
-<line x1="917.5" y1="302" x2="1220.0" y2="342" stroke="#93a5ba"/>
-<text x="1220.0" y="360" text-anchor="middle" font-family="Arial" font-size="13" fill="#172a45"><title>ModsS</title>ModsS</text>
-<line x1="1220.0" y1="367" x2="1055.0" y2="407" stroke="#93a5ba"/>
-<text x="1055.0" y="425" text-anchor="middle" font-family="Arial" font-size="13" fill="#172a45"><title>PP</title>PP</text>
-<line x1="1055.0" y1="432" x2="945" y2="472" stroke="#93a5ba"/>
-<text x="945" y="490" text-anchor="middle" font-family="Arial" font-size="13" fill="#172a45"><title>de</title>de</text>
-<line x1="1055.0" y1="432" x2="1165.0" y2="472" stroke="#93a5ba"/>
-<text x="1165.0" y="490" text-anchor="middle" font-family="Arial" font-size="13" fill="#172a45"><title>SN</title>SN</text>
-<line x1="1165.0" y1="497" x2="1165.0" y2="537" stroke="#93a5ba"/>
-<text x="1165.0" y="555" text-anchor="middle" font-family="Arial" font-size="13" fill="#172a45"><title>SN_FS</title>SN_FS</text>
-<line x1="1165.0" y1="562" x2="1055" y2="602" stroke="#93a5ba"/>
-<text x="1055" y="620" text-anchor="middle" font-family="Arial" font-size="13" fill="#172a45"><title>la</title>la</text>
-<line x1="1165.0" y1="562" x2="1165" y2="602" stroke="#93a5ba"/>
-<text x="1165" y="620" text-anchor="middle" font-family="Arial" font-size="13" fill="#172a45"><title>ciudad</title>ciudad</text>
-<line x1="1165.0" y1="562" x2="1275.0" y2="602" stroke="#93a5ba"/>
-<text x="1275.0" y="620" text-anchor="middle" font-family="Arial" font-size="13" fill="#172a45"><title>AdjFS</title>AdjFS</text>
-<line x1="1275.0" y1="627" x2="1275" y2="667" stroke="#93a5ba"/>
-<text x="1275" y="685" text-anchor="middle" font-family="Arial" font-size="13" fill="#172a45"><title>eps</title>eps</text>
-<line x1="1220.0" y1="367" x2="1385.0" y2="407" stroke="#93a5ba"/>
-<text x="1385.0" y="425" text-anchor="middle" font-family="Arial" font-size="13" fill="#172a45"><title>ModsS</title>ModsS</text>
-<line x1="1385.0" y1="432" x2="1385" y2="472" stroke="#93a5ba"/>
-<text x="1385" y="490" text-anchor="middle" font-family="Arial" font-size="13" fill="#172a45"><title>eps</title>eps</text>
+<line x1="377.8125" y1="107" x2="580.625" y2="147" stroke="#93a5ba"/>
+<text x="580.625" y="165" text-anchor="middle" font-family="Arial" font-size="13" fill="#172a45"><title>SV_FS</title>SV_FS</text>
+<line x1="580.625" y1="172" x2="395.0" y2="212" stroke="#93a5ba"/>
+<text x="395.0" y="230" text-anchor="middle" font-family="Arial" font-size="13" fill="#172a45"><title>VerboSG</title>VerboSG</text>
+<line x1="395.0" y1="237" x2="395" y2="277" stroke="#93a5ba"/>
+<text x="395" y="295" text-anchor="middle" font-family="Arial" font-size="13" fill="#172a45"><title>vive</title>vive</text>
+<line x1="580.625" y1="172" x2="766.25" y2="212" stroke="#93a5ba"/>
+<text x="766.25" y="230" text-anchor="middle" font-family="Arial" font-size="13" fill="#172a45"><title>Cpl_FS</title>Cpl_FS</text>
+<line x1="766.25" y1="237" x2="505.0" y2="277" stroke="#93a5ba"/>
+<text x="505.0" y="295" text-anchor="middle" font-family="Arial" font-size="13" fill="#172a45"><title>Objeto</title>Objeto</text>
+<line x1="505.0" y1="302" x2="505" y2="342" stroke="#93a5ba"/>
+<text x="505" y="360" text-anchor="middle" font-family="Arial" font-size="13" fill="#172a45"><title>eps</title>eps</text>
+<line x1="766.25" y1="237" x2="1027.5" y2="277" stroke="#93a5ba"/>
+<text x="1027.5" y="295" text-anchor="middle" font-family="Arial" font-size="13" fill="#172a45"><title>ModsS</title>ModsS</text>
+<line x1="1027.5" y1="302" x2="725.0" y2="342" stroke="#93a5ba"/>
+<text x="725.0" y="360" text-anchor="middle" font-family="Arial" font-size="13" fill="#172a45"><title>PP</title>PP</text>
+<line x1="725.0" y1="367" x2="615" y2="407" stroke="#93a5ba"/>
+<text x="615" y="425" text-anchor="middle" font-family="Arial" font-size="13" fill="#172a45"><title>en</title>en</text>
+<line x1="725.0" y1="367" x2="835.0" y2="407" stroke="#93a5ba"/>
+<text x="835.0" y="425" text-anchor="middle" font-family="Arial" font-size="13" fill="#172a45"><title>SN</title>SN</text>
+<line x1="835.0" y1="432" x2="835.0" y2="472" stroke="#93a5ba"/>
+<text x="835.0" y="490" text-anchor="middle" font-family="Arial" font-size="13" fill="#172a45"><title>SN_FS</title>SN_FS</text>
+<line x1="835.0" y1="497" x2="725" y2="537" stroke="#93a5ba"/>
+<text x="725" y="555" text-anchor="middle" font-family="Arial" font-size="13" fill="#172a45"><title>la</title>la</text>
+<line x1="835.0" y1="497" x2="835" y2="537" stroke="#93a5ba"/>
+<text x="835" y="555" text-anchor="middle" font-family="Arial" font-size="13" fill="#172a45"><title>casa</title>casa</text>
+<line x1="835.0" y1="497" x2="945.0" y2="537" stroke="#93a5ba"/>
+<text x="945.0" y="555" text-anchor="middle" font-family="Arial" font-size="13" fill="#172a45"><title>AdjFS</title>AdjFS</text>
+<line x1="945.0" y1="562" x2="945" y2="602" stroke="#93a5ba"/>
+<text x="945" y="620" text-anchor="middle" font-family="Arial" font-size="13" fill="#172a45"><title>eps</title>eps</text>
+<line x1="1027.5" y1="302" x2="1330.0" y2="342" stroke="#93a5ba"/>
+<text x="1330.0" y="360" text-anchor="middle" font-family="Arial" font-size="13" fill="#172a45"><title>ModsS</title>ModsS</text>
+<line x1="1330.0" y1="367" x2="1165.0" y2="407" stroke="#93a5ba"/>
+<text x="1165.0" y="425" text-anchor="middle" font-family="Arial" font-size="13" fill="#172a45"><title>PP</title>PP</text>
+<line x1="1165.0" y1="432" x2="1055" y2="472" stroke="#93a5ba"/>
+<text x="1055" y="490" text-anchor="middle" font-family="Arial" font-size="13" fill="#172a45"><title>de</title>de</text>
+<line x1="1165.0" y1="432" x2="1275.0" y2="472" stroke="#93a5ba"/>
+<text x="1275.0" y="490" text-anchor="middle" font-family="Arial" font-size="13" fill="#172a45"><title>SN</title>SN</text>
+<line x1="1275.0" y1="497" x2="1275.0" y2="537" stroke="#93a5ba"/>
+<text x="1275.0" y="555" text-anchor="middle" font-family="Arial" font-size="13" fill="#172a45"><title>SN_FS</title>SN_FS</text>
+<line x1="1275.0" y1="562" x2="1165" y2="602" stroke="#93a5ba"/>
+<text x="1165" y="620" text-anchor="middle" font-family="Arial" font-size="13" fill="#172a45"><title>la</title>la</text>
+<line x1="1275.0" y1="562" x2="1275" y2="602" stroke="#93a5ba"/>
+<text x="1275" y="620" text-anchor="middle" font-family="Arial" font-size="13" fill="#172a45"><title>ciudad</title>ciudad</text>
+<line x1="1275.0" y1="562" x2="1385.0" y2="602" stroke="#93a5ba"/>
+<text x="1385.0" y="620" text-anchor="middle" font-family="Arial" font-size="13" fill="#172a45"><title>AdjFS</title>AdjFS</text>
+<line x1="1385.0" y1="627" x2="1385" y2="667" stroke="#93a5ba"/>
+<text x="1385" y="685" text-anchor="middle" font-family="Arial" font-size="13" fill="#172a45"><title>eps</title>eps</text>
+<line x1="1330.0" y1="367" x2="1495.0" y2="407" stroke="#93a5ba"/>
+<text x="1495.0" y="425" text-anchor="middle" font-family="Arial" font-size="13" fill="#172a45"><title>ModsS</title>ModsS</text>
+<line x1="1495.0" y1="432" x2="1495" y2="472" stroke="#93a5ba"/>
+<text x="1495" y="490" text-anchor="middle" font-family="Arial" font-size="13" fill="#172a45"><title>eps</title>eps</text>
 </svg>

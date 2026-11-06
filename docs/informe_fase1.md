@@ -59,19 +59,19 @@ Fenómeno | Codificación de la gramática
 
 Concordancia nominal | SN_MS, SN_FS, SN_MP y SN_FP combinan determinante, nombre y adjetivo compatibles
 
-Sujeto y verbo | VERB_3S y VERB_3P restringen tercera persona
+Sujeto y verbo | VerboSG y VerboPL restringen tercera persona
 
 Subordinación | QUE Oracion permite inclusión recursiva
 
 Modificadores | Adjetivos pospuestos, ADV y PREP SN
 
-Tiempo verbal | Presente en tercera persona, singular y plural
+Tiempos y objeto | Presente, pretérito perfecto simple y SN objeto opcional
 
 La duplicación de categorías por un número finito de rasgos permite expresar la concordancia elegida dentro de una CFG. El crecimiento de reglas es un costo de mantenimiento observable. La subordinación también usa recursión de producciones y admite más de un nivel. La prueba de dos niveles comprueba tres nodos Oracion en el árbol.
 
 Las frases preposicionales sucesivas se adjuntan al sintagma verbal. El fixture denominado históricamente pp_anidada contiene dos PP hermanas. Se conserva como regresión y se añade una aserción estructural para hacer explícita esa interpretación. La gramática auxiliar de ambigüedad permite además una adjunción nominal.
 
-El subconjunto excluye pronombres, coordinación, relativas, objetos nominales y tiempos pasados. El punto final también está fuera de esta versión. Todos los verbos plenos comparten los complementos permitidos y la gramática no comprueba valencia semántica. Esas decisiones se registran para interpretar las etiquetas del corpus y las diferencias con un analizador general.
+El vocabulario excluye pronombres, coordinación, relativas e imperfecto. El punto final también está fuera de esta versión. Todos los verbos plenos comparten los complementos permitidos y la gramática no comprueba valencia semántica. Esas decisiones se registran para interpretar las etiquetas del corpus y las diferencias con un analizador general.
 
 
 ---
@@ -107,11 +107,11 @@ La demo ejecutó trece frases idénticas en los tres sistemas, con identificador
 
 Sistema | Tokens POS | Exactitud POS | Tiempo ms
 
-nltk | 73 | 95.89% | 0.049
+nltk | 73 | 95.89% | 0.051
 
-parser | 73 | 94.52% | 0.648
+parser | 73 | 95.89% | 0.687
 
-spacy | 73 | 98.63% | 14.390
+spacy | 73 | 98.63% | 10.691
 
 El parser coincidió con las trece etiquetas de pertenencia al subconjunto de la demo. Los adaptadores externos aportan POS y, en spaCy, dependencias y morfología. accepted permanece sin valor en esos adaptadores porque su tarea no emite una decisión de pertenencia a esta CFG. El informe identifica por separado procesamiento, etiquetado y aceptación.
 

@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "created_utc": "2026-11-06T16:04:13.769847+00:00",
+    "created_utc": "2026-11-06T15:43:16.882862+00:00",
     "commit": "c2dcd47f3d173a148cf3ecc9d9c2a68c13983bc3",
     "hash_policy": "SHA-256; texto UTF-8 con saltos LF, binarios sin transformacion",
     "source_hashes": {
@@ -8,22 +8,28 @@
       "experimentos\\adaptadores.py": "33f7e133ff470c38d00b0cad93f3a6df7e05e3e3862bfaf6e68fb22c8eb99fde",
       "experimentos\\ambiguedad.py": "6be7a7a1a9af9465b0a0b0532bbbcd16daf17f6727878702e71aaefaa7b3e17a",
       "experimentos\\common.py": "40523eaefc18210d446c505b588791d20c213c803e4ee09e53ab2b7488beba87",
-      "experimentos\\comparar_nlp.py": "f5a0120f6f278671e2ae3b81da2e0d86c2e0933e04a3fd67125f918420776c26",
+      "experimentos\\comparar_nlp.py": "277d5e225d503185520110b5bb0590886c49f730f5c546d3df277cafdfaea106",
       "experimentos\\demo_fase1.py": "3f780a85516024d9bb2009d4f3ed54b9a3ea8779b4b73298ccc0a831c90179a1",
-      "experimentos\\metricas.py": "47b8bcf060de8ed9eedc258e411ba352b4f6b857cb481e7b50279a546132d766",
+      "experimentos\\graficas.py": "1b451855de1573b3b91c0e1773782f3b9de64ab316aadea6ab73bcefe31424ee",
+      "experimentos\\llm.py": "77aa7ea90e65db9fae5499d3dba0a14824b38654019de3b1491bcb3eba1add6b",
+      "experimentos\\metricas.py": "ed773557e0049db0bdea33a25c69bb3378584d408a65891ba9a660845ea1a5a5",
       "experimentos\\registro_fallos.py": "07808652e58c77274eafb402bc34de1bcd2477210a0aee273f7a676a3dff1845",
+      "experimentos\\rendimiento.py": "dac932dfeb990425cadcb9a6f7f395c4517e07b6201471e1116a96809e213752",
+      "experimentos\\resumir_llm.py": "c143e195488e8dd2314f2db003a3efdf15dca95ceb39a0f9b6871ac5a84a4574",
+      "experimentos\\validar_corpus.py": "d8ff90742a522a9fbb775b9315c4b86368048f26bed10297c5560136b34c2778",
+      "experimentos\\validar_derivacion.py": "4dbe3dc1ac86ef3f9abf77c891d1b43bc1fb2f5569964a8a40636a881bcdbfcd",
       "main.py": "8e40b3cfbd7dc94e6f008d49caca37f24f4384747d47eb28f68e0485678beb93",
       "minic\\__init__.py": "acf5d7d08e80102a69942e0ca6b238232c063b7772748533da274c3fe32ddda3",
       "minic\\diagnostics.py": "2047c88075a8b6fbeb496288abf8a93ae667a62b81b3713f779e65d513a40a2f",
       "minic\\grammar.py": "50d2346daffe58561f08b16d274cc92c2cf638a48d58d25653b92d5b0a45e2df",
       "minic\\lexer.py": "7614c895a8ce8d545764d0f9daf48004c95f148160af4c902b616ec180f63720",
-      "minic\\lexicon_es.py": "1bfdeb6a805de14676889275a82a4fc6318244656a9252de5a4d4398bfb54eb4",
+      "minic\\lexicon_es.py": "eec0049a3b0968207b15c002a8ce88d12a445cbbaf855a2e33556a84abd49ad8",
       "minic\\parser.py": "772e085c5d8442eac57953a6a11508964d9e37d4e7a1d396dc11ed21072835ac",
       "minic\\trees.py": "5c18d6b216bb6b85a1d8c1eb711281ecab2202be5efb9a14ed510c00eeab4161"
     },
     "tracked_changes": true,
-    "grammar_sha256": "e7147cb30ece6bbd64c7d401151c4bcb6e83a2e23f48654d49e4a0a8984aebc0",
-    "corpus_sha256": "9a06d89f8d18c2ab5557078f331778a11762061956600d430a85d7dd0eb47a55"
+    "grammar_sha256": "cf1d5f630a2d49dd0cfdeedd4ac9b14cdae1209ee714a2b84b94f5f880df5c81",
+    "corpus_sha256": "99b8250b69c0c684e2824231b7a1c5eb6ed99853ec6aeb091be4e09c5c31c0e7"
   },
   "cases": [
     {
@@ -104,8 +110,17 @@
         {
           "nonterminal": "SV_MS",
           "production": [
-            "VERB_3S",
+            "VerboSG",
             "Cpl_MS"
+          ],
+          "lookahead": "VERB_3S",
+          "line": 1,
+          "column": 9
+        },
+        {
+          "nonterminal": "VerboSG",
+          "production": [
+            "VERB_3S"
           ],
           "lookahead": "VERB_3S",
           "line": 1,
@@ -114,7 +129,17 @@
         {
           "nonterminal": "Cpl_MS",
           "production": [
+            "Objeto",
             "ModsS"
+          ],
+          "lookahead": "$",
+          "line": 1,
+          "column": 14
+        },
+        {
+          "nonterminal": "Objeto",
+          "production": [
+            "eps"
           ],
           "lookahead": "$",
           "line": 1,
@@ -136,12 +161,11 @@
       "id": "ES-005",
       "text": "El niño lee el libro",
       "phenomena": [
-        "SVO",
-        "objeto_fuera_del_subconjunto_fase1"
+        "SVO"
       ],
-      "expected": false,
-      "accepted": false,
-      "classification": "sintaxis_del_subconjunto",
+      "expected": true,
+      "accepted": true,
+      "classification": "aceptada",
       "tokens": [
         [
           "DET_MS",
@@ -223,25 +247,81 @@
         {
           "nonterminal": "SV_MS",
           "production": [
-            "VERB_3S",
+            "VerboSG",
             "Cpl_MS"
           ],
           "lookahead": "VERB_3S",
           "line": 1,
           "column": 9
+        },
+        {
+          "nonterminal": "VerboSG",
+          "production": [
+            "VERB_3S"
+          ],
+          "lookahead": "VERB_3S",
+          "line": 1,
+          "column": 9
+        },
+        {
+          "nonterminal": "Cpl_MS",
+          "production": [
+            "Objeto",
+            "ModsS"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 13
+        },
+        {
+          "nonterminal": "Objeto",
+          "production": [
+            "SN"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 13
+        },
+        {
+          "nonterminal": "SN",
+          "production": [
+            "SN_MS"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 13
+        },
+        {
+          "nonterminal": "SN_MS",
+          "production": [
+            "DET_MS",
+            "SUST_MS",
+            "AdjMS"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 13
+        },
+        {
+          "nonterminal": "AdjMS",
+          "production": [
+            "eps"
+          ],
+          "lookahead": "$",
+          "line": 1,
+          "column": 21
+        },
+        {
+          "nonterminal": "ModsS",
+          "production": [
+            "eps"
+          ],
+          "lookahead": "$",
+          "line": 1,
+          "column": 21
         }
       ],
-      "diagnostics": [
-        {
-          "line": 1,
-          "column": 13,
-          "offset": 12,
-          "stage": "syntactic",
-          "code": "unexpected_token",
-          "message": "no se esperaba 'el' al analizar Cpl_MS. Se esperaba: ['$', 'ADV', 'PREP', 'QUE']",
-          "nonterminal": "Cpl_MS"
-        }
-      ]
+      "diagnostics": []
     },
     {
       "id": "ES-013",
@@ -312,8 +392,17 @@
         {
           "nonterminal": "SV_MS",
           "production": [
-            "VERB_3S",
+            "VerboSG",
             "Cpl_MS"
+          ],
+          "lookahead": "VERB_3S",
+          "line": 1,
+          "column": 10
+        },
+        {
+          "nonterminal": "VerboSG",
+          "production": [
+            "VERB_3S"
           ],
           "lookahead": "VERB_3S",
           "line": 1,
@@ -322,7 +411,17 @@
         {
           "nonterminal": "Cpl_MS",
           "production": [
+            "Objeto",
             "ModsS"
+          ],
+          "lookahead": "$",
+          "line": 1,
+          "column": 15
+        },
+        {
+          "nonterminal": "Objeto",
+          "production": [
+            "eps"
           ],
           "lookahead": "$",
           "line": 1,
@@ -354,7 +453,7 @@
           "offset": 3,
           "stage": "syntactic",
           "code": "unexpected_token",
-          "message": "no se esperaba 'niños' al analizar AdjMS. Se esperaba: ['$', 'ADJ_MS', 'ADV', 'COP_3S', 'PREP', 'VERB_3S']",
+          "message": "no se esperaba 'niños' al analizar AdjMS. Se esperaba: ['$', 'ADJ_MS', 'ADV', 'COP_3S', 'COP_PAST_3S', 'PREP', 'VERB_3S', 'VERB_PAST_3S']",
           "nonterminal": "AdjMS"
         }
       ]
@@ -428,8 +527,17 @@
         {
           "nonterminal": "SV_FS",
           "production": [
-            "VERB_3S",
+            "VerboSG",
             "Cpl_FS"
+          ],
+          "lookahead": "VERB_3S",
+          "line": 1,
+          "column": 9
+        },
+        {
+          "nonterminal": "VerboSG",
+          "production": [
+            "VERB_3S"
           ],
           "lookahead": "VERB_3S",
           "line": 1,
@@ -438,7 +546,17 @@
         {
           "nonterminal": "Cpl_FS",
           "production": [
+            "Objeto",
             "ModsS"
+          ],
+          "lookahead": "$",
+          "line": 1,
+          "column": 14
+        },
+        {
+          "nonterminal": "Objeto",
+          "production": [
+            "eps"
           ],
           "lookahead": "$",
           "line": 1,
@@ -470,7 +588,7 @@
           "offset": 3,
           "stage": "syntactic",
           "code": "unexpected_token",
-          "message": "no se esperaba 'niño' al analizar AdjFS. Se esperaba: ['$', 'ADJ_FS', 'ADV', 'COP_3S', 'PREP', 'VERB_3S']",
+          "message": "no se esperaba 'niño' al analizar AdjFS. Se esperaba: ['$', 'ADJ_FS', 'ADV', 'COP_3S', 'COP_PAST_3S', 'PREP', 'VERB_3S', 'VERB_PAST_3S']",
           "nonterminal": "AdjFS"
         }
       ]
@@ -549,7 +667,7 @@
           "offset": 10,
           "stage": "syntactic",
           "code": "unexpected_token",
-          "message": "no se esperaba 'corre' al analizar AdjMP. Se esperaba: ['$', 'ADJ_MP', 'ADV', 'COP_3P', 'PREP', 'VERB_3P']",
+          "message": "no se esperaba 'corre' al analizar AdjMP. Se esperaba: ['$', 'ADJ_MP', 'ADV', 'COP_3P', 'COP_PAST_3P', 'PREP', 'VERB_3P', 'VERB_PAST_3P']",
           "nonterminal": "AdjMP"
         },
         {
@@ -558,7 +676,7 @@
           "offset": 15,
           "stage": "syntactic",
           "code": "unexpected_token",
-          "message": "no se esperaba '$' al analizar SV_MP. Se esperaba: ['COP_3P', 'VERB_3P']",
+          "message": "no se esperaba '$' al analizar SV_MP. Se esperaba: ['COP_3P', 'COP_PAST_3P', 'VERB_3P', 'VERB_PAST_3P']",
           "nonterminal": "SV_MP"
         }
       ]
@@ -681,8 +799,17 @@
         {
           "nonterminal": "SV_MS",
           "production": [
-            "VERB_3S",
+            "VerboSG",
             "Cpl_MS"
+          ],
+          "lookahead": "VERB_3S",
+          "line": 1,
+          "column": 14
+        },
+        {
+          "nonterminal": "VerboSG",
+          "production": [
+            "VERB_3S"
           ],
           "lookahead": "VERB_3S",
           "line": 1,
@@ -691,7 +818,17 @@
         {
           "nonterminal": "Cpl_MS",
           "production": [
+            "Objeto",
             "ModsS"
+          ],
+          "lookahead": "ADV",
+          "line": 1,
+          "column": 20
+        },
+        {
+          "nonterminal": "Objeto",
+          "production": [
+            "eps"
           ],
           "lookahead": "ADV",
           "line": 1,
@@ -882,8 +1019,17 @@
         {
           "nonterminal": "SV_FS",
           "production": [
-            "VERB_3S",
+            "VerboSG",
             "Cpl_FS"
+          ],
+          "lookahead": "VERB_3S",
+          "line": 1,
+          "column": 10
+        },
+        {
+          "nonterminal": "VerboSG",
+          "production": [
+            "VERB_3S"
           ],
           "lookahead": "VERB_3S",
           "line": 1,
@@ -892,7 +1038,17 @@
         {
           "nonterminal": "Cpl_FS",
           "production": [
+            "Objeto",
             "ModsS"
+          ],
+          "lookahead": "PREP",
+          "line": 1,
+          "column": 15
+        },
+        {
+          "nonterminal": "Objeto",
+          "production": [
+            "eps"
           ],
           "lookahead": "PREP",
           "line": 1,
@@ -1083,8 +1239,17 @@
         {
           "nonterminal": "SV_MS",
           "production": [
-            "VERB_3S",
+            "VerboSG",
             "Cpl_MS"
+          ],
+          "lookahead": "VERB_3S",
+          "line": 1,
+          "column": 14
+        },
+        {
+          "nonterminal": "VerboSG",
+          "production": [
+            "VERB_3S"
           ],
           "lookahead": "VERB_3S",
           "line": 1,
@@ -1093,7 +1258,17 @@
         {
           "nonterminal": "Cpl_MS",
           "production": [
+            "Objeto",
             "ModsS"
+          ],
+          "lookahead": "$",
+          "line": 1,
+          "column": 19
+        },
+        {
+          "nonterminal": "Objeto",
+          "production": [
+            "eps"
           ],
           "lookahead": "$",
           "line": 1,
@@ -1116,7 +1291,7 @@
           "offset": 8,
           "stage": "syntactic",
           "code": "unexpected_token",
-          "message": "no se esperaba 'alta' al analizar AdjMS. Se esperaba: ['$', 'ADJ_MS', 'ADV', 'COP_3S', 'PREP', 'VERB_3S']",
+          "message": "no se esperaba 'alta' al analizar AdjMS. Se esperaba: ['$', 'ADJ_MS', 'ADV', 'COP_3S', 'COP_PAST_3S', 'PREP', 'VERB_3S', 'VERB_PAST_3S']",
           "nonterminal": "AdjMS"
         }
       ]
@@ -1125,12 +1300,11 @@
       "id": "ES-041",
       "text": "La profesora sabe que el niño lee el libro",
       "phenomena": [
-        "subordinada_SVO",
-        "objeto_fuera_del_subconjunto_fase1"
+        "subordinada_SVO"
       ],
-      "expected": false,
-      "accepted": false,
-      "classification": "sintaxis_del_subconjunto",
+      "expected": true,
+      "accepted": true,
+      "classification": "aceptada",
       "tokens": [
         [
           "DET_FS",
@@ -1236,8 +1410,17 @@
         {
           "nonterminal": "SV_FS",
           "production": [
-            "VERB_3S",
+            "VerboSG",
             "Cpl_FS"
+          ],
+          "lookahead": "VERB_3S",
+          "line": 1,
+          "column": 14
+        },
+        {
+          "nonterminal": "VerboSG",
+          "production": [
+            "VERB_3S"
           ],
           "lookahead": "VERB_3S",
           "line": 1,
@@ -1295,25 +1478,81 @@
         {
           "nonterminal": "SV_MS",
           "production": [
-            "VERB_3S",
+            "VerboSG",
             "Cpl_MS"
           ],
           "lookahead": "VERB_3S",
           "line": 1,
           "column": 31
+        },
+        {
+          "nonterminal": "VerboSG",
+          "production": [
+            "VERB_3S"
+          ],
+          "lookahead": "VERB_3S",
+          "line": 1,
+          "column": 31
+        },
+        {
+          "nonterminal": "Cpl_MS",
+          "production": [
+            "Objeto",
+            "ModsS"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 35
+        },
+        {
+          "nonterminal": "Objeto",
+          "production": [
+            "SN"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 35
+        },
+        {
+          "nonterminal": "SN",
+          "production": [
+            "SN_MS"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 35
+        },
+        {
+          "nonterminal": "SN_MS",
+          "production": [
+            "DET_MS",
+            "SUST_MS",
+            "AdjMS"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 35
+        },
+        {
+          "nonterminal": "AdjMS",
+          "production": [
+            "eps"
+          ],
+          "lookahead": "$",
+          "line": 1,
+          "column": 43
+        },
+        {
+          "nonterminal": "ModsS",
+          "production": [
+            "eps"
+          ],
+          "lookahead": "$",
+          "line": 1,
+          "column": 43
         }
       ],
-      "diagnostics": [
-        {
-          "line": 1,
-          "column": 35,
-          "offset": 34,
-          "stage": "syntactic",
-          "code": "unexpected_token",
-          "message": "no se esperaba 'el' al analizar Cpl_MS. Se esperaba: ['$', 'ADV', 'PREP', 'QUE']",
-          "nonterminal": "Cpl_MS"
-        }
-      ]
+      "diagnostics": []
     },
     {
       "id": "ES-049",
@@ -1429,8 +1668,17 @@
         {
           "nonterminal": "SV_MS",
           "production": [
-            "VERB_3S",
+            "VerboSG",
             "Cpl_MS"
+          ],
+          "lookahead": "VERB_3S",
+          "line": 1,
+          "column": 13
+        },
+        {
+          "nonterminal": "VerboSG",
+          "production": [
+            "VERB_3S"
           ],
           "lookahead": "VERB_3S",
           "line": 1,
@@ -1484,7 +1732,7 @@
           "offset": 31,
           "stage": "syntactic",
           "code": "unexpected_token",
-          "message": "no se esperaba 'lee' al analizar AdjMP. Se esperaba: ['$', 'ADJ_MP', 'ADV', 'COP_3P', 'PREP', 'VERB_3P']",
+          "message": "no se esperaba 'lee' al analizar AdjMP. Se esperaba: ['$', 'ADJ_MP', 'ADV', 'COP_3P', 'COP_PAST_3P', 'PREP', 'VERB_3P', 'VERB_PAST_3P']",
           "nonterminal": "AdjMP"
         },
         {
@@ -1493,7 +1741,7 @@
           "offset": 43,
           "stage": "syntactic",
           "code": "unexpected_token",
-          "message": "no se esperaba '$' al analizar SV_MP. Se esperaba: ['COP_3P', 'VERB_3P']",
+          "message": "no se esperaba '$' al analizar SV_MP. Se esperaba: ['COP_3P', 'COP_PAST_3P', 'VERB_3P', 'VERB_PAST_3P']",
           "nonterminal": "SV_MP"
         }
       ]
@@ -1599,7 +1847,7 @@
           "offset": 8,
           "stage": "syntactic",
           "code": "unexpected_token",
-          "message": "no se esperaba 'y' al analizar AdjMS. Se esperaba: ['$', 'ADJ_MS', 'ADV', 'COP_3S', 'PREP', 'VERB_3S']",
+          "message": "no se esperaba 'y' al analizar AdjMS. Se esperaba: ['$', 'ADJ_MS', 'ADV', 'COP_3S', 'COP_PAST_3S', 'PREP', 'VERB_3S', 'VERB_PAST_3S']",
           "nonterminal": "AdjMS"
         },
         {
@@ -1608,7 +1856,7 @@
           "offset": 24,
           "stage": "syntactic",
           "code": "unexpected_token",
-          "message": "no se esperaba '$' al analizar SV_MS. Se esperaba: ['COP_3S', 'VERB_3S']",
+          "message": "no se esperaba '$' al analizar SV_MS. Se esperaba: ['COP_3S', 'COP_PAST_3S', 'VERB_3S', 'VERB_PAST_3S']",
           "nonterminal": "SV_MS"
         }
       ]
@@ -1694,12 +1942,78 @@
         {
           "nonterminal": "SV_MS",
           "production": [
-            "VERB_3S",
+            "VerboSG",
             "Cpl_MS"
           ],
           "lookahead": "VERB_3S",
           "line": 1,
           "column": 15
+        },
+        {
+          "nonterminal": "VerboSG",
+          "production": [
+            "VERB_3S"
+          ],
+          "lookahead": "VERB_3S",
+          "line": 1,
+          "column": 15
+        },
+        {
+          "nonterminal": "Cpl_MS",
+          "production": [
+            "Objeto",
+            "ModsS"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 19
+        },
+        {
+          "nonterminal": "Objeto",
+          "production": [
+            "SN"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 19
+        },
+        {
+          "nonterminal": "SN",
+          "production": [
+            "SN_MS"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 19
+        },
+        {
+          "nonterminal": "SN_MS",
+          "production": [
+            "DET_MS",
+            "SUST_MS",
+            "AdjMS"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 19
+        },
+        {
+          "nonterminal": "AdjMS",
+          "production": [
+            "eps"
+          ],
+          "lookahead": "$",
+          "line": 1,
+          "column": 27
+        },
+        {
+          "nonterminal": "ModsS",
+          "production": [
+            "eps"
+          ],
+          "lookahead": "$",
+          "line": 1,
+          "column": 27
         }
       ],
       "diagnostics": [
@@ -1727,17 +2041,8 @@
           "offset": 3,
           "stage": "syntactic",
           "code": "unexpected_token",
-          "message": "no se esperaba 'astronauta' al analizar AdjMS. Se esperaba: ['$', 'ADJ_MS', 'ADV', 'COP_3S', 'PREP', 'VERB_3S']",
+          "message": "no se esperaba 'astronauta' al analizar AdjMS. Se esperaba: ['$', 'ADJ_MS', 'ADV', 'COP_3S', 'COP_PAST_3S', 'PREP', 'VERB_3S', 'VERB_PAST_3S']",
           "nonterminal": "AdjMS"
-        },
-        {
-          "line": 1,
-          "column": 19,
-          "offset": 18,
-          "stage": "syntactic",
-          "code": "unexpected_token",
-          "message": "no se esperaba 'el' al analizar Cpl_MS. Se esperaba: ['$', 'ADV', 'PREP', 'QUE']",
-          "nonterminal": "Cpl_MS"
         }
       ]
     },
@@ -1749,7 +2054,7 @@
       ],
       "expected": false,
       "accepted": false,
-      "classification": "vocabulario",
+      "classification": "sintaxis_del_subconjunto",
       "tokens": [
         [
           "DET_MS",
@@ -1764,7 +2069,7 @@
           4
         ],
         [
-          "ID",
+          "VERB_PAST_3S",
           "leyó",
           1,
           9
@@ -1818,27 +2123,94 @@
           "lookahead": "DET_MS",
           "line": 1,
           "column": 1
+        },
+        {
+          "nonterminal": "AdjMS",
+          "production": [
+            "eps"
+          ],
+          "lookahead": "VERB_PAST_3S",
+          "line": 1,
+          "column": 9
+        },
+        {
+          "nonterminal": "SV_MS",
+          "production": [
+            "VerboSG",
+            "Cpl_MS"
+          ],
+          "lookahead": "VERB_PAST_3S",
+          "line": 1,
+          "column": 9
+        },
+        {
+          "nonterminal": "VerboSG",
+          "production": [
+            "VERB_PAST_3S"
+          ],
+          "lookahead": "VERB_PAST_3S",
+          "line": 1,
+          "column": 9
+        },
+        {
+          "nonterminal": "Cpl_MS",
+          "production": [
+            "Objeto",
+            "ModsS"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 14
+        },
+        {
+          "nonterminal": "Objeto",
+          "production": [
+            "SN"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 14
+        },
+        {
+          "nonterminal": "SN",
+          "production": [
+            "SN_MS"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 14
+        },
+        {
+          "nonterminal": "SN_MS",
+          "production": [
+            "DET_MS",
+            "SUST_MS",
+            "AdjMS"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 14
+        },
+        {
+          "nonterminal": "AdjMS",
+          "production": [
+            "eps"
+          ],
+          "lookahead": "$",
+          "line": 1,
+          "column": 23
+        },
+        {
+          "nonterminal": "ModsS",
+          "production": [
+            "eps"
+          ],
+          "lookahead": "$",
+          "line": 1,
+          "column": 23
         }
       ],
       "diagnostics": [
-        {
-          "line": 1,
-          "column": 9,
-          "offset": 8,
-          "stage": "lexical",
-          "code": "unknown_word",
-          "message": "palabra fuera del vocabulario 'leyó'",
-          "nonterminal": null
-        },
-        {
-          "line": 1,
-          "column": 9,
-          "offset": 8,
-          "stage": "syntactic",
-          "code": "unexpected_token",
-          "message": "no se esperaba 'leyó' al analizar AdjMS. Se esperaba: ['$', 'ADJ_MS', 'ADV', 'COP_3S', 'PREP', 'VERB_3S']",
-          "nonterminal": "AdjMS"
-        },
         {
           "line": 1,
           "column": 22,
@@ -1847,15 +2219,6 @@
           "code": "illegal_character",
           "message": "caracter ilegal '.'",
           "nonterminal": null
-        },
-        {
-          "line": 1,
-          "column": 23,
-          "offset": 22,
-          "stage": "syntactic",
-          "code": "unexpected_token",
-          "message": "no se esperaba '$' al analizar SV_MS. Se esperaba: ['COP_3S', 'VERB_3S']",
-          "nonterminal": "SV_MS"
         }
       ]
     }

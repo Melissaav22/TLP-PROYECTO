@@ -6,11 +6,17 @@ test_positions_and_order (test_contratos.Contracts) ... ok
 test_recovery (test_contratos.Contracts) ... ok
 test_spanish_isolation (test_contratos.Contracts) ... ok
 test_structure (test_contratos.Contracts) ... ok
-test_confusion_matrix (test_experimentos.PhaseOneExperiments) ... ok
-test_demo_reference_matches_grammar (test_experimentos.PhaseOneExperiments) ... ok
-test_text_hash_is_portable (test_experimentos.PhaseOneExperiments) ... ok
+test_svo_tenses_and_agreement (test_contratos.Contracts) ... ok
+test_api_transport_and_resume_local_fixture (test_experimentos.Experiments) ... ok
+test_confusion_matrix (test_experimentos.Experiments) ... ok
+test_corpus_expected_acceptance (test_experimentos.Experiments) ... ok
+test_corpus_integrity (test_experimentos.Experiments) ... ok
+test_proof_validation (test_experimentos.Experiments) ... ok
+test_text_hash_is_portable (test_experimentos.Experiments) ... ok
 
 ----------------------------------------------------------------------
-Ran 11 tests in 13.077s
+Ran 15 tests in 13.839s
 
 OK
+2/2 respuestas recibidas; 2 llamadas nuevas.
+2/2 respuestas recibidas; 0 llamadas nuevas.

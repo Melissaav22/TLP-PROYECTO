@@ -1,26 +1,113 @@
-# Estado de implementación de la fase 1
+# Estado de implementación del plan
 
-Rama: `feat/fase-uno`, creada desde `ExtensionEspañol` el 6 de noviembre de 2026.
+Historial de ramas: `ExtensionEspañol` → `feat/fase-uno` → `feat/fase-dos`.
+La primera rama conserva la gramática de fase 1 y sus resultados propios. Esta
+rama añade SVO y pasado, actualiza la referencia de la demo y contiene ambas
+fases. Los commits se separan por dependencias, correcciones, funcionalidades,
+pruebas y documentación con el formato Conventional Commits 1.0.0.
 
-## Alcance
+Actualizado el 6 de noviembre de 2026 sobre la base Git c2dcd47 y los cambios
+locales identificados en los resultados. La auditoría del 5 de noviembre queda
+como fotografía anterior al desarrollo.
 
-Parser LL(1) MiniC y español en presente; concordancia, modificadores y subordinación. Incluye validación de gramáticas, raíz española independiente, diagnósticos con posición, recuperación, árboles profundos y SVG. SVO y pasado se incorporan en `feat/fase-dos`, que deriva de esta rama.
+## Resultado local
 
-## Evidencia de esta rama
+- 39 fixtures originales aprobados, 20 MiniC y 19 español.
+- 15 pruebas nuevas de contratos y experimentos aprobadas en Python 3.10 y 3.12.
+- 90 sondas de la auditoría anterior aprobadas, frente a las 19 brechas originales.
+- Corpus de 60 frases, 20 por nivel, con 33 positivas y 27 negativas CFG.
+- 180 análisis reales con parser, NLTK CESS-ESP y spaCy es_core_news_sm.
+- Demo de Fase 1 sobre 13 frases y 39 análisis.
+- Dos derivaciones de una CFG auxiliar para la frase de las PP.
+- Métricas, tablas CSV, gráficas y ocho mediciones de tamaño guardadas.
+- Informes de 6 y 8 páginas, con fuentes Markdown.
+- Presentaciones editables de 10 y 12 diapositivas con notas.
+- Cliente LLM, prompts y validación de derivaciones implementados.
 
-- 39 fixtures originales y 11 pruebas de contratos/experimentos.
-- Demo de 13 frases y 39 análisis reales con parser, NLTK CESS-ESP y spaCy.
-- Datos y trazas bajo datos/fase1.json y resultados/fase1.
-- Ambigüedad contrastada mediante dos derivaciones de una CFG auxiliar.
-- Informe de seis páginas y presentación de diez diapositivas con notas.
-- Dependencias bloqueadas y huellas de código, gramática y datos.
+La referencia POS y las etiquetas lingüísticas se prepararon antes de las
+predicciones y requieren revisión del grupo. La decisión de dejar la ejecución
+API pendiente fue confirmada por el usuario. No hay respuestas de proveedor ni
+una comparación LLM zero-shot/few-shot ejecutada.
 
-Las etiquetas son una referencia inicial. Dos frases con objeto nominal tienen esperado_cfg=false porque esa construcción todavía queda fuera de esta gramática. En fase 2 cambia la gramática y se actualizan esas etiquetas.
+Las salidas NLP conservan la procedencia de sus corridas originales. El
+validador LLM `experimentos/validar_derivacion.py` se endureció después de esas
+corridas; por eso su huella histórica difiere del archivo actual. Los
+adaptadores, la gramática y los datos utilizados por NLP conservan sus huellas.
+Las pruebas de derivaciones verifican la versión actual del validador.
 
-## Documentación histórica y pendientes
+## Estado por bloque
 
-AUDITORIA_TECNICA.md, AUDITORIA_ESTADO_ACTUAL.md, auditoria/ y PLAN_IMPLEMENTACION.md conservan el diagnóstico y plan previos, que cubren ambas fases. Su contenido no representa el alcance implementado de esta rama.
+| ID | Estado de ejecución | Evidencia |
+|---|---|---|
+| T01 | Verificado en código | Diagnósticos ordenados, columna, configuración/E/S y pruebas de regresión |
+| T02 | Verificado en código | Raíz española, reservadas C y literales decimales |
+| T03 | Verificado en código | Serialización iterativa, SVG y aserciones estructurales |
+| T04 | Datos y análisis preparados para revisión | datos/fase1.json, resultados/fase1/fallos.json e informe Fase 1 |
+| T05 | Ejecutado con herramientas reales | resultados/fase1/comparacion.json, 39 análisis sin errores |
+| T06 | Artefactos preparados | Informe de 6 páginas, presentación y guía reproducible; falta revisión/ensayo/entrega |
+| T07 | Verificado en código | SVO, presente y pretérito perfecto simple, concordancia y modificadores |
+| T08 | Corpus preparado para revisión humana | 60 entradas, niveles, POS y separación de ejemplos verificados automáticamente |
+| T09 | Ejecutado con herramientas reales | 180 análisis, versiones, datos originales y tiempos |
+| T10 | Ejecutado y contrastado | Matriz de confusión, clasificación de errores, CSV y PNG |
+| T11 | Integración preparada, API pendiente acordada | 120 solicitudes y validación; prueba local de transporte/reanudación |
+| T12 | Paquete local preparado, cierre externo pendiente | Locks, instalación limpia, resultados, informes y presentaciones |
 
-Faltan revisión de etiquetas y argumento formal por el grupo, completar autoría, ensayar 15–20 minutos y confirmar entrega/defensa. Los límites del subconjunto no demuestran por sí mismos que el español quede fuera de todas las CFG.
+## Decisiones de implementación
 
-Los informes y diapositivas se revisan mediante render. El generador PPTX presenta en este host un código de salida 1 al cerrar, incluso después de emitir recibos satisfactorios; se verifican por separado paquete, geometría, fuentes, reimportación y renders. Sigue pendiente corregir esa anomalía de automatización. No se ha validado mediante una sesión nativa de PowerPoint.
+La comparación común de los tres sistemas utiliza POS grueso y detección de
+NOUN frente al resto. La pertenencia a la CFG se evalúa para el parser y se
+evaluará para el LLM cuando se ejecute. Los adaptadores NLTK/spaCy mantienen
+accepted sin valor. Esta definición evita atribuirles una decisión de rechazo
+que sus salidas no contienen.
+
+Se eligieron presente y pretérito perfecto simple. Las PP son modificadores
+verbales sucesivos. Los verbos comparten complementos sintácticos permitidos,
+con la valencia semántica declarada fuera del modelo actual. Los números MiniC
+son decimales ASCII sin ceros iniciales y de hasta 4.096 dígitos.
+
+El resultado 60/60 del parser corresponde al oro inicial controlado. La tabla
+POS anotada favorece al lexer propio en el vocabulario compartido. Las cifras
+requieren revisión de etiquetas y un corpus ampliado para generalizarse.
+
+## Pendientes para declarar cierre académico
+
+1. Revisar etiquetas, estructuras y fenómenos con el grupo.
+2. Revisar el argumento formal y su alcance sobre CFG y español.
+3. Completar integrantes y autoría de informes y presentaciones.
+4. Ensayar y verificar la duración de 15–20 minutos por exposición.
+5. Ejecutar la API LLM cuando el responsable lo decida, incorporar logs y
+   regenerar su comparación, costo y sección de resultados.
+6. Confirmar compartición, entrega y defensa ante el docente.
+
+## Documentos y resultados
+
+- docs/informe_fase1.pdf y docs/informe_fase1.md
+- docs/informe_fase2.pdf y docs/informe_fase2.md
+- docs/presentacion_fase1.pptx y docs/presentacion_fase2.pptx
+- docs/trazabilidad_requisitos.json
+- resultados/fase1 y resultados/nlp
+- resultados/metricas y resultados/verificacion
+- resultados/llm/estado.json
+
+Los informes y las diapositivas fueron renderizados y revisados visualmente.
+Las presentaciones pasaron validación de paquete, geometría, fuentes y
+reimportación. La revisión se realizó con el renderer del runtime, sin una
+sesión nativa de PowerPoint.
+
+En este host, el proceso del generador PPTX devolvió 1 al finalizar, después
+de emitir los dos recibos satisfactorios. Se verificaron por separado los
+SHA-256 de ambos archivos, la reimportación y todos sus renders. Esta anomalía
+del cierre del proceso sigue pendiente de resolver para automatizar la
+regeneración del PPTX con un código de salida confiable.
+
+## Regeneración de documentos
+
+El código fuente de los PDF está en scripts/generar_informes.py y sus
+dependencias en requirements-documentos.txt. Se ejecutó con el Python
+proporcionado por el runtime de documentos.
+
+El generador de PPTX usa @oai/artifact-tool del runtime de Codex.
+CODEX_PRESENTATIONS_SKILL debe apuntar a la habilidad instalada de
+presentaciones. Los archivos finales existentes se deben conservar y la
+regeneración se valida en un destino nuevo. Las fuentes, datos y notas
+también permanecen editables dentro de las presentaciones entregadas.

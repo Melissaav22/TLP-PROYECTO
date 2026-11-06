@@ -24,7 +24,7 @@
         "accuracy": 0.9714285714285714
       },
       "pos_accuracy": 0.9142857142857143,
-      "mean_seconds": 2.6879995130002498e-05
+      "mean_seconds": 2.8199999360367655e-05
     },
     {
       "tool": "nltk",
@@ -45,7 +45,7 @@
         "accuracy": 1.0
       },
       "pos_accuracy": 1.0,
-      "mean_seconds": 2.606666142431398e-05
+      "mean_seconds": 3.120000474154949e-05
     },
     {
       "tool": "nltk",
@@ -66,7 +66,7 @@
         "accuracy": 1.0
       },
       "pos_accuracy": 1.0,
-      "mean_seconds": 8.45200032927096e-05
+      "mean_seconds": 8.635999402031302e-05
     },
     {
       "tool": "nltk",
@@ -87,7 +87,7 @@
         "accuracy": 0.9863013698630136
       },
       "pos_accuracy": 0.958904109589041,
-      "mean_seconds": 4.886153664511557e-05
+      "mean_seconds": 5.1261537009850144e-05
     },
     {
       "tool": "parser",
@@ -97,12 +97,12 @@
       "alignment_errors": 0,
       "cfg": {
         "n": 5,
-        "tp": 0,
+        "tp": 1,
         "fp": 0,
-        "tn": 5,
+        "tn": 4,
         "fn": 0,
-        "precision": null,
-        "recall": null,
+        "precision": 1.0,
+        "recall": 1.0,
         "correct_rejection": 1.0,
         "accuracy": 1.0
       },
@@ -117,8 +117,8 @@
         "correct_rejection": 1.0,
         "accuracy": 0.9714285714285714
       },
-      "pos_accuracy": 0.8857142857142857,
-      "mean_seconds": 0.0006133599963504821
+      "pos_accuracy": 0.9142857142857143,
+      "mean_seconds": 0.0006403800041880458
     },
     {
       "tool": "parser",
@@ -149,7 +149,7 @@
         "accuracy": 1.0
       },
       "pos_accuracy": 1.0,
-      "mean_seconds": 0.0006095000038233896
+      "mean_seconds": 0.0007110666580653439
     },
     {
       "tool": "parser",
@@ -159,9 +159,9 @@
       "alignment_errors": 0,
       "cfg": {
         "n": 5,
-        "tp": 1,
+        "tp": 2,
         "fp": 0,
-        "tn": 4,
+        "tn": 3,
         "fn": 0,
         "precision": 1.0,
         "recall": 1.0,
@@ -180,7 +180,7 @@
         "accuracy": 1.0
       },
       "pos_accuracy": 1.0,
-      "mean_seconds": 0.0007046000042464584
+      "mean_seconds": 0.0007204400084447115
     },
     {
       "tool": "parser",
@@ -190,9 +190,9 @@
       "alignment_errors": 0,
       "cfg": {
         "n": 13,
-        "tp": 3,
+        "tp": 5,
         "fp": 0,
-        "tn": 10,
+        "tn": 8,
         "fn": 0,
         "precision": 1.0,
         "recall": 1.0,
@@ -210,8 +210,8 @@
         "correct_rejection": 1.0,
         "accuracy": 0.9863013698630136
       },
-      "pos_accuracy": 0.9452054794520548,
-      "mean_seconds": 0.0006475615395734516
+      "pos_accuracy": 0.958904109589041,
+      "mean_seconds": 0.0006874846182584476
     },
     {
       "tool": "spacy",
@@ -232,7 +232,7 @@
         "accuracy": 1.0
       },
       "pos_accuracy": 1.0,
-      "mean_seconds": 0.014372420002473518
+      "mean_seconds": 0.010696420003660024
     },
     {
       "tool": "spacy",
@@ -253,7 +253,7 @@
         "accuracy": 0.9523809523809523
       },
       "pos_accuracy": 0.9523809523809523,
-      "mean_seconds": 0.015503566683037207
+      "mean_seconds": 0.010061766670939202
     },
     {
       "tool": "spacy",
@@ -274,7 +274,7 @@
         "accuracy": 1.0
       },
       "pos_accuracy": 1.0,
-      "mean_seconds": 0.013739199994597584
+      "mean_seconds": 0.01106423999881372
     },
     {
       "tool": "spacy",
@@ -295,7 +295,7 @@
         "accuracy": 0.9863013698630136
       },
       "pos_accuracy": 0.9863013698630136,
-      "mean_seconds": 0.014389907694959011
+      "mean_seconds": 0.010691430771168178
     }
   ],
   "errors": [
@@ -343,14 +343,6 @@
       "id": "ES-057",
       "tool": "parser",
       "type": "tagging_error",
-      "word": "leyó",
-      "expected": "VERB",
-      "predicted": "X"
-    },
-    {
-      "id": "ES-057",
-      "tool": "parser",
-      "type": "tagging_error",
       "word": ".",
       "expected": "PUNCT",
       "predicted": "X"
@@ -365,7 +357,7 @@
     }
   ],
   "source_metadata": {
-    "created_utc": "2026-11-06T16:04:15.379926+00:00",
+    "created_utc": "2026-11-06T15:43:18.452845+00:00",
     "commit": "c2dcd47f3d173a148cf3ecc9d9c2a68c13983bc3",
     "hash_policy": "SHA-256; texto UTF-8 con saltos LF, binarios sin transformacion",
     "source_hashes": {
@@ -373,22 +365,28 @@
       "experimentos\\adaptadores.py": "33f7e133ff470c38d00b0cad93f3a6df7e05e3e3862bfaf6e68fb22c8eb99fde",
       "experimentos\\ambiguedad.py": "6be7a7a1a9af9465b0a0b0532bbbcd16daf17f6727878702e71aaefaa7b3e17a",
       "experimentos\\common.py": "40523eaefc18210d446c505b588791d20c213c803e4ee09e53ab2b7488beba87",
-      "experimentos\\comparar_nlp.py": "f5a0120f6f278671e2ae3b81da2e0d86c2e0933e04a3fd67125f918420776c26",
+      "experimentos\\comparar_nlp.py": "277d5e225d503185520110b5bb0590886c49f730f5c546d3df277cafdfaea106",
       "experimentos\\demo_fase1.py": "3f780a85516024d9bb2009d4f3ed54b9a3ea8779b4b73298ccc0a831c90179a1",
-      "experimentos\\metricas.py": "47b8bcf060de8ed9eedc258e411ba352b4f6b857cb481e7b50279a546132d766",
+      "experimentos\\graficas.py": "1b451855de1573b3b91c0e1773782f3b9de64ab316aadea6ab73bcefe31424ee",
+      "experimentos\\llm.py": "77aa7ea90e65db9fae5499d3dba0a14824b38654019de3b1491bcb3eba1add6b",
+      "experimentos\\metricas.py": "ed773557e0049db0bdea33a25c69bb3378584d408a65891ba9a660845ea1a5a5",
       "experimentos\\registro_fallos.py": "07808652e58c77274eafb402bc34de1bcd2477210a0aee273f7a676a3dff1845",
+      "experimentos\\rendimiento.py": "dac932dfeb990425cadcb9a6f7f395c4517e07b6201471e1116a96809e213752",
+      "experimentos\\resumir_llm.py": "c143e195488e8dd2314f2db003a3efdf15dca95ceb39a0f9b6871ac5a84a4574",
+      "experimentos\\validar_corpus.py": "d8ff90742a522a9fbb775b9315c4b86368048f26bed10297c5560136b34c2778",
+      "experimentos\\validar_derivacion.py": "4dbe3dc1ac86ef3f9abf77c891d1b43bc1fb2f5569964a8a40636a881bcdbfcd",
       "main.py": "8e40b3cfbd7dc94e6f008d49caca37f24f4384747d47eb28f68e0485678beb93",
       "minic\\__init__.py": "acf5d7d08e80102a69942e0ca6b238232c063b7772748533da274c3fe32ddda3",
       "minic\\diagnostics.py": "2047c88075a8b6fbeb496288abf8a93ae667a62b81b3713f779e65d513a40a2f",
       "minic\\grammar.py": "50d2346daffe58561f08b16d274cc92c2cf638a48d58d25653b92d5b0a45e2df",
       "minic\\lexer.py": "7614c895a8ce8d545764d0f9daf48004c95f148160af4c902b616ec180f63720",
-      "minic\\lexicon_es.py": "1bfdeb6a805de14676889275a82a4fc6318244656a9252de5a4d4398bfb54eb4",
+      "minic\\lexicon_es.py": "eec0049a3b0968207b15c002a8ce88d12a445cbbaf855a2e33556a84abd49ad8",
       "minic\\parser.py": "772e085c5d8442eac57953a6a11508964d9e37d4e7a1d396dc11ed21072835ac",
       "minic\\trees.py": "5c18d6b216bb6b85a1d8c1eb711281ecab2202be5efb9a14ed510c00eeab4161"
     },
     "tracked_changes": true,
-    "grammar_sha256": "e7147cb30ece6bbd64c7d401151c4bcb6e83a2e23f48654d49e4a0a8984aebc0",
-    "corpus_sha256": "9a06d89f8d18c2ab5557078f331778a11762061956600d430a85d7dd0eb47a55"
+    "grammar_sha256": "cf1d5f630a2d49dd0cfdeedd4ac9b14cdae1209ee714a2b84b94f5f880df5c81",
+    "corpus_sha256": "99b8250b69c0c684e2824231b7a1c5eb6ed99853ec6aeb091be4e09c5c31c0e7"
   },
-  "input_sha256": "acbe6cbb333db4215d8de0a33bce856c4fd717bdbb35e20469150eb4cd64c2e9"
+  "input_sha256": "2cc9176fc0c783aaaeb18fdd6a327fd2479b3aa25ae507d0d10b4e57eb3fe09c"
 }
