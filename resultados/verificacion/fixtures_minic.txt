@@ -1,0 +1,24 @@
+caso                                | esperado               | obtenido                       | resultado
+---------------------------------------------------------------------------------------------------------
+v01_declaraciones.c                 | aceptar                | aceptado                       | OK
+v02_precedencia_parentesis.c        | aceptar                | aceptado                       | OK
+v03_if_else_if.c                    | aceptar                | aceptado                       | OK
+v04_while.c                         | aceptar                | aceptado                       | OK
+v05_for_completo.c                  | aceptar                | aceptado                       | OK
+v06_for_partes_vacias.c             | aceptar                | aceptado                       | OK
+v07_anidado.c                       | aceptar                | aceptado                       | OK
+v08_solo_comentarios.c              | aceptar                | aceptado                       | OK
+v09_palabras_reservadas_en_ids.c    | aceptar                | aceptado                       | OK
+i01_falta_punto_y_coma.c            | rechazar (linea 4)     | rechazado (linea 4)            | OK
+i02_falta_parentesis_cierre.c       | rechazar (linea 3)     | rechazado (linea 3)            | OK
+i03_if_sin_llaves.c                 | rechazar (linea 3)     | rechazado (linea 3)            | OK
+i04_else_sin_if.c                   | rechazar (linea 2)     | rechazado (linea 2)            | OK
+i05_caracter_ilegal.c               | rechazar (linea 2)     | rechazado (linea 2)            | OK
+i06_for_incompleto.c                | rechazar (linea 2)     | rechazado (linea 2)            | OK
+i07_condicion_sin_comparacion.c     | rechazar (linea 3)     | rechazado (linea 3)            | OK
+i08_falta_llave_cierre.c            | rechazar (linea 5)     | rechazado (linea 5)            | OK
+i09_declaracion_sin_identificador.c | rechazar (linea 2)     | rechazado (linea 2)            | OK
+i10_llave_de_mas.c                  | rechazar (linea 3)     | rechazado (linea 3)            | OK
+i11_asignacion_sin_expresion.c      | rechazar (linea 2)     | rechazado (linea 2)            | OK
+
+20/20 casos pasan.

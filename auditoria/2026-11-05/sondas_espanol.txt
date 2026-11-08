@@ -1,0 +1,19 @@
+184/199 expectativas satisfechas; 15 diferencias.
+Grupos: {"actual": {"total": 173, "passed": 173, "failed": 0}, "fase2": {"total": 5, "passed": 0, "failed": 5}, "alcance_documentado": {"total": 3, "passed": 3, "failed": 0}, "robustez": {"total": 1, "passed": 0, "failed": 1}, "aislamiento_oraciones": {"total": 7, "passed": 0, "failed": 7}, "interpretacion_estructural": {"total": 1, "passed": 0, "failed": 1}, "caracterizacion": {"total": 4, "passed": 4, "failed": 0}, "cli": {"total": 5, "passed": 4, "failed": 1}}
+Gramatica: {"nonterminals": 53, "productions": 102, "table_cells": 177}
+Lexico: 161 palabras; 19 categorias; corpus: 19
+{"id": "svo", "actual": false, "first_error": ["Linea 1, col 13: no se esperaba 'el' al analizar Cpl_MS. Se esperaba: ['$', 'ADV', 'PREP', 'QUE']"]}
+{"id": "svo_plural", "actual": false, "first_error": ["Linea 1, col 19: no se esperaba 'las' al analizar Cpl_FP. Se esperaba: ['$', 'ADV', 'PREP', 'QUE']"]}
+{"id": "preterito", "actual": false, "first_error": ["Linea 1, col 9: no se esperaba 'corri\u00f3' al analizar AdjMS. Se esperaba: ['$', 'ADJ_MS', 'ADV', 'COP_3S', 'PREP', 'VERB_3S']"]}
+{"id": "preterito_plural", "actual": false, "first_error": ["Linea 1, col 11: no se esperaba 'corrieron' al analizar AdjMP. Se esperaba: ['$', 'ADJ_MP', 'ADV', 'COP_3P', 'PREP', 'VERB_3P']"]}
+{"id": "imperfecto", "actual": false, "first_error": ["Linea 1, col 9: no se esperaba 'cantaba' al analizar AdjFS. Se esperaba: ['$', 'ADJ_FS', 'ADV', 'COP_3S', 'PREP', 'VERB_3S']"]}
+{"id": "acento_nfd", "actual": false, "first_error": ["Linea 1: caracter ilegal '\u0301'"]}
+{"id": "modo_es_vacio", "actual": true, "first_error": []}
+{"id": "modo_es_comentario", "actual": true, "first_error": []}
+{"id": "modo_es_declaracion_c", "actual": true, "first_error": []}
+{"id": "modo_es_asignacion_c", "actual": true, "first_error": []}
+{"id": "modo_es_if_c", "actual": true, "first_error": []}
+{"id": "modo_es_while_c", "actual": true, "first_error": []}
+{"id": "modo_es_for_c", "actual": true, "first_error": []}
+{"id": "pp_anidada_en_sn", "actual": false, "first_error": []}
+{"id": "cli_es_modo_no_filtra_c", "actual": 0, "first_error": []}

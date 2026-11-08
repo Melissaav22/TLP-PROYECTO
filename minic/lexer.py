@@ -1,12 +1,25 @@
-"""Analizador lexico (PLY). Proposito: Convierte texto en una lista de tokens."""
+"""Analizador lexico (PLY). Convierte texto en una lista de tokens.
+
+Ademas del vocabulario de MiniC, reconoce palabras del espanol y les asigna
+un token con sus rasgos morfologicos (ver minic/lexicon_es.py)."""
 import ply.lex as lex
+import unicodedata
+
+from . import lexicon_es
+from .diagnostics import Diagnostic
 
 reserved = {'int': 'INT', 'if': 'IF', 'else': 'ELSE', 'while': 'WHILE',
             'for': 'FOR'}
+C_KEYWORDS = set('auto break case char const continue default do double enum '
+                 'extern float goto inline long register restrict return short '
+                 'signed sizeof static struct switch typedef union unsigned void '
+                 'volatile _Alignas _Alignof _Atomic _Bool _Complex _Generic '
+                 '_Imaginary _Noreturn _Static_assert _Thread_local'.split())
+MAX_NUM_DIGITS = 4096
 
 tokens = ['ID', 'NUM', 'PLUS', 'MINUS', 'TIMES', 'DIVIDE', 'LPAREN',
           'RPAREN', 'LBRACE', 'RBRACE', 'SEMI', 'ASSIGN', 'EQ', 'LT',
-          'GT', 'LE', 'GE', 'NE'] + list(reserved.values())
+          'GT', 'LE', 'GE', 'NE', 'C_KEYWORD'] + list(reserved.values()) + lexicon_es.TOKENS
 
 t_PLUS = r'\+'
 t_MINUS = r'-'
@@ -30,16 +43,31 @@ t_ignore = ' \t\r'
 
 
 def t_ID(t):
-    r'[A-Za-z_][A-Za-z_0-9]*'
-    # Se reconoce como identificador y DESPUES se consulta si es reservada,
-    # asi "integer" es un ID y no "int" + "eger".
-    t.type = reserved.get(t.value, 'ID')
+    r'[A-Za-zÁÉÍÓÚÜÑáéíóúüñ_][A-Za-z0-9ÁÉÍÓÚÜÑáéíóúüñ_\u0300-\u036f]*'
+    # Primero las reservadas de C (sensibles a mayusculas) y despues el
+    # lexico del espanol (sin distinguir mayusculas), asi "integer" sigue
+    # siendo un ID y no "int" + "eger".
+    if t.value in reserved:
+        t.type = reserved[t.value]
+        return t
+    if getattr(t.lexer, 'spanish', False):
+        word = unicodedata.normalize('NFC', t.value).lower()
+        t.type = lexicon_es.LEXICON.get(word, 'ID')
+        if t.type == 'ID':
+            _error(t.lexer, t.lexpos, 'unknown_word', f'palabra fuera del vocabulario {t.value!r}')
+    else:
+        t.type = 'C_KEYWORD' if t.value in C_KEYWORDS else 'ID'
     return t
 
 
 def t_NUM(t):
-    r'\d+'
-    t.value = int(t.value)
+    r'[0-9]+'
+    if len(t.value) > MAX_NUM_DIGITS:
+        _error(t.lexer, t.lexpos, 'number_too_long',
+               f'numero excede el limite de {MAX_NUM_DIGITS} digitos')
+    elif len(t.value) > 1 and t.value.startswith('0'):
+        _error(t.lexer, t.lexpos, 'leading_zero',
+               'solo se admiten decimales sin ceros iniciales')
     return t
 
 
@@ -54,8 +82,13 @@ def t_newline(t):
 
 
 def t_error(t):
-    t.lexer.errors.append((t.lineno, t.value[0]))
+    _error(t.lexer, t.lexpos, 'illegal_character', f'caracter ilegal {t.value[0]!r}')
     t.lexer.skip(1)
+
+
+def _error(lexer, offset, code, message):
+    lexer.errors.append(Diagnostic(lexer.lineno, _column(lexer.lexdata, offset),
+                                   offset, 'lexical', code, message))
 
 
 _base_lexer = lex.lex()
@@ -65,15 +98,17 @@ def _column(source, lexpos):
     return lexpos - (source.rfind('\n', 0, lexpos) + 1) + 1
 
 
-def tokenize(source):
+def tokenize(source, spanish=False):
     """Devuelve (tokens, errores_lexicos).
 
     tokens: lista de (tipo, lexema, linea, columna) terminada en '$'.
-    errores_lexicos: lista de (linea, caracter_ilegal).
+    errores_lexicos: lista de Diagnostic con posicion, codigo y mensaje.
+    Con spanish=True las palabras del lexico español llevan sus rasgos.
     """
     lx = _base_lexer.clone()
     lx.errors = []
     lx.lineno = 1
+    lx.spanish = spanish
     lx.input(source)
     out = [(tok.type, str(tok.value), tok.lineno, _column(source, tok.lexpos))
            for tok in lx]

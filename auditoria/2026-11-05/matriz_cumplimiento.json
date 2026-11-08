@@ -1,0 +1,522 @@
+{
+  "audit_date": "2026-11-05",
+  "timezone": "America/El_Salvador",
+  "repository": "C:\\Users\\Cristopher-Diaz-TDW\\Desktop\\PROJECTS\\TLP-PROYECTO",
+  "commit": "c2dcd47f3d173a148cf3ecc9d9c2a68c13983bc3",
+  "specification": "C:\\Users\\Cristopher-Diaz-TDW\\Downloads\\especificaci_n_de_proyecto_tlp02_2026.md",
+  "scope": "Requisitos técnicos, experimentales y documentos exigidos observables en el repositorio. Presentaciones y administración académica fuera del cómputo por falta de evidencia verificable.",
+  "methodology": {
+    "weight_scale": "5 crítico, 4 central, 3 funcional/experimental, 2 soporte",
+    "phase_formula": "sum(weight * percent) / sum(weight)",
+    "global_formula": "0.4 * phase_1 + 0.6 * phase_2",
+    "ranges": {
+      "0": "No implementado o entregable no localizado",
+      "1-50": "En progreso / soporte parcial",
+      "51-85": "Funcional con brechas o sin pruebas específicas",
+      "86-100": "Cumplido con pruebas asociadas"
+    },
+    "totals": [
+      {
+        "phase": 1,
+        "count": 16,
+        "weight": 57,
+        "numerator": 3800,
+        "percent": 66.66666666666667
+      },
+      {
+        "phase": 2,
+        "count": 28,
+        "weight": 96,
+        "numerator": 2620,
+        "percent": 27.291666666666668
+      }
+    ],
+    "global": 43.04166666666667
+  },
+  "requirements": [
+    {
+      "id": "F1-REQ-01",
+      "phase": 1,
+      "weight": 5,
+      "percent": 90,
+      "source_line": 44,
+      "title": "Parser formal Python LL(1) del subconjunto MiniC",
+      "files": "minic/parser.py:8; minic/grammar.py:70; gramatica_minic.txt:11",
+      "evidence": "Motor predictivo real con pila y tabla; 20/20 fixtures pasan. Persisten diferencias del léxico frente a C y límites de entrada.",
+      "status": "Cumplido"
+    },
+    {
+      "id": "F1-REQ-02",
+      "phase": 1,
+      "weight": 3,
+      "percent": 85,
+      "source_line": 44,
+      "title": "Árbol de análisis sintáctico del lenguaje formal",
+      "files": "minic/parser.py:21; main.py:50",
+      "evidence": "nltk.Tree real y representación textual funcional. El runner descarta el árbol; fuentes válidas extensas fallan al imprimir.",
+      "status": "Parcial / funcional"
+    },
+    {
+      "id": "F1-REQ-03",
+      "phase": 1,
+      "weight": 3,
+      "percent": 75,
+      "source_line": 44,
+      "title": "Manejo básico de errores sintácticos",
+      "files": "minic/parser.py:40; minic/parser.py:53",
+      "evidence": "Recuperación por FOLLOW e inserción de terminales. Línea/columna sintáctica presentes; orden mixto de diagnósticos y manejo de excepciones pendientes.",
+      "status": "Parcial / funcional"
+    },
+    {
+      "id": "F1-REQ-04",
+      "phase": 1,
+      "weight": 4,
+      "percent": 95,
+      "source_line": 45,
+      "title": "Pruebas de entradas válidas e inválidas de MiniC",
+      "files": "tests/run_tests.py:51; tests/validos/v01_declaraciones.c:1; tests/invalidos/i01_falta_punto_y_coma.c:1",
+      "evidence": "9 válidos y 11 inválidos ejecutados correctamente. Los negativos comprueban primera línea del error.",
+      "status": "Cumplido"
+    },
+    {
+      "id": "F1-REQ-05",
+      "phase": 1,
+      "weight": 4,
+      "percent": 95,
+      "source_line": 46,
+      "title": "Extensión de la CFG del parser al español",
+      "files": "gramatica_minic.txt:11; minic/parser.py:18; minic/lexer.py:45",
+      "evidence": "Una gramática unificada y selección de lexicón por spanish/--es; 19/19 fixtures del español pasan.",
+      "status": "Cumplido"
+    },
+    {
+      "id": "F1-REQ-06",
+      "phase": 1,
+      "weight": 4,
+      "percent": 95,
+      "source_line": 46,
+      "title": "Concordancia de género y número sustantivo-adjetivo",
+      "files": "gramatica_minic.txt:55; minic/lexicon_es.py:43",
+      "evidence": "Categorías MS/FS/MP/FP y negativos de concordancia. Barrido adicional de 128 combinaciones nominales/verbales correcto.",
+      "status": "Cumplido"
+    },
+    {
+      "id": "F1-REQ-07",
+      "phase": 1,
+      "weight": 4,
+      "percent": 95,
+      "source_line": 46,
+      "title": "Concordancia entre sujeto y verbo",
+      "files": "gramatica_minic.txt:50; gramatica_minic.txt:72",
+      "evidence": "Tercera persona singular/plural en SV; negativos originales y barrido adicional detectan combinaciones incompatibles.",
+      "status": "Cumplido"
+    },
+    {
+      "id": "F1-REQ-08",
+      "phase": 1,
+      "weight": 4,
+      "percent": 95,
+      "source_line": 46,
+      "title": "Al menos un tipo de cláusula subordinada",
+      "files": "gramatica_minic.txt:78; tests/es/validos/v07_subordinada.txt:1",
+      "evidence": "Complemento con que y Oracion recursiva real. Sonda con dos niveles de subordinación aceptada y tres nodos Oracion.",
+      "status": "Cumplido"
+    },
+    {
+      "id": "F1-REQ-09",
+      "phase": 1,
+      "weight": 2,
+      "percent": 95,
+      "source_line": 46,
+      "title": "Modificadores adjetivales",
+      "files": "gramatica_minic.txt:62; tests/es/validos/v05_modificadores.txt:1",
+      "evidence": "Adjetivos pospuestos concordados y atributos tras cópula; tests positivos y negativos asociados.",
+      "status": "Cumplido"
+    },
+    {
+      "id": "F1-REQ-10",
+      "phase": 1,
+      "weight": 2,
+      "percent": 95,
+      "source_line": 46,
+      "title": "Modificadores adverbiales",
+      "files": "gramatica_minic.txt:95; minic/lexicon_es.py:111",
+      "evidence": "ADV antes/después de PP en modificadores verbales; fixtures v05/v09 y sondas correctos.",
+      "status": "Cumplido"
+    },
+    {
+      "id": "F1-REQ-11",
+      "phase": 1,
+      "weight": 3,
+      "percent": 90,
+      "source_line": 46,
+      "title": "Modificadores con frases preposicionales",
+      "files": "gramatica_minic.txt:68; gramatica_minic.txt:95",
+      "evidence": "PP -> PREP SN funciona en posiciones verbales. v06 acepta dos PP sucesivas pero su árbol no contiene PP dentro del SN.",
+      "status": "Cumplido"
+    },
+    {
+      "id": "F1-REQ-12",
+      "phase": 1,
+      "weight": 5,
+      "percent": 30,
+      "source_line": 47,
+      "title": "Registro sistemático de fallos con regla y fenómeno",
+      "files": "tests/es/invalidos/i03_genero_adjetivo.txt:1; tests/run_tests.py:58; minic/parser.py:55",
+      "evidence": "8 negativos y mensajes con no terminal ofrecen una base; no hay dataset de fenómenos, regla de producción registrada, clasificación ni exportación experimental.",
+      "status": "Parcial / esqueleto"
+    },
+    {
+      "id": "F1-REQ-13",
+      "phase": 1,
+      "weight": 4,
+      "percent": 0,
+      "source_line": 43,
+      "title": "Análisis formal de fallos y relación con Chomsky",
+      "files": "—",
+      "evidence": "No se encontró análisis teórico propio, clasificación formal ni evidencia de qué límite corresponde al diseño, LL(1) o CFG.",
+      "status": "Pendiente"
+    },
+    {
+      "id": "F1-REQ-14",
+      "phase": 1,
+      "weight": 5,
+      "percent": 0,
+      "source_line": 48,
+      "title": "Demo NLP sobre las mismas oraciones del parser",
+      "files": "minic/parser.py:3",
+      "evidence": "NLTK se utiliza para construir árboles propios. No existe un segundo analizador NLP ni script de comparación de oraciones.",
+      "status": "Pendiente"
+    },
+    {
+      "id": "F1-REQ-15",
+      "phase": 1,
+      "weight": 2,
+      "percent": 85,
+      "source_line": 52,
+      "title": "Código documentado y README ejecutable",
+      "files": "README.md:20; minic/lexicon_es.py:1; tests/run_tests.py:1",
+      "evidence": "Comandos MiniC/español y limitaciones documentados y verificados. Falta documentar y reproducir la demo comparativa requerida.",
+      "status": "Parcial / funcional"
+    },
+    {
+      "id": "F1-REQ-16",
+      "phase": 1,
+      "weight": 3,
+      "percent": 0,
+      "source_line": 51,
+      "title": "Informe técnico Fase 1 de 5–7 páginas",
+      "files": "—",
+      "evidence": "No se encontró el informe del proyecto en el árbol inspeccionado. La auditoría previa no acredita este entregable.",
+      "status": "Pendiente"
+    },
+    {
+      "id": "F2-REQ-01",
+      "phase": 2,
+      "weight": 4,
+      "percent": 85,
+      "source_line": 70,
+      "title": "CFG explícita para un español controlado",
+      "files": "gramatica_minic.txt:50; README.md:76",
+      "evidence": "Producciones y límites explícitos, lexicón finito y tabla sin conflictos. El mínimo SVO y tiempos queda pendiente en requisitos propios.",
+      "status": "Parcial / funcional"
+    },
+    {
+      "id": "F2-REQ-02",
+      "phase": 2,
+      "weight": 5,
+      "percent": 0,
+      "source_line": 70,
+      "title": "Oraciones sujeto-verbo-objeto con objeto directo",
+      "files": "gramatica_minic.txt:72; gramatica_minic.txt:78",
+      "evidence": "No hay producción que consuma SN como objeto. El niño lee el libro y Las niñas compran las flores se rechazan con palabras conocidas.",
+      "status": "Pendiente"
+    },
+    {
+      "id": "F2-REQ-03",
+      "phase": 2,
+      "weight": 2,
+      "percent": 95,
+      "source_line": 70,
+      "title": "Modificadores adjetivales",
+      "files": "gramatica_minic.txt:62; tests/es/validos/v03_det_sust_adj.txt:1",
+      "evidence": "Implementación compartida con Fase 1 y casos asociados de concordancia.",
+      "status": "Cumplido"
+    },
+    {
+      "id": "F2-REQ-04",
+      "phase": 2,
+      "weight": 2,
+      "percent": 95,
+      "source_line": 70,
+      "title": "Modificadores adverbiales",
+      "files": "gramatica_minic.txt:95; tests/es/validos/v09_adverbio_plural.txt:1",
+      "evidence": "ADV implementado y ejercitado en la suite; combinaciones adicionales con PP pasan.",
+      "status": "Cumplido"
+    },
+    {
+      "id": "F2-REQ-05",
+      "phase": 2,
+      "weight": 3,
+      "percent": 85,
+      "source_line": 70,
+      "title": "Modificadores preposicionales",
+      "files": "gramatica_minic.txt:68; tests/es/validos/v06_pp_anidada.txt:1",
+      "evidence": "Frases preposicionales operativas. El corpus no verifica semántica de adjunción y el caso llamado anidado construye PP hermanas.",
+      "status": "Parcial / funcional"
+    },
+    {
+      "id": "F2-REQ-06",
+      "phase": 2,
+      "weight": 5,
+      "percent": 0,
+      "source_line": 70,
+      "title": "Al menos dos tiempos verbales",
+      "files": "minic/lexicon_es.py:86",
+      "evidence": "Solo formas de presente. Corrió, corrieron y cantaba se tokenizan como ID y se rechazan.",
+      "status": "Pendiente"
+    },
+    {
+      "id": "F2-REQ-07",
+      "phase": 2,
+      "weight": 4,
+      "percent": 95,
+      "source_line": 70,
+      "title": "Concordancia básica",
+      "files": "gramatica_minic.txt:56; gramatica_minic.txt:72; gramatica_minic.txt:84",
+      "evidence": "Rasgos finitos en categorías, originales y 160 combinaciones adicionales de concordancia/atributo correctas.",
+      "status": "Cumplido"
+    },
+    {
+      "id": "F2-REQ-08",
+      "phase": 2,
+      "weight": 2,
+      "percent": 85,
+      "source_line": 70,
+      "title": "Vocabulario reducido definido y variado",
+      "files": "minic/lexicon_es.py:43",
+      "evidence": "161 entradas y 19 categorías. Sustantivos, adjetivos, verbos, cópulas, ADV, PREP y QUE; desconocidos vuelven ID sin diagnóstico léxico específico.",
+      "status": "Parcial / funcional"
+    },
+    {
+      "id": "F2-REQ-09",
+      "phase": 2,
+      "weight": 5,
+      "percent": 85,
+      "source_line": 71,
+      "title": "Parser propio LL(1) que valide frases",
+      "files": "minic/parser.py:8; minic/lexer.py:80",
+      "evidence": "Opera con 19 fixtures. --es selecciona léxico y mantiene Program unificado: también acepta MiniC y vacío, relevante para evaluar frases.",
+      "status": "Parcial / funcional"
+    },
+    {
+      "id": "F2-REQ-10",
+      "phase": 2,
+      "weight": 3,
+      "percent": 85,
+      "source_line": 71,
+      "title": "Árboles sintácticos visuales por oración",
+      "files": "main.py:50; minic/parser.py:21",
+      "evidence": "CLI --es presenta árbol textual con pretty_print; prueba por subprocess exitosa. Sin pruebas originales de CLI o exportación automatizada.",
+      "status": "Parcial / funcional"
+    },
+    {
+      "id": "F2-REQ-11",
+      "phase": 2,
+      "weight": 4,
+      "percent": 30,
+      "source_line": 76,
+      "title": "Corpus de al menos 60 oraciones",
+      "files": "tests/es/validos/v01_sujeto_singular.txt:1; tests/es/invalidos/i01_genero_det_sust.txt:1",
+      "evidence": "19 oraciones originales (11 positivas, 8 negativas), faltan al menos 41. Las combinaciones generadas por el auditor no amplían el corpus entregado.",
+      "status": "Parcial / esqueleto"
+    },
+    {
+      "id": "F2-REQ-12",
+      "phase": 2,
+      "weight": 3,
+      "percent": 0,
+      "source_line": 72,
+      "title": "Corpus organizado en tres niveles de complejidad",
+      "files": "tests/run_tests.py:41",
+      "evidence": "Solo carpetas validos/invalidos; no hay niveles simples/intermedios/complejos ni metadatos equivalentes.",
+      "status": "Pendiente"
+    },
+    {
+      "id": "F2-REQ-13",
+      "phase": 2,
+      "weight": 3,
+      "percent": 85,
+      "source_line": 76,
+      "title": "Salida esperada etiquetada en el corpus",
+      "files": "tests/run_tests.py:51; tests/run_tests.py:61",
+      "evidence": "Aceptación por carpeta y línea esperada en negativos. Faltan etiquetas de fenómenos, estructura/tokens esperados y significado homogéneo para comparar sistemas.",
+      "status": "Parcial / funcional"
+    },
+    {
+      "id": "F2-REQ-14",
+      "phase": 2,
+      "weight": 5,
+      "percent": 0,
+      "source_line": 77,
+      "title": "Al menos dos herramientas modernas de NLP",
+      "files": "requirements.txt:1; minic/parser.py:3",
+      "evidence": "No hay adaptadores de NLP. Instalar NLTK y usar Tree no ejecuta un analizador independiente.",
+      "status": "Pendiente"
+    },
+    {
+      "id": "F2-REQ-15",
+      "phase": 2,
+      "weight": 4,
+      "percent": 0,
+      "source_line": 77,
+      "title": "Procesar y comparar el mismo conjunto entre sistemas",
+      "files": "—",
+      "evidence": "No hay orquestador experimental, IDs compartidos de resultados ni contrato de comparación.",
+      "status": "Pendiente"
+    },
+    {
+      "id": "F2-REQ-16",
+      "phase": 2,
+      "weight": 3,
+      "percent": 0,
+      "source_line": 78,
+      "title": "Métrica de precisión",
+      "files": "—",
+      "evidence": "No se calculan TP/FP ni precisión; el porcentaje de fixtures aprobados no implementa esta métrica.",
+      "status": "Pendiente"
+    },
+    {
+      "id": "F2-REQ-17",
+      "phase": 2,
+      "weight": 3,
+      "percent": 0,
+      "source_line": 78,
+      "title": "Métrica de cobertura o recall",
+      "files": "—",
+      "evidence": "No hay TP/FN ni recall por sistema o nivel.",
+      "status": "Pendiente"
+    },
+    {
+      "id": "F2-REQ-18",
+      "phase": 2,
+      "weight": 3,
+      "percent": 0,
+      "source_line": 78,
+      "title": "Tasa de rechazo correcto",
+      "files": "—",
+      "evidence": "No hay TN/(TN+FP) ni metodología para decidir rechazo en herramientas NLP.",
+      "status": "Pendiente"
+    },
+    {
+      "id": "F2-REQ-19",
+      "phase": 2,
+      "weight": 3,
+      "percent": 0,
+      "source_line": 78,
+      "title": "Clasificación de falsos positivos, falsos negativos y errores de etiquetado",
+      "files": "tests/run_tests.py:55",
+      "evidence": "El runner muestra OK/FALLA, sin clasificación ni exportación por oración/sistema.",
+      "status": "Pendiente"
+    },
+    {
+      "id": "F2-REQ-20",
+      "phase": 2,
+      "weight": 3,
+      "percent": 0,
+      "source_line": 78,
+      "title": "Tablas y gráficas de resultados cuantitativos",
+      "files": "tests/run_tests.py:75",
+      "evidence": "Existe tabla de pruebas, pero no tablas comparativas de métricas ni generación de gráficas del experimento.",
+      "status": "Pendiente"
+    },
+    {
+      "id": "F2-REQ-21",
+      "phase": 2,
+      "weight": 5,
+      "percent": 0,
+      "source_line": 79,
+      "title": "Experimento con LLM mediante API",
+      "files": "—",
+      "evidence": "No hay cliente, ejecución ni resultados de API LLM.",
+      "status": "Pendiente"
+    },
+    {
+      "id": "F2-REQ-22",
+      "phase": 2,
+      "weight": 3,
+      "percent": 0,
+      "source_line": 79,
+      "title": "Prompt con reglas explícitas de producción",
+      "files": "—",
+      "evidence": "No existen prompts ni inyección versionada de las reglas de la gramática en solicitudes.",
+      "status": "Pendiente"
+    },
+    {
+      "id": "F2-REQ-23",
+      "phase": 2,
+      "weight": 4,
+      "percent": 0,
+      "source_line": 82,
+      "title": "Comparación few-shot frente a zero-shot",
+      "files": "—",
+      "evidence": "No hay variantes de prompt, ejemplos controlados ni ejecuciones comparables.",
+      "status": "Pendiente"
+    },
+    {
+      "id": "F2-REQ-24",
+      "phase": 2,
+      "weight": 4,
+      "percent": 0,
+      "source_line": 80,
+      "title": "Evaluar adhesión a reglas y aciertos/fallos del LLM",
+      "files": "—",
+      "evidence": "No hay validación de derivaciones/árboles generados ni registro de desviaciones hacia gramática general.",
+      "status": "Pendiente"
+    },
+    {
+      "id": "F2-REQ-25",
+      "phase": 2,
+      "weight": 3,
+      "percent": 0,
+      "source_line": 87,
+      "title": "Logs de prompts y respuestas obtenidas",
+      "files": "—",
+      "evidence": "No se encontraron logs reales de experimentos, identificadores de modelo o trazabilidad de respuestas.",
+      "status": "Pendiente"
+    },
+    {
+      "id": "F2-REQ-26",
+      "phase": 2,
+      "weight": 3,
+      "percent": 0,
+      "source_line": 83,
+      "title": "Comparación de robustez, ambigüedad, escalabilidad y costo",
+      "files": "—",
+      "evidence": "No se registran ejecuciones de otros sistemas, tiempos, consumo/costo ni análisis experimental comparable.",
+      "status": "Pendiente"
+    },
+    {
+      "id": "F2-REQ-27",
+      "phase": 2,
+      "weight": 2,
+      "percent": 20,
+      "source_line": 87,
+      "title": "Código y README para reproducir los experimentos",
+      "files": "README.md:20",
+      "evidence": "Se reproduce el parser y sus fixtures. Faltan componentes y comandos de corpus, NLP, métricas y LLM.",
+      "status": "Parcial / esqueleto"
+    },
+    {
+      "id": "F2-REQ-28",
+      "phase": 2,
+      "weight": 3,
+      "percent": 0,
+      "source_line": 86,
+      "title": "Informe final Fase 2 de 7–10 páginas con resultados",
+      "files": "—",
+      "evidence": "No se encontró informe final en el repositorio ni resultados que lo sustenten.",
+      "status": "Pendiente"
+    }
+  ]
+}

@@ -1,90 +1,85 @@
-# Parser LL(1) para MiniC (Proyecto TLP02-2026, Fase 1)
+# Proyecto TLP02 2026
 
-Parser predictivo descendente (LL(1)) dirigido por tabla para **MiniC**, un
-subconjunto de C. Construye el árbol de análisis como `nltk.Tree` y reporta
-errores léxicos y sintácticos con línea y columna.
+Parser LL(1) para fragmentos MiniC y español controlado, árboles SVG y experimentos reproducibles con NLTK y spaCy.
 
-**Integrantes:** 
+## Estado
 
-## Requisitos e instalación
+Rama `feat/fase-uno`, basada en `ExtensionEspañol`. Conserva los 39 fixtures originales e incorpora una demo de 13 frases con parser, NLTK y spaCy. Las pruebas, trazas, métricas e informe de esta rama corresponden a la gramática de fase 1. Las etiquetas y los documentos requieren revisión del grupo. Consulta `docs/ESTADO_IMPLEMENTACION.md`.
 
-Python 3.10 o superior.
+La rama `feat/fase-dos` deriva de esta rama y añade SVO, pasado, corpus de 60 frases, evaluación completa e integración LLM. Las auditorías y el plan son documentos históricos y pueden describir ambas fases; no acreditan implementación de fase 2 en esta rama.
 
-```bash
-python3 -m venv venv
-source venv/bin/activate        # en Windows: venv\Scripts\activate
-pip install -r requirements.txt
+## Instalación del parser
+
+Python 3.10 o superior. Se verificaron Python 3.10.22 y 3.12.15. Desde la raíz, en PowerShell:
+
+```powershell
+uv venv --python 3.10 .venv
+uv pip sync --python .venv/Scripts/python.exe --require-hashes requirements-core.lock
+.\.venv\Scripts\python.exe tests/run_tests.py
+.\.venv\Scripts\python.exe tests/run_tests.py --es
+.\.venv\Scripts\python.exe -m unittest discover -s tests -p "test_*.py" -v
 ```
+
+En Linux/macOS, sustituye `.venv\Scripts\python.exe` por `.venv/bin/python`.
 
 ## Uso
 
-```bash
-python main.py programa.c             # analiza y dibuja el árbol
-python main.py programa.c --compacto  # árbol en formato de corchetes
-python main.py --tabla                # muestra FIRST, FOLLOW y la tabla LL(1)
-python tests/run_tests.py             # corre todos los casos de prueba
+```powershell
+.\.venv\Scripts\python.exe main.py tests/validos/v01_declaraciones.c --compacto
+.\.venv\Scripts\python.exe main.py tests/es/validos/v07_subordinada.txt --es
+.\.venv\Scripts\python.exe main.py tests/es/validos/v07_subordinada.txt --es --svg resultados/arbol.svg
+.\.venv\Scripts\python.exe main.py --tabla
 ```
 
-Código de salida: `0` si el análisis es exitoso, `1` si hay errores.
+La salida es 0 si termina correctamente y 1 ante errores de fuente, lectura, gramática o escritura. argparse devuelve 2 para argumentos inválidos. `--compacto` usa serialización iterativa en una línea. La salida habitual presenta un árbol de consola para entradas pequeñas y corchetes para árboles profundos. El SVG admite hasta 2.000 nodos, con error controlado al superar ese límite.
 
-## Estructura
+## Subconjuntos y contratos
 
+MiniC contiene declaraciones `int`, asignaciones, aritmética, comparaciones, `if/else if/else`, `while` y `for`, con cuerpos entre llaves. Los archivos representan fragmentos sintácticos. El análisis semántico de tipos, declaraciones previas y ejecución queda fuera del alcance.
+
+Se aceptan decimales ASCII `0` o `[1-9][0-9]*`, de hasta 4.096 dígitos, conservando el lexema. Se excluyen octales, ceros iniciales, números Unicode, funciones, operadores lógicos, comentarios de bloque y asignaciones encadenadas. Se impide usar palabras clave C como identificadores.
+
+El español se valida desde `Oracion`. Requiere determinante, sujeto nominal y verbo de tercera persona. Incluye presente, adjetivos concordados, adverbios, PP y subordinadas con `que`. El objeto directo nominal y el pasado se incorporan en fase 2.
+
+Las PP sucesivas modifican al sintagma verbal. El fixture histórico `v06_pp_anidada.txt` contiene dos PP hermanas. `experimentos.ambiguedad` contrasta esa política con dos adjunciones de una CFG auxiliar. Los verbos plenos comparten las posibilidades de complemento. La valencia semántica es una limitación declarada.
+
+El lexicón está en `minic/lexicon_es.py` y admite consulta normalizada NFC. Se excluyen coordinación, pronombres, relativas, imperfecto y punto final. La pertenencia al subconjunto se etiqueta separada de la corrección general del español.
+
+`parse(source, grammar, spanish=False)` conserva `(nltk.Tree, list[str])`. `parse_detailed` añade tokens, diagnósticos estructurados y producciones. `Grammar(path, start=...)` y `for_start` calculan FOLLOW y tabla para la raíz elegida.
+
+## Entorno experimental
+
+Se fija Python 3.12 y las dependencias con hashes:
+
+```powershell
+uv venv --python 3.12 .venv-nlp
+uv pip sync --python .venv-nlp/Scripts/python.exe --require-hashes requirements-experimentos.lock
+.\.venv-nlp\Scripts\python.exe scripts/preparar_modelos.py
 ```
-gramatica_minic.txt   gramática LL(1) (datos; el motor no depende de ella)
-main.py               interfaz de línea de comandos
-minic/lexer.py        analizador léxico (PLY)
-minic/grammar.py      lee la gramática; calcula FIRST, FOLLOW y la tabla M[A,t]
-minic/parser.py       parser con pila; construye el árbol; recupera errores
-tests/validos/        programas que deben ser aceptados
-tests/invalidos/      programas que deben ser rechazados (línea de error esperada
-                      en la primera línea de cada archivo)
-tests/run_tests.py    ejecuta los casos y muestra una tabla de resultados
+
+El lock incluye spaCy 3.8.18, es_core_news_sm 3.8.0, NLTK 3.10.4 y Matplotlib 3.11.2. NLTK entrena un etiquetador unigram con CESS-ESP, respaldo por sufijos y NOUN. Las frases de demostración se mantienen separadas de ese entrenamiento.
+
+## Reproducción
+
+```powershell
+.\.venv-nlp\Scripts\python.exe -m experimentos.registro_fallos
+.\.venv-nlp\Scripts\python.exe -m experimentos.demo_fase1
+.\.venv-nlp\Scripts\python.exe -m experimentos.ambiguedad
+.\.venv-nlp\Scripts\python.exe -m experimentos.metricas
 ```
 
-La gramática está separada del motor: cambiar el lenguaje implica editar
-`gramatica_minic.txt`, no el parser. Si la gramática no es LL(1), `Grammar`
-lanza un error indicando la celda `M[A,t]` en conflicto.
+`datos/fase1.json` guarda 13 frases con etiquetas específicas de esta gramática. Dos casos SVO se rechazan aquí por estar fuera del subconjunto; en fase 2 se amplía la gramática y se actualiza su referencia. Los resultados conservan hashes normalizados de texto UTF-8 con saltos LF, además del commit base.
 
-## El subconjunto MiniC
+## Tareas y métricas
 
-Acepta: declaraciones con inicialización opcional (`int x;`, `int x = e;`),
-asignaciones, expresiones aritméticas (`+ - * /` y paréntesis, con la
-precedencia usual), condiciones con `< > == <= >= !=`, `if / else if / else`,
-`while` y `for`.
+La pertenencia CFG se evalúa para el parser. Los tres analizadores se comparan en POS grueso, unificando AUX con VERB y PROPN con NOUN. Se reportan exactitud POS y precisión, recall y rechazo correcto de NOUN frente al resto. Cada tabla conserva sus denominadores. Un denominador cero produce null.
 
-**Restricciones respecto a C** (todo programa MiniC válido es también C válido;
-MiniC acepta menos programas, no cambia el significado de ninguno):
+Los adaptadores NLTK/spaCy devuelven `accepted=null` porque entregan POS o dependencias, sin una decisión propia de pertenencia a esta CFG. La anotación de referencia es inicial y necesita revisión del grupo.
 
-- El cuerpo de `if`, `else`, `while` y `for` debe ir entre llaves `{ }`.
-  Esto evita el *dangling else* (conflicto LL(1): `else` pertenecería a
-  FIRST(`else …`) y a FOLLOW(`ElsePart`)).
-- Una condición debe tener un operador relacional (`while (x)` no se acepta).
-- Solo el tipo `int`, una variable por declaración.
-- La asignación es una sentencia, no una expresión (no se acepta `a = b = 3`).
-- No hay funciones, `return`, `do-while`, `&&`, `||`, ni comentarios `/* */`.
+## Informe y defensa
 
-## Decisiones de diseño
+`docs/informe_fase1.pdf` contiene seis páginas y `docs/informe_fase1.md` su fuente editable. `docs/presentacion_fase1.pptx` contiene diez diapositivas con notas. Los generadores están en `scripts/`; el PDF usa `requirements-documentos.txt` y el PPTX utiliza el runtime `@oai/artifact-tool` indicado en el estado de implementación.
 
-- **Sin recursión por la izquierda.** Las reglas del tipo `E → E + T` se
-  reescriben como `E → T E'`, `E' → + T E' | ε`, porque un parser descendente
-  no puede expandir una regla que empieza por sí misma. Se agrupan niveles
-  (`Expr / Term / Factor`) para que `*` y `/` tengan mayor precedencia que
-  `+` y `-`.
-- **Nota sobre asociatividad:** la gramática acepta exactamente las mismas
-  cadenas que la versión con recursión izquierda, pero el árbol anida
-  `ExprP` hacia la derecha, de modo que *el árbol no codifica* que `-` y `/`
-  son asociativos por la izquierda. Si se evaluara el árbol habría que
-  recorrerlo acumulando de izquierda a derecha.
-- **Palabras reservadas:** el lexer reconoce primero un identificador y luego
-  consulta la lista de reservadas, así `integer` es un `ID` y no `int` + `eger`.
-- **Recuperación de errores (modo pánico):** ante un error en un no terminal
-  `A`, se descartan tokens hasta uno de FOLLOW(`A`) y se continúa.
+El grupo debe revisar las etiquetas, el argumento formal y la autoría; después debe ensayar una exposición de 15–20 minutos y registrar la entrega.
 
-## Limitaciones conocidas
-
-- La recuperación de errores es básica: **el primer error reportado siempre
-  es confiable; los siguientes pueden ser consecuencia del primero.**
-- Sin análisis semántico (no verifica que una variable esté declarada antes de
-  usarse; eso no puede expresarse con una gramática libre de contexto).
-
-
+Fuentes: [NLTK](https://www.nltk.org/api/nltk.tag.sequential.html) y [spaCy español](https://spacy.io/models/es).

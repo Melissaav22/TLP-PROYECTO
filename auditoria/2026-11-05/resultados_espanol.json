@@ -1,0 +1,2388 @@
+{
+  "python": "3.14.8",
+  "grammar": {
+    "nonterminals": 53,
+    "productions": 102,
+    "table_cells": 177
+  },
+  "lexicon_words": 161,
+  "lexical_categories": 19,
+  "corpus_size": 19,
+  "mode_sequence": [
+    "ID",
+    "DET_MS",
+    "ID"
+  ],
+  "total": 199,
+  "passed": 184,
+  "failed": 15,
+  "groups": {
+    "actual": {
+      "total": 173,
+      "passed": 173,
+      "failed": 0
+    },
+    "fase2": {
+      "total": 5,
+      "passed": 0,
+      "failed": 5
+    },
+    "alcance_documentado": {
+      "total": 3,
+      "passed": 3,
+      "failed": 0
+    },
+    "robustez": {
+      "total": 1,
+      "passed": 0,
+      "failed": 1
+    },
+    "aislamiento_oraciones": {
+      "total": 7,
+      "passed": 0,
+      "failed": 7
+    },
+    "interpretacion_estructural": {
+      "total": 1,
+      "passed": 0,
+      "failed": 1
+    },
+    "caracterizacion": {
+      "total": 4,
+      "passed": 4,
+      "failed": 0
+    },
+    "cli": {
+      "total": 5,
+      "passed": 4,
+      "failed": 1
+    }
+  },
+  "results": [
+    {
+      "id": "concordancia_0_0_0_0",
+      "source": "el niño alto corre",
+      "expected": true,
+      "actual": true,
+      "scope": "actual",
+      "ok": true,
+      "errors": []
+    },
+    {
+      "id": "concordancia_0_0_0_1",
+      "source": "el niño alto corren",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 14: no se esperaba 'corren' al analizar AdjMS. Se esperaba: ['$', 'ADJ_MS', 'ADV', 'COP_3S', 'PREP', 'VERB_3S']",
+        "Linea 1, col 20: no se esperaba '$' al analizar SV_MS. Se esperaba: ['COP_3S', 'VERB_3S']"
+      ]
+    },
+    {
+      "id": "concordancia_0_0_1_0",
+      "source": "el niño alta corre",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 9: no se esperaba 'alta' al analizar AdjMS. Se esperaba: ['$', 'ADJ_MS', 'ADV', 'COP_3S', 'PREP', 'VERB_3S']"
+      ]
+    },
+    {
+      "id": "concordancia_0_0_1_1",
+      "source": "el niño alta corren",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 9: no se esperaba 'alta' al analizar AdjMS. Se esperaba: ['$', 'ADJ_MS', 'ADV', 'COP_3S', 'PREP', 'VERB_3S']",
+        "Linea 1, col 20: no se esperaba '$' al analizar SV_MS. Se esperaba: ['COP_3S', 'VERB_3S']"
+      ]
+    },
+    {
+      "id": "concordancia_0_0_2_0",
+      "source": "el niño altos corre",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 9: no se esperaba 'altos' al analizar AdjMS. Se esperaba: ['$', 'ADJ_MS', 'ADV', 'COP_3S', 'PREP', 'VERB_3S']"
+      ]
+    },
+    {
+      "id": "concordancia_0_0_2_1",
+      "source": "el niño altos corren",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 9: no se esperaba 'altos' al analizar AdjMS. Se esperaba: ['$', 'ADJ_MS', 'ADV', 'COP_3S', 'PREP', 'VERB_3S']",
+        "Linea 1, col 21: no se esperaba '$' al analizar SV_MS. Se esperaba: ['COP_3S', 'VERB_3S']"
+      ]
+    },
+    {
+      "id": "concordancia_0_0_3_0",
+      "source": "el niño altas corre",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 9: no se esperaba 'altas' al analizar AdjMS. Se esperaba: ['$', 'ADJ_MS', 'ADV', 'COP_3S', 'PREP', 'VERB_3S']"
+      ]
+    },
+    {
+      "id": "concordancia_0_0_3_1",
+      "source": "el niño altas corren",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 9: no se esperaba 'altas' al analizar AdjMS. Se esperaba: ['$', 'ADJ_MS', 'ADV', 'COP_3S', 'PREP', 'VERB_3S']",
+        "Linea 1, col 21: no se esperaba '$' al analizar SV_MS. Se esperaba: ['COP_3S', 'VERB_3S']"
+      ]
+    },
+    {
+      "id": "concordancia_0_1_0_0",
+      "source": "el niña alto corre",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 4: se esperaba SUST_MS pero llego 'niña'",
+        "Linea 1, col 4: no se esperaba 'niña' al analizar AdjMS. Se esperaba: ['$', 'ADJ_MS', 'ADV', 'COP_3S', 'PREP', 'VERB_3S']"
+      ]
+    },
+    {
+      "id": "concordancia_0_1_0_1",
+      "source": "el niña alto corren",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 4: se esperaba SUST_MS pero llego 'niña'",
+        "Linea 1, col 4: no se esperaba 'niña' al analizar AdjMS. Se esperaba: ['$', 'ADJ_MS', 'ADV', 'COP_3S', 'PREP', 'VERB_3S']",
+        "Linea 1, col 20: no se esperaba '$' al analizar SV_MS. Se esperaba: ['COP_3S', 'VERB_3S']"
+      ]
+    },
+    {
+      "id": "concordancia_0_1_1_0",
+      "source": "el niña alta corre",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 4: se esperaba SUST_MS pero llego 'niña'",
+        "Linea 1, col 4: no se esperaba 'niña' al analizar AdjMS. Se esperaba: ['$', 'ADJ_MS', 'ADV', 'COP_3S', 'PREP', 'VERB_3S']"
+      ]
+    },
+    {
+      "id": "concordancia_0_1_1_1",
+      "source": "el niña alta corren",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 4: se esperaba SUST_MS pero llego 'niña'",
+        "Linea 1, col 4: no se esperaba 'niña' al analizar AdjMS. Se esperaba: ['$', 'ADJ_MS', 'ADV', 'COP_3S', 'PREP', 'VERB_3S']",
+        "Linea 1, col 20: no se esperaba '$' al analizar SV_MS. Se esperaba: ['COP_3S', 'VERB_3S']"
+      ]
+    },
+    {
+      "id": "concordancia_0_1_2_0",
+      "source": "el niña altos corre",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 4: se esperaba SUST_MS pero llego 'niña'",
+        "Linea 1, col 4: no se esperaba 'niña' al analizar AdjMS. Se esperaba: ['$', 'ADJ_MS', 'ADV', 'COP_3S', 'PREP', 'VERB_3S']"
+      ]
+    },
+    {
+      "id": "concordancia_0_1_2_1",
+      "source": "el niña altos corren",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 4: se esperaba SUST_MS pero llego 'niña'",
+        "Linea 1, col 4: no se esperaba 'niña' al analizar AdjMS. Se esperaba: ['$', 'ADJ_MS', 'ADV', 'COP_3S', 'PREP', 'VERB_3S']",
+        "Linea 1, col 21: no se esperaba '$' al analizar SV_MS. Se esperaba: ['COP_3S', 'VERB_3S']"
+      ]
+    },
+    {
+      "id": "concordancia_0_1_3_0",
+      "source": "el niña altas corre",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 4: se esperaba SUST_MS pero llego 'niña'",
+        "Linea 1, col 4: no se esperaba 'niña' al analizar AdjMS. Se esperaba: ['$', 'ADJ_MS', 'ADV', 'COP_3S', 'PREP', 'VERB_3S']"
+      ]
+    },
+    {
+      "id": "concordancia_0_1_3_1",
+      "source": "el niña altas corren",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 4: se esperaba SUST_MS pero llego 'niña'",
+        "Linea 1, col 4: no se esperaba 'niña' al analizar AdjMS. Se esperaba: ['$', 'ADJ_MS', 'ADV', 'COP_3S', 'PREP', 'VERB_3S']",
+        "Linea 1, col 21: no se esperaba '$' al analizar SV_MS. Se esperaba: ['COP_3S', 'VERB_3S']"
+      ]
+    },
+    {
+      "id": "concordancia_0_2_0_0",
+      "source": "el niños alto corre",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 4: se esperaba SUST_MS pero llego 'niños'",
+        "Linea 1, col 4: no se esperaba 'niños' al analizar AdjMS. Se esperaba: ['$', 'ADJ_MS', 'ADV', 'COP_3S', 'PREP', 'VERB_3S']"
+      ]
+    },
+    {
+      "id": "concordancia_0_2_0_1",
+      "source": "el niños alto corren",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 4: se esperaba SUST_MS pero llego 'niños'",
+        "Linea 1, col 4: no se esperaba 'niños' al analizar AdjMS. Se esperaba: ['$', 'ADJ_MS', 'ADV', 'COP_3S', 'PREP', 'VERB_3S']",
+        "Linea 1, col 21: no se esperaba '$' al analizar SV_MS. Se esperaba: ['COP_3S', 'VERB_3S']"
+      ]
+    },
+    {
+      "id": "concordancia_0_2_1_0",
+      "source": "el niños alta corre",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 4: se esperaba SUST_MS pero llego 'niños'",
+        "Linea 1, col 4: no se esperaba 'niños' al analizar AdjMS. Se esperaba: ['$', 'ADJ_MS', 'ADV', 'COP_3S', 'PREP', 'VERB_3S']"
+      ]
+    },
+    {
+      "id": "concordancia_0_2_1_1",
+      "source": "el niños alta corren",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 4: se esperaba SUST_MS pero llego 'niños'",
+        "Linea 1, col 4: no se esperaba 'niños' al analizar AdjMS. Se esperaba: ['$', 'ADJ_MS', 'ADV', 'COP_3S', 'PREP', 'VERB_3S']",
+        "Linea 1, col 21: no se esperaba '$' al analizar SV_MS. Se esperaba: ['COP_3S', 'VERB_3S']"
+      ]
+    },
+    {
+      "id": "concordancia_0_2_2_0",
+      "source": "el niños altos corre",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 4: se esperaba SUST_MS pero llego 'niños'",
+        "Linea 1, col 4: no se esperaba 'niños' al analizar AdjMS. Se esperaba: ['$', 'ADJ_MS', 'ADV', 'COP_3S', 'PREP', 'VERB_3S']"
+      ]
+    },
+    {
+      "id": "concordancia_0_2_2_1",
+      "source": "el niños altos corren",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 4: se esperaba SUST_MS pero llego 'niños'",
+        "Linea 1, col 4: no se esperaba 'niños' al analizar AdjMS. Se esperaba: ['$', 'ADJ_MS', 'ADV', 'COP_3S', 'PREP', 'VERB_3S']",
+        "Linea 1, col 22: no se esperaba '$' al analizar SV_MS. Se esperaba: ['COP_3S', 'VERB_3S']"
+      ]
+    },
+    {
+      "id": "concordancia_0_2_3_0",
+      "source": "el niños altas corre",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 4: se esperaba SUST_MS pero llego 'niños'",
+        "Linea 1, col 4: no se esperaba 'niños' al analizar AdjMS. Se esperaba: ['$', 'ADJ_MS', 'ADV', 'COP_3S', 'PREP', 'VERB_3S']"
+      ]
+    },
+    {
+      "id": "concordancia_0_2_3_1",
+      "source": "el niños altas corren",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 4: se esperaba SUST_MS pero llego 'niños'",
+        "Linea 1, col 4: no se esperaba 'niños' al analizar AdjMS. Se esperaba: ['$', 'ADJ_MS', 'ADV', 'COP_3S', 'PREP', 'VERB_3S']",
+        "Linea 1, col 22: no se esperaba '$' al analizar SV_MS. Se esperaba: ['COP_3S', 'VERB_3S']"
+      ]
+    },
+    {
+      "id": "concordancia_0_3_0_0",
+      "source": "el niñas alto corre",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 4: se esperaba SUST_MS pero llego 'niñas'",
+        "Linea 1, col 4: no se esperaba 'niñas' al analizar AdjMS. Se esperaba: ['$', 'ADJ_MS', 'ADV', 'COP_3S', 'PREP', 'VERB_3S']"
+      ]
+    },
+    {
+      "id": "concordancia_0_3_0_1",
+      "source": "el niñas alto corren",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 4: se esperaba SUST_MS pero llego 'niñas'",
+        "Linea 1, col 4: no se esperaba 'niñas' al analizar AdjMS. Se esperaba: ['$', 'ADJ_MS', 'ADV', 'COP_3S', 'PREP', 'VERB_3S']",
+        "Linea 1, col 21: no se esperaba '$' al analizar SV_MS. Se esperaba: ['COP_3S', 'VERB_3S']"
+      ]
+    },
+    {
+      "id": "concordancia_0_3_1_0",
+      "source": "el niñas alta corre",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 4: se esperaba SUST_MS pero llego 'niñas'",
+        "Linea 1, col 4: no se esperaba 'niñas' al analizar AdjMS. Se esperaba: ['$', 'ADJ_MS', 'ADV', 'COP_3S', 'PREP', 'VERB_3S']"
+      ]
+    },
+    {
+      "id": "concordancia_0_3_1_1",
+      "source": "el niñas alta corren",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 4: se esperaba SUST_MS pero llego 'niñas'",
+        "Linea 1, col 4: no se esperaba 'niñas' al analizar AdjMS. Se esperaba: ['$', 'ADJ_MS', 'ADV', 'COP_3S', 'PREP', 'VERB_3S']",
+        "Linea 1, col 21: no se esperaba '$' al analizar SV_MS. Se esperaba: ['COP_3S', 'VERB_3S']"
+      ]
+    },
+    {
+      "id": "concordancia_0_3_2_0",
+      "source": "el niñas altos corre",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 4: se esperaba SUST_MS pero llego 'niñas'",
+        "Linea 1, col 4: no se esperaba 'niñas' al analizar AdjMS. Se esperaba: ['$', 'ADJ_MS', 'ADV', 'COP_3S', 'PREP', 'VERB_3S']"
+      ]
+    },
+    {
+      "id": "concordancia_0_3_2_1",
+      "source": "el niñas altos corren",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 4: se esperaba SUST_MS pero llego 'niñas'",
+        "Linea 1, col 4: no se esperaba 'niñas' al analizar AdjMS. Se esperaba: ['$', 'ADJ_MS', 'ADV', 'COP_3S', 'PREP', 'VERB_3S']",
+        "Linea 1, col 22: no se esperaba '$' al analizar SV_MS. Se esperaba: ['COP_3S', 'VERB_3S']"
+      ]
+    },
+    {
+      "id": "concordancia_0_3_3_0",
+      "source": "el niñas altas corre",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 4: se esperaba SUST_MS pero llego 'niñas'",
+        "Linea 1, col 4: no se esperaba 'niñas' al analizar AdjMS. Se esperaba: ['$', 'ADJ_MS', 'ADV', 'COP_3S', 'PREP', 'VERB_3S']"
+      ]
+    },
+    {
+      "id": "concordancia_0_3_3_1",
+      "source": "el niñas altas corren",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 4: se esperaba SUST_MS pero llego 'niñas'",
+        "Linea 1, col 4: no se esperaba 'niñas' al analizar AdjMS. Se esperaba: ['$', 'ADJ_MS', 'ADV', 'COP_3S', 'PREP', 'VERB_3S']",
+        "Linea 1, col 22: no se esperaba '$' al analizar SV_MS. Se esperaba: ['COP_3S', 'VERB_3S']"
+      ]
+    },
+    {
+      "id": "concordancia_1_0_0_0",
+      "source": "la niño alto corre",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 4: se esperaba SUST_FS pero llego 'niño'",
+        "Linea 1, col 4: no se esperaba 'niño' al analizar AdjFS. Se esperaba: ['$', 'ADJ_FS', 'ADV', 'COP_3S', 'PREP', 'VERB_3S']"
+      ]
+    },
+    {
+      "id": "concordancia_1_0_0_1",
+      "source": "la niño alto corren",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 4: se esperaba SUST_FS pero llego 'niño'",
+        "Linea 1, col 4: no se esperaba 'niño' al analizar AdjFS. Se esperaba: ['$', 'ADJ_FS', 'ADV', 'COP_3S', 'PREP', 'VERB_3S']",
+        "Linea 1, col 20: no se esperaba '$' al analizar SV_FS. Se esperaba: ['COP_3S', 'VERB_3S']"
+      ]
+    },
+    {
+      "id": "concordancia_1_0_1_0",
+      "source": "la niño alta corre",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 4: se esperaba SUST_FS pero llego 'niño'",
+        "Linea 1, col 4: no se esperaba 'niño' al analizar AdjFS. Se esperaba: ['$', 'ADJ_FS', 'ADV', 'COP_3S', 'PREP', 'VERB_3S']"
+      ]
+    },
+    {
+      "id": "concordancia_1_0_1_1",
+      "source": "la niño alta corren",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 4: se esperaba SUST_FS pero llego 'niño'",
+        "Linea 1, col 4: no se esperaba 'niño' al analizar AdjFS. Se esperaba: ['$', 'ADJ_FS', 'ADV', 'COP_3S', 'PREP', 'VERB_3S']",
+        "Linea 1, col 20: no se esperaba '$' al analizar SV_FS. Se esperaba: ['COP_3S', 'VERB_3S']"
+      ]
+    },
+    {
+      "id": "concordancia_1_0_2_0",
+      "source": "la niño altos corre",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 4: se esperaba SUST_FS pero llego 'niño'",
+        "Linea 1, col 4: no se esperaba 'niño' al analizar AdjFS. Se esperaba: ['$', 'ADJ_FS', 'ADV', 'COP_3S', 'PREP', 'VERB_3S']"
+      ]
+    },
+    {
+      "id": "concordancia_1_0_2_1",
+      "source": "la niño altos corren",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 4: se esperaba SUST_FS pero llego 'niño'",
+        "Linea 1, col 4: no se esperaba 'niño' al analizar AdjFS. Se esperaba: ['$', 'ADJ_FS', 'ADV', 'COP_3S', 'PREP', 'VERB_3S']",
+        "Linea 1, col 21: no se esperaba '$' al analizar SV_FS. Se esperaba: ['COP_3S', 'VERB_3S']"
+      ]
+    },
+    {
+      "id": "concordancia_1_0_3_0",
+      "source": "la niño altas corre",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 4: se esperaba SUST_FS pero llego 'niño'",
+        "Linea 1, col 4: no se esperaba 'niño' al analizar AdjFS. Se esperaba: ['$', 'ADJ_FS', 'ADV', 'COP_3S', 'PREP', 'VERB_3S']"
+      ]
+    },
+    {
+      "id": "concordancia_1_0_3_1",
+      "source": "la niño altas corren",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 4: se esperaba SUST_FS pero llego 'niño'",
+        "Linea 1, col 4: no se esperaba 'niño' al analizar AdjFS. Se esperaba: ['$', 'ADJ_FS', 'ADV', 'COP_3S', 'PREP', 'VERB_3S']",
+        "Linea 1, col 21: no se esperaba '$' al analizar SV_FS. Se esperaba: ['COP_3S', 'VERB_3S']"
+      ]
+    },
+    {
+      "id": "concordancia_1_1_0_0",
+      "source": "la niña alto corre",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 9: no se esperaba 'alto' al analizar AdjFS. Se esperaba: ['$', 'ADJ_FS', 'ADV', 'COP_3S', 'PREP', 'VERB_3S']"
+      ]
+    },
+    {
+      "id": "concordancia_1_1_0_1",
+      "source": "la niña alto corren",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 9: no se esperaba 'alto' al analizar AdjFS. Se esperaba: ['$', 'ADJ_FS', 'ADV', 'COP_3S', 'PREP', 'VERB_3S']",
+        "Linea 1, col 20: no se esperaba '$' al analizar SV_FS. Se esperaba: ['COP_3S', 'VERB_3S']"
+      ]
+    },
+    {
+      "id": "concordancia_1_1_1_0",
+      "source": "la niña alta corre",
+      "expected": true,
+      "actual": true,
+      "scope": "actual",
+      "ok": true,
+      "errors": []
+    },
+    {
+      "id": "concordancia_1_1_1_1",
+      "source": "la niña alta corren",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 14: no se esperaba 'corren' al analizar AdjFS. Se esperaba: ['$', 'ADJ_FS', 'ADV', 'COP_3S', 'PREP', 'VERB_3S']",
+        "Linea 1, col 20: no se esperaba '$' al analizar SV_FS. Se esperaba: ['COP_3S', 'VERB_3S']"
+      ]
+    },
+    {
+      "id": "concordancia_1_1_2_0",
+      "source": "la niña altos corre",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 9: no se esperaba 'altos' al analizar AdjFS. Se esperaba: ['$', 'ADJ_FS', 'ADV', 'COP_3S', 'PREP', 'VERB_3S']"
+      ]
+    },
+    {
+      "id": "concordancia_1_1_2_1",
+      "source": "la niña altos corren",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 9: no se esperaba 'altos' al analizar AdjFS. Se esperaba: ['$', 'ADJ_FS', 'ADV', 'COP_3S', 'PREP', 'VERB_3S']",
+        "Linea 1, col 21: no se esperaba '$' al analizar SV_FS. Se esperaba: ['COP_3S', 'VERB_3S']"
+      ]
+    },
+    {
+      "id": "concordancia_1_1_3_0",
+      "source": "la niña altas corre",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 9: no se esperaba 'altas' al analizar AdjFS. Se esperaba: ['$', 'ADJ_FS', 'ADV', 'COP_3S', 'PREP', 'VERB_3S']"
+      ]
+    },
+    {
+      "id": "concordancia_1_1_3_1",
+      "source": "la niña altas corren",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 9: no se esperaba 'altas' al analizar AdjFS. Se esperaba: ['$', 'ADJ_FS', 'ADV', 'COP_3S', 'PREP', 'VERB_3S']",
+        "Linea 1, col 21: no se esperaba '$' al analizar SV_FS. Se esperaba: ['COP_3S', 'VERB_3S']"
+      ]
+    },
+    {
+      "id": "concordancia_1_2_0_0",
+      "source": "la niños alto corre",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 4: se esperaba SUST_FS pero llego 'niños'",
+        "Linea 1, col 4: no se esperaba 'niños' al analizar AdjFS. Se esperaba: ['$', 'ADJ_FS', 'ADV', 'COP_3S', 'PREP', 'VERB_3S']"
+      ]
+    },
+    {
+      "id": "concordancia_1_2_0_1",
+      "source": "la niños alto corren",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 4: se esperaba SUST_FS pero llego 'niños'",
+        "Linea 1, col 4: no se esperaba 'niños' al analizar AdjFS. Se esperaba: ['$', 'ADJ_FS', 'ADV', 'COP_3S', 'PREP', 'VERB_3S']",
+        "Linea 1, col 21: no se esperaba '$' al analizar SV_FS. Se esperaba: ['COP_3S', 'VERB_3S']"
+      ]
+    },
+    {
+      "id": "concordancia_1_2_1_0",
+      "source": "la niños alta corre",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 4: se esperaba SUST_FS pero llego 'niños'",
+        "Linea 1, col 4: no se esperaba 'niños' al analizar AdjFS. Se esperaba: ['$', 'ADJ_FS', 'ADV', 'COP_3S', 'PREP', 'VERB_3S']"
+      ]
+    },
+    {
+      "id": "concordancia_1_2_1_1",
+      "source": "la niños alta corren",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 4: se esperaba SUST_FS pero llego 'niños'",
+        "Linea 1, col 4: no se esperaba 'niños' al analizar AdjFS. Se esperaba: ['$', 'ADJ_FS', 'ADV', 'COP_3S', 'PREP', 'VERB_3S']",
+        "Linea 1, col 21: no se esperaba '$' al analizar SV_FS. Se esperaba: ['COP_3S', 'VERB_3S']"
+      ]
+    },
+    {
+      "id": "concordancia_1_2_2_0",
+      "source": "la niños altos corre",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 4: se esperaba SUST_FS pero llego 'niños'",
+        "Linea 1, col 4: no se esperaba 'niños' al analizar AdjFS. Se esperaba: ['$', 'ADJ_FS', 'ADV', 'COP_3S', 'PREP', 'VERB_3S']"
+      ]
+    },
+    {
+      "id": "concordancia_1_2_2_1",
+      "source": "la niños altos corren",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 4: se esperaba SUST_FS pero llego 'niños'",
+        "Linea 1, col 4: no se esperaba 'niños' al analizar AdjFS. Se esperaba: ['$', 'ADJ_FS', 'ADV', 'COP_3S', 'PREP', 'VERB_3S']",
+        "Linea 1, col 22: no se esperaba '$' al analizar SV_FS. Se esperaba: ['COP_3S', 'VERB_3S']"
+      ]
+    },
+    {
+      "id": "concordancia_1_2_3_0",
+      "source": "la niños altas corre",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 4: se esperaba SUST_FS pero llego 'niños'",
+        "Linea 1, col 4: no se esperaba 'niños' al analizar AdjFS. Se esperaba: ['$', 'ADJ_FS', 'ADV', 'COP_3S', 'PREP', 'VERB_3S']"
+      ]
+    },
+    {
+      "id": "concordancia_1_2_3_1",
+      "source": "la niños altas corren",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 4: se esperaba SUST_FS pero llego 'niños'",
+        "Linea 1, col 4: no se esperaba 'niños' al analizar AdjFS. Se esperaba: ['$', 'ADJ_FS', 'ADV', 'COP_3S', 'PREP', 'VERB_3S']",
+        "Linea 1, col 22: no se esperaba '$' al analizar SV_FS. Se esperaba: ['COP_3S', 'VERB_3S']"
+      ]
+    },
+    {
+      "id": "concordancia_1_3_0_0",
+      "source": "la niñas alto corre",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 4: se esperaba SUST_FS pero llego 'niñas'",
+        "Linea 1, col 4: no se esperaba 'niñas' al analizar AdjFS. Se esperaba: ['$', 'ADJ_FS', 'ADV', 'COP_3S', 'PREP', 'VERB_3S']"
+      ]
+    },
+    {
+      "id": "concordancia_1_3_0_1",
+      "source": "la niñas alto corren",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 4: se esperaba SUST_FS pero llego 'niñas'",
+        "Linea 1, col 4: no se esperaba 'niñas' al analizar AdjFS. Se esperaba: ['$', 'ADJ_FS', 'ADV', 'COP_3S', 'PREP', 'VERB_3S']",
+        "Linea 1, col 21: no se esperaba '$' al analizar SV_FS. Se esperaba: ['COP_3S', 'VERB_3S']"
+      ]
+    },
+    {
+      "id": "concordancia_1_3_1_0",
+      "source": "la niñas alta corre",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 4: se esperaba SUST_FS pero llego 'niñas'",
+        "Linea 1, col 4: no se esperaba 'niñas' al analizar AdjFS. Se esperaba: ['$', 'ADJ_FS', 'ADV', 'COP_3S', 'PREP', 'VERB_3S']"
+      ]
+    },
+    {
+      "id": "concordancia_1_3_1_1",
+      "source": "la niñas alta corren",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 4: se esperaba SUST_FS pero llego 'niñas'",
+        "Linea 1, col 4: no se esperaba 'niñas' al analizar AdjFS. Se esperaba: ['$', 'ADJ_FS', 'ADV', 'COP_3S', 'PREP', 'VERB_3S']",
+        "Linea 1, col 21: no se esperaba '$' al analizar SV_FS. Se esperaba: ['COP_3S', 'VERB_3S']"
+      ]
+    },
+    {
+      "id": "concordancia_1_3_2_0",
+      "source": "la niñas altos corre",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 4: se esperaba SUST_FS pero llego 'niñas'",
+        "Linea 1, col 4: no se esperaba 'niñas' al analizar AdjFS. Se esperaba: ['$', 'ADJ_FS', 'ADV', 'COP_3S', 'PREP', 'VERB_3S']"
+      ]
+    },
+    {
+      "id": "concordancia_1_3_2_1",
+      "source": "la niñas altos corren",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 4: se esperaba SUST_FS pero llego 'niñas'",
+        "Linea 1, col 4: no se esperaba 'niñas' al analizar AdjFS. Se esperaba: ['$', 'ADJ_FS', 'ADV', 'COP_3S', 'PREP', 'VERB_3S']",
+        "Linea 1, col 22: no se esperaba '$' al analizar SV_FS. Se esperaba: ['COP_3S', 'VERB_3S']"
+      ]
+    },
+    {
+      "id": "concordancia_1_3_3_0",
+      "source": "la niñas altas corre",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 4: se esperaba SUST_FS pero llego 'niñas'",
+        "Linea 1, col 4: no se esperaba 'niñas' al analizar AdjFS. Se esperaba: ['$', 'ADJ_FS', 'ADV', 'COP_3S', 'PREP', 'VERB_3S']"
+      ]
+    },
+    {
+      "id": "concordancia_1_3_3_1",
+      "source": "la niñas altas corren",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 4: se esperaba SUST_FS pero llego 'niñas'",
+        "Linea 1, col 4: no se esperaba 'niñas' al analizar AdjFS. Se esperaba: ['$', 'ADJ_FS', 'ADV', 'COP_3S', 'PREP', 'VERB_3S']",
+        "Linea 1, col 22: no se esperaba '$' al analizar SV_FS. Se esperaba: ['COP_3S', 'VERB_3S']"
+      ]
+    },
+    {
+      "id": "concordancia_2_0_0_0",
+      "source": "los niño alto corre",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 5: se esperaba SUST_MP pero llego 'niño'",
+        "Linea 1, col 5: no se esperaba 'niño' al analizar AdjMP. Se esperaba: ['$', 'ADJ_MP', 'ADV', 'COP_3P', 'PREP', 'VERB_3P']",
+        "Linea 1, col 20: no se esperaba '$' al analizar SV_MP. Se esperaba: ['COP_3P', 'VERB_3P']"
+      ]
+    },
+    {
+      "id": "concordancia_2_0_0_1",
+      "source": "los niño alto corren",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 5: se esperaba SUST_MP pero llego 'niño'",
+        "Linea 1, col 5: no se esperaba 'niño' al analizar AdjMP. Se esperaba: ['$', 'ADJ_MP', 'ADV', 'COP_3P', 'PREP', 'VERB_3P']"
+      ]
+    },
+    {
+      "id": "concordancia_2_0_1_0",
+      "source": "los niño alta corre",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 5: se esperaba SUST_MP pero llego 'niño'",
+        "Linea 1, col 5: no se esperaba 'niño' al analizar AdjMP. Se esperaba: ['$', 'ADJ_MP', 'ADV', 'COP_3P', 'PREP', 'VERB_3P']",
+        "Linea 1, col 20: no se esperaba '$' al analizar SV_MP. Se esperaba: ['COP_3P', 'VERB_3P']"
+      ]
+    },
+    {
+      "id": "concordancia_2_0_1_1",
+      "source": "los niño alta corren",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 5: se esperaba SUST_MP pero llego 'niño'",
+        "Linea 1, col 5: no se esperaba 'niño' al analizar AdjMP. Se esperaba: ['$', 'ADJ_MP', 'ADV', 'COP_3P', 'PREP', 'VERB_3P']"
+      ]
+    },
+    {
+      "id": "concordancia_2_0_2_0",
+      "source": "los niño altos corre",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 5: se esperaba SUST_MP pero llego 'niño'",
+        "Linea 1, col 5: no se esperaba 'niño' al analizar AdjMP. Se esperaba: ['$', 'ADJ_MP', 'ADV', 'COP_3P', 'PREP', 'VERB_3P']",
+        "Linea 1, col 21: no se esperaba '$' al analizar SV_MP. Se esperaba: ['COP_3P', 'VERB_3P']"
+      ]
+    },
+    {
+      "id": "concordancia_2_0_2_1",
+      "source": "los niño altos corren",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 5: se esperaba SUST_MP pero llego 'niño'",
+        "Linea 1, col 5: no se esperaba 'niño' al analizar AdjMP. Se esperaba: ['$', 'ADJ_MP', 'ADV', 'COP_3P', 'PREP', 'VERB_3P']"
+      ]
+    },
+    {
+      "id": "concordancia_2_0_3_0",
+      "source": "los niño altas corre",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 5: se esperaba SUST_MP pero llego 'niño'",
+        "Linea 1, col 5: no se esperaba 'niño' al analizar AdjMP. Se esperaba: ['$', 'ADJ_MP', 'ADV', 'COP_3P', 'PREP', 'VERB_3P']",
+        "Linea 1, col 21: no se esperaba '$' al analizar SV_MP. Se esperaba: ['COP_3P', 'VERB_3P']"
+      ]
+    },
+    {
+      "id": "concordancia_2_0_3_1",
+      "source": "los niño altas corren",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 5: se esperaba SUST_MP pero llego 'niño'",
+        "Linea 1, col 5: no se esperaba 'niño' al analizar AdjMP. Se esperaba: ['$', 'ADJ_MP', 'ADV', 'COP_3P', 'PREP', 'VERB_3P']"
+      ]
+    },
+    {
+      "id": "concordancia_2_1_0_0",
+      "source": "los niña alto corre",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 5: se esperaba SUST_MP pero llego 'niña'",
+        "Linea 1, col 5: no se esperaba 'niña' al analizar AdjMP. Se esperaba: ['$', 'ADJ_MP', 'ADV', 'COP_3P', 'PREP', 'VERB_3P']",
+        "Linea 1, col 20: no se esperaba '$' al analizar SV_MP. Se esperaba: ['COP_3P', 'VERB_3P']"
+      ]
+    },
+    {
+      "id": "concordancia_2_1_0_1",
+      "source": "los niña alto corren",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 5: se esperaba SUST_MP pero llego 'niña'",
+        "Linea 1, col 5: no se esperaba 'niña' al analizar AdjMP. Se esperaba: ['$', 'ADJ_MP', 'ADV', 'COP_3P', 'PREP', 'VERB_3P']"
+      ]
+    },
+    {
+      "id": "concordancia_2_1_1_0",
+      "source": "los niña alta corre",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 5: se esperaba SUST_MP pero llego 'niña'",
+        "Linea 1, col 5: no se esperaba 'niña' al analizar AdjMP. Se esperaba: ['$', 'ADJ_MP', 'ADV', 'COP_3P', 'PREP', 'VERB_3P']",
+        "Linea 1, col 20: no se esperaba '$' al analizar SV_MP. Se esperaba: ['COP_3P', 'VERB_3P']"
+      ]
+    },
+    {
+      "id": "concordancia_2_1_1_1",
+      "source": "los niña alta corren",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 5: se esperaba SUST_MP pero llego 'niña'",
+        "Linea 1, col 5: no se esperaba 'niña' al analizar AdjMP. Se esperaba: ['$', 'ADJ_MP', 'ADV', 'COP_3P', 'PREP', 'VERB_3P']"
+      ]
+    },
+    {
+      "id": "concordancia_2_1_2_0",
+      "source": "los niña altos corre",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 5: se esperaba SUST_MP pero llego 'niña'",
+        "Linea 1, col 5: no se esperaba 'niña' al analizar AdjMP. Se esperaba: ['$', 'ADJ_MP', 'ADV', 'COP_3P', 'PREP', 'VERB_3P']",
+        "Linea 1, col 21: no se esperaba '$' al analizar SV_MP. Se esperaba: ['COP_3P', 'VERB_3P']"
+      ]
+    },
+    {
+      "id": "concordancia_2_1_2_1",
+      "source": "los niña altos corren",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 5: se esperaba SUST_MP pero llego 'niña'",
+        "Linea 1, col 5: no se esperaba 'niña' al analizar AdjMP. Se esperaba: ['$', 'ADJ_MP', 'ADV', 'COP_3P', 'PREP', 'VERB_3P']"
+      ]
+    },
+    {
+      "id": "concordancia_2_1_3_0",
+      "source": "los niña altas corre",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 5: se esperaba SUST_MP pero llego 'niña'",
+        "Linea 1, col 5: no se esperaba 'niña' al analizar AdjMP. Se esperaba: ['$', 'ADJ_MP', 'ADV', 'COP_3P', 'PREP', 'VERB_3P']",
+        "Linea 1, col 21: no se esperaba '$' al analizar SV_MP. Se esperaba: ['COP_3P', 'VERB_3P']"
+      ]
+    },
+    {
+      "id": "concordancia_2_1_3_1",
+      "source": "los niña altas corren",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 5: se esperaba SUST_MP pero llego 'niña'",
+        "Linea 1, col 5: no se esperaba 'niña' al analizar AdjMP. Se esperaba: ['$', 'ADJ_MP', 'ADV', 'COP_3P', 'PREP', 'VERB_3P']"
+      ]
+    },
+    {
+      "id": "concordancia_2_2_0_0",
+      "source": "los niños alto corre",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 11: no se esperaba 'alto' al analizar AdjMP. Se esperaba: ['$', 'ADJ_MP', 'ADV', 'COP_3P', 'PREP', 'VERB_3P']",
+        "Linea 1, col 21: no se esperaba '$' al analizar SV_MP. Se esperaba: ['COP_3P', 'VERB_3P']"
+      ]
+    },
+    {
+      "id": "concordancia_2_2_0_1",
+      "source": "los niños alto corren",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 11: no se esperaba 'alto' al analizar AdjMP. Se esperaba: ['$', 'ADJ_MP', 'ADV', 'COP_3P', 'PREP', 'VERB_3P']"
+      ]
+    },
+    {
+      "id": "concordancia_2_2_1_0",
+      "source": "los niños alta corre",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 11: no se esperaba 'alta' al analizar AdjMP. Se esperaba: ['$', 'ADJ_MP', 'ADV', 'COP_3P', 'PREP', 'VERB_3P']",
+        "Linea 1, col 21: no se esperaba '$' al analizar SV_MP. Se esperaba: ['COP_3P', 'VERB_3P']"
+      ]
+    },
+    {
+      "id": "concordancia_2_2_1_1",
+      "source": "los niños alta corren",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 11: no se esperaba 'alta' al analizar AdjMP. Se esperaba: ['$', 'ADJ_MP', 'ADV', 'COP_3P', 'PREP', 'VERB_3P']"
+      ]
+    },
+    {
+      "id": "concordancia_2_2_2_0",
+      "source": "los niños altos corre",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 17: no se esperaba 'corre' al analizar AdjMP. Se esperaba: ['$', 'ADJ_MP', 'ADV', 'COP_3P', 'PREP', 'VERB_3P']",
+        "Linea 1, col 22: no se esperaba '$' al analizar SV_MP. Se esperaba: ['COP_3P', 'VERB_3P']"
+      ]
+    },
+    {
+      "id": "concordancia_2_2_2_1",
+      "source": "los niños altos corren",
+      "expected": true,
+      "actual": true,
+      "scope": "actual",
+      "ok": true,
+      "errors": []
+    },
+    {
+      "id": "concordancia_2_2_3_0",
+      "source": "los niños altas corre",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 11: no se esperaba 'altas' al analizar AdjMP. Se esperaba: ['$', 'ADJ_MP', 'ADV', 'COP_3P', 'PREP', 'VERB_3P']",
+        "Linea 1, col 22: no se esperaba '$' al analizar SV_MP. Se esperaba: ['COP_3P', 'VERB_3P']"
+      ]
+    },
+    {
+      "id": "concordancia_2_2_3_1",
+      "source": "los niños altas corren",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 11: no se esperaba 'altas' al analizar AdjMP. Se esperaba: ['$', 'ADJ_MP', 'ADV', 'COP_3P', 'PREP', 'VERB_3P']"
+      ]
+    },
+    {
+      "id": "concordancia_2_3_0_0",
+      "source": "los niñas alto corre",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 5: se esperaba SUST_MP pero llego 'niñas'",
+        "Linea 1, col 5: no se esperaba 'niñas' al analizar AdjMP. Se esperaba: ['$', 'ADJ_MP', 'ADV', 'COP_3P', 'PREP', 'VERB_3P']",
+        "Linea 1, col 21: no se esperaba '$' al analizar SV_MP. Se esperaba: ['COP_3P', 'VERB_3P']"
+      ]
+    },
+    {
+      "id": "concordancia_2_3_0_1",
+      "source": "los niñas alto corren",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 5: se esperaba SUST_MP pero llego 'niñas'",
+        "Linea 1, col 5: no se esperaba 'niñas' al analizar AdjMP. Se esperaba: ['$', 'ADJ_MP', 'ADV', 'COP_3P', 'PREP', 'VERB_3P']"
+      ]
+    },
+    {
+      "id": "concordancia_2_3_1_0",
+      "source": "los niñas alta corre",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 5: se esperaba SUST_MP pero llego 'niñas'",
+        "Linea 1, col 5: no se esperaba 'niñas' al analizar AdjMP. Se esperaba: ['$', 'ADJ_MP', 'ADV', 'COP_3P', 'PREP', 'VERB_3P']",
+        "Linea 1, col 21: no se esperaba '$' al analizar SV_MP. Se esperaba: ['COP_3P', 'VERB_3P']"
+      ]
+    },
+    {
+      "id": "concordancia_2_3_1_1",
+      "source": "los niñas alta corren",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 5: se esperaba SUST_MP pero llego 'niñas'",
+        "Linea 1, col 5: no se esperaba 'niñas' al analizar AdjMP. Se esperaba: ['$', 'ADJ_MP', 'ADV', 'COP_3P', 'PREP', 'VERB_3P']"
+      ]
+    },
+    {
+      "id": "concordancia_2_3_2_0",
+      "source": "los niñas altos corre",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 5: se esperaba SUST_MP pero llego 'niñas'",
+        "Linea 1, col 5: no se esperaba 'niñas' al analizar AdjMP. Se esperaba: ['$', 'ADJ_MP', 'ADV', 'COP_3P', 'PREP', 'VERB_3P']",
+        "Linea 1, col 22: no se esperaba '$' al analizar SV_MP. Se esperaba: ['COP_3P', 'VERB_3P']"
+      ]
+    },
+    {
+      "id": "concordancia_2_3_2_1",
+      "source": "los niñas altos corren",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 5: se esperaba SUST_MP pero llego 'niñas'",
+        "Linea 1, col 5: no se esperaba 'niñas' al analizar AdjMP. Se esperaba: ['$', 'ADJ_MP', 'ADV', 'COP_3P', 'PREP', 'VERB_3P']"
+      ]
+    },
+    {
+      "id": "concordancia_2_3_3_0",
+      "source": "los niñas altas corre",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 5: se esperaba SUST_MP pero llego 'niñas'",
+        "Linea 1, col 5: no se esperaba 'niñas' al analizar AdjMP. Se esperaba: ['$', 'ADJ_MP', 'ADV', 'COP_3P', 'PREP', 'VERB_3P']",
+        "Linea 1, col 22: no se esperaba '$' al analizar SV_MP. Se esperaba: ['COP_3P', 'VERB_3P']"
+      ]
+    },
+    {
+      "id": "concordancia_2_3_3_1",
+      "source": "los niñas altas corren",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 5: se esperaba SUST_MP pero llego 'niñas'",
+        "Linea 1, col 5: no se esperaba 'niñas' al analizar AdjMP. Se esperaba: ['$', 'ADJ_MP', 'ADV', 'COP_3P', 'PREP', 'VERB_3P']"
+      ]
+    },
+    {
+      "id": "concordancia_3_0_0_0",
+      "source": "las niño alto corre",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 5: se esperaba SUST_FP pero llego 'niño'",
+        "Linea 1, col 5: no se esperaba 'niño' al analizar AdjFP. Se esperaba: ['$', 'ADJ_FP', 'ADV', 'COP_3P', 'PREP', 'VERB_3P']",
+        "Linea 1, col 20: no se esperaba '$' al analizar SV_FP. Se esperaba: ['COP_3P', 'VERB_3P']"
+      ]
+    },
+    {
+      "id": "concordancia_3_0_0_1",
+      "source": "las niño alto corren",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 5: se esperaba SUST_FP pero llego 'niño'",
+        "Linea 1, col 5: no se esperaba 'niño' al analizar AdjFP. Se esperaba: ['$', 'ADJ_FP', 'ADV', 'COP_3P', 'PREP', 'VERB_3P']"
+      ]
+    },
+    {
+      "id": "concordancia_3_0_1_0",
+      "source": "las niño alta corre",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 5: se esperaba SUST_FP pero llego 'niño'",
+        "Linea 1, col 5: no se esperaba 'niño' al analizar AdjFP. Se esperaba: ['$', 'ADJ_FP', 'ADV', 'COP_3P', 'PREP', 'VERB_3P']",
+        "Linea 1, col 20: no se esperaba '$' al analizar SV_FP. Se esperaba: ['COP_3P', 'VERB_3P']"
+      ]
+    },
+    {
+      "id": "concordancia_3_0_1_1",
+      "source": "las niño alta corren",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 5: se esperaba SUST_FP pero llego 'niño'",
+        "Linea 1, col 5: no se esperaba 'niño' al analizar AdjFP. Se esperaba: ['$', 'ADJ_FP', 'ADV', 'COP_3P', 'PREP', 'VERB_3P']"
+      ]
+    },
+    {
+      "id": "concordancia_3_0_2_0",
+      "source": "las niño altos corre",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 5: se esperaba SUST_FP pero llego 'niño'",
+        "Linea 1, col 5: no se esperaba 'niño' al analizar AdjFP. Se esperaba: ['$', 'ADJ_FP', 'ADV', 'COP_3P', 'PREP', 'VERB_3P']",
+        "Linea 1, col 21: no se esperaba '$' al analizar SV_FP. Se esperaba: ['COP_3P', 'VERB_3P']"
+      ]
+    },
+    {
+      "id": "concordancia_3_0_2_1",
+      "source": "las niño altos corren",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 5: se esperaba SUST_FP pero llego 'niño'",
+        "Linea 1, col 5: no se esperaba 'niño' al analizar AdjFP. Se esperaba: ['$', 'ADJ_FP', 'ADV', 'COP_3P', 'PREP', 'VERB_3P']"
+      ]
+    },
+    {
+      "id": "concordancia_3_0_3_0",
+      "source": "las niño altas corre",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 5: se esperaba SUST_FP pero llego 'niño'",
+        "Linea 1, col 5: no se esperaba 'niño' al analizar AdjFP. Se esperaba: ['$', 'ADJ_FP', 'ADV', 'COP_3P', 'PREP', 'VERB_3P']",
+        "Linea 1, col 21: no se esperaba '$' al analizar SV_FP. Se esperaba: ['COP_3P', 'VERB_3P']"
+      ]
+    },
+    {
+      "id": "concordancia_3_0_3_1",
+      "source": "las niño altas corren",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 5: se esperaba SUST_FP pero llego 'niño'",
+        "Linea 1, col 5: no se esperaba 'niño' al analizar AdjFP. Se esperaba: ['$', 'ADJ_FP', 'ADV', 'COP_3P', 'PREP', 'VERB_3P']"
+      ]
+    },
+    {
+      "id": "concordancia_3_1_0_0",
+      "source": "las niña alto corre",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 5: se esperaba SUST_FP pero llego 'niña'",
+        "Linea 1, col 5: no se esperaba 'niña' al analizar AdjFP. Se esperaba: ['$', 'ADJ_FP', 'ADV', 'COP_3P', 'PREP', 'VERB_3P']",
+        "Linea 1, col 20: no se esperaba '$' al analizar SV_FP. Se esperaba: ['COP_3P', 'VERB_3P']"
+      ]
+    },
+    {
+      "id": "concordancia_3_1_0_1",
+      "source": "las niña alto corren",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 5: se esperaba SUST_FP pero llego 'niña'",
+        "Linea 1, col 5: no se esperaba 'niña' al analizar AdjFP. Se esperaba: ['$', 'ADJ_FP', 'ADV', 'COP_3P', 'PREP', 'VERB_3P']"
+      ]
+    },
+    {
+      "id": "concordancia_3_1_1_0",
+      "source": "las niña alta corre",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 5: se esperaba SUST_FP pero llego 'niña'",
+        "Linea 1, col 5: no se esperaba 'niña' al analizar AdjFP. Se esperaba: ['$', 'ADJ_FP', 'ADV', 'COP_3P', 'PREP', 'VERB_3P']",
+        "Linea 1, col 20: no se esperaba '$' al analizar SV_FP. Se esperaba: ['COP_3P', 'VERB_3P']"
+      ]
+    },
+    {
+      "id": "concordancia_3_1_1_1",
+      "source": "las niña alta corren",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 5: se esperaba SUST_FP pero llego 'niña'",
+        "Linea 1, col 5: no se esperaba 'niña' al analizar AdjFP. Se esperaba: ['$', 'ADJ_FP', 'ADV', 'COP_3P', 'PREP', 'VERB_3P']"
+      ]
+    },
+    {
+      "id": "concordancia_3_1_2_0",
+      "source": "las niña altos corre",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 5: se esperaba SUST_FP pero llego 'niña'",
+        "Linea 1, col 5: no se esperaba 'niña' al analizar AdjFP. Se esperaba: ['$', 'ADJ_FP', 'ADV', 'COP_3P', 'PREP', 'VERB_3P']",
+        "Linea 1, col 21: no se esperaba '$' al analizar SV_FP. Se esperaba: ['COP_3P', 'VERB_3P']"
+      ]
+    },
+    {
+      "id": "concordancia_3_1_2_1",
+      "source": "las niña altos corren",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 5: se esperaba SUST_FP pero llego 'niña'",
+        "Linea 1, col 5: no se esperaba 'niña' al analizar AdjFP. Se esperaba: ['$', 'ADJ_FP', 'ADV', 'COP_3P', 'PREP', 'VERB_3P']"
+      ]
+    },
+    {
+      "id": "concordancia_3_1_3_0",
+      "source": "las niña altas corre",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 5: se esperaba SUST_FP pero llego 'niña'",
+        "Linea 1, col 5: no se esperaba 'niña' al analizar AdjFP. Se esperaba: ['$', 'ADJ_FP', 'ADV', 'COP_3P', 'PREP', 'VERB_3P']",
+        "Linea 1, col 21: no se esperaba '$' al analizar SV_FP. Se esperaba: ['COP_3P', 'VERB_3P']"
+      ]
+    },
+    {
+      "id": "concordancia_3_1_3_1",
+      "source": "las niña altas corren",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 5: se esperaba SUST_FP pero llego 'niña'",
+        "Linea 1, col 5: no se esperaba 'niña' al analizar AdjFP. Se esperaba: ['$', 'ADJ_FP', 'ADV', 'COP_3P', 'PREP', 'VERB_3P']"
+      ]
+    },
+    {
+      "id": "concordancia_3_2_0_0",
+      "source": "las niños alto corre",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 5: se esperaba SUST_FP pero llego 'niños'",
+        "Linea 1, col 5: no se esperaba 'niños' al analizar AdjFP. Se esperaba: ['$', 'ADJ_FP', 'ADV', 'COP_3P', 'PREP', 'VERB_3P']",
+        "Linea 1, col 21: no se esperaba '$' al analizar SV_FP. Se esperaba: ['COP_3P', 'VERB_3P']"
+      ]
+    },
+    {
+      "id": "concordancia_3_2_0_1",
+      "source": "las niños alto corren",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 5: se esperaba SUST_FP pero llego 'niños'",
+        "Linea 1, col 5: no se esperaba 'niños' al analizar AdjFP. Se esperaba: ['$', 'ADJ_FP', 'ADV', 'COP_3P', 'PREP', 'VERB_3P']"
+      ]
+    },
+    {
+      "id": "concordancia_3_2_1_0",
+      "source": "las niños alta corre",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 5: se esperaba SUST_FP pero llego 'niños'",
+        "Linea 1, col 5: no se esperaba 'niños' al analizar AdjFP. Se esperaba: ['$', 'ADJ_FP', 'ADV', 'COP_3P', 'PREP', 'VERB_3P']",
+        "Linea 1, col 21: no se esperaba '$' al analizar SV_FP. Se esperaba: ['COP_3P', 'VERB_3P']"
+      ]
+    },
+    {
+      "id": "concordancia_3_2_1_1",
+      "source": "las niños alta corren",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 5: se esperaba SUST_FP pero llego 'niños'",
+        "Linea 1, col 5: no se esperaba 'niños' al analizar AdjFP. Se esperaba: ['$', 'ADJ_FP', 'ADV', 'COP_3P', 'PREP', 'VERB_3P']"
+      ]
+    },
+    {
+      "id": "concordancia_3_2_2_0",
+      "source": "las niños altos corre",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 5: se esperaba SUST_FP pero llego 'niños'",
+        "Linea 1, col 5: no se esperaba 'niños' al analizar AdjFP. Se esperaba: ['$', 'ADJ_FP', 'ADV', 'COP_3P', 'PREP', 'VERB_3P']",
+        "Linea 1, col 22: no se esperaba '$' al analizar SV_FP. Se esperaba: ['COP_3P', 'VERB_3P']"
+      ]
+    },
+    {
+      "id": "concordancia_3_2_2_1",
+      "source": "las niños altos corren",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 5: se esperaba SUST_FP pero llego 'niños'",
+        "Linea 1, col 5: no se esperaba 'niños' al analizar AdjFP. Se esperaba: ['$', 'ADJ_FP', 'ADV', 'COP_3P', 'PREP', 'VERB_3P']"
+      ]
+    },
+    {
+      "id": "concordancia_3_2_3_0",
+      "source": "las niños altas corre",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 5: se esperaba SUST_FP pero llego 'niños'",
+        "Linea 1, col 5: no se esperaba 'niños' al analizar AdjFP. Se esperaba: ['$', 'ADJ_FP', 'ADV', 'COP_3P', 'PREP', 'VERB_3P']",
+        "Linea 1, col 22: no se esperaba '$' al analizar SV_FP. Se esperaba: ['COP_3P', 'VERB_3P']"
+      ]
+    },
+    {
+      "id": "concordancia_3_2_3_1",
+      "source": "las niños altas corren",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 5: se esperaba SUST_FP pero llego 'niños'",
+        "Linea 1, col 5: no se esperaba 'niños' al analizar AdjFP. Se esperaba: ['$', 'ADJ_FP', 'ADV', 'COP_3P', 'PREP', 'VERB_3P']"
+      ]
+    },
+    {
+      "id": "concordancia_3_3_0_0",
+      "source": "las niñas alto corre",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 11: no se esperaba 'alto' al analizar AdjFP. Se esperaba: ['$', 'ADJ_FP', 'ADV', 'COP_3P', 'PREP', 'VERB_3P']",
+        "Linea 1, col 21: no se esperaba '$' al analizar SV_FP. Se esperaba: ['COP_3P', 'VERB_3P']"
+      ]
+    },
+    {
+      "id": "concordancia_3_3_0_1",
+      "source": "las niñas alto corren",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 11: no se esperaba 'alto' al analizar AdjFP. Se esperaba: ['$', 'ADJ_FP', 'ADV', 'COP_3P', 'PREP', 'VERB_3P']"
+      ]
+    },
+    {
+      "id": "concordancia_3_3_1_0",
+      "source": "las niñas alta corre",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 11: no se esperaba 'alta' al analizar AdjFP. Se esperaba: ['$', 'ADJ_FP', 'ADV', 'COP_3P', 'PREP', 'VERB_3P']",
+        "Linea 1, col 21: no se esperaba '$' al analizar SV_FP. Se esperaba: ['COP_3P', 'VERB_3P']"
+      ]
+    },
+    {
+      "id": "concordancia_3_3_1_1",
+      "source": "las niñas alta corren",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 11: no se esperaba 'alta' al analizar AdjFP. Se esperaba: ['$', 'ADJ_FP', 'ADV', 'COP_3P', 'PREP', 'VERB_3P']"
+      ]
+    },
+    {
+      "id": "concordancia_3_3_2_0",
+      "source": "las niñas altos corre",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 11: no se esperaba 'altos' al analizar AdjFP. Se esperaba: ['$', 'ADJ_FP', 'ADV', 'COP_3P', 'PREP', 'VERB_3P']",
+        "Linea 1, col 22: no se esperaba '$' al analizar SV_FP. Se esperaba: ['COP_3P', 'VERB_3P']"
+      ]
+    },
+    {
+      "id": "concordancia_3_3_2_1",
+      "source": "las niñas altos corren",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 11: no se esperaba 'altos' al analizar AdjFP. Se esperaba: ['$', 'ADJ_FP', 'ADV', 'COP_3P', 'PREP', 'VERB_3P']"
+      ]
+    },
+    {
+      "id": "concordancia_3_3_3_0",
+      "source": "las niñas altas corre",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 17: no se esperaba 'corre' al analizar AdjFP. Se esperaba: ['$', 'ADJ_FP', 'ADV', 'COP_3P', 'PREP', 'VERB_3P']",
+        "Linea 1, col 22: no se esperaba '$' al analizar SV_FP. Se esperaba: ['COP_3P', 'VERB_3P']"
+      ]
+    },
+    {
+      "id": "concordancia_3_3_3_1",
+      "source": "las niñas altas corren",
+      "expected": true,
+      "actual": true,
+      "scope": "actual",
+      "ok": true,
+      "errors": []
+    },
+    {
+      "id": "atributo_0_0_0",
+      "source": "el niño es alto",
+      "expected": true,
+      "actual": true,
+      "scope": "actual",
+      "ok": true,
+      "errors": []
+    },
+    {
+      "id": "atributo_0_0_1",
+      "source": "el niño son alto",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 9: no se esperaba 'son' al analizar AdjMS. Se esperaba: ['$', 'ADJ_MS', 'ADV', 'COP_3S', 'PREP', 'VERB_3S']",
+        "Linea 1, col 17: no se esperaba '$' al analizar SV_MS. Se esperaba: ['COP_3S', 'VERB_3S']"
+      ]
+    },
+    {
+      "id": "atributo_0_1_0",
+      "source": "el niño es alta",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 12: no se esperaba 'alta' al analizar PredCpl_MS. Se esperaba: ['$', 'ADJ_MS', 'ADV', 'PREP']"
+      ]
+    },
+    {
+      "id": "atributo_0_1_1",
+      "source": "el niño son alta",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 9: no se esperaba 'son' al analizar AdjMS. Se esperaba: ['$', 'ADJ_MS', 'ADV', 'COP_3S', 'PREP', 'VERB_3S']",
+        "Linea 1, col 17: no se esperaba '$' al analizar SV_MS. Se esperaba: ['COP_3S', 'VERB_3S']"
+      ]
+    },
+    {
+      "id": "atributo_0_2_0",
+      "source": "el niño es altos",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 12: no se esperaba 'altos' al analizar PredCpl_MS. Se esperaba: ['$', 'ADJ_MS', 'ADV', 'PREP']"
+      ]
+    },
+    {
+      "id": "atributo_0_2_1",
+      "source": "el niño son altos",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 9: no se esperaba 'son' al analizar AdjMS. Se esperaba: ['$', 'ADJ_MS', 'ADV', 'COP_3S', 'PREP', 'VERB_3S']",
+        "Linea 1, col 18: no se esperaba '$' al analizar SV_MS. Se esperaba: ['COP_3S', 'VERB_3S']"
+      ]
+    },
+    {
+      "id": "atributo_0_3_0",
+      "source": "el niño es altas",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 12: no se esperaba 'altas' al analizar PredCpl_MS. Se esperaba: ['$', 'ADJ_MS', 'ADV', 'PREP']"
+      ]
+    },
+    {
+      "id": "atributo_0_3_1",
+      "source": "el niño son altas",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 9: no se esperaba 'son' al analizar AdjMS. Se esperaba: ['$', 'ADJ_MS', 'ADV', 'COP_3S', 'PREP', 'VERB_3S']",
+        "Linea 1, col 18: no se esperaba '$' al analizar SV_MS. Se esperaba: ['COP_3S', 'VERB_3S']"
+      ]
+    },
+    {
+      "id": "atributo_1_0_0",
+      "source": "la niña es alto",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 12: no se esperaba 'alto' al analizar PredCpl_FS. Se esperaba: ['$', 'ADJ_FS', 'ADV', 'PREP']"
+      ]
+    },
+    {
+      "id": "atributo_1_0_1",
+      "source": "la niña son alto",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 9: no se esperaba 'son' al analizar AdjFS. Se esperaba: ['$', 'ADJ_FS', 'ADV', 'COP_3S', 'PREP', 'VERB_3S']",
+        "Linea 1, col 17: no se esperaba '$' al analizar SV_FS. Se esperaba: ['COP_3S', 'VERB_3S']"
+      ]
+    },
+    {
+      "id": "atributo_1_1_0",
+      "source": "la niña es alta",
+      "expected": true,
+      "actual": true,
+      "scope": "actual",
+      "ok": true,
+      "errors": []
+    },
+    {
+      "id": "atributo_1_1_1",
+      "source": "la niña son alta",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 9: no se esperaba 'son' al analizar AdjFS. Se esperaba: ['$', 'ADJ_FS', 'ADV', 'COP_3S', 'PREP', 'VERB_3S']",
+        "Linea 1, col 17: no se esperaba '$' al analizar SV_FS. Se esperaba: ['COP_3S', 'VERB_3S']"
+      ]
+    },
+    {
+      "id": "atributo_1_2_0",
+      "source": "la niña es altos",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 12: no se esperaba 'altos' al analizar PredCpl_FS. Se esperaba: ['$', 'ADJ_FS', 'ADV', 'PREP']"
+      ]
+    },
+    {
+      "id": "atributo_1_2_1",
+      "source": "la niña son altos",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 9: no se esperaba 'son' al analizar AdjFS. Se esperaba: ['$', 'ADJ_FS', 'ADV', 'COP_3S', 'PREP', 'VERB_3S']",
+        "Linea 1, col 18: no se esperaba '$' al analizar SV_FS. Se esperaba: ['COP_3S', 'VERB_3S']"
+      ]
+    },
+    {
+      "id": "atributo_1_3_0",
+      "source": "la niña es altas",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 12: no se esperaba 'altas' al analizar PredCpl_FS. Se esperaba: ['$', 'ADJ_FS', 'ADV', 'PREP']"
+      ]
+    },
+    {
+      "id": "atributo_1_3_1",
+      "source": "la niña son altas",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 9: no se esperaba 'son' al analizar AdjFS. Se esperaba: ['$', 'ADJ_FS', 'ADV', 'COP_3S', 'PREP', 'VERB_3S']",
+        "Linea 1, col 18: no se esperaba '$' al analizar SV_FS. Se esperaba: ['COP_3S', 'VERB_3S']"
+      ]
+    },
+    {
+      "id": "atributo_2_0_0",
+      "source": "los niños es alto",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 11: no se esperaba 'es' al analizar AdjMP. Se esperaba: ['$', 'ADJ_MP', 'ADV', 'COP_3P', 'PREP', 'VERB_3P']",
+        "Linea 1, col 18: no se esperaba '$' al analizar SV_MP. Se esperaba: ['COP_3P', 'VERB_3P']"
+      ]
+    },
+    {
+      "id": "atributo_2_0_1",
+      "source": "los niños son alto",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 15: no se esperaba 'alto' al analizar PredCpl_MP. Se esperaba: ['$', 'ADJ_MP', 'ADV', 'PREP']"
+      ]
+    },
+    {
+      "id": "atributo_2_1_0",
+      "source": "los niños es alta",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 11: no se esperaba 'es' al analizar AdjMP. Se esperaba: ['$', 'ADJ_MP', 'ADV', 'COP_3P', 'PREP', 'VERB_3P']",
+        "Linea 1, col 18: no se esperaba '$' al analizar SV_MP. Se esperaba: ['COP_3P', 'VERB_3P']"
+      ]
+    },
+    {
+      "id": "atributo_2_1_1",
+      "source": "los niños son alta",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 15: no se esperaba 'alta' al analizar PredCpl_MP. Se esperaba: ['$', 'ADJ_MP', 'ADV', 'PREP']"
+      ]
+    },
+    {
+      "id": "atributo_2_2_0",
+      "source": "los niños es altos",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 11: no se esperaba 'es' al analizar AdjMP. Se esperaba: ['$', 'ADJ_MP', 'ADV', 'COP_3P', 'PREP', 'VERB_3P']",
+        "Linea 1, col 19: no se esperaba '$' al analizar SV_MP. Se esperaba: ['COP_3P', 'VERB_3P']"
+      ]
+    },
+    {
+      "id": "atributo_2_2_1",
+      "source": "los niños son altos",
+      "expected": true,
+      "actual": true,
+      "scope": "actual",
+      "ok": true,
+      "errors": []
+    },
+    {
+      "id": "atributo_2_3_0",
+      "source": "los niños es altas",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 11: no se esperaba 'es' al analizar AdjMP. Se esperaba: ['$', 'ADJ_MP', 'ADV', 'COP_3P', 'PREP', 'VERB_3P']",
+        "Linea 1, col 19: no se esperaba '$' al analizar SV_MP. Se esperaba: ['COP_3P', 'VERB_3P']"
+      ]
+    },
+    {
+      "id": "atributo_2_3_1",
+      "source": "los niños son altas",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 15: no se esperaba 'altas' al analizar PredCpl_MP. Se esperaba: ['$', 'ADJ_MP', 'ADV', 'PREP']"
+      ]
+    },
+    {
+      "id": "atributo_3_0_0",
+      "source": "las niñas es alto",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 11: no se esperaba 'es' al analizar AdjFP. Se esperaba: ['$', 'ADJ_FP', 'ADV', 'COP_3P', 'PREP', 'VERB_3P']",
+        "Linea 1, col 18: no se esperaba '$' al analizar SV_FP. Se esperaba: ['COP_3P', 'VERB_3P']"
+      ]
+    },
+    {
+      "id": "atributo_3_0_1",
+      "source": "las niñas son alto",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 15: no se esperaba 'alto' al analizar PredCpl_FP. Se esperaba: ['$', 'ADJ_FP', 'ADV', 'PREP']"
+      ]
+    },
+    {
+      "id": "atributo_3_1_0",
+      "source": "las niñas es alta",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 11: no se esperaba 'es' al analizar AdjFP. Se esperaba: ['$', 'ADJ_FP', 'ADV', 'COP_3P', 'PREP', 'VERB_3P']",
+        "Linea 1, col 18: no se esperaba '$' al analizar SV_FP. Se esperaba: ['COP_3P', 'VERB_3P']"
+      ]
+    },
+    {
+      "id": "atributo_3_1_1",
+      "source": "las niñas son alta",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 15: no se esperaba 'alta' al analizar PredCpl_FP. Se esperaba: ['$', 'ADJ_FP', 'ADV', 'PREP']"
+      ]
+    },
+    {
+      "id": "atributo_3_2_0",
+      "source": "las niñas es altos",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 11: no se esperaba 'es' al analizar AdjFP. Se esperaba: ['$', 'ADJ_FP', 'ADV', 'COP_3P', 'PREP', 'VERB_3P']",
+        "Linea 1, col 19: no se esperaba '$' al analizar SV_FP. Se esperaba: ['COP_3P', 'VERB_3P']"
+      ]
+    },
+    {
+      "id": "atributo_3_2_1",
+      "source": "las niñas son altos",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 15: no se esperaba 'altos' al analizar PredCpl_FP. Se esperaba: ['$', 'ADJ_FP', 'ADV', 'PREP']"
+      ]
+    },
+    {
+      "id": "atributo_3_3_0",
+      "source": "las niñas es altas",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 11: no se esperaba 'es' al analizar AdjFP. Se esperaba: ['$', 'ADJ_FP', 'ADV', 'COP_3P', 'PREP', 'VERB_3P']",
+        "Linea 1, col 19: no se esperaba '$' al analizar SV_FP. Se esperaba: ['COP_3P', 'VERB_3P']"
+      ]
+    },
+    {
+      "id": "atributo_3_3_1",
+      "source": "las niñas son altas",
+      "expected": true,
+      "actual": true,
+      "scope": "actual",
+      "ok": true,
+      "errors": []
+    },
+    {
+      "id": "svo",
+      "source": "El niño lee el libro",
+      "expected": true,
+      "actual": false,
+      "scope": "fase2",
+      "ok": false,
+      "errors": [
+        "Linea 1, col 13: no se esperaba 'el' al analizar Cpl_MS. Se esperaba: ['$', 'ADV', 'PREP', 'QUE']"
+      ]
+    },
+    {
+      "id": "svo_plural",
+      "source": "Las niñas compran las flores",
+      "expected": true,
+      "actual": false,
+      "scope": "fase2",
+      "ok": false,
+      "errors": [
+        "Linea 1, col 19: no se esperaba 'las' al analizar Cpl_FP. Se esperaba: ['$', 'ADV', 'PREP', 'QUE']"
+      ]
+    },
+    {
+      "id": "preterito",
+      "source": "El niño corrió",
+      "expected": true,
+      "actual": false,
+      "scope": "fase2",
+      "ok": false,
+      "errors": [
+        "Linea 1, col 9: no se esperaba 'corrió' al analizar AdjMS. Se esperaba: ['$', 'ADJ_MS', 'ADV', 'COP_3S', 'PREP', 'VERB_3S']",
+        "Linea 1, col 15: no se esperaba '$' al analizar SV_MS. Se esperaba: ['COP_3S', 'VERB_3S']"
+      ]
+    },
+    {
+      "id": "preterito_plural",
+      "source": "Los niños corrieron",
+      "expected": true,
+      "actual": false,
+      "scope": "fase2",
+      "ok": false,
+      "errors": [
+        "Linea 1, col 11: no se esperaba 'corrieron' al analizar AdjMP. Se esperaba: ['$', 'ADJ_MP', 'ADV', 'COP_3P', 'PREP', 'VERB_3P']",
+        "Linea 1, col 20: no se esperaba '$' al analizar SV_MP. Se esperaba: ['COP_3P', 'VERB_3P']"
+      ]
+    },
+    {
+      "id": "imperfecto",
+      "source": "La niña cantaba",
+      "expected": true,
+      "actual": false,
+      "scope": "fase2",
+      "ok": false,
+      "errors": [
+        "Linea 1, col 9: no se esperaba 'cantaba' al analizar AdjFS. Se esperaba: ['$', 'ADJ_FS', 'ADV', 'COP_3S', 'PREP', 'VERB_3S']",
+        "Linea 1, col 16: no se esperaba '$' al analizar SV_FS. Se esperaba: ['COP_3S', 'VERB_3S']"
+      ]
+    },
+    {
+      "id": "presente",
+      "source": "La niña canta",
+      "expected": true,
+      "actual": true,
+      "scope": "actual",
+      "ok": true,
+      "errors": []
+    },
+    {
+      "id": "subordinada_doble",
+      "source": "La profesora sabe que el niño dice que las niñas cantan",
+      "expected": true,
+      "actual": true,
+      "scope": "actual",
+      "ok": true,
+      "errors": []
+    },
+    {
+      "id": "subordinada_sujeto_plural",
+      "source": "Los profesores dicen que la niña canta",
+      "expected": true,
+      "actual": true,
+      "scope": "actual",
+      "ok": true,
+      "errors": []
+    },
+    {
+      "id": "subordinada_verbo_inconcordante",
+      "source": "Los profesores dice que la niña canta",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 16: no se esperaba 'dice' al analizar AdjMP. Se esperaba: ['$', 'ADJ_MP', 'ADV', 'COP_3P', 'PREP', 'VERB_3P']",
+        "Linea 1, col 38: no se esperaba '$' al analizar SV_MP. Se esperaba: ['COP_3P', 'VERB_3P']"
+      ]
+    },
+    {
+      "id": "subordinada_adjetivo_inconcordante",
+      "source": "El niño dice que la casa es blancos",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 29: no se esperaba 'blancos' al analizar PredCpl_FS. Se esperaba: ['$', 'ADJ_FS', 'ADV', 'PREP']"
+      ]
+    },
+    {
+      "id": "adverbio_y_pp",
+      "source": "El niño corre rápidamente en el parque",
+      "expected": true,
+      "actual": true,
+      "scope": "actual",
+      "ok": true,
+      "errors": []
+    },
+    {
+      "id": "pp_y_adverbio",
+      "source": "La niña camina en la ciudad despacio",
+      "expected": true,
+      "actual": true,
+      "scope": "actual",
+      "ok": true,
+      "errors": []
+    },
+    {
+      "id": "pp_encadenadas",
+      "source": "La mujer vive en la casa de la ciudad",
+      "expected": true,
+      "actual": true,
+      "scope": "actual",
+      "ok": true,
+      "errors": []
+    },
+    {
+      "id": "sin_determinante",
+      "source": "Niño corre",
+      "expected": false,
+      "actual": false,
+      "scope": "alcance_documentado",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 1: no se esperaba 'Niño' al analizar Program. Se esperaba: ['$', 'DET_FP', 'DET_FS', 'DET_MP', 'DET_MS', 'FOR', 'ID', 'IF', 'INT', 'WHILE']"
+      ]
+    },
+    {
+      "id": "oov",
+      "source": "El astronauta corre",
+      "expected": false,
+      "actual": false,
+      "scope": "alcance_documentado",
+      "ok": true,
+      "errors": [
+        "Linea 1, col 4: se esperaba SUST_MS pero llego 'astronauta'",
+        "Linea 1, col 4: no se esperaba 'astronauta' al analizar AdjMS. Se esperaba: ['$', 'ADJ_MS', 'ADV', 'COP_3S', 'PREP', 'VERB_3S']"
+      ]
+    },
+    {
+      "id": "punto_final",
+      "source": "El niño corre.",
+      "expected": false,
+      "actual": false,
+      "scope": "alcance_documentado",
+      "ok": true,
+      "errors": [
+        "Linea 1: caracter ilegal '.'"
+      ]
+    },
+    {
+      "id": "mayusculas",
+      "source": "EL NIÑO CORRE",
+      "expected": true,
+      "actual": true,
+      "scope": "actual",
+      "ok": true,
+      "errors": []
+    },
+    {
+      "id": "acento_nfc",
+      "source": "El árbol es alto",
+      "expected": true,
+      "actual": true,
+      "scope": "actual",
+      "ok": true,
+      "errors": []
+    },
+    {
+      "id": "acento_nfd",
+      "source": "El árbol es alto",
+      "expected": true,
+      "actual": false,
+      "scope": "robustez",
+      "ok": false,
+      "errors": [
+        "Linea 1: caracter ilegal '́'",
+        "Linea 1, col 4: se esperaba SUST_MS pero llego 'a'",
+        "Linea 1, col 4: no se esperaba 'a' al analizar AdjMS. Se esperaba: ['$', 'ADJ_MS', 'ADV', 'COP_3S', 'PREP', 'VERB_3S']"
+      ]
+    },
+    {
+      "id": "dos_oraciones",
+      "source": "El niño corre\nLa niña canta",
+      "expected": false,
+      "actual": false,
+      "scope": "actual",
+      "ok": true,
+      "errors": [
+        "Linea 2, col 1: no se esperaba 'La' al analizar Cpl_MS. Se esperaba: ['$', 'ADV', 'PREP', 'QUE']"
+      ]
+    },
+    {
+      "id": "modo_es_vacio",
+      "source": "",
+      "expected": false,
+      "actual": true,
+      "scope": "aislamiento_oraciones",
+      "ok": false,
+      "errors": []
+    },
+    {
+      "id": "modo_es_comentario",
+      "source": "// sin oracion",
+      "expected": false,
+      "actual": true,
+      "scope": "aislamiento_oraciones",
+      "ok": false,
+      "errors": []
+    },
+    {
+      "id": "modo_es_declaracion_c",
+      "source": "int x = 1;",
+      "expected": false,
+      "actual": true,
+      "scope": "aislamiento_oraciones",
+      "ok": false,
+      "errors": []
+    },
+    {
+      "id": "modo_es_asignacion_c",
+      "source": "x = 1;",
+      "expected": false,
+      "actual": true,
+      "scope": "aislamiento_oraciones",
+      "ok": false,
+      "errors": []
+    },
+    {
+      "id": "modo_es_if_c",
+      "source": "if (x < 2) {}",
+      "expected": false,
+      "actual": true,
+      "scope": "aislamiento_oraciones",
+      "ok": false,
+      "errors": []
+    },
+    {
+      "id": "modo_es_while_c",
+      "source": "while (x < 2) {}",
+      "expected": false,
+      "actual": true,
+      "scope": "aislamiento_oraciones",
+      "ok": false,
+      "errors": []
+    },
+    {
+      "id": "modo_es_for_c",
+      "source": "for (; x < 2;) {}",
+      "expected": false,
+      "actual": true,
+      "scope": "aislamiento_oraciones",
+      "ok": false,
+      "errors": []
+    },
+    {
+      "id": "arbol_tiene_oracion",
+      "source": "El niño corre",
+      "expected": true,
+      "actual": true,
+      "scope": "actual",
+      "ok": true,
+      "errors": []
+    },
+    {
+      "id": "pp_anidada_en_sn",
+      "source": "La mujer vive en la casa de la ciudad",
+      "expected": true,
+      "actual": false,
+      "scope": "interpretacion_estructural",
+      "ok": false,
+      "errors": []
+    },
+    {
+      "id": "subordinada_doble_en_arbol",
+      "source": "La profesora sabe que el niño dice que las niñas cantan",
+      "expected": 3,
+      "actual": 3,
+      "scope": "actual",
+      "ok": true,
+      "errors": []
+    },
+    {
+      "id": "caracterizacion_El niño es",
+      "source": "El niño es",
+      "expected": true,
+      "actual": true,
+      "scope": "caracterizacion",
+      "ok": true,
+      "errors": []
+    },
+    {
+      "id": "caracterizacion_La casa está",
+      "source": "La casa está",
+      "expected": true,
+      "actual": true,
+      "scope": "caracterizacion",
+      "ok": true,
+      "errors": []
+    },
+    {
+      "id": "caracterizacion_El niño compra",
+      "source": "El niño compra",
+      "expected": true,
+      "actual": true,
+      "scope": "caracterizacion",
+      "ok": true,
+      "errors": []
+    },
+    {
+      "id": "caracterizacion_El niño corre que la niña canta",
+      "source": "El niño corre que la niña canta",
+      "expected": true,
+      "actual": true,
+      "scope": "caracterizacion",
+      "ok": true,
+      "errors": []
+    },
+    {
+      "id": "cli_es_compacto",
+      "source": "El niño corre",
+      "expected": 0,
+      "actual": 0,
+      "ok": true,
+      "scope": "cli",
+      "flags": [
+        "--es",
+        "--compacto"
+      ],
+      "stdout": "(Program\n  (Oracion\n    (OracionSG\n      (SN_MS El ni�o (AdjMS eps))\n      (SV_MS corre (Cpl_MS (ModsS eps))))))\nAnalisis exitoso.\n",
+      "stderr": ""
+    },
+    {
+      "id": "cli_es_visual",
+      "source": "El niño corre",
+      "expected": 0,
+      "actual": 0,
+      "ok": true,
+      "scope": "cli",
+      "flags": [
+        "--es"
+      ],
+      "stdout": "           Program                    \n              |                        \n           Oracion                    \n              |                        \n          OracionSG                   \n       _______|_____________           \n      |                   SV_MS       \n      |                _____|_____     \n    SN_MS             |         Cpl_MS\n  ____|_______        |           |    \n |    |     AdjMS     |         ModsS \n |    |       |       |           |    \n El  ni�o    eps    corre        eps  \n\nAnalisis exitoso.\n",
+      "stderr": ""
+    },
+    {
+      "id": "cli_es_error",
+      "source": "El niño corren",
+      "expected": 1,
+      "actual": 1,
+      "ok": true,
+      "scope": "cli",
+      "flags": [
+        "--es",
+        "--compacto"
+      ],
+      "stdout": "2 error(es):\n   Linea 1, col 9: no se esperaba 'corren' al analizar AdjMS. Se esperaba: ['$', 'ADJ_MS', 'ADV', 'COP_3S', 'PREP', 'VERB_3S']\n   Linea 1, col 15: no se esperaba '$' al analizar SV_MS. Se esperaba: ['COP_3S', 'VERB_3S']\n",
+      "stderr": ""
+    },
+    {
+      "id": "cli_sin_es",
+      "source": "El niño corre",
+      "expected": 1,
+      "actual": 1,
+      "ok": true,
+      "scope": "cli",
+      "flags": [
+        "--compacto"
+      ],
+      "stdout": "4 error(es):\n   Linea 1, col 4: se esperaba ASSIGN pero llego 'ni�o'\n   Linea 1, col 9: no se esperaba 'corre' al analizar TermP. Se esperaba: ['DIVIDE', 'EQ', 'GE', 'GT', 'LE', 'LT', 'MINUS', 'NE', 'PLUS', 'RPAREN', 'SEMI', 'TIMES']\n   Linea 1, col 14: no se esperaba '$' al analizar ExprP. Se esperaba: ['EQ', 'GE', 'GT', 'LE', 'LT', 'MINUS', 'NE', 'PLUS', 'RPAREN', 'SEMI']\n   Linea 1, col 14: se esperaba SEMI pero llego '$'\n",
+      "stderr": ""
+    },
+    {
+      "id": "cli_es_modo_no_filtra_c",
+      "source": "int x = 1;",
+      "expected": 1,
+      "actual": 0,
+      "ok": false,
+      "scope": "cli",
+      "flags": [
+        "--es",
+        "--compacto"
+      ],
+      "stdout": "(Program\n  (StmtList\n    (Stmt\n      (Decl\n        int\n        x\n        (DeclTail = (Expr (Term (Factor 1) (TermP eps)) (ExprP eps)))\n        ;))\n    (StmtList eps)))\nAnalisis exitoso.\n",
+      "stderr": ""
+    }
+  ]
+}

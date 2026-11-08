@@ -4,3 +4,9 @@ parser.out
 parsetab.py
 venv/
 .venv/
+.venv-*/
+.models/
+.env
+.pytest_cache/
+.coverage*
+.build/

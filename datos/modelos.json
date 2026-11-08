@@ -1,0 +1,24 @@
+{
+  "parser": {
+    "tool": "parser",
+    "model": "CFG LL(1)",
+    "version": "41d4805f8d9d3176c9c5ff61e728f7a13ce17e027abcdd43f90040d3f53ba5df",
+    "initialization_seconds": 0.0020019999938085675
+  },
+  "nltk": {
+    "tool": "nltk",
+    "version": "3.10.4",
+    "model": "CESS-ESP unigram + sufijos -3 + NOUN",
+    "training_sentences": 6030,
+    "training_tokens": 192686,
+    "training_sha256": "ae5b12898039e51911ae16d25c4822cb92adcfc034a2e12b57676d21d3c94884",
+    "initialization_seconds": 12.24794249999104
+  },
+  "spacy": {
+    "tool": "spacy",
+    "version": "3.8.18",
+    "model": "es_core_news_sm",
+    "model_version": "3.8.0",
+    "initialization_seconds": 2.659057099983329
+  }
+}

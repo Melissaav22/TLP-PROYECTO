@@ -1,0 +1,16 @@
+test_cli_normal_and_errors (test_contratos.Contracts) ... ok
+test_decimal_and_keywords (test_contratos.Contracts) ... ok
+test_grammar_validation_and_oracle (test_contratos.Contracts) ... ok
+test_long_source_cli (test_contratos.Contracts) ... ok
+test_positions_and_order (test_contratos.Contracts) ... ok
+test_recovery (test_contratos.Contracts) ... ok
+test_spanish_isolation (test_contratos.Contracts) ... ok
+test_structure (test_contratos.Contracts) ... ok
+test_confusion_matrix (test_experimentos.PhaseOneExperiments) ... ok
+test_demo_reference_matches_grammar (test_experimentos.PhaseOneExperiments) ... ok
+test_text_hash_is_portable (test_experimentos.PhaseOneExperiments) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 13.077s
+
+OK

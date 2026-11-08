@@ -1,0 +1,23 @@
+caso                                | esperado               | obtenido                       | resultado
+---------------------------------------------------------------------------------------------------------
+v01_sujeto_singular.txt             | aceptar                | aceptado                       | OK
+v02_sujeto_plural.txt               | aceptar                | aceptado                       | OK
+v03_det_sust_adj.txt                | aceptar                | aceptado                       | OK
+v04_atributo_plural.txt             | aceptar                | aceptado                       | OK
+v05_modificadores.txt               | aceptar                | aceptado                       | OK
+v06_pp_anidada.txt                  | aceptar                | aceptado                       | OK
+v07_subordinada.txt                 | aceptar                | aceptado                       | OK
+v08_subordinada_concordancia.txt    | aceptar                | aceptado                       | OK
+v09_adverbio_plural.txt             | aceptar                | aceptado                       | OK
+v10_sn_femenino.txt                 | aceptar                | aceptado                       | OK
+v11_subordinada_anidada.txt         | aceptar                | aceptado                       | OK
+i01_genero_det_sust.txt             | rechazar (linea 2)     | rechazado (linea 2)            | OK
+i02_numero_det_sust.txt             | rechazar (linea 2)     | rechazado (linea 2)            | OK
+i03_genero_adjetivo.txt             | rechazar (linea 2)     | rechazado (linea 2)            | OK
+i04_concordancia_verbo_singular.txt | rechazar (linea 2)     | rechazado (linea 2)            | OK
+i05_concordancia_verbo_plural.txt   | rechazar (linea 2)     | rechazado (linea 2)            | OK
+i06_falta_complementizador.txt      | rechazar (linea 2)     | rechazado (linea 2)            | OK
+i07_orden_adjetivo.txt              | rechazar (linea 2)     | rechazado (linea 2)            | OK
+i08_concordancia_atributo.txt       | rechazar (linea 2)     | rechazado (linea 2)            | OK
+
+19/19 casos pasan.
