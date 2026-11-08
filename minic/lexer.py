@@ -1,4 +1,4 @@
-"""Analizador lexico (PLY). Convierte texto en una lista de tokens."""
+"""Analizador lexico (PLY). Proposito: Convierte texto en una lista de tokens."""
 import ply.lex as lex
 
 reserved = {'int': 'INT', 'if': 'IF', 'else': 'ELSE', 'while': 'WHILE',

@@ -1,3 +1,4 @@
+# Proposito: Dice que secuencia de tipos de tokens son válidas
 # ------------------------------------------------------------
 # Gramatica LL(1) de MiniC (subconjunto de C)
 # Formato:   NoTerminal -> alternativa1 | alternativa2

@@ -1,3 +1,4 @@
+""" Proposito: Lleva cuentas de un stack de cosas que hacer"""
 """Parser predictivo LL(1) con pila, arbol nltk.Tree y recuperacion de errores
 en modo panico (usa los conjuntos FOLLOW de la gramatica)."""
 from nltk import Tree
@@ -21,6 +22,7 @@ def parse(source, grammar):
     pos = 0
     nonterminals = grammar.nonterminals
 
+    # Stack de elementos que encuentra en el programa
     while stack:
         X, parent, idx = stack.pop()
         ttype, lexeme, line, col = toks[pos]
@@ -40,7 +42,7 @@ def parse(source, grammar):
                 parent[idx] = f'<falta {X}>'      # se "inserta" y se sigue
             continue
 
-        alpha = grammar.table.get((X, ttype))     # X es no terminal
+        alpha = grammar.table.get((X, ttype))     # X es no terminal, tendrá que ver regla que aplicará según tabla
         if idx is None:                           # simbolo inicial
             node = parent
         else:
