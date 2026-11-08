@@ -27,9 +27,19 @@ def write_json(path, value):
         stream.write('\n')
 
 
+def _git(*args):
+    """Salida de un comando git en la raíz del proyecto; None si no hay repositorio."""
+    try:
+        done = subprocess.run(['git', *args], cwd=ROOT, capture_output=True,
+                              text=True, check=True)
+    except (OSError, subprocess.CalledProcessError):
+        return None
+    return done.stdout.strip()
+
+
 def metadata(corpus):
-    commit = subprocess.run(['git', 'rev-parse', 'HEAD'], cwd=ROOT,
-                            capture_output=True, text=True, check=True).stdout.strip()
+    commit = _git('rev-parse', 'HEAD') or 'sin-git'
+    changes = _git('diff', '--name-only')
     sources = [ROOT / 'main.py']
     for directory in ['minic', 'experimentos']:
         sources.extend((ROOT / directory).glob('*.py'))
@@ -37,7 +47,6 @@ def metadata(corpus):
     return dict(created_utc=datetime.now(timezone.utc).isoformat(), commit=commit,
                 hash_policy='SHA-256; texto UTF-8 con saltos LF, binarios sin transformacion',
                 source_hashes=source_hashes,
-                tracked_changes=bool(subprocess.run(['git', 'diff', '--name-only'], cwd=ROOT,
-                                      capture_output=True, text=True, check=True).stdout.strip()),
+                tracked_changes=None if changes is None else bool(changes),
                 grammar_sha256=digest(ROOT / 'gramatica_minic.txt'),
                 corpus_sha256=digest(corpus))
