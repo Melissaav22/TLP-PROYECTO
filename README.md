@@ -10,17 +10,20 @@ La rama `feat/fase-dos` deriva de esta rama y añade SVO, pasado, corpus de 60 f
 
 ## Instalación del parser
 
-Python 3.10 o superior. Se verificaron Python 3.10.22 y 3.12.15. Desde la raíz, en PowerShell:
+Requiere Python 3.10 o superior. Desde la raíz del proyecto:
 
 ```powershell
-uv venv --python 3.10 .venv
-uv pip sync --python .venv/Scripts/python.exe --require-hashes requirements-core.lock
-.\.venv\Scripts\python.exe tests/run_tests.py
-.\.venv\Scripts\python.exe tests/run_tests.py --es
-.\.venv\Scripts\python.exe -m unittest discover -s tests -p "test_*.py" -v
+python -m venv .venv
+.\.venv\Scripts\activate
+pip install -r requirements.txt
+python tests/run_tests.py
+python tests/run_tests.py --es
+python -m unittest discover -s tests -p "test_*.py" -v
 ```
 
-En Linux/macOS, sustituye `.venv\Scripts\python.exe` por `.venv/bin/python`.
+En Linux/macOS, activa el entorno con `source .venv/bin/activate`.
+
+Con el entorno activado, los comandos de la sección "Uso" se ejecutan con `python main.py ...`. Para reproducir exactamente las versiones verificadas, existe `requirements-core.lock` (con hashes), instalable con `uv pip sync --require-hashes requirements-core.lock`.
 
 ## Uso
 
