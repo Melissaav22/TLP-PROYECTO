@@ -10,29 +10,49 @@ La rama `feat/fase-dos` deriva de esta rama y añade SVO, pasado, corpus de 60 f
 
 ## Instalación del parser
 
-Requiere Python 3.10 o superior. Desde la raíz del proyecto:
+Requiere Python 3.10 o superior. Todos los comandos se ejecutan desde la carpeta raíz del proyecto (donde está `main.py`), en PowerShell.
+
+**1. Preparar el entorno (una sola vez)**
 
 ```powershell
 python -m venv .venv
 .\.venv\Scripts\activate
 pip install -r requirements.txt
+```
+
+- `python -m venv .venv` crea un entorno virtual en la carpeta `.venv`, para no instalar nada en el Python del sistema.
+- `.\.venv\Scripts\activate` activa ese entorno. Debe repetirse cada vez que se abra una terminal nueva. En Linux/macOS: `source .venv/bin/activate`.
+- `pip install -r requirements.txt` instala las dependencias del parser: `ply` (analizador léxico) y `nltk` (estructura de árbol).
+
+**2. Verificar que todo funciona**
+
+```powershell
 python tests/run_tests.py
 python tests/run_tests.py --es
 python -m unittest discover -s tests -p "test_*.py" -v
 ```
 
-En Linux/macOS, activa el entorno con `source .venv/bin/activate`.
+- `python tests/run_tests.py` corre los 20 casos de MiniC y debe terminar con `20/20 casos pasan.`
+- `python tests/run_tests.py --es` corre los 19 casos del español y debe terminar con `19/19 casos pasan.`
+- `python -m unittest ...` corre las 11 pruebas unitarias y debe terminar con `OK`.
 
-Con el entorno activado, los comandos de la sección "Uso" se ejecutan con `python main.py ...`. Para reproducir exactamente las versiones verificadas, existe `requirements-core.lock` (con hashes), instalable con `uv pip sync --require-hashes requirements-core.lock`.
+Con el entorno activado, los comandos de la sección "Uso" también pueden ejecutarse como `python main.py ...`. Para reproducir exactamente las versiones verificadas existe `requirements-core.lock` (con hashes), instalable con `uv pip sync --require-hashes requirements-core.lock`.
 
 ## Uso
 
+Con el entorno activado:
+
 ```powershell
-.\.venv\Scripts\python.exe main.py tests/validos/v01_declaraciones.c --compacto
-.\.venv\Scripts\python.exe main.py tests/es/validos/v07_subordinada.txt --es
-.\.venv\Scripts\python.exe main.py tests/es/validos/v07_subordinada.txt --es --svg resultados/arbol.svg
-.\.venv\Scripts\python.exe main.py --tabla
+python main.py tests/validos/v01_declaraciones.c --compacto
+python main.py tests/es/validos/v07_subordinada.txt --es
+python main.py tests/es/validos/v07_subordinada.txt --es --svg resultados/arbol.svg
+python main.py --tabla
 ```
+
+- La primera línea analiza un programa MiniC y muestra su árbol en una sola línea (`--compacto`).
+- La segunda analiza una oración en español (`--es`) y muestra su árbol en consola.
+- La tercera hace lo mismo y además guarda el árbol como imagen en `resultados/arbol.svg` (`--svg`).
+- La cuarta muestra la tabla LL(1) de la gramática (`--tabla`).
 
 La salida es 0 si termina correctamente y 1 ante errores de fuente, lectura, gramática o escritura. argparse devuelve 2 para argumentos inválidos. `--compacto` usa serialización iterativa en una línea. La salida habitual presenta un árbol de consola para entradas pequeñas y corchetes para árboles profundos. El SVG admite hasta 2.000 nodos, con error controlado al superar ese límite.
 
