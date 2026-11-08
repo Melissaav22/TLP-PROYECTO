@@ -16,12 +16,13 @@ Requiere Python 3.10 o superior. Todos los comandos se ejecutan desde la carpeta
 
 ```powershell
 python -m venv .venv
-.\.venv\Scripts\activate
+.\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 ```
 
 - `python -m venv .venv` crea un entorno virtual en la carpeta `.venv`, para no instalar nada en el Python del sistema.
-- `.\.venv\Scripts\activate` activa ese entorno. Debe repetirse cada vez que se abra una terminal nueva. En Linux/macOS: `source .venv/bin/activate`.
+- `.\.venv\Scripts\Activate.ps1` activa ese entorno; la terminal mostrará `(.venv)` al inicio. Debe repetirse cada vez que se abra una terminal nueva. Si PowerShell bloquea el script, ejecutar antes `Set-ExecutionPolicy -Scope Process Bypass`. En Linux/macOS: `source .venv/bin/activate`. En CMD (no PowerShell): `.venv\Scripts\activate.bat`.
+- Si la activación no funciona, no es obligatoria: se puede usar el Python del entorno directamente, por ejemplo `.\.venv\Scripts\python.exe -m pip install -r requirements.txt` y `.\.venv\Scripts\python.exe tests/run_tests.py`.
 - `pip install -r requirements.txt` instala las dependencias del parser: `ply` (analizador léxico) y `nltk` (estructura de árbol).
 
 **2. Verificar que todo funciona**
