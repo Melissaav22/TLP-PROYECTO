@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1240" height="735" viewBox="0 0 1240 735">
+<rect width="100%" height="100%" fill="white"/>
+<text x="382.96875" y="35" text-anchor="middle" font-family="Arial" font-size="13" fill="#172a45"><title>Oracion</title>Oracion</text>
+<line x1="382.96875" y1="42" x2="382.96875" y2="82" stroke="#93a5ba"/>
+<text x="382.96875" y="100" text-anchor="middle" font-family="Arial" font-size="13" fill="#172a45"><title>OracionSG</title>OracionSG</text>
+<line x1="382.96875" y1="107" x2="175.0" y2="147" stroke="#93a5ba"/>
+<text x="175.0" y="165" text-anchor="middle" font-family="Arial" font-size="13" fill="#172a45"><title>SN_FS</title>SN_FS</text>
+<line x1="175.0" y1="172" x2="65" y2="212" stroke="#93a5ba"/>
+<text x="65" y="230" text-anchor="middle" font-family="Arial" font-size="13" fill="#172a45"><title>La</title>La</text>
+<line x1="175.0" y1="172" x2="175.0" y2="212" stroke="#93a5ba"/>
+<text x="175.0" y="230" text-anchor="middle" font-family="Arial" font-size="13" fill="#172a45"><title>NombreFS</title>NombreFS</text>
+<line x1="175.0" y1="237" x2="175" y2="277" stroke="#93a5ba"/>
+<text x="175" y="295" text-anchor="middle" font-family="Arial" font-size="13" fill="#172a45"><title>niña</title>niña</text>
+<line x1="175.0" y1="172" x2="285.0" y2="212" stroke="#93a5ba"/>
+<text x="285.0" y="230" text-anchor="middle" font-family="Arial" font-size="13" fill="#172a45"><title>AdjFS</title>AdjFS</text>
+<line x1="285.0" y1="237" x2="285" y2="277" stroke="#93a5ba"/>
+<text x="285" y="295" text-anchor="middle" font-family="Arial" font-size="13" fill="#172a45"><title>eps</title>eps</text>
+<line x1="382.96875" y1="107" x2="590.9375" y2="147" stroke="#93a5ba"/>
+<text x="590.9375" y="165" text-anchor="middle" font-family="Arial" font-size="13" fill="#172a45"><title>SigueFS</title>SigueFS</text>
+<line x1="590.9375" y1="172" x2="395" y2="212" stroke="#93a5ba"/>
+<text x="395" y="230" text-anchor="middle" font-family="Arial" font-size="13" fill="#172a45"><title>y</title>y</text>
+<line x1="590.9375" y1="172" x2="786.875" y2="212" stroke="#93a5ba"/>
+<text x="786.875" y="230" text-anchor="middle" font-family="Arial" font-size="13" fill="#172a45"><title>CoordinadoF</title>CoordinadoF</text>
+<line x1="786.875" y1="237" x2="615.0" y2="277" stroke="#93a5ba"/>
+<text x="615.0" y="295" text-anchor="middle" font-family="Arial" font-size="13" fill="#172a45"><title>SN_MS</title>SN_MS</text>
+<line x1="615.0" y1="302" x2="505" y2="342" stroke="#93a5ba"/>
+<text x="505" y="360" text-anchor="middle" font-family="Arial" font-size="13" fill="#172a45"><title>el</title>el</text>
+<line x1="615.0" y1="302" x2="615" y2="342" stroke="#93a5ba"/>
+<text x="615" y="360" text-anchor="middle" font-family="Arial" font-size="13" fill="#172a45"><title>niño</title>niño</text>
+<line x1="615.0" y1="302" x2="725.0" y2="342" stroke="#93a5ba"/>
+<text x="725.0" y="360" text-anchor="middle" font-family="Arial" font-size="13" fill="#172a45"><title>AdjMS</title>AdjMS</text>
+<line x1="725.0" y1="367" x2="725" y2="407" stroke="#93a5ba"/>
+<text x="725" y="425" text-anchor="middle" font-family="Arial" font-size="13" fill="#172a45"><title>eps</title>eps</text>
+<line x1="786.875" y1="237" x2="958.75" y2="277" stroke="#93a5ba"/>
+<text x="958.75" y="295" text-anchor="middle" font-family="Arial" font-size="13" fill="#172a45"><title>ColaCoordM</title>ColaCoordM</text>
+<line x1="958.75" y1="302" x2="958.75" y2="342" stroke="#93a5ba"/>
+<text x="958.75" y="360" text-anchor="middle" font-family="Arial" font-size="13" fill="#172a45"><title>SV_MP</title>SV_MP</text>
+<line x1="958.75" y1="367" x2="835.0" y2="407" stroke="#93a5ba"/>
+<text x="835.0" y="425" text-anchor="middle" font-family="Arial" font-size="13" fill="#172a45"><title>VerboPL</title>VerboPL</text>
+<line x1="835.0" y1="432" x2="835" y2="472" stroke="#93a5ba"/>
+<text x="835" y="490" text-anchor="middle" font-family="Arial" font-size="13" fill="#172a45"><title>comen</title>comen</text>
+<line x1="958.75" y1="367" x2="1082.5" y2="407" stroke="#93a5ba"/>
+<text x="1082.5" y="425" text-anchor="middle" font-family="Arial" font-size="13" fill="#172a45"><title>Cpl_MP</title>Cpl_MP</text>
+<line x1="1082.5" y1="432" x2="1000.0" y2="472" stroke="#93a5ba"/>
+<text x="1000.0" y="490" text-anchor="middle" font-family="Arial" font-size="13" fill="#172a45"><title>Objeto</title>Objeto</text>
+<line x1="1000.0" y1="497" x2="1000.0" y2="537" stroke="#93a5ba"/>
+<text x="1000.0" y="555" text-anchor="middle" font-family="Arial" font-size="13" fill="#172a45"><title>MasaObjeto</title>MasaObjeto</text>
+<line x1="1000.0" y1="562" x2="945" y2="602" stroke="#93a5ba"/>
+<text x="945" y="620" text-anchor="middle" font-family="Arial" font-size="13" fill="#172a45"><title>fruta</title>fruta</text>
+<line x1="1000.0" y1="562" x2="1055.0" y2="602" stroke="#93a5ba"/>
+<text x="1055.0" y="620" text-anchor="middle" font-family="Arial" font-size="13" fill="#172a45"><title>AdjFS</title>AdjFS</text>
+<line x1="1055.0" y1="627" x2="1055" y2="667" stroke="#93a5ba"/>
+<text x="1055" y="685" text-anchor="middle" font-family="Arial" font-size="13" fill="#172a45"><title>eps</title>eps</text>
+<line x1="1082.5" y1="432" x2="1165.0" y2="472" stroke="#93a5ba"/>
+<text x="1165.0" y="490" text-anchor="middle" font-family="Arial" font-size="13" fill="#172a45"><title>ModsP</title>ModsP</text>
+<line x1="1165.0" y1="497" x2="1165" y2="537" stroke="#93a5ba"/>
+<text x="1165" y="555" text-anchor="middle" font-family="Arial" font-size="13" fill="#172a45"><title>eps</title>eps</text>
+</svg>

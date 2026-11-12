@@ -1,0 +1,29 @@
+test_both_start_symbols_are_ll1 (test_ampliacion_es.SpanishExpansion.test_both_start_symbols_are_ll1) ... ok
+test_cli_and_evaluation_pipeline (test_ampliacion_es.SpanishExpansion.test_cli_and_evaluation_pipeline) ... ok
+test_comparable_reference_preserves_pos (test_ampliacion_es.SpanishExpansion.test_comparable_reference_preserves_pos) ... ok
+test_coordination_number_and_gender (test_ampliacion_es.SpanishExpansion.test_coordination_number_and_gender) ... ok
+test_corpus_integrity_and_decisions (test_ampliacion_es.SpanishExpansion.test_corpus_integrity_and_decisions) ... ok
+test_inversion_and_limits (test_ampliacion_es.SpanishExpansion.test_inversion_and_limits) ... ok
+test_mass_and_nominal_objects (test_ampliacion_es.SpanishExpansion.test_mass_and_nominal_objects) ... ok
+test_member_agreement_and_incomplete_coordination (test_ampliacion_es.SpanishExpansion.test_member_agreement_and_incomplete_coordination) ... ok
+test_minic_isolation_and_unsupported_spanish (test_ampliacion_es.SpanishExpansion.test_minic_isolation_and_unsupported_spanish) ... ok
+test_new_tokens_and_positions (test_ampliacion_es.SpanishExpansion.test_new_tokens_and_positions) ... ok
+test_past_and_subordination (test_ampliacion_es.SpanishExpansion.test_past_and_subordination) ... ok
+test_tree_separates_members_and_object (test_ampliacion_es.SpanishExpansion.test_tree_separates_members_and_object) ... ok
+test_cli_normal_and_errors (test_contratos.Contracts.test_cli_normal_and_errors) ... ok
+test_decimal_and_keywords (test_contratos.Contracts.test_decimal_and_keywords) ... ok
+test_grammar_validation_and_oracle (test_contratos.Contracts.test_grammar_validation_and_oracle) ... ok
+test_long_source_cli (test_contratos.Contracts.test_long_source_cli) ... ok
+test_positions_and_order (test_contratos.Contracts.test_positions_and_order) ... ok
+test_recovery (test_contratos.Contracts.test_recovery) ... ok
+test_spanish_isolation (test_contratos.Contracts.test_spanish_isolation) ... ok
+test_structure (test_contratos.Contracts.test_structure) ... ok
+test_confusion_matrix (test_experimentos.PhaseOneExperiments.test_confusion_matrix) ... ok
+test_demo_reference_matches_grammar (test_experimentos.PhaseOneExperiments.test_demo_reference_matches_grammar) ... ok
+test_historical_results_are_preserved (test_experimentos.PhaseOneExperiments.test_historical_results_are_preserved) ... ok
+test_text_hash_is_portable (test_experimentos.PhaseOneExperiments.test_text_hash_is_portable) ... ok
+
+----------------------------------------------------------------------
+Ran 24 tests in 4.727s
+
+OK

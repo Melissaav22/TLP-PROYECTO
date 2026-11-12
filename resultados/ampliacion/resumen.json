@@ -1,0 +1,203 @@
+{
+  "evaluation_tasks": {
+    "cfg": "Pertenencia a la CFG controlada, solo sistemas que emiten esa decisión.",
+    "noun_detection": "Clasificación binaria por token: NOUN frente al resto, POS común.",
+    "pos": "Exactitud de etiquetas gruesas, AUX/VERB y PROPN/NOUN unificados."
+  },
+  "reports": [
+    {
+      "tool": "parser",
+      "level": "complejo",
+      "sentences": 31,
+      "execution_errors": 0,
+      "alignment_errors": 0,
+      "cfg": {
+        "n": 31,
+        "tp": 17,
+        "fp": 0,
+        "tn": 14,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "correct_rejection": 1.0,
+        "accuracy": 1.0
+      },
+      "noun_detection": {
+        "n": 235,
+        "tp": 83,
+        "fp": 0,
+        "tn": 151,
+        "fn": 1,
+        "precision": 1.0,
+        "recall": 0.9880952380952381,
+        "correct_rejection": 1.0,
+        "accuracy": 0.9957446808510638
+      },
+      "pos_accuracy": 0.9914893617021276,
+      "mean_seconds": 0.0006489645118915266
+    },
+    {
+      "tool": "parser",
+      "level": "intermedio",
+      "sentences": 29,
+      "execution_errors": 0,
+      "alignment_errors": 0,
+      "cfg": {
+        "n": 29,
+        "tp": 14,
+        "fp": 0,
+        "tn": 15,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "correct_rejection": 1.0,
+        "accuracy": 1.0
+      },
+      "noun_detection": {
+        "n": 140,
+        "tp": 51,
+        "fp": 0,
+        "tn": 88,
+        "fn": 1,
+        "precision": 1.0,
+        "recall": 0.9807692307692307,
+        "correct_rejection": 1.0,
+        "accuracy": 0.9928571428571429
+      },
+      "pos_accuracy": 0.9785714285714285,
+      "mean_seconds": 0.0006078379308997557
+    },
+    {
+      "tool": "parser",
+      "level": "simple",
+      "sentences": 5,
+      "execution_errors": 0,
+      "alignment_errors": 0,
+      "cfg": {
+        "n": 5,
+        "tp": 2,
+        "fp": 0,
+        "tn": 3,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "correct_rejection": 1.0,
+        "accuracy": 1.0
+      },
+      "noun_detection": {
+        "n": 17,
+        "tp": 6,
+        "fp": 0,
+        "tn": 11,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "correct_rejection": 1.0,
+        "accuracy": 1.0
+      },
+      "pos_accuracy": 1.0,
+      "mean_seconds": 0.0007015399634838105
+    },
+    {
+      "tool": "parser",
+      "level": "todos",
+      "sentences": 65,
+      "execution_errors": 0,
+      "alignment_errors": 0,
+      "cfg": {
+        "n": 65,
+        "tp": 33,
+        "fp": 0,
+        "tn": 32,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "correct_rejection": 1.0,
+        "accuracy": 1.0
+      },
+      "noun_detection": {
+        "n": 392,
+        "tp": 140,
+        "fp": 0,
+        "tn": 250,
+        "fn": 2,
+        "precision": 1.0,
+        "recall": 0.9859154929577465,
+        "correct_rejection": 1.0,
+        "accuracy": 0.9948979591836735
+      },
+      "pos_accuracy": 0.9872448979591837,
+      "mean_seconds": 0.0006346599951099891
+    }
+  ],
+  "errors": [
+    {
+      "id": "ES-056",
+      "tool": "parser",
+      "type": "tagging_error",
+      "word": "astronauta",
+      "expected": "NOUN",
+      "predicted": "X"
+    },
+    {
+      "id": "ES-057",
+      "tool": "parser",
+      "type": "tagging_error",
+      "word": ".",
+      "expected": "PUNCT",
+      "predicted": "X"
+    },
+    {
+      "id": "AMP-037",
+      "tool": "parser",
+      "type": "tagging_error",
+      "word": ".",
+      "expected": "PUNCT",
+      "predicted": "X"
+    },
+    {
+      "id": "AMP-038",
+      "tool": "parser",
+      "type": "tagging_error",
+      "word": "astronauta",
+      "expected": "NOUN",
+      "predicted": "X"
+    },
+    {
+      "id": "AMP-039",
+      "tool": "parser",
+      "type": "tagging_error",
+      "word": "comía",
+      "expected": "VERB",
+      "predicted": "X"
+    }
+  ],
+  "source_metadata": {
+    "created_utc": "2026-11-12T19:53:48.054353+00:00",
+    "commit": "e83f09b74e13b8dd4e8d4cbdf930ec14bf8487ab",
+    "branch": "codex/ampliar-espanol",
+    "hash_policy": "SHA-256; texto UTF-8 con saltos LF, binarios sin transformacion",
+    "source_hashes": {
+      "experimentos\\__init__.py": "1af49503f294837ba9215f0a0f3c41925111d28b2ea1130ce5b04d9dc2d84c7f",
+      "experimentos\\adaptadores.py": "810ac9626607fc6d8f77e7a2a7313426217b9b37872286a6a2429106a6923e03",
+      "experimentos\\ambiguedad.py": "5c03d49c0dfe90d8d6772fc5649cba7fffb741224b09122e1acd53f3e37d2d2c",
+      "experimentos\\common.py": "c74e9a1709602ea1e98c5ac395bebedb97e275cad38edbdd5e005905c904c6f4",
+      "experimentos\\comparar_nlp.py": "d4b33b2588e229c535c51c4234315432f2cdecc11a8638181a9c0dd4747e5079",
+      "experimentos\\demo_fase1.py": "ce0570d767ffa95fcbaeecdb7578cfb8e233c6e5bd62976183389a2d52635a63",
+      "experimentos\\metricas.py": "23812c856e284ab9686abada5c214400436a589a1e12d6e98d75d94220a20081",
+      "experimentos\\registro_fallos.py": "ca26287de6a4bfeeeb4b078488bebf2d7576e8a34d0842c68975074bc4356dd8",
+      "main.py": "8e40b3cfbd7dc94e6f008d49caca37f24f4384747d47eb28f68e0485678beb93",
+      "minic\\__init__.py": "acf5d7d08e80102a69942e0ca6b238232c063b7772748533da274c3fe32ddda3",
+      "minic\\diagnostics.py": "fc88d37cc1c749c782bb353751938ad1e1ead59ee295f731d724e96419e474ab",
+      "minic\\grammar.py": "e353f235b813211c759bdfc7f9c9caeac4d1ae84671578fd2af2be154d5aa0d9",
+      "minic\\lexer.py": "06590f8c0582e837de73d2e5bab1cb7fb6e5510f889fee5dc289cbf994e44227",
+      "minic\\lexicon_es.py": "079c190476390453aa16ca8dd9eabf6ba9591dc1521e9e85bf5365f8b509f33b",
+      "minic\\parser.py": "22e2304f4a15bfbc5d4c465fd2f86437c1283acd422212567878af34e025672e",
+      "minic\\trees.py": "d0ae18536ad4abdf49af5b811724dda28b97bf602de5696900569317600a0832"
+    },
+    "tracked_changes": true,
+    "grammar_sha256": "f3ec163d055725d7d16dcb286f115958271a70e14f9e6f5b538f8d0ed2e95ff6",
+    "corpus_sha256": "b1ca38bfb3694e8495cd2593305edbc0c317d7be9a6a7e8ba082fbbcfcad037d"
+  },
+  "input_sha256": "6830594d91f2632f9cf2d0168bdb81d85b15250f7a524dee78235649617813ac"
+}

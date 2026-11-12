@@ -1,0 +1,2588 @@
+{
+  "metadata": {
+    "created_utc": "2026-11-12T19:53:48.772251+00:00",
+    "commit": "e83f09b74e13b8dd4e8d4cbdf930ec14bf8487ab",
+    "branch": "codex/ampliar-espanol",
+    "hash_policy": "SHA-256; texto UTF-8 con saltos LF, binarios sin transformacion",
+    "source_hashes": {
+      "experimentos\\__init__.py": "1af49503f294837ba9215f0a0f3c41925111d28b2ea1130ce5b04d9dc2d84c7f",
+      "experimentos\\adaptadores.py": "810ac9626607fc6d8f77e7a2a7313426217b9b37872286a6a2429106a6923e03",
+      "experimentos\\ambiguedad.py": "5c03d49c0dfe90d8d6772fc5649cba7fffb741224b09122e1acd53f3e37d2d2c",
+      "experimentos\\common.py": "c74e9a1709602ea1e98c5ac395bebedb97e275cad38edbdd5e005905c904c6f4",
+      "experimentos\\comparar_nlp.py": "d4b33b2588e229c535c51c4234315432f2cdecc11a8638181a9c0dd4747e5079",
+      "experimentos\\demo_fase1.py": "ce0570d767ffa95fcbaeecdb7578cfb8e233c6e5bd62976183389a2d52635a63",
+      "experimentos\\metricas.py": "23812c856e284ab9686abada5c214400436a589a1e12d6e98d75d94220a20081",
+      "experimentos\\registro_fallos.py": "ca26287de6a4bfeeeb4b078488bebf2d7576e8a34d0842c68975074bc4356dd8",
+      "main.py": "8e40b3cfbd7dc94e6f008d49caca37f24f4384747d47eb28f68e0485678beb93",
+      "minic\\__init__.py": "acf5d7d08e80102a69942e0ca6b238232c063b7772748533da274c3fe32ddda3",
+      "minic\\diagnostics.py": "fc88d37cc1c749c782bb353751938ad1e1ead59ee295f731d724e96419e474ab",
+      "minic\\grammar.py": "e353f235b813211c759bdfc7f9c9caeac4d1ae84671578fd2af2be154d5aa0d9",
+      "minic\\lexer.py": "06590f8c0582e837de73d2e5bab1cb7fb6e5510f889fee5dc289cbf994e44227",
+      "minic\\lexicon_es.py": "079c190476390453aa16ca8dd9eabf6ba9591dc1521e9e85bf5365f8b509f33b",
+      "minic\\parser.py": "22e2304f4a15bfbc5d4c465fd2f86437c1283acd422212567878af34e025672e",
+      "minic\\trees.py": "d0ae18536ad4abdf49af5b811724dda28b97bf602de5696900569317600a0832"
+    },
+    "tracked_changes": true,
+    "grammar_sha256": "f3ec163d055725d7d16dcb286f115958271a70e14f9e6f5b538f8d0ed2e95ff6",
+    "corpus_sha256": "9c21ca85a5dc543d0408791271679fdc45d7ebe95a482c7dc7b2c258efc09762"
+  },
+  "tools": {
+    "parser": {
+      "tool": "parser",
+      "model": "CFG LL(1)",
+      "version": "f3ec163d055725d7d16dcb286f115958271a70e14f9e6f5b538f8d0ed2e95ff6",
+      "initialization_seconds": 0.00221649999730289
+    }
+  },
+  "results": [
+    {
+      "id": "ES-001",
+      "tool": "parser",
+      "text": "El niño corre",
+      "level": "simple",
+      "tokens": [
+        "El",
+        "niño",
+        "corre"
+      ],
+      "pos": [
+        "DET",
+        "NOUN",
+        "VERB"
+      ],
+      "lexical_tokens": [
+        [
+          "DET_MS",
+          "El",
+          1,
+          1
+        ],
+        [
+          "SUST_MS",
+          "niño",
+          1,
+          4
+        ],
+        [
+          "VERB_3S",
+          "corre",
+          1,
+          9
+        ]
+      ],
+      "accepted": true,
+      "tree": "(Oracion (OracionSG (SN_MS El niño (AdjMS eps)) (SigueMS (SV_MS (VerboSG corre) (Cpl_MS (Objeto eps) (ModsS eps))))))",
+      "diagnostics": [],
+      "productions": [
+        {
+          "nonterminal": "Oracion",
+          "production": [
+            "OracionSG"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "nonterminal": "OracionSG",
+          "production": [
+            "SN_MS",
+            "SigueMS"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "nonterminal": "SN_MS",
+          "production": [
+            "DET_MS",
+            "SUST_MS",
+            "AdjMS"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "nonterminal": "AdjMS",
+          "production": [
+            "eps"
+          ],
+          "lookahead": "VERB_3S",
+          "line": 1,
+          "column": 9
+        },
+        {
+          "nonterminal": "SigueMS",
+          "production": [
+            "SV_MS"
+          ],
+          "lookahead": "VERB_3S",
+          "line": 1,
+          "column": 9
+        },
+        {
+          "nonterminal": "SV_MS",
+          "production": [
+            "VerboSG",
+            "Cpl_MS"
+          ],
+          "lookahead": "VERB_3S",
+          "line": 1,
+          "column": 9
+        },
+        {
+          "nonterminal": "VerboSG",
+          "production": [
+            "VERB_3S"
+          ],
+          "lookahead": "VERB_3S",
+          "line": 1,
+          "column": 9
+        },
+        {
+          "nonterminal": "Cpl_MS",
+          "production": [
+            "Objeto",
+            "ModsS"
+          ],
+          "lookahead": "$",
+          "line": 1,
+          "column": 14
+        },
+        {
+          "nonterminal": "Objeto",
+          "production": [
+            "eps"
+          ],
+          "lookahead": "$",
+          "line": 1,
+          "column": 14
+        },
+        {
+          "nonterminal": "ModsS",
+          "production": [
+            "eps"
+          ],
+          "lookahead": "$",
+          "line": 1,
+          "column": 14
+        }
+      ],
+      "execution_error": null,
+      "seconds": 0.0007236001547425985
+    },
+    {
+      "id": "ES-005",
+      "tool": "parser",
+      "text": "El niño lee el libro",
+      "level": "simple",
+      "tokens": [
+        "El",
+        "niño",
+        "lee",
+        "el",
+        "libro"
+      ],
+      "pos": [
+        "DET",
+        "NOUN",
+        "VERB",
+        "DET",
+        "NOUN"
+      ],
+      "lexical_tokens": [
+        [
+          "DET_MS",
+          "El",
+          1,
+          1
+        ],
+        [
+          "SUST_MS",
+          "niño",
+          1,
+          4
+        ],
+        [
+          "VERB_3S",
+          "lee",
+          1,
+          9
+        ],
+        [
+          "DET_MS",
+          "el",
+          1,
+          13
+        ],
+        [
+          "SUST_MS",
+          "libro",
+          1,
+          16
+        ]
+      ],
+      "accepted": true,
+      "tree": "(Oracion (OracionSG (SN_MS El niño (AdjMS eps)) (SigueMS (SV_MS (VerboSG lee) (Cpl_MS (Objeto (SN (SN_MS el libro (AdjMS eps)))) (ModsS eps))))))",
+      "diagnostics": [],
+      "productions": [
+        {
+          "nonterminal": "Oracion",
+          "production": [
+            "OracionSG"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "nonterminal": "OracionSG",
+          "production": [
+            "SN_MS",
+            "SigueMS"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "nonterminal": "SN_MS",
+          "production": [
+            "DET_MS",
+            "SUST_MS",
+            "AdjMS"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "nonterminal": "AdjMS",
+          "production": [
+            "eps"
+          ],
+          "lookahead": "VERB_3S",
+          "line": 1,
+          "column": 9
+        },
+        {
+          "nonterminal": "SigueMS",
+          "production": [
+            "SV_MS"
+          ],
+          "lookahead": "VERB_3S",
+          "line": 1,
+          "column": 9
+        },
+        {
+          "nonterminal": "SV_MS",
+          "production": [
+            "VerboSG",
+            "Cpl_MS"
+          ],
+          "lookahead": "VERB_3S",
+          "line": 1,
+          "column": 9
+        },
+        {
+          "nonterminal": "VerboSG",
+          "production": [
+            "VERB_3S"
+          ],
+          "lookahead": "VERB_3S",
+          "line": 1,
+          "column": 9
+        },
+        {
+          "nonterminal": "Cpl_MS",
+          "production": [
+            "Objeto",
+            "ModsS"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 13
+        },
+        {
+          "nonterminal": "Objeto",
+          "production": [
+            "SN"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 13
+        },
+        {
+          "nonterminal": "SN",
+          "production": [
+            "SN_MS"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 13
+        },
+        {
+          "nonterminal": "SN_MS",
+          "production": [
+            "DET_MS",
+            "SUST_MS",
+            "AdjMS"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 13
+        },
+        {
+          "nonterminal": "AdjMS",
+          "production": [
+            "eps"
+          ],
+          "lookahead": "$",
+          "line": 1,
+          "column": 21
+        },
+        {
+          "nonterminal": "ModsS",
+          "production": [
+            "eps"
+          ],
+          "lookahead": "$",
+          "line": 1,
+          "column": 21
+        }
+      ],
+      "execution_error": null,
+      "seconds": 0.0006399999838322401
+    },
+    {
+      "id": "ES-013",
+      "tool": "parser",
+      "text": "El niños corre",
+      "level": "simple",
+      "tokens": [
+        "El",
+        "niños",
+        "corre"
+      ],
+      "pos": [
+        "DET",
+        "NOUN",
+        "VERB"
+      ],
+      "lexical_tokens": [
+        [
+          "DET_MS",
+          "El",
+          1,
+          1
+        ],
+        [
+          "SUST_MP",
+          "niños",
+          1,
+          4
+        ],
+        [
+          "VERB_3S",
+          "corre",
+          1,
+          10
+        ]
+      ],
+      "accepted": false,
+      "tree": "(Oracion (OracionSG (SN_MS El <falta SUST_MS> (AdjMS <error>)) (SigueMS (SV_MS (VerboSG corre) (Cpl_MS (Objeto eps) (ModsS eps))))))",
+      "diagnostics": [
+        {
+          "line": 1,
+          "column": 4,
+          "offset": 3,
+          "stage": "syntactic",
+          "code": "missing_terminal",
+          "message": "se esperaba SUST_MS pero llego 'niños'",
+          "nonterminal": null
+        },
+        {
+          "line": 1,
+          "column": 4,
+          "offset": 3,
+          "stage": "syntactic",
+          "code": "unexpected_token",
+          "message": "no se esperaba 'niños' al analizar AdjMS. Se esperaba: ['$', 'ADJ_MS', 'ADV', 'CONJ_Y', 'COP_3P', 'COP_3S', 'COP_PAST_3P', 'COP_PAST_3S', 'PREP', 'VERB_3P', 'VERB_3S', 'VERB_PAST_3P', 'VERB_PAST_3S']",
+          "nonterminal": "AdjMS"
+        }
+      ],
+      "productions": [
+        {
+          "nonterminal": "Oracion",
+          "production": [
+            "OracionSG"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "nonterminal": "OracionSG",
+          "production": [
+            "SN_MS",
+            "SigueMS"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "nonterminal": "SN_MS",
+          "production": [
+            "DET_MS",
+            "SUST_MS",
+            "AdjMS"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "nonterminal": "SigueMS",
+          "production": [
+            "SV_MS"
+          ],
+          "lookahead": "VERB_3S",
+          "line": 1,
+          "column": 10
+        },
+        {
+          "nonterminal": "SV_MS",
+          "production": [
+            "VerboSG",
+            "Cpl_MS"
+          ],
+          "lookahead": "VERB_3S",
+          "line": 1,
+          "column": 10
+        },
+        {
+          "nonterminal": "VerboSG",
+          "production": [
+            "VERB_3S"
+          ],
+          "lookahead": "VERB_3S",
+          "line": 1,
+          "column": 10
+        },
+        {
+          "nonterminal": "Cpl_MS",
+          "production": [
+            "Objeto",
+            "ModsS"
+          ],
+          "lookahead": "$",
+          "line": 1,
+          "column": 15
+        },
+        {
+          "nonterminal": "Objeto",
+          "production": [
+            "eps"
+          ],
+          "lookahead": "$",
+          "line": 1,
+          "column": 15
+        },
+        {
+          "nonterminal": "ModsS",
+          "production": [
+            "eps"
+          ],
+          "lookahead": "$",
+          "line": 1,
+          "column": 15
+        }
+      ],
+      "execution_error": null,
+      "seconds": 0.0005723000504076481
+    },
+    {
+      "id": "ES-014",
+      "tool": "parser",
+      "text": "La niño corre",
+      "level": "simple",
+      "tokens": [
+        "La",
+        "niño",
+        "corre"
+      ],
+      "pos": [
+        "DET",
+        "NOUN",
+        "VERB"
+      ],
+      "lexical_tokens": [
+        [
+          "DET_FS",
+          "La",
+          1,
+          1
+        ],
+        [
+          "SUST_MS",
+          "niño",
+          1,
+          4
+        ],
+        [
+          "VERB_3S",
+          "corre",
+          1,
+          9
+        ]
+      ],
+      "accepted": false,
+      "tree": "(Oracion (OracionSG (SN_FS La (NombreFS <error>) (AdjFS eps)) (SigueFS (SV_FS (VerboSG corre) (Cpl_FS (Objeto eps) (ModsS eps))))))",
+      "diagnostics": [
+        {
+          "line": 1,
+          "column": 4,
+          "offset": 3,
+          "stage": "syntactic",
+          "code": "unexpected_token",
+          "message": "no se esperaba 'niño' al analizar NombreFS. Se esperaba: ['SUST_FS', 'SUST_MASA_FS']",
+          "nonterminal": "NombreFS"
+        }
+      ],
+      "productions": [
+        {
+          "nonterminal": "Oracion",
+          "production": [
+            "OracionSG"
+          ],
+          "lookahead": "DET_FS",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "nonterminal": "OracionSG",
+          "production": [
+            "SN_FS",
+            "SigueFS"
+          ],
+          "lookahead": "DET_FS",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "nonterminal": "SN_FS",
+          "production": [
+            "DET_FS",
+            "NombreFS",
+            "AdjFS"
+          ],
+          "lookahead": "DET_FS",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "nonterminal": "AdjFS",
+          "production": [
+            "eps"
+          ],
+          "lookahead": "VERB_3S",
+          "line": 1,
+          "column": 9
+        },
+        {
+          "nonterminal": "SigueFS",
+          "production": [
+            "SV_FS"
+          ],
+          "lookahead": "VERB_3S",
+          "line": 1,
+          "column": 9
+        },
+        {
+          "nonterminal": "SV_FS",
+          "production": [
+            "VerboSG",
+            "Cpl_FS"
+          ],
+          "lookahead": "VERB_3S",
+          "line": 1,
+          "column": 9
+        },
+        {
+          "nonterminal": "VerboSG",
+          "production": [
+            "VERB_3S"
+          ],
+          "lookahead": "VERB_3S",
+          "line": 1,
+          "column": 9
+        },
+        {
+          "nonterminal": "Cpl_FS",
+          "production": [
+            "Objeto",
+            "ModsS"
+          ],
+          "lookahead": "$",
+          "line": 1,
+          "column": 14
+        },
+        {
+          "nonterminal": "Objeto",
+          "production": [
+            "eps"
+          ],
+          "lookahead": "$",
+          "line": 1,
+          "column": 14
+        },
+        {
+          "nonterminal": "ModsS",
+          "production": [
+            "eps"
+          ],
+          "lookahead": "$",
+          "line": 1,
+          "column": 14
+        }
+      ],
+      "execution_error": null,
+      "seconds": 0.0006413999944925308
+    },
+    {
+      "id": "ES-015",
+      "tool": "parser",
+      "text": "Los niños corre",
+      "level": "simple",
+      "tokens": [
+        "Los",
+        "niños",
+        "corre"
+      ],
+      "pos": [
+        "DET",
+        "NOUN",
+        "VERB"
+      ],
+      "lexical_tokens": [
+        [
+          "DET_MP",
+          "Los",
+          1,
+          1
+        ],
+        [
+          "SUST_MP",
+          "niños",
+          1,
+          5
+        ],
+        [
+          "VERB_3S",
+          "corre",
+          1,
+          11
+        ]
+      ],
+      "accepted": false,
+      "tree": "(Oracion (OracionPL (SN_MP Los niños (AdjMP <error>)) (SigueMP <error>)))",
+      "diagnostics": [
+        {
+          "line": 1,
+          "column": 11,
+          "offset": 10,
+          "stage": "syntactic",
+          "code": "unexpected_token",
+          "message": "no se esperaba 'corre' al analizar AdjMP. Se esperaba: ['$', 'ADJ_MP', 'ADV', 'CONJ_Y', 'COP_3P', 'COP_PAST_3P', 'PREP', 'VERB_3P', 'VERB_PAST_3P']",
+          "nonterminal": "AdjMP"
+        },
+        {
+          "line": 1,
+          "column": 16,
+          "offset": 15,
+          "stage": "syntactic",
+          "code": "unexpected_token",
+          "message": "no se esperaba '$' al analizar SigueMP. Se esperaba: ['CONJ_Y', 'COP_3P', 'COP_PAST_3P', 'VERB_3P', 'VERB_PAST_3P']",
+          "nonterminal": "SigueMP"
+        }
+      ],
+      "productions": [
+        {
+          "nonterminal": "Oracion",
+          "production": [
+            "OracionPL"
+          ],
+          "lookahead": "DET_MP",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "nonterminal": "OracionPL",
+          "production": [
+            "SN_MP",
+            "SigueMP"
+          ],
+          "lookahead": "DET_MP",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "nonterminal": "SN_MP",
+          "production": [
+            "DET_MP",
+            "SUST_MP",
+            "AdjMP"
+          ],
+          "lookahead": "DET_MP",
+          "line": 1,
+          "column": 1
+        }
+      ],
+      "execution_error": null,
+      "seconds": 0.0005477000959217548
+    },
+    {
+      "id": "ES-021",
+      "tool": "parser",
+      "text": "El niño alto corre rápidamente en el parque",
+      "level": "intermedio",
+      "tokens": [
+        "El",
+        "niño",
+        "alto",
+        "corre",
+        "rápidamente",
+        "en",
+        "el",
+        "parque"
+      ],
+      "pos": [
+        "DET",
+        "NOUN",
+        "ADJ",
+        "VERB",
+        "ADV",
+        "ADP",
+        "DET",
+        "NOUN"
+      ],
+      "lexical_tokens": [
+        [
+          "DET_MS",
+          "El",
+          1,
+          1
+        ],
+        [
+          "SUST_MS",
+          "niño",
+          1,
+          4
+        ],
+        [
+          "ADJ_MS",
+          "alto",
+          1,
+          9
+        ],
+        [
+          "VERB_3S",
+          "corre",
+          1,
+          14
+        ],
+        [
+          "ADV",
+          "rápidamente",
+          1,
+          20
+        ],
+        [
+          "PREP",
+          "en",
+          1,
+          32
+        ],
+        [
+          "DET_MS",
+          "el",
+          1,
+          35
+        ],
+        [
+          "SUST_MS",
+          "parque",
+          1,
+          38
+        ]
+      ],
+      "accepted": true,
+      "tree": "(Oracion (OracionSG (SN_MS El niño (AdjMS alto (AdjMS eps))) (SigueMS (SV_MS (VerboSG corre) (Cpl_MS (Objeto eps) (ModsS rápidamente (ModsS (PP en (SN (SN_MS el parque (AdjMS eps)))) (ModsS eps))))))))",
+      "diagnostics": [],
+      "productions": [
+        {
+          "nonterminal": "Oracion",
+          "production": [
+            "OracionSG"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "nonterminal": "OracionSG",
+          "production": [
+            "SN_MS",
+            "SigueMS"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "nonterminal": "SN_MS",
+          "production": [
+            "DET_MS",
+            "SUST_MS",
+            "AdjMS"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "nonterminal": "AdjMS",
+          "production": [
+            "ADJ_MS",
+            "AdjMS"
+          ],
+          "lookahead": "ADJ_MS",
+          "line": 1,
+          "column": 9
+        },
+        {
+          "nonterminal": "AdjMS",
+          "production": [
+            "eps"
+          ],
+          "lookahead": "VERB_3S",
+          "line": 1,
+          "column": 14
+        },
+        {
+          "nonterminal": "SigueMS",
+          "production": [
+            "SV_MS"
+          ],
+          "lookahead": "VERB_3S",
+          "line": 1,
+          "column": 14
+        },
+        {
+          "nonterminal": "SV_MS",
+          "production": [
+            "VerboSG",
+            "Cpl_MS"
+          ],
+          "lookahead": "VERB_3S",
+          "line": 1,
+          "column": 14
+        },
+        {
+          "nonterminal": "VerboSG",
+          "production": [
+            "VERB_3S"
+          ],
+          "lookahead": "VERB_3S",
+          "line": 1,
+          "column": 14
+        },
+        {
+          "nonterminal": "Cpl_MS",
+          "production": [
+            "Objeto",
+            "ModsS"
+          ],
+          "lookahead": "ADV",
+          "line": 1,
+          "column": 20
+        },
+        {
+          "nonterminal": "Objeto",
+          "production": [
+            "eps"
+          ],
+          "lookahead": "ADV",
+          "line": 1,
+          "column": 20
+        },
+        {
+          "nonterminal": "ModsS",
+          "production": [
+            "ADV",
+            "ModsS"
+          ],
+          "lookahead": "ADV",
+          "line": 1,
+          "column": 20
+        },
+        {
+          "nonterminal": "ModsS",
+          "production": [
+            "PP",
+            "ModsS"
+          ],
+          "lookahead": "PREP",
+          "line": 1,
+          "column": 32
+        },
+        {
+          "nonterminal": "PP",
+          "production": [
+            "PREP",
+            "SN"
+          ],
+          "lookahead": "PREP",
+          "line": 1,
+          "column": 32
+        },
+        {
+          "nonterminal": "SN",
+          "production": [
+            "SN_MS"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 35
+        },
+        {
+          "nonterminal": "SN_MS",
+          "production": [
+            "DET_MS",
+            "SUST_MS",
+            "AdjMS"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 35
+        },
+        {
+          "nonterminal": "AdjMS",
+          "production": [
+            "eps"
+          ],
+          "lookahead": "$",
+          "line": 1,
+          "column": 44
+        },
+        {
+          "nonterminal": "ModsS",
+          "production": [
+            "eps"
+          ],
+          "lookahead": "$",
+          "line": 1,
+          "column": 44
+        }
+      ],
+      "execution_error": null,
+      "seconds": 0.000561899971216917
+    },
+    {
+      "id": "ES-025",
+      "tool": "parser",
+      "text": "La mujer vive en la casa de la ciudad",
+      "level": "intermedio",
+      "tokens": [
+        "La",
+        "mujer",
+        "vive",
+        "en",
+        "la",
+        "casa",
+        "de",
+        "la",
+        "ciudad"
+      ],
+      "pos": [
+        "DET",
+        "NOUN",
+        "VERB",
+        "ADP",
+        "DET",
+        "NOUN",
+        "ADP",
+        "DET",
+        "NOUN"
+      ],
+      "lexical_tokens": [
+        [
+          "DET_FS",
+          "La",
+          1,
+          1
+        ],
+        [
+          "SUST_FS",
+          "mujer",
+          1,
+          4
+        ],
+        [
+          "VERB_3S",
+          "vive",
+          1,
+          10
+        ],
+        [
+          "PREP",
+          "en",
+          1,
+          15
+        ],
+        [
+          "DET_FS",
+          "la",
+          1,
+          18
+        ],
+        [
+          "SUST_FS",
+          "casa",
+          1,
+          21
+        ],
+        [
+          "PREP",
+          "de",
+          1,
+          26
+        ],
+        [
+          "DET_FS",
+          "la",
+          1,
+          29
+        ],
+        [
+          "SUST_FS",
+          "ciudad",
+          1,
+          32
+        ]
+      ],
+      "accepted": true,
+      "tree": "(Oracion (OracionSG (SN_FS La (NombreFS mujer) (AdjFS eps)) (SigueFS (SV_FS (VerboSG vive) (Cpl_FS (Objeto eps) (ModsS (PP en (SN (SN_FS la (NombreFS casa) (AdjFS eps)))) (ModsS (PP de (SN (SN_FS la (NombreFS ciudad) (AdjFS eps)))) (ModsS eps))))))))",
+      "diagnostics": [],
+      "productions": [
+        {
+          "nonterminal": "Oracion",
+          "production": [
+            "OracionSG"
+          ],
+          "lookahead": "DET_FS",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "nonterminal": "OracionSG",
+          "production": [
+            "SN_FS",
+            "SigueFS"
+          ],
+          "lookahead": "DET_FS",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "nonterminal": "SN_FS",
+          "production": [
+            "DET_FS",
+            "NombreFS",
+            "AdjFS"
+          ],
+          "lookahead": "DET_FS",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "nonterminal": "NombreFS",
+          "production": [
+            "SUST_FS"
+          ],
+          "lookahead": "SUST_FS",
+          "line": 1,
+          "column": 4
+        },
+        {
+          "nonterminal": "AdjFS",
+          "production": [
+            "eps"
+          ],
+          "lookahead": "VERB_3S",
+          "line": 1,
+          "column": 10
+        },
+        {
+          "nonterminal": "SigueFS",
+          "production": [
+            "SV_FS"
+          ],
+          "lookahead": "VERB_3S",
+          "line": 1,
+          "column": 10
+        },
+        {
+          "nonterminal": "SV_FS",
+          "production": [
+            "VerboSG",
+            "Cpl_FS"
+          ],
+          "lookahead": "VERB_3S",
+          "line": 1,
+          "column": 10
+        },
+        {
+          "nonterminal": "VerboSG",
+          "production": [
+            "VERB_3S"
+          ],
+          "lookahead": "VERB_3S",
+          "line": 1,
+          "column": 10
+        },
+        {
+          "nonterminal": "Cpl_FS",
+          "production": [
+            "Objeto",
+            "ModsS"
+          ],
+          "lookahead": "PREP",
+          "line": 1,
+          "column": 15
+        },
+        {
+          "nonterminal": "Objeto",
+          "production": [
+            "eps"
+          ],
+          "lookahead": "PREP",
+          "line": 1,
+          "column": 15
+        },
+        {
+          "nonterminal": "ModsS",
+          "production": [
+            "PP",
+            "ModsS"
+          ],
+          "lookahead": "PREP",
+          "line": 1,
+          "column": 15
+        },
+        {
+          "nonterminal": "PP",
+          "production": [
+            "PREP",
+            "SN"
+          ],
+          "lookahead": "PREP",
+          "line": 1,
+          "column": 15
+        },
+        {
+          "nonterminal": "SN",
+          "production": [
+            "SN_FS"
+          ],
+          "lookahead": "DET_FS",
+          "line": 1,
+          "column": 18
+        },
+        {
+          "nonterminal": "SN_FS",
+          "production": [
+            "DET_FS",
+            "NombreFS",
+            "AdjFS"
+          ],
+          "lookahead": "DET_FS",
+          "line": 1,
+          "column": 18
+        },
+        {
+          "nonterminal": "NombreFS",
+          "production": [
+            "SUST_FS"
+          ],
+          "lookahead": "SUST_FS",
+          "line": 1,
+          "column": 21
+        },
+        {
+          "nonterminal": "AdjFS",
+          "production": [
+            "eps"
+          ],
+          "lookahead": "PREP",
+          "line": 1,
+          "column": 26
+        },
+        {
+          "nonterminal": "ModsS",
+          "production": [
+            "PP",
+            "ModsS"
+          ],
+          "lookahead": "PREP",
+          "line": 1,
+          "column": 26
+        },
+        {
+          "nonterminal": "PP",
+          "production": [
+            "PREP",
+            "SN"
+          ],
+          "lookahead": "PREP",
+          "line": 1,
+          "column": 26
+        },
+        {
+          "nonterminal": "SN",
+          "production": [
+            "SN_FS"
+          ],
+          "lookahead": "DET_FS",
+          "line": 1,
+          "column": 29
+        },
+        {
+          "nonterminal": "SN_FS",
+          "production": [
+            "DET_FS",
+            "NombreFS",
+            "AdjFS"
+          ],
+          "lookahead": "DET_FS",
+          "line": 1,
+          "column": 29
+        },
+        {
+          "nonterminal": "NombreFS",
+          "production": [
+            "SUST_FS"
+          ],
+          "lookahead": "SUST_FS",
+          "line": 1,
+          "column": 32
+        },
+        {
+          "nonterminal": "AdjFS",
+          "production": [
+            "eps"
+          ],
+          "lookahead": "$",
+          "line": 1,
+          "column": 38
+        },
+        {
+          "nonterminal": "ModsS",
+          "production": [
+            "eps"
+          ],
+          "lookahead": "$",
+          "line": 1,
+          "column": 38
+        }
+      ],
+      "execution_error": null,
+      "seconds": 0.0006905000191181898
+    },
+    {
+      "id": "ES-033",
+      "tool": "parser",
+      "text": "El niño alta corre",
+      "level": "intermedio",
+      "tokens": [
+        "El",
+        "niño",
+        "alta",
+        "corre"
+      ],
+      "pos": [
+        "DET",
+        "NOUN",
+        "ADJ",
+        "VERB"
+      ],
+      "lexical_tokens": [
+        [
+          "DET_MS",
+          "El",
+          1,
+          1
+        ],
+        [
+          "SUST_MS",
+          "niño",
+          1,
+          4
+        ],
+        [
+          "ADJ_FS",
+          "alta",
+          1,
+          9
+        ],
+        [
+          "VERB_3S",
+          "corre",
+          1,
+          14
+        ]
+      ],
+      "accepted": false,
+      "tree": "(Oracion (OracionSG (SN_MS El niño (AdjMS <error>)) (SigueMS (SV_MS (VerboSG corre) (Cpl_MS (Objeto eps) (ModsS eps))))))",
+      "diagnostics": [
+        {
+          "line": 1,
+          "column": 9,
+          "offset": 8,
+          "stage": "syntactic",
+          "code": "unexpected_token",
+          "message": "no se esperaba 'alta' al analizar AdjMS. Se esperaba: ['$', 'ADJ_MS', 'ADV', 'CONJ_Y', 'COP_3P', 'COP_3S', 'COP_PAST_3P', 'COP_PAST_3S', 'PREP', 'VERB_3P', 'VERB_3S', 'VERB_PAST_3P', 'VERB_PAST_3S']",
+          "nonterminal": "AdjMS"
+        }
+      ],
+      "productions": [
+        {
+          "nonterminal": "Oracion",
+          "production": [
+            "OracionSG"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "nonterminal": "OracionSG",
+          "production": [
+            "SN_MS",
+            "SigueMS"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "nonterminal": "SN_MS",
+          "production": [
+            "DET_MS",
+            "SUST_MS",
+            "AdjMS"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "nonterminal": "SigueMS",
+          "production": [
+            "SV_MS"
+          ],
+          "lookahead": "VERB_3S",
+          "line": 1,
+          "column": 14
+        },
+        {
+          "nonterminal": "SV_MS",
+          "production": [
+            "VerboSG",
+            "Cpl_MS"
+          ],
+          "lookahead": "VERB_3S",
+          "line": 1,
+          "column": 14
+        },
+        {
+          "nonterminal": "VerboSG",
+          "production": [
+            "VERB_3S"
+          ],
+          "lookahead": "VERB_3S",
+          "line": 1,
+          "column": 14
+        },
+        {
+          "nonterminal": "Cpl_MS",
+          "production": [
+            "Objeto",
+            "ModsS"
+          ],
+          "lookahead": "$",
+          "line": 1,
+          "column": 19
+        },
+        {
+          "nonterminal": "Objeto",
+          "production": [
+            "eps"
+          ],
+          "lookahead": "$",
+          "line": 1,
+          "column": 19
+        },
+        {
+          "nonterminal": "ModsS",
+          "production": [
+            "eps"
+          ],
+          "lookahead": "$",
+          "line": 1,
+          "column": 19
+        }
+      ],
+      "execution_error": null,
+      "seconds": 0.0007486999966204166
+    },
+    {
+      "id": "ES-041",
+      "tool": "parser",
+      "text": "La profesora sabe que el niño lee el libro",
+      "level": "complejo",
+      "tokens": [
+        "La",
+        "profesora",
+        "sabe",
+        "que",
+        "el",
+        "niño",
+        "lee",
+        "el",
+        "libro"
+      ],
+      "pos": [
+        "DET",
+        "NOUN",
+        "VERB",
+        "SCONJ",
+        "DET",
+        "NOUN",
+        "VERB",
+        "DET",
+        "NOUN"
+      ],
+      "lexical_tokens": [
+        [
+          "DET_FS",
+          "La",
+          1,
+          1
+        ],
+        [
+          "SUST_FS",
+          "profesora",
+          1,
+          4
+        ],
+        [
+          "VERB_3S",
+          "sabe",
+          1,
+          14
+        ],
+        [
+          "QUE",
+          "que",
+          1,
+          19
+        ],
+        [
+          "DET_MS",
+          "el",
+          1,
+          23
+        ],
+        [
+          "SUST_MS",
+          "niño",
+          1,
+          26
+        ],
+        [
+          "VERB_3S",
+          "lee",
+          1,
+          31
+        ],
+        [
+          "DET_MS",
+          "el",
+          1,
+          35
+        ],
+        [
+          "SUST_MS",
+          "libro",
+          1,
+          38
+        ]
+      ],
+      "accepted": true,
+      "tree": "(Oracion (OracionSG (SN_FS La (NombreFS profesora) (AdjFS eps)) (SigueFS (SV_FS (VerboSG sabe) (Cpl_FS que (Oracion (OracionSG (SN_MS el niño (AdjMS eps)) (SigueMS (SV_MS (VerboSG lee) (Cpl_MS (Objeto (SN (SN_MS el libro (AdjMS eps)))) (ModsS eps)))))))))))",
+      "diagnostics": [],
+      "productions": [
+        {
+          "nonterminal": "Oracion",
+          "production": [
+            "OracionSG"
+          ],
+          "lookahead": "DET_FS",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "nonterminal": "OracionSG",
+          "production": [
+            "SN_FS",
+            "SigueFS"
+          ],
+          "lookahead": "DET_FS",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "nonterminal": "SN_FS",
+          "production": [
+            "DET_FS",
+            "NombreFS",
+            "AdjFS"
+          ],
+          "lookahead": "DET_FS",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "nonterminal": "NombreFS",
+          "production": [
+            "SUST_FS"
+          ],
+          "lookahead": "SUST_FS",
+          "line": 1,
+          "column": 4
+        },
+        {
+          "nonterminal": "AdjFS",
+          "production": [
+            "eps"
+          ],
+          "lookahead": "VERB_3S",
+          "line": 1,
+          "column": 14
+        },
+        {
+          "nonterminal": "SigueFS",
+          "production": [
+            "SV_FS"
+          ],
+          "lookahead": "VERB_3S",
+          "line": 1,
+          "column": 14
+        },
+        {
+          "nonterminal": "SV_FS",
+          "production": [
+            "VerboSG",
+            "Cpl_FS"
+          ],
+          "lookahead": "VERB_3S",
+          "line": 1,
+          "column": 14
+        },
+        {
+          "nonterminal": "VerboSG",
+          "production": [
+            "VERB_3S"
+          ],
+          "lookahead": "VERB_3S",
+          "line": 1,
+          "column": 14
+        },
+        {
+          "nonterminal": "Cpl_FS",
+          "production": [
+            "QUE",
+            "Oracion"
+          ],
+          "lookahead": "QUE",
+          "line": 1,
+          "column": 19
+        },
+        {
+          "nonterminal": "Oracion",
+          "production": [
+            "OracionSG"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 23
+        },
+        {
+          "nonterminal": "OracionSG",
+          "production": [
+            "SN_MS",
+            "SigueMS"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 23
+        },
+        {
+          "nonterminal": "SN_MS",
+          "production": [
+            "DET_MS",
+            "SUST_MS",
+            "AdjMS"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 23
+        },
+        {
+          "nonterminal": "AdjMS",
+          "production": [
+            "eps"
+          ],
+          "lookahead": "VERB_3S",
+          "line": 1,
+          "column": 31
+        },
+        {
+          "nonterminal": "SigueMS",
+          "production": [
+            "SV_MS"
+          ],
+          "lookahead": "VERB_3S",
+          "line": 1,
+          "column": 31
+        },
+        {
+          "nonterminal": "SV_MS",
+          "production": [
+            "VerboSG",
+            "Cpl_MS"
+          ],
+          "lookahead": "VERB_3S",
+          "line": 1,
+          "column": 31
+        },
+        {
+          "nonterminal": "VerboSG",
+          "production": [
+            "VERB_3S"
+          ],
+          "lookahead": "VERB_3S",
+          "line": 1,
+          "column": 31
+        },
+        {
+          "nonterminal": "Cpl_MS",
+          "production": [
+            "Objeto",
+            "ModsS"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 35
+        },
+        {
+          "nonterminal": "Objeto",
+          "production": [
+            "SN"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 35
+        },
+        {
+          "nonterminal": "SN",
+          "production": [
+            "SN_MS"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 35
+        },
+        {
+          "nonterminal": "SN_MS",
+          "production": [
+            "DET_MS",
+            "SUST_MS",
+            "AdjMS"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 35
+        },
+        {
+          "nonterminal": "AdjMS",
+          "production": [
+            "eps"
+          ],
+          "lookahead": "$",
+          "line": 1,
+          "column": 43
+        },
+        {
+          "nonterminal": "ModsS",
+          "production": [
+            "eps"
+          ],
+          "lookahead": "$",
+          "line": 1,
+          "column": 43
+        }
+      ],
+      "execution_error": null,
+      "seconds": 0.0007817000150680542
+    },
+    {
+      "id": "ES-049",
+      "tool": "parser",
+      "text": "El profesor sabe que los niños lee el libro",
+      "level": "complejo",
+      "tokens": [
+        "El",
+        "profesor",
+        "sabe",
+        "que",
+        "los",
+        "niños",
+        "lee",
+        "el",
+        "libro"
+      ],
+      "pos": [
+        "DET",
+        "NOUN",
+        "VERB",
+        "SCONJ",
+        "DET",
+        "NOUN",
+        "VERB",
+        "DET",
+        "NOUN"
+      ],
+      "lexical_tokens": [
+        [
+          "DET_MS",
+          "El",
+          1,
+          1
+        ],
+        [
+          "SUST_MS",
+          "profesor",
+          1,
+          4
+        ],
+        [
+          "VERB_3S",
+          "sabe",
+          1,
+          13
+        ],
+        [
+          "QUE",
+          "que",
+          1,
+          18
+        ],
+        [
+          "DET_MP",
+          "los",
+          1,
+          22
+        ],
+        [
+          "SUST_MP",
+          "niños",
+          1,
+          26
+        ],
+        [
+          "VERB_3S",
+          "lee",
+          1,
+          32
+        ],
+        [
+          "DET_MS",
+          "el",
+          1,
+          36
+        ],
+        [
+          "SUST_MS",
+          "libro",
+          1,
+          39
+        ]
+      ],
+      "accepted": false,
+      "tree": "(Oracion (OracionSG (SN_MS El profesor (AdjMS eps)) (SigueMS (SV_MS (VerboSG sabe) (Cpl_MS que (Oracion (OracionPL (SN_MP los niños (AdjMP <error>)) (SigueMP <error>))))))))",
+      "diagnostics": [
+        {
+          "line": 1,
+          "column": 32,
+          "offset": 31,
+          "stage": "syntactic",
+          "code": "unexpected_token",
+          "message": "no se esperaba 'lee' al analizar AdjMP. Se esperaba: ['$', 'ADJ_MP', 'ADV', 'CONJ_Y', 'COP_3P', 'COP_PAST_3P', 'PREP', 'VERB_3P', 'VERB_PAST_3P']",
+          "nonterminal": "AdjMP"
+        },
+        {
+          "line": 1,
+          "column": 44,
+          "offset": 43,
+          "stage": "syntactic",
+          "code": "unexpected_token",
+          "message": "no se esperaba '$' al analizar SigueMP. Se esperaba: ['CONJ_Y', 'COP_3P', 'COP_PAST_3P', 'VERB_3P', 'VERB_PAST_3P']",
+          "nonterminal": "SigueMP"
+        }
+      ],
+      "productions": [
+        {
+          "nonterminal": "Oracion",
+          "production": [
+            "OracionSG"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "nonterminal": "OracionSG",
+          "production": [
+            "SN_MS",
+            "SigueMS"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "nonterminal": "SN_MS",
+          "production": [
+            "DET_MS",
+            "SUST_MS",
+            "AdjMS"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "nonterminal": "AdjMS",
+          "production": [
+            "eps"
+          ],
+          "lookahead": "VERB_3S",
+          "line": 1,
+          "column": 13
+        },
+        {
+          "nonterminal": "SigueMS",
+          "production": [
+            "SV_MS"
+          ],
+          "lookahead": "VERB_3S",
+          "line": 1,
+          "column": 13
+        },
+        {
+          "nonterminal": "SV_MS",
+          "production": [
+            "VerboSG",
+            "Cpl_MS"
+          ],
+          "lookahead": "VERB_3S",
+          "line": 1,
+          "column": 13
+        },
+        {
+          "nonterminal": "VerboSG",
+          "production": [
+            "VERB_3S"
+          ],
+          "lookahead": "VERB_3S",
+          "line": 1,
+          "column": 13
+        },
+        {
+          "nonterminal": "Cpl_MS",
+          "production": [
+            "QUE",
+            "Oracion"
+          ],
+          "lookahead": "QUE",
+          "line": 1,
+          "column": 18
+        },
+        {
+          "nonterminal": "Oracion",
+          "production": [
+            "OracionPL"
+          ],
+          "lookahead": "DET_MP",
+          "line": 1,
+          "column": 22
+        },
+        {
+          "nonterminal": "OracionPL",
+          "production": [
+            "SN_MP",
+            "SigueMP"
+          ],
+          "lookahead": "DET_MP",
+          "line": 1,
+          "column": 22
+        },
+        {
+          "nonterminal": "SN_MP",
+          "production": [
+            "DET_MP",
+            "SUST_MP",
+            "AdjMP"
+          ],
+          "lookahead": "DET_MP",
+          "line": 1,
+          "column": 22
+        }
+      ],
+      "execution_error": null,
+      "seconds": 0.0008463000413030386
+    },
+    {
+      "id": "ES-053",
+      "tool": "parser",
+      "text": "El niño y la niña corren",
+      "level": "complejo",
+      "tokens": [
+        "El",
+        "niño",
+        "y",
+        "la",
+        "niña",
+        "corren"
+      ],
+      "pos": [
+        "DET",
+        "NOUN",
+        "CCONJ",
+        "DET",
+        "NOUN",
+        "VERB"
+      ],
+      "lexical_tokens": [
+        [
+          "DET_MS",
+          "El",
+          1,
+          1
+        ],
+        [
+          "SUST_MS",
+          "niño",
+          1,
+          4
+        ],
+        [
+          "CONJ_Y",
+          "y",
+          1,
+          9
+        ],
+        [
+          "DET_FS",
+          "la",
+          1,
+          11
+        ],
+        [
+          "SUST_FS",
+          "niña",
+          1,
+          14
+        ],
+        [
+          "VERB_3P",
+          "corren",
+          1,
+          19
+        ]
+      ],
+      "accepted": true,
+      "tree": "(Oracion (OracionSG (SN_MS El niño (AdjMS eps)) (SigueMS y (CoordinadoM (SN (SN_FS la (NombreFS niña) (AdjFS eps))) (ColaCoordM (SV_MP (VerboPL corren) (Cpl_MP (Objeto eps) (ModsP eps))))))))",
+      "diagnostics": [],
+      "productions": [
+        {
+          "nonterminal": "Oracion",
+          "production": [
+            "OracionSG"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "nonterminal": "OracionSG",
+          "production": [
+            "SN_MS",
+            "SigueMS"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "nonterminal": "SN_MS",
+          "production": [
+            "DET_MS",
+            "SUST_MS",
+            "AdjMS"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "nonterminal": "AdjMS",
+          "production": [
+            "eps"
+          ],
+          "lookahead": "CONJ_Y",
+          "line": 1,
+          "column": 9
+        },
+        {
+          "nonterminal": "SigueMS",
+          "production": [
+            "CONJ_Y",
+            "CoordinadoM"
+          ],
+          "lookahead": "CONJ_Y",
+          "line": 1,
+          "column": 9
+        },
+        {
+          "nonterminal": "CoordinadoM",
+          "production": [
+            "SN",
+            "ColaCoordM"
+          ],
+          "lookahead": "DET_FS",
+          "line": 1,
+          "column": 11
+        },
+        {
+          "nonterminal": "SN",
+          "production": [
+            "SN_FS"
+          ],
+          "lookahead": "DET_FS",
+          "line": 1,
+          "column": 11
+        },
+        {
+          "nonterminal": "SN_FS",
+          "production": [
+            "DET_FS",
+            "NombreFS",
+            "AdjFS"
+          ],
+          "lookahead": "DET_FS",
+          "line": 1,
+          "column": 11
+        },
+        {
+          "nonterminal": "NombreFS",
+          "production": [
+            "SUST_FS"
+          ],
+          "lookahead": "SUST_FS",
+          "line": 1,
+          "column": 14
+        },
+        {
+          "nonterminal": "AdjFS",
+          "production": [
+            "eps"
+          ],
+          "lookahead": "VERB_3P",
+          "line": 1,
+          "column": 19
+        },
+        {
+          "nonterminal": "ColaCoordM",
+          "production": [
+            "SV_MP"
+          ],
+          "lookahead": "VERB_3P",
+          "line": 1,
+          "column": 19
+        },
+        {
+          "nonterminal": "SV_MP",
+          "production": [
+            "VerboPL",
+            "Cpl_MP"
+          ],
+          "lookahead": "VERB_3P",
+          "line": 1,
+          "column": 19
+        },
+        {
+          "nonterminal": "VerboPL",
+          "production": [
+            "VERB_3P"
+          ],
+          "lookahead": "VERB_3P",
+          "line": 1,
+          "column": 19
+        },
+        {
+          "nonterminal": "Cpl_MP",
+          "production": [
+            "Objeto",
+            "ModsP"
+          ],
+          "lookahead": "$",
+          "line": 1,
+          "column": 25
+        },
+        {
+          "nonterminal": "Objeto",
+          "production": [
+            "eps"
+          ],
+          "lookahead": "$",
+          "line": 1,
+          "column": 25
+        },
+        {
+          "nonterminal": "ModsP",
+          "production": [
+            "eps"
+          ],
+          "lookahead": "$",
+          "line": 1,
+          "column": 25
+        }
+      ],
+      "execution_error": null,
+      "seconds": 0.0006003000307828188
+    },
+    {
+      "id": "ES-056",
+      "tool": "parser",
+      "text": "El astronauta lee el libro",
+      "level": "complejo",
+      "tokens": [
+        "El",
+        "astronauta",
+        "lee",
+        "el",
+        "libro"
+      ],
+      "pos": [
+        "DET",
+        "X",
+        "VERB",
+        "DET",
+        "NOUN"
+      ],
+      "lexical_tokens": [
+        [
+          "DET_MS",
+          "El",
+          1,
+          1
+        ],
+        [
+          "ID",
+          "astronauta",
+          1,
+          4
+        ],
+        [
+          "VERB_3S",
+          "lee",
+          1,
+          15
+        ],
+        [
+          "DET_MS",
+          "el",
+          1,
+          19
+        ],
+        [
+          "SUST_MS",
+          "libro",
+          1,
+          22
+        ]
+      ],
+      "accepted": false,
+      "tree": "(Oracion (OracionSG (SN_MS El <falta SUST_MS> (AdjMS <error>)) (SigueMS (SV_MS (VerboSG lee) (Cpl_MS (Objeto (SN (SN_MS el libro (AdjMS eps)))) (ModsS eps))))))",
+      "diagnostics": [
+        {
+          "line": 1,
+          "column": 4,
+          "offset": 3,
+          "stage": "lexical",
+          "code": "unknown_word",
+          "message": "palabra fuera del vocabulario 'astronauta'",
+          "nonterminal": null
+        },
+        {
+          "line": 1,
+          "column": 4,
+          "offset": 3,
+          "stage": "syntactic",
+          "code": "missing_terminal",
+          "message": "se esperaba SUST_MS pero llego 'astronauta'",
+          "nonterminal": null
+        },
+        {
+          "line": 1,
+          "column": 4,
+          "offset": 3,
+          "stage": "syntactic",
+          "code": "unexpected_token",
+          "message": "no se esperaba 'astronauta' al analizar AdjMS. Se esperaba: ['$', 'ADJ_MS', 'ADV', 'CONJ_Y', 'COP_3P', 'COP_3S', 'COP_PAST_3P', 'COP_PAST_3S', 'PREP', 'VERB_3P', 'VERB_3S', 'VERB_PAST_3P', 'VERB_PAST_3S']",
+          "nonterminal": "AdjMS"
+        }
+      ],
+      "productions": [
+        {
+          "nonterminal": "Oracion",
+          "production": [
+            "OracionSG"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "nonterminal": "OracionSG",
+          "production": [
+            "SN_MS",
+            "SigueMS"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "nonterminal": "SN_MS",
+          "production": [
+            "DET_MS",
+            "SUST_MS",
+            "AdjMS"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "nonterminal": "SigueMS",
+          "production": [
+            "SV_MS"
+          ],
+          "lookahead": "VERB_3S",
+          "line": 1,
+          "column": 15
+        },
+        {
+          "nonterminal": "SV_MS",
+          "production": [
+            "VerboSG",
+            "Cpl_MS"
+          ],
+          "lookahead": "VERB_3S",
+          "line": 1,
+          "column": 15
+        },
+        {
+          "nonterminal": "VerboSG",
+          "production": [
+            "VERB_3S"
+          ],
+          "lookahead": "VERB_3S",
+          "line": 1,
+          "column": 15
+        },
+        {
+          "nonterminal": "Cpl_MS",
+          "production": [
+            "Objeto",
+            "ModsS"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 19
+        },
+        {
+          "nonterminal": "Objeto",
+          "production": [
+            "SN"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 19
+        },
+        {
+          "nonterminal": "SN",
+          "production": [
+            "SN_MS"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 19
+        },
+        {
+          "nonterminal": "SN_MS",
+          "production": [
+            "DET_MS",
+            "SUST_MS",
+            "AdjMS"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 19
+        },
+        {
+          "nonterminal": "AdjMS",
+          "production": [
+            "eps"
+          ],
+          "lookahead": "$",
+          "line": 1,
+          "column": 27
+        },
+        {
+          "nonterminal": "ModsS",
+          "production": [
+            "eps"
+          ],
+          "lookahead": "$",
+          "line": 1,
+          "column": 27
+        }
+      ],
+      "execution_error": null,
+      "seconds": 0.0006408998742699623
+    },
+    {
+      "id": "ES-057",
+      "tool": "parser",
+      "text": "El niño leyó el libro.",
+      "level": "complejo",
+      "tokens": [
+        "El",
+        "niño",
+        "leyó",
+        "el",
+        "libro",
+        "."
+      ],
+      "pos": [
+        "DET",
+        "NOUN",
+        "VERB",
+        "DET",
+        "NOUN",
+        "X"
+      ],
+      "lexical_tokens": [
+        [
+          "DET_MS",
+          "El",
+          1,
+          1
+        ],
+        [
+          "SUST_MS",
+          "niño",
+          1,
+          4
+        ],
+        [
+          "VERB_PAST_3S",
+          "leyó",
+          1,
+          9
+        ],
+        [
+          "DET_MS",
+          "el",
+          1,
+          14
+        ],
+        [
+          "SUST_MS",
+          "libro",
+          1,
+          17
+        ]
+      ],
+      "accepted": false,
+      "tree": "(Oracion (OracionSG (SN_MS El niño (AdjMS eps)) (SigueMS (SV_MS (VerboSG leyó) (Cpl_MS (Objeto (SN (SN_MS el libro (AdjMS eps)))) (ModsS eps))))))",
+      "diagnostics": [
+        {
+          "line": 1,
+          "column": 22,
+          "offset": 21,
+          "stage": "lexical",
+          "code": "illegal_character",
+          "message": "caracter ilegal '.'",
+          "nonterminal": null
+        }
+      ],
+      "productions": [
+        {
+          "nonterminal": "Oracion",
+          "production": [
+            "OracionSG"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "nonterminal": "OracionSG",
+          "production": [
+            "SN_MS",
+            "SigueMS"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "nonterminal": "SN_MS",
+          "production": [
+            "DET_MS",
+            "SUST_MS",
+            "AdjMS"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "nonterminal": "AdjMS",
+          "production": [
+            "eps"
+          ],
+          "lookahead": "VERB_PAST_3S",
+          "line": 1,
+          "column": 9
+        },
+        {
+          "nonterminal": "SigueMS",
+          "production": [
+            "SV_MS"
+          ],
+          "lookahead": "VERB_PAST_3S",
+          "line": 1,
+          "column": 9
+        },
+        {
+          "nonterminal": "SV_MS",
+          "production": [
+            "VerboSG",
+            "Cpl_MS"
+          ],
+          "lookahead": "VERB_PAST_3S",
+          "line": 1,
+          "column": 9
+        },
+        {
+          "nonterminal": "VerboSG",
+          "production": [
+            "VERB_PAST_3S"
+          ],
+          "lookahead": "VERB_PAST_3S",
+          "line": 1,
+          "column": 9
+        },
+        {
+          "nonterminal": "Cpl_MS",
+          "production": [
+            "Objeto",
+            "ModsS"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 14
+        },
+        {
+          "nonterminal": "Objeto",
+          "production": [
+            "SN"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 14
+        },
+        {
+          "nonterminal": "SN",
+          "production": [
+            "SN_MS"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 14
+        },
+        {
+          "nonterminal": "SN_MS",
+          "production": [
+            "DET_MS",
+            "SUST_MS",
+            "AdjMS"
+          ],
+          "lookahead": "DET_MS",
+          "line": 1,
+          "column": 14
+        },
+        {
+          "nonterminal": "AdjMS",
+          "production": [
+            "eps"
+          ],
+          "lookahead": "$",
+          "line": 1,
+          "column": 23
+        },
+        {
+          "nonterminal": "ModsS",
+          "production": [
+            "eps"
+          ],
+          "lookahead": "$",
+          "line": 1,
+          "column": 23
+        }
+      ],
+      "execution_error": null,
+      "seconds": 0.0005689000245183706
+    }
+  ]
+}

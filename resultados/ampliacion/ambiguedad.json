@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "created_utc": "2026-11-12T19:53:50.052585+00:00",
+    "commit": "e83f09b74e13b8dd4e8d4cbdf930ec14bf8487ab",
+    "branch": "codex/ampliar-espanol",
+    "hash_policy": "SHA-256; texto UTF-8 con saltos LF, binarios sin transformacion",
+    "source_hashes": {
+      "experimentos\\__init__.py": "1af49503f294837ba9215f0a0f3c41925111d28b2ea1130ce5b04d9dc2d84c7f",
+      "experimentos\\adaptadores.py": "810ac9626607fc6d8f77e7a2a7313426217b9b37872286a6a2429106a6923e03",
+      "experimentos\\ambiguedad.py": "5c03d49c0dfe90d8d6772fc5649cba7fffb741224b09122e1acd53f3e37d2d2c",
+      "experimentos\\common.py": "c74e9a1709602ea1e98c5ac395bebedb97e275cad38edbdd5e005905c904c6f4",
+      "experimentos\\comparar_nlp.py": "d4b33b2588e229c535c51c4234315432f2cdecc11a8638181a9c0dd4747e5079",
+      "experimentos\\demo_fase1.py": "ce0570d767ffa95fcbaeecdb7578cfb8e233c6e5bd62976183389a2d52635a63",
+      "experimentos\\metricas.py": "23812c856e284ab9686abada5c214400436a589a1e12d6e98d75d94220a20081",
+      "experimentos\\registro_fallos.py": "ca26287de6a4bfeeeb4b078488bebf2d7576e8a34d0842c68975074bc4356dd8",
+      "main.py": "8e40b3cfbd7dc94e6f008d49caca37f24f4384747d47eb28f68e0485678beb93",
+      "minic\\__init__.py": "acf5d7d08e80102a69942e0ca6b238232c063b7772748533da274c3fe32ddda3",
+      "minic\\diagnostics.py": "fc88d37cc1c749c782bb353751938ad1e1ead59ee295f731d724e96419e474ab",
+      "minic\\grammar.py": "e353f235b813211c759bdfc7f9c9caeac4d1ae84671578fd2af2be154d5aa0d9",
+      "minic\\lexer.py": "06590f8c0582e837de73d2e5bab1cb7fb6e5510f889fee5dc289cbf994e44227",
+      "minic\\lexicon_es.py": "079c190476390453aa16ca8dd9eabf6ba9591dc1521e9e85bf5365f8b509f33b",
+      "minic\\parser.py": "22e2304f4a15bfbc5d4c465fd2f86437c1283acd422212567878af34e025672e",
+      "minic\\trees.py": "d0ae18536ad4abdf49af5b811724dda28b97bf602de5696900569317600a0832"
+    },
+    "tracked_changes": true,
+    "grammar_sha256": "f3ec163d055725d7d16dcb286f115958271a70e14f9e6f5b538f8d0ed2e95ff6",
+    "corpus_sha256": "b1ca38bfb3694e8495cd2593305edbc0c317d7be9a6a7e8ba082fbbcfcad037d"
+  },
+  "sentence": "La mujer vive en la casa de la ciudad",
+  "toy_grammar": "\nS -> NP VP\nNP -> DET N | NP PP\nVP -> V PP | VP PP\nPP -> P NP\nDET -> 'La' | 'la'\nN -> 'mujer' | 'casa' | 'ciudad'\nV -> 'vive'\nP -> 'en' | 'de'\n",
+  "alternatives": 2,
+  "trees": [
+    "(S (NP (DET La) (N mujer)) (VP (VP (V vive) (PP (P en) (NP (DET la) (N casa)))) (PP (P de) (NP (DET la) (N ciudad)))))",
+    "(S (NP (DET La) (N mujer)) (VP (V vive) (PP (P en) (NP (NP (DET la) (N casa)) (PP (P de) (NP (DET la) (N ciudad)))))))"
+  ],
+  "own_tree": "(Oracion (OracionSG (SN_FS La (NombreFS mujer) (AdjFS eps)) (SigueFS (SV_FS (VerboSG vive) (Cpl_FS (Objeto eps) (ModsS (PP en (SN (SN_FS la (NombreFS casa) (AdjFS eps)))) (ModsS (PP de (SN (SN_FS la (NombreFS ciudad) (AdjFS eps)))) (ModsS eps))))))))",
+  "interpretation": "La CFG auxiliar admite adjuncion nominal y verbal; el subconjunto LL(1) selecciona PP verbales sucesivas."
+}

@@ -1,0 +1,75 @@
+caso                                       | esperado               | obtenido                       | resultado
+----------------------------------------------------------------------------------------------------------------
+v01_sujeto_singular.txt                    | aceptar                | aceptado                       | OK
+v02_sujeto_plural.txt                      | aceptar                | aceptado                       | OK
+v03_det_sust_adj.txt                       | aceptar                | aceptado                       | OK
+v04_atributo_plural.txt                    | aceptar                | aceptado                       | OK
+v05_modificadores.txt                      | aceptar                | aceptado                       | OK
+v06_pp_anidada.txt                         | aceptar                | aceptado                       | OK
+v07_subordinada.txt                        | aceptar                | aceptado                       | OK
+v08_subordinada_concordancia.txt           | aceptar                | aceptado                       | OK
+v09_adverbio_plural.txt                    | aceptar                | aceptado                       | OK
+v10_sn_femenino.txt                        | aceptar                | aceptado                       | OK
+v11_subordinada_anidada.txt                | aceptar                | aceptado                       | OK
+v12_coordinacion_mixta.txt                 | aceptar                | aceptado                       | OK
+v13_coordinacion_orden.txt                 | aceptar                | aceptado                       | OK
+v14_coordinacion_femenina.txt              | aceptar                | aceptado                       | OK
+v15_coordinacion_tres.txt                  | aceptar                | aceptado                       | OK
+v16_atributo_mixto.txt                     | aceptar                | aceptado                       | OK
+v17_atributo_femenino.txt                  | aceptar                | aceptado                       | OK
+v18_objeto_masa.txt                        | aceptar                | aceptado                       | OK
+v19_objeto_masa_determinante.txt           | aceptar                | aceptado                       | OK
+v20_objeto_nominal.txt                     | aceptar                | aceptado                       | OK
+v21_inversion_singular.txt                 | aceptar                | aceptado                       | OK
+v22_inversion_plural.txt                   | aceptar                | aceptado                       | OK
+v23_subordinada_coordinada.txt             | aceptar                | aceptado                       | OK
+v24_pasado_coordinado.txt                  | aceptar                | aceptado                       | OK
+v25_pasado_objeto.txt                      | aceptar                | aceptado                       | OK
+v26_pasado_invertido.txt                   | aceptar                | aceptado                       | OK
+v27_pasado_copula_femenina.txt             | aceptar                | aceptado                       | OK
+v28_pasado_copula_mixta.txt                | aceptar                | aceptado                       | OK
+v29_objeto_adjetivo.txt                    | aceptar                | aceptado                       | OK
+v30_masa_adjetivo.txt                      | aceptar                | aceptado                       | OK
+v31_frutas_determinante.txt                | aceptar                | aceptado                       | OK
+v32_coordinacion_modificadores.txt         | aceptar                | aceptado                       | OK
+v33_pasado_subordinada.txt                 | aceptar                | aceptado                       | OK
+v34_miembro_plural.txt                     | aceptar                | aceptado                       | OK
+v35_miembro_femenino_plural.txt            | aceptar                | aceptado                       | OK
+v36_masculino_ultimo.txt                   | aceptar                | aceptado                       | OK
+v37_plural_objeto.txt                      | aceptar                | aceptado                       | OK
+v38_inversion_modificadores.txt            | aceptar                | aceptado                       | OK
+i01_genero_det_sust.txt                    | rechazar (linea 2)     | rechazado (linea 2)            | OK
+i02_numero_det_sust.txt                    | rechazar (linea 2)     | rechazado (linea 2)            | OK
+i03_genero_adjetivo.txt                    | rechazar (linea 2)     | rechazado (linea 2)            | OK
+i04_concordancia_verbo_singular.txt        | rechazar (linea 2)     | rechazado (linea 2)            | OK
+i05_concordancia_verbo_plural.txt          | rechazar (linea 2)     | rechazado (linea 2)            | OK
+i06_falta_complementizador.txt             | rechazar (linea 2)     | rechazado (linea 2)            | OK
+i07_orden_adjetivo.txt                     | rechazar (linea 2)     | rechazado (linea 2)            | OK
+i08_concordancia_atributo.txt              | rechazar (linea 2)     | rechazado (linea 2)            | OK
+i09_coordinacion_verbo_singular.txt        | rechazar (linea 2)     | rechazado (linea 2)            | OK
+i10_miembro_discordante.txt                | rechazar (linea 2)     | rechazado (linea 2)            | OK
+i11_miembro_ausente.txt                    | rechazar (linea 2)     | rechazado (linea 2)            | OK
+i12_conjuncion_duplicada.txt               | rechazar (linea 2)     | rechazado (linea 2)            | OK
+i13_atributo_mixto_discordante.txt         | rechazar (linea 2)     | rechazado (linea 2)            | OK
+i14_atributo_singular.txt                  | rechazar (linea 2)     | rechazado (linea 2)            | OK
+i15_contable_sin_determinante.txt          | rechazar (linea 2)     | rechazado (linea 2)            | OK
+i16_inversion_discordante.txt              | rechazar (linea 2)     | rechazado (linea 2)            | OK
+i17_pasado_coordinado_singular.txt         | rechazar (linea 2)     | rechazado (linea 2)            | OK
+i18_pasado_copula_discordante.txt          | rechazar (linea 2)     | rechazado (linea 2)            | OK
+i19_objeto_adjetivo_discordante.txt        | rechazar (linea 2)     | rechazado (linea 2)            | OK
+i20_masa_adjetivo_discordante.txt          | rechazar (linea 2)     | rechazado (linea 2)            | OK
+i21_plural_sin_determinante.txt            | rechazar (linea 2)     | rechazado (linea 2)            | OK
+i22_sujeto_sin_determinante.txt            | rechazar (linea 2)     | rechazado (linea 2)            | OK
+i23_inversion_objeto_fuera_alcance.txt     | rechazar (linea 2)     | rechazado (linea 2)            | OK
+i24_inversion_coordinada_fuera_alcance.txt | rechazar (linea 2)     | rechazado (linea 2)            | OK
+i25_punto_fuera_alcance.txt                | rechazar (linea 2)     | rechazado (linea 2)            | OK
+i26_vocabulario_desconocido.txt            | rechazar (linea 2)     | rechazado (linea 2)            | OK
+i27_imperfecto_fuera_alcance.txt           | rechazar (linea 2)     | rechazado (linea 2)            | OK
+i28_adjetivo_miembro_discordante.txt       | rechazar (linea 2)     | rechazado (linea 2)            | OK
+i29_singular_verbo_plural.txt              | rechazar (linea 2)     | rechazado (linea 2)            | OK
+i30_pasado_plural_discordante.txt          | rechazar (linea 2)     | rechazado (linea 2)            | OK
+i31_dos_objetos_fuera_alcance.txt          | rechazar (linea 2)     | rechazado (linea 2)            | OK
+i32_objeto_coordinado_fuera_alcance.txt    | rechazar (linea 2)     | rechazado (linea 2)            | OK
+i33_sujeto_omitido_fuera_alcance.txt       | rechazar (linea 3)     | rechazado (linea 3)            | OK
+
+71/71 casos pasan.
