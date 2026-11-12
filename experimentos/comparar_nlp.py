@@ -26,9 +26,9 @@ def run(corpus_path, names):
 
 def main(argv=None):
     parser = argparse.ArgumentParser()
-    parser.add_argument('--corpus', default=str(ROOT / 'datos/fase1.json'))
+    parser.add_argument('--corpus', default=str(ROOT / 'datos/ampliacion_es.json'))
     parser.add_argument('--tools', nargs='+', choices=list(ADAPTERS), default=list(ADAPTERS))
-    parser.add_argument('--output', default=str(ROOT / 'resultados/fase1/comparacion.json'))
+    parser.add_argument('--output', default=str(ROOT / 'resultados/ampliacion/comparacion.json'))
     args = parser.parse_args(argv)
     try:
         results = run(args.corpus, args.tools)

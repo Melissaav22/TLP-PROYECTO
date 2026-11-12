@@ -1,0 +1,2 @@
+// ESPERA: error en linea 2
+La niña come fruta nuevo

@@ -1,0 +1,21 @@
+{
+  "commit_base": "f1ccab6c223625f45af2313911eb0dca7aa2b61b",
+  "branch_base": "master",
+  "python": "3.14.6",
+  "dependencies": {
+    "ply": "3.11",
+    "nltk": "3.10.4"
+  },
+  "hash_policy": "SHA-256 de texto UTF-8 con saltos LF",
+  "files": {
+    "gramatica_minic.txt": "e7147cb30ece6bbd64c7d401151c4bcb6e83a2e23f48654d49e4a0a8984aebc0",
+    "datos/fase1.json": "9a06d89f8d18c2ab5557078f331778a11762061956600d430a85d7dd0eb47a55",
+    "minic/lexicon_es.py": "1bfdeb6a805de14676889275a82a4fc6318244656a9252de5a4d4398bfb54eb4",
+    "minic/lexer.py": "06590f8c0582e837de73d2e5bab1cb7fb6e5510f889fee5dc289cbf994e44227",
+    "resultados/fase1/comparacion.json": "acbe6cbb333db4215d8de0a33bce856c4fd717bdbb35e20469150eb4cd64c2e9",
+    "resultados/fase1/resumen.json": "4d524b636dc0167fa2016ba6d165d79dc6b68b437bb6a1b08958daf9dbca17dc",
+    "resultados/fase1/fallos.json": "d1b9e57755e667f9046c8eee9ad1efda2546ccae085bbcd2fc28afabe77b6faf",
+    "resultados/fase1/ambiguedad.json": "a26335938d55013009d6e518ce329be589b64e36e94fe7ff676886e9186ca973"
+  },
+  "reproduccion_exacta": "Usar el commit_base con sus fuentes y vocabulario originales; la gramatica archivada permite validar la referencia CFG."
+}

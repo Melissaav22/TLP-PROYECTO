@@ -1,4 +1,4 @@
-"""Contratos de la demostración NLP de la fase 1."""
+"""Referencias históricas y métricas de los experimentos."""
 from pathlib import Path
 import tempfile
 import unittest
@@ -19,14 +19,24 @@ class PhaseOneExperiments(unittest.TestCase):
             self.assertEqual(digest(lf), digest(crlf))
 
     def test_demo_reference_matches_grammar(self):
-        grammar = Grammar(ROOT / 'gramatica_minic.txt')
+        # La ampliación cambia la pertenencia CFG. Fase 1 se contrasta con
+        # su gramática archivada; su reproducción exacta usa el commit base.
+        historical = ROOT / 'datos/historico/fase1/gramatica_minic.txt'
+        grammar = Grammar(historical)
         rows = read_json(ROOT / 'datos/fase1.json')
         self.assertEqual(len(rows), 13)
         self.assertEqual(len({row['id'] for row in rows}), 13)
         for row in rows:
             with self.subTest(id=row['id']):
-                self.assertEqual(row['grammar_version'], digest(ROOT / 'gramatica_minic.txt'))
+                self.assertEqual(row['grammar_version'], digest(historical))
                 self.assertEqual(parse_detailed(row['texto'], grammar, True).accepted, row['esperado_cfg'])
+
+    def test_historical_results_are_preserved(self):
+        reference = read_json(ROOT / 'datos/historico/fase1/referencia.json')
+        for path, expected in reference['files'].items():
+            if path.startswith(('datos/fase1', 'resultados/fase1/')):
+                with self.subTest(path=path):
+                    self.assertEqual(digest(ROOT / path), expected)
 
     def test_confusion_matrix(self):
         result = binary_metrics([True, True, False, False], [True, False, True, False])

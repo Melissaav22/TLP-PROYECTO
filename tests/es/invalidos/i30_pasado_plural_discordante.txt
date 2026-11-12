@@ -1,0 +1,2 @@
+// ESPERA: error en linea 2
+Las niñas comió fruta

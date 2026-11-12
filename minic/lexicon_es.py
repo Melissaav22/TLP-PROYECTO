@@ -17,6 +17,7 @@ SUST_MS = 'SUST_MS'
 SUST_FS = 'SUST_FS'
 SUST_MP = 'SUST_MP'
 SUST_FP = 'SUST_FP'
+SUST_MASA_FS = 'SUST_MASA_FS'
 
 ADJ_MS = 'ADJ_MS'
 ADJ_FS = 'ADJ_FS'
@@ -25,19 +26,25 @@ ADJ_FP = 'ADJ_FP'
 
 VERB_3S = 'VERB_3S'
 VERB_3P = 'VERB_3P'
+VERB_PAST_3S = 'VERB_PAST_3S'
+VERB_PAST_3P = 'VERB_PAST_3P'
 COP_3S = 'COP_3S'
 COP_3P = 'COP_3P'
+COP_PAST_3S = 'COP_PAST_3S'
+COP_PAST_3P = 'COP_PAST_3P'
 
 ADV = 'ADV'
 PREP = 'PREP'
 QUE = 'QUE'
+CONJ_Y = 'CONJ_Y'
 
 TOKENS = [
     DET_MS, DET_FS, DET_MP, DET_FP,
-    SUST_MS, SUST_FS, SUST_MP, SUST_FP,
+    SUST_MS, SUST_FS, SUST_MP, SUST_FP, SUST_MASA_FS,
     ADJ_MS, ADJ_FS, ADJ_MP, ADJ_FP,
-    VERB_3S, VERB_3P, COP_3S, COP_3P,
-    ADV, PREP, QUE,
+    VERB_3S, VERB_3P, VERB_PAST_3S, VERB_PAST_3P,
+    COP_3S, COP_3P, COP_PAST_3S, COP_PAST_3P,
+    ADV, PREP, QUE, CONJ_Y,
 ]
 
 LEXICON = {
@@ -69,6 +76,10 @@ LEXICON = {
     'hermana': SUST_FS, 'hermanas': SUST_FP,
     'silla': SUST_FS, 'sillas': SUST_FP,
     'ventana': SUST_FS, 'ventanas': SUST_FP,
+
+    # Uso de masa: "come fruta"; tambien admite "la fruta".
+    # El plural contable conserva el determinante: "las frutas".
+    'fruta': SUST_MASA_FS, 'frutas': SUST_FP,
 
     # adjetivos (las cuatro formas)
     'alto': ADJ_MS, 'alta': ADJ_FS, 'altos': ADJ_MP, 'altas': ADJ_FP,
@@ -121,4 +132,22 @@ LEXICON = {
 
     # complementizador / relativo
     'que': QUE,
+    'y': CONJ_Y,
 }
+
+# Pretérito perfecto simple, adaptado del incremento 2211877 de fase 2.
+# El token conserva tiempo y número; la concordancia se decide en la CFG.
+PAST_FORMS = [
+    ('corrió', 'corrieron'), ('caminó', 'caminaron'), ('compró', 'compraron'),
+    ('leyó', 'leyeron'), ('escribió', 'escribieron'), ('comió', 'comieron'),
+    ('vivió', 'vivieron'), ('estudió', 'estudiaron'), ('trabajó', 'trabajaron'),
+    ('cantó', 'cantaron'), ('bailó', 'bailaron'), ('supo', 'supieron'),
+    ('dijo', 'dijeron'), ('miró', 'miraron'), ('buscó', 'buscaron'),
+    ('quiso', 'quisieron'), ('durmió', 'durmieron'), ('abrió', 'abrieron'),
+    ('cerró', 'cerraron'),
+]
+for singular, plural in PAST_FORMS:
+    LEXICON[singular] = VERB_PAST_3S
+    LEXICON[plural] = VERB_PAST_3P
+LEXICON.update({'fue': COP_PAST_3S, 'fueron': COP_PAST_3P,
+                'estuvo': COP_PAST_3S, 'estuvieron': COP_PAST_3P})

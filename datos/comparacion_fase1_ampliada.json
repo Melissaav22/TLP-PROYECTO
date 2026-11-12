@@ -1,0 +1,384 @@
+[
+  {
+    "id": "ES-001",
+    "texto": "El niño corre",
+    "nivel": "simple",
+    "fenomenos": [
+      "sujeto_verbo"
+    ],
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "tokens_esperados": [
+      "El",
+      "niño",
+      "corre"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "VERB"
+    ],
+    "grammar_version": "f3ec163d055725d7d16dcb286f115958271a70e14f9e6f5b538f8d0ed2e95ff6",
+    "revision_humana": "pendiente_del_grupo",
+    "esperado_cfg_fase1": true,
+    "grammar_version_fase1": "e7147cb30ece6bbd64c7d401151c4bcb6e83a2e23f48654d49e4a0a8984aebc0"
+  },
+  {
+    "id": "ES-005",
+    "texto": "El niño lee el libro",
+    "nivel": "simple",
+    "fenomenos": [
+      "SVO",
+      "objeto_nominal"
+    ],
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "tokens_esperados": [
+      "El",
+      "niño",
+      "lee",
+      "el",
+      "libro"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "VERB",
+      "DET",
+      "NOUN"
+    ],
+    "grammar_version": "f3ec163d055725d7d16dcb286f115958271a70e14f9e6f5b538f8d0ed2e95ff6",
+    "revision_humana": "pendiente_del_grupo",
+    "esperado_cfg_fase1": false,
+    "grammar_version_fase1": "e7147cb30ece6bbd64c7d401151c4bcb6e83a2e23f48654d49e4a0a8984aebc0"
+  },
+  {
+    "id": "ES-013",
+    "texto": "El niños corre",
+    "nivel": "simple",
+    "fenomenos": [
+      "numero_determinante"
+    ],
+    "esperado_cfg": false,
+    "gramatical_espanol": false,
+    "tokens_esperados": [
+      "El",
+      "niños",
+      "corre"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "VERB"
+    ],
+    "grammar_version": "f3ec163d055725d7d16dcb286f115958271a70e14f9e6f5b538f8d0ed2e95ff6",
+    "revision_humana": "pendiente_del_grupo",
+    "esperado_cfg_fase1": false,
+    "grammar_version_fase1": "e7147cb30ece6bbd64c7d401151c4bcb6e83a2e23f48654d49e4a0a8984aebc0"
+  },
+  {
+    "id": "ES-014",
+    "texto": "La niño corre",
+    "nivel": "simple",
+    "fenomenos": [
+      "genero_determinante"
+    ],
+    "esperado_cfg": false,
+    "gramatical_espanol": false,
+    "tokens_esperados": [
+      "La",
+      "niño",
+      "corre"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "VERB"
+    ],
+    "grammar_version": "f3ec163d055725d7d16dcb286f115958271a70e14f9e6f5b538f8d0ed2e95ff6",
+    "revision_humana": "pendiente_del_grupo",
+    "esperado_cfg_fase1": false,
+    "grammar_version_fase1": "e7147cb30ece6bbd64c7d401151c4bcb6e83a2e23f48654d49e4a0a8984aebc0"
+  },
+  {
+    "id": "ES-015",
+    "texto": "Los niños corre",
+    "nivel": "simple",
+    "fenomenos": [
+      "numero_verbo"
+    ],
+    "esperado_cfg": false,
+    "gramatical_espanol": false,
+    "tokens_esperados": [
+      "Los",
+      "niños",
+      "corre"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "VERB"
+    ],
+    "grammar_version": "f3ec163d055725d7d16dcb286f115958271a70e14f9e6f5b538f8d0ed2e95ff6",
+    "revision_humana": "pendiente_del_grupo",
+    "esperado_cfg_fase1": false,
+    "grammar_version_fase1": "e7147cb30ece6bbd64c7d401151c4bcb6e83a2e23f48654d49e4a0a8984aebc0"
+  },
+  {
+    "id": "ES-021",
+    "texto": "El niño alto corre rápidamente en el parque",
+    "nivel": "intermedio",
+    "fenomenos": [
+      "adjetivo_adverbio_PP"
+    ],
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "tokens_esperados": [
+      "El",
+      "niño",
+      "alto",
+      "corre",
+      "rápidamente",
+      "en",
+      "el",
+      "parque"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "ADJ",
+      "VERB",
+      "ADV",
+      "ADP",
+      "DET",
+      "NOUN"
+    ],
+    "grammar_version": "f3ec163d055725d7d16dcb286f115958271a70e14f9e6f5b538f8d0ed2e95ff6",
+    "revision_humana": "pendiente_del_grupo",
+    "esperado_cfg_fase1": true,
+    "grammar_version_fase1": "e7147cb30ece6bbd64c7d401151c4bcb6e83a2e23f48654d49e4a0a8984aebc0"
+  },
+  {
+    "id": "ES-025",
+    "texto": "La mujer vive en la casa de la ciudad",
+    "nivel": "intermedio",
+    "fenomenos": [
+      "PP_sucesivas"
+    ],
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "tokens_esperados": [
+      "La",
+      "mujer",
+      "vive",
+      "en",
+      "la",
+      "casa",
+      "de",
+      "la",
+      "ciudad"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "VERB",
+      "ADP",
+      "DET",
+      "NOUN",
+      "ADP",
+      "DET",
+      "NOUN"
+    ],
+    "grammar_version": "f3ec163d055725d7d16dcb286f115958271a70e14f9e6f5b538f8d0ed2e95ff6",
+    "revision_humana": "pendiente_del_grupo",
+    "esperado_cfg_fase1": true,
+    "grammar_version_fase1": "e7147cb30ece6bbd64c7d401151c4bcb6e83a2e23f48654d49e4a0a8984aebc0"
+  },
+  {
+    "id": "ES-033",
+    "texto": "El niño alta corre",
+    "nivel": "intermedio",
+    "fenomenos": [
+      "genero_adjetivo"
+    ],
+    "esperado_cfg": false,
+    "gramatical_espanol": false,
+    "tokens_esperados": [
+      "El",
+      "niño",
+      "alta",
+      "corre"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "ADJ",
+      "VERB"
+    ],
+    "grammar_version": "f3ec163d055725d7d16dcb286f115958271a70e14f9e6f5b538f8d0ed2e95ff6",
+    "revision_humana": "pendiente_del_grupo",
+    "esperado_cfg_fase1": false,
+    "grammar_version_fase1": "e7147cb30ece6bbd64c7d401151c4bcb6e83a2e23f48654d49e4a0a8984aebc0"
+  },
+  {
+    "id": "ES-041",
+    "texto": "La profesora sabe que el niño lee el libro",
+    "nivel": "complejo",
+    "fenomenos": [
+      "subordinada_SVO",
+      "objeto_nominal"
+    ],
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "tokens_esperados": [
+      "La",
+      "profesora",
+      "sabe",
+      "que",
+      "el",
+      "niño",
+      "lee",
+      "el",
+      "libro"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "VERB",
+      "SCONJ",
+      "DET",
+      "NOUN",
+      "VERB",
+      "DET",
+      "NOUN"
+    ],
+    "grammar_version": "f3ec163d055725d7d16dcb286f115958271a70e14f9e6f5b538f8d0ed2e95ff6",
+    "revision_humana": "pendiente_del_grupo",
+    "esperado_cfg_fase1": false,
+    "grammar_version_fase1": "e7147cb30ece6bbd64c7d401151c4bcb6e83a2e23f48654d49e4a0a8984aebc0"
+  },
+  {
+    "id": "ES-049",
+    "texto": "El profesor sabe que los niños lee el libro",
+    "nivel": "complejo",
+    "fenomenos": [
+      "concordancia_subordinada"
+    ],
+    "esperado_cfg": false,
+    "gramatical_espanol": false,
+    "tokens_esperados": [
+      "El",
+      "profesor",
+      "sabe",
+      "que",
+      "los",
+      "niños",
+      "lee",
+      "el",
+      "libro"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "VERB",
+      "SCONJ",
+      "DET",
+      "NOUN",
+      "VERB",
+      "DET",
+      "NOUN"
+    ],
+    "grammar_version": "f3ec163d055725d7d16dcb286f115958271a70e14f9e6f5b538f8d0ed2e95ff6",
+    "revision_humana": "pendiente_del_grupo",
+    "esperado_cfg_fase1": false,
+    "grammar_version_fase1": "e7147cb30ece6bbd64c7d401151c4bcb6e83a2e23f48654d49e4a0a8984aebc0"
+  },
+  {
+    "id": "ES-053",
+    "texto": "El niño y la niña corren",
+    "nivel": "complejo",
+    "fenomenos": [
+      "coordinacion_sujeto"
+    ],
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "tokens_esperados": [
+      "El",
+      "niño",
+      "y",
+      "la",
+      "niña",
+      "corren"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "CCONJ",
+      "DET",
+      "NOUN",
+      "VERB"
+    ],
+    "grammar_version": "f3ec163d055725d7d16dcb286f115958271a70e14f9e6f5b538f8d0ed2e95ff6",
+    "revision_humana": "pendiente_del_grupo",
+    "esperado_cfg_fase1": false,
+    "grammar_version_fase1": "e7147cb30ece6bbd64c7d401151c4bcb6e83a2e23f48654d49e4a0a8984aebc0"
+  },
+  {
+    "id": "ES-056",
+    "texto": "El astronauta lee el libro",
+    "nivel": "complejo",
+    "fenomenos": [
+      "sustantivo_fuera_del_vocabulario"
+    ],
+    "esperado_cfg": false,
+    "gramatical_espanol": true,
+    "tokens_esperados": [
+      "El",
+      "astronauta",
+      "lee",
+      "el",
+      "libro"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "VERB",
+      "DET",
+      "NOUN"
+    ],
+    "grammar_version": "f3ec163d055725d7d16dcb286f115958271a70e14f9e6f5b538f8d0ed2e95ff6",
+    "revision_humana": "pendiente_del_grupo",
+    "esperado_cfg_fase1": false,
+    "grammar_version_fase1": "e7147cb30ece6bbd64c7d401151c4bcb6e83a2e23f48654d49e4a0a8984aebc0"
+  },
+  {
+    "id": "ES-057",
+    "texto": "El niño leyó el libro.",
+    "nivel": "complejo",
+    "fenomenos": [
+      "puntuacion_fuera_de_gramatica"
+    ],
+    "esperado_cfg": false,
+    "gramatical_espanol": true,
+    "tokens_esperados": [
+      "El",
+      "niño",
+      "leyó",
+      "el",
+      "libro",
+      "."
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "VERB",
+      "DET",
+      "NOUN",
+      "PUNCT"
+    ],
+    "grammar_version": "f3ec163d055725d7d16dcb286f115958271a70e14f9e6f5b538f8d0ed2e95ff6",
+    "revision_humana": "pendiente_del_grupo",
+    "esperado_cfg_fase1": false,
+    "grammar_version_fase1": "e7147cb30ece6bbd64c7d401151c4bcb6e83a2e23f48654d49e4a0a8984aebc0"
+  }
+]

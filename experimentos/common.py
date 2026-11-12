@@ -45,6 +45,7 @@ def metadata(corpus):
         sources.extend((ROOT / directory).glob('*.py'))
     source_hashes = {str(p.relative_to(ROOT)): digest(p) for p in sorted(sources)}
     return dict(created_utc=datetime.now(timezone.utc).isoformat(), commit=commit,
+                branch=_git('branch', '--show-current'),
                 hash_policy='SHA-256; texto UTF-8 con saltos LF, binarios sin transformacion',
                 source_hashes=source_hashes,
                 tracked_changes=None if changes is None else bool(changes),

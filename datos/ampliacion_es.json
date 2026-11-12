@@ -1,0 +1,1906 @@
+[
+  {
+    "id": "ES-001",
+    "texto": "El niño corre",
+    "nivel": "simple",
+    "fenomenos": [
+      "sujeto_verbo"
+    ],
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "tokens_esperados": [
+      "El",
+      "niño",
+      "corre"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "VERB"
+    ],
+    "grammar_version": "f3ec163d055725d7d16dcb286f115958271a70e14f9e6f5b538f8d0ed2e95ff6",
+    "revision_humana": "pendiente_del_grupo",
+    "esperado_cfg_fase1": true,
+    "grammar_version_fase1": "e7147cb30ece6bbd64c7d401151c4bcb6e83a2e23f48654d49e4a0a8984aebc0"
+  },
+  {
+    "id": "ES-005",
+    "texto": "El niño lee el libro",
+    "nivel": "simple",
+    "fenomenos": [
+      "SVO",
+      "objeto_nominal"
+    ],
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "tokens_esperados": [
+      "El",
+      "niño",
+      "lee",
+      "el",
+      "libro"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "VERB",
+      "DET",
+      "NOUN"
+    ],
+    "grammar_version": "f3ec163d055725d7d16dcb286f115958271a70e14f9e6f5b538f8d0ed2e95ff6",
+    "revision_humana": "pendiente_del_grupo",
+    "esperado_cfg_fase1": false,
+    "grammar_version_fase1": "e7147cb30ece6bbd64c7d401151c4bcb6e83a2e23f48654d49e4a0a8984aebc0"
+  },
+  {
+    "id": "ES-013",
+    "texto": "El niños corre",
+    "nivel": "simple",
+    "fenomenos": [
+      "numero_determinante"
+    ],
+    "esperado_cfg": false,
+    "gramatical_espanol": false,
+    "tokens_esperados": [
+      "El",
+      "niños",
+      "corre"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "VERB"
+    ],
+    "grammar_version": "f3ec163d055725d7d16dcb286f115958271a70e14f9e6f5b538f8d0ed2e95ff6",
+    "revision_humana": "pendiente_del_grupo",
+    "esperado_cfg_fase1": false,
+    "grammar_version_fase1": "e7147cb30ece6bbd64c7d401151c4bcb6e83a2e23f48654d49e4a0a8984aebc0"
+  },
+  {
+    "id": "ES-014",
+    "texto": "La niño corre",
+    "nivel": "simple",
+    "fenomenos": [
+      "genero_determinante"
+    ],
+    "esperado_cfg": false,
+    "gramatical_espanol": false,
+    "tokens_esperados": [
+      "La",
+      "niño",
+      "corre"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "VERB"
+    ],
+    "grammar_version": "f3ec163d055725d7d16dcb286f115958271a70e14f9e6f5b538f8d0ed2e95ff6",
+    "revision_humana": "pendiente_del_grupo",
+    "esperado_cfg_fase1": false,
+    "grammar_version_fase1": "e7147cb30ece6bbd64c7d401151c4bcb6e83a2e23f48654d49e4a0a8984aebc0"
+  },
+  {
+    "id": "ES-015",
+    "texto": "Los niños corre",
+    "nivel": "simple",
+    "fenomenos": [
+      "numero_verbo"
+    ],
+    "esperado_cfg": false,
+    "gramatical_espanol": false,
+    "tokens_esperados": [
+      "Los",
+      "niños",
+      "corre"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "VERB"
+    ],
+    "grammar_version": "f3ec163d055725d7d16dcb286f115958271a70e14f9e6f5b538f8d0ed2e95ff6",
+    "revision_humana": "pendiente_del_grupo",
+    "esperado_cfg_fase1": false,
+    "grammar_version_fase1": "e7147cb30ece6bbd64c7d401151c4bcb6e83a2e23f48654d49e4a0a8984aebc0"
+  },
+  {
+    "id": "ES-021",
+    "texto": "El niño alto corre rápidamente en el parque",
+    "nivel": "intermedio",
+    "fenomenos": [
+      "adjetivo_adverbio_PP"
+    ],
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "tokens_esperados": [
+      "El",
+      "niño",
+      "alto",
+      "corre",
+      "rápidamente",
+      "en",
+      "el",
+      "parque"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "ADJ",
+      "VERB",
+      "ADV",
+      "ADP",
+      "DET",
+      "NOUN"
+    ],
+    "grammar_version": "f3ec163d055725d7d16dcb286f115958271a70e14f9e6f5b538f8d0ed2e95ff6",
+    "revision_humana": "pendiente_del_grupo",
+    "esperado_cfg_fase1": true,
+    "grammar_version_fase1": "e7147cb30ece6bbd64c7d401151c4bcb6e83a2e23f48654d49e4a0a8984aebc0"
+  },
+  {
+    "id": "ES-025",
+    "texto": "La mujer vive en la casa de la ciudad",
+    "nivel": "intermedio",
+    "fenomenos": [
+      "PP_sucesivas"
+    ],
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "tokens_esperados": [
+      "La",
+      "mujer",
+      "vive",
+      "en",
+      "la",
+      "casa",
+      "de",
+      "la",
+      "ciudad"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "VERB",
+      "ADP",
+      "DET",
+      "NOUN",
+      "ADP",
+      "DET",
+      "NOUN"
+    ],
+    "grammar_version": "f3ec163d055725d7d16dcb286f115958271a70e14f9e6f5b538f8d0ed2e95ff6",
+    "revision_humana": "pendiente_del_grupo",
+    "esperado_cfg_fase1": true,
+    "grammar_version_fase1": "e7147cb30ece6bbd64c7d401151c4bcb6e83a2e23f48654d49e4a0a8984aebc0"
+  },
+  {
+    "id": "ES-033",
+    "texto": "El niño alta corre",
+    "nivel": "intermedio",
+    "fenomenos": [
+      "genero_adjetivo"
+    ],
+    "esperado_cfg": false,
+    "gramatical_espanol": false,
+    "tokens_esperados": [
+      "El",
+      "niño",
+      "alta",
+      "corre"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "ADJ",
+      "VERB"
+    ],
+    "grammar_version": "f3ec163d055725d7d16dcb286f115958271a70e14f9e6f5b538f8d0ed2e95ff6",
+    "revision_humana": "pendiente_del_grupo",
+    "esperado_cfg_fase1": false,
+    "grammar_version_fase1": "e7147cb30ece6bbd64c7d401151c4bcb6e83a2e23f48654d49e4a0a8984aebc0"
+  },
+  {
+    "id": "ES-041",
+    "texto": "La profesora sabe que el niño lee el libro",
+    "nivel": "complejo",
+    "fenomenos": [
+      "subordinada_SVO",
+      "objeto_nominal"
+    ],
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "tokens_esperados": [
+      "La",
+      "profesora",
+      "sabe",
+      "que",
+      "el",
+      "niño",
+      "lee",
+      "el",
+      "libro"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "VERB",
+      "SCONJ",
+      "DET",
+      "NOUN",
+      "VERB",
+      "DET",
+      "NOUN"
+    ],
+    "grammar_version": "f3ec163d055725d7d16dcb286f115958271a70e14f9e6f5b538f8d0ed2e95ff6",
+    "revision_humana": "pendiente_del_grupo",
+    "esperado_cfg_fase1": false,
+    "grammar_version_fase1": "e7147cb30ece6bbd64c7d401151c4bcb6e83a2e23f48654d49e4a0a8984aebc0"
+  },
+  {
+    "id": "ES-049",
+    "texto": "El profesor sabe que los niños lee el libro",
+    "nivel": "complejo",
+    "fenomenos": [
+      "concordancia_subordinada"
+    ],
+    "esperado_cfg": false,
+    "gramatical_espanol": false,
+    "tokens_esperados": [
+      "El",
+      "profesor",
+      "sabe",
+      "que",
+      "los",
+      "niños",
+      "lee",
+      "el",
+      "libro"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "VERB",
+      "SCONJ",
+      "DET",
+      "NOUN",
+      "VERB",
+      "DET",
+      "NOUN"
+    ],
+    "grammar_version": "f3ec163d055725d7d16dcb286f115958271a70e14f9e6f5b538f8d0ed2e95ff6",
+    "revision_humana": "pendiente_del_grupo",
+    "esperado_cfg_fase1": false,
+    "grammar_version_fase1": "e7147cb30ece6bbd64c7d401151c4bcb6e83a2e23f48654d49e4a0a8984aebc0"
+  },
+  {
+    "id": "ES-053",
+    "texto": "El niño y la niña corren",
+    "nivel": "complejo",
+    "fenomenos": [
+      "coordinacion_sujeto"
+    ],
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "tokens_esperados": [
+      "El",
+      "niño",
+      "y",
+      "la",
+      "niña",
+      "corren"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "CCONJ",
+      "DET",
+      "NOUN",
+      "VERB"
+    ],
+    "grammar_version": "f3ec163d055725d7d16dcb286f115958271a70e14f9e6f5b538f8d0ed2e95ff6",
+    "revision_humana": "pendiente_del_grupo",
+    "esperado_cfg_fase1": false,
+    "grammar_version_fase1": "e7147cb30ece6bbd64c7d401151c4bcb6e83a2e23f48654d49e4a0a8984aebc0"
+  },
+  {
+    "id": "ES-056",
+    "texto": "El astronauta lee el libro",
+    "nivel": "complejo",
+    "fenomenos": [
+      "sustantivo_fuera_del_vocabulario"
+    ],
+    "esperado_cfg": false,
+    "gramatical_espanol": true,
+    "tokens_esperados": [
+      "El",
+      "astronauta",
+      "lee",
+      "el",
+      "libro"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "VERB",
+      "DET",
+      "NOUN"
+    ],
+    "grammar_version": "f3ec163d055725d7d16dcb286f115958271a70e14f9e6f5b538f8d0ed2e95ff6",
+    "revision_humana": "pendiente_del_grupo",
+    "esperado_cfg_fase1": false,
+    "grammar_version_fase1": "e7147cb30ece6bbd64c7d401151c4bcb6e83a2e23f48654d49e4a0a8984aebc0"
+  },
+  {
+    "id": "ES-057",
+    "texto": "El niño leyó el libro.",
+    "nivel": "complejo",
+    "fenomenos": [
+      "puntuacion_fuera_de_gramatica"
+    ],
+    "esperado_cfg": false,
+    "gramatical_espanol": true,
+    "tokens_esperados": [
+      "El",
+      "niño",
+      "leyó",
+      "el",
+      "libro",
+      "."
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "VERB",
+      "DET",
+      "NOUN",
+      "PUNCT"
+    ],
+    "grammar_version": "f3ec163d055725d7d16dcb286f115958271a70e14f9e6f5b538f8d0ed2e95ff6",
+    "revision_humana": "pendiente_del_grupo",
+    "esperado_cfg_fase1": false,
+    "grammar_version_fase1": "e7147cb30ece6bbd64c7d401151c4bcb6e83a2e23f48654d49e4a0a8984aebc0"
+  },
+  {
+    "id": "AMP-001",
+    "texto": "La niña y el niño comen fruta",
+    "nivel": "complejo",
+    "fenomenos": [
+      "coordinacion_mixta"
+    ],
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "tokens_esperados": [
+      "La",
+      "niña",
+      "y",
+      "el",
+      "niño",
+      "comen",
+      "fruta"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "CCONJ",
+      "DET",
+      "NOUN",
+      "VERB",
+      "NOUN"
+    ],
+    "grammar_version": "f3ec163d055725d7d16dcb286f115958271a70e14f9e6f5b538f8d0ed2e95ff6",
+    "revision_humana": "pendiente_del_grupo",
+    "referencia": "Expectativas y POS declarados manualmente antes de ejecutar la variante."
+  },
+  {
+    "id": "AMP-002",
+    "texto": "El niño y la niña comen fruta",
+    "nivel": "complejo",
+    "fenomenos": [
+      "coordinacion_orden"
+    ],
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "tokens_esperados": [
+      "El",
+      "niño",
+      "y",
+      "la",
+      "niña",
+      "comen",
+      "fruta"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "CCONJ",
+      "DET",
+      "NOUN",
+      "VERB",
+      "NOUN"
+    ],
+    "grammar_version": "f3ec163d055725d7d16dcb286f115958271a70e14f9e6f5b538f8d0ed2e95ff6",
+    "revision_humana": "pendiente_del_grupo",
+    "referencia": "Expectativas y POS declarados manualmente antes de ejecutar la variante."
+  },
+  {
+    "id": "AMP-003",
+    "texto": "La niña y la mujer comen fruta",
+    "nivel": "complejo",
+    "fenomenos": [
+      "coordinacion_femenina"
+    ],
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "tokens_esperados": [
+      "La",
+      "niña",
+      "y",
+      "la",
+      "mujer",
+      "comen",
+      "fruta"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "CCONJ",
+      "DET",
+      "NOUN",
+      "VERB",
+      "NOUN"
+    ],
+    "grammar_version": "f3ec163d055725d7d16dcb286f115958271a70e14f9e6f5b538f8d0ed2e95ff6",
+    "revision_humana": "pendiente_del_grupo",
+    "referencia": "Expectativas y POS declarados manualmente antes de ejecutar la variante."
+  },
+  {
+    "id": "AMP-004",
+    "texto": "La niña y el niño y la mujer comen fruta",
+    "nivel": "complejo",
+    "fenomenos": [
+      "coordinacion_tres"
+    ],
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "tokens_esperados": [
+      "La",
+      "niña",
+      "y",
+      "el",
+      "niño",
+      "y",
+      "la",
+      "mujer",
+      "comen",
+      "fruta"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "CCONJ",
+      "DET",
+      "NOUN",
+      "CCONJ",
+      "DET",
+      "NOUN",
+      "VERB",
+      "NOUN"
+    ],
+    "grammar_version": "f3ec163d055725d7d16dcb286f115958271a70e14f9e6f5b538f8d0ed2e95ff6",
+    "revision_humana": "pendiente_del_grupo",
+    "referencia": "Expectativas y POS declarados manualmente antes de ejecutar la variante."
+  },
+  {
+    "id": "AMP-005",
+    "texto": "La niña y el niño come fruta",
+    "nivel": "complejo",
+    "fenomenos": [
+      "coordinacion_verbo_singular"
+    ],
+    "esperado_cfg": false,
+    "gramatical_espanol": false,
+    "tokens_esperados": [
+      "La",
+      "niña",
+      "y",
+      "el",
+      "niño",
+      "come",
+      "fruta"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "CCONJ",
+      "DET",
+      "NOUN",
+      "VERB",
+      "NOUN"
+    ],
+    "grammar_version": "f3ec163d055725d7d16dcb286f115958271a70e14f9e6f5b538f8d0ed2e95ff6",
+    "revision_humana": "pendiente_del_grupo",
+    "referencia": "Expectativas y POS declarados manualmente antes de ejecutar la variante."
+  },
+  {
+    "id": "AMP-006",
+    "texto": "La niña y los niño comen fruta",
+    "nivel": "complejo",
+    "fenomenos": [
+      "miembro_discordante"
+    ],
+    "esperado_cfg": false,
+    "gramatical_espanol": false,
+    "tokens_esperados": [
+      "La",
+      "niña",
+      "y",
+      "los",
+      "niño",
+      "comen",
+      "fruta"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "CCONJ",
+      "DET",
+      "NOUN",
+      "VERB",
+      "NOUN"
+    ],
+    "grammar_version": "f3ec163d055725d7d16dcb286f115958271a70e14f9e6f5b538f8d0ed2e95ff6",
+    "revision_humana": "pendiente_del_grupo",
+    "referencia": "Expectativas y POS declarados manualmente antes de ejecutar la variante."
+  },
+  {
+    "id": "AMP-007",
+    "texto": "La niña y comen fruta",
+    "nivel": "complejo",
+    "fenomenos": [
+      "miembro_ausente"
+    ],
+    "esperado_cfg": false,
+    "gramatical_espanol": false,
+    "tokens_esperados": [
+      "La",
+      "niña",
+      "y",
+      "comen",
+      "fruta"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "CCONJ",
+      "VERB",
+      "NOUN"
+    ],
+    "grammar_version": "f3ec163d055725d7d16dcb286f115958271a70e14f9e6f5b538f8d0ed2e95ff6",
+    "revision_humana": "pendiente_del_grupo",
+    "referencia": "Expectativas y POS declarados manualmente antes de ejecutar la variante."
+  },
+  {
+    "id": "AMP-008",
+    "texto": "La niña y y el niño comen fruta",
+    "nivel": "complejo",
+    "fenomenos": [
+      "conjuncion_duplicada"
+    ],
+    "esperado_cfg": false,
+    "gramatical_espanol": false,
+    "tokens_esperados": [
+      "La",
+      "niña",
+      "y",
+      "y",
+      "el",
+      "niño",
+      "comen",
+      "fruta"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "CCONJ",
+      "CCONJ",
+      "DET",
+      "NOUN",
+      "VERB",
+      "NOUN"
+    ],
+    "grammar_version": "f3ec163d055725d7d16dcb286f115958271a70e14f9e6f5b538f8d0ed2e95ff6",
+    "revision_humana": "pendiente_del_grupo",
+    "referencia": "Expectativas y POS declarados manualmente antes de ejecutar la variante."
+  },
+  {
+    "id": "AMP-009",
+    "texto": "La niña y el niño son altos",
+    "nivel": "complejo",
+    "fenomenos": [
+      "atributo_mixto"
+    ],
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "tokens_esperados": [
+      "La",
+      "niña",
+      "y",
+      "el",
+      "niño",
+      "son",
+      "altos"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "CCONJ",
+      "DET",
+      "NOUN",
+      "VERB",
+      "ADJ"
+    ],
+    "grammar_version": "f3ec163d055725d7d16dcb286f115958271a70e14f9e6f5b538f8d0ed2e95ff6",
+    "revision_humana": "pendiente_del_grupo",
+    "referencia": "Expectativas y POS declarados manualmente antes de ejecutar la variante."
+  },
+  {
+    "id": "AMP-010",
+    "texto": "La niña y la mujer son altas",
+    "nivel": "complejo",
+    "fenomenos": [
+      "atributo_femenino"
+    ],
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "tokens_esperados": [
+      "La",
+      "niña",
+      "y",
+      "la",
+      "mujer",
+      "son",
+      "altas"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "CCONJ",
+      "DET",
+      "NOUN",
+      "VERB",
+      "ADJ"
+    ],
+    "grammar_version": "f3ec163d055725d7d16dcb286f115958271a70e14f9e6f5b538f8d0ed2e95ff6",
+    "revision_humana": "pendiente_del_grupo",
+    "referencia": "Expectativas y POS declarados manualmente antes de ejecutar la variante."
+  },
+  {
+    "id": "AMP-011",
+    "texto": "La niña y el niño son altas",
+    "nivel": "complejo",
+    "fenomenos": [
+      "atributo_mixto_discordante"
+    ],
+    "esperado_cfg": false,
+    "gramatical_espanol": false,
+    "tokens_esperados": [
+      "La",
+      "niña",
+      "y",
+      "el",
+      "niño",
+      "son",
+      "altas"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "CCONJ",
+      "DET",
+      "NOUN",
+      "VERB",
+      "ADJ"
+    ],
+    "grammar_version": "f3ec163d055725d7d16dcb286f115958271a70e14f9e6f5b538f8d0ed2e95ff6",
+    "revision_humana": "pendiente_del_grupo",
+    "referencia": "Expectativas y POS declarados manualmente antes de ejecutar la variante."
+  },
+  {
+    "id": "AMP-012",
+    "texto": "La niña y la mujer son alto",
+    "nivel": "complejo",
+    "fenomenos": [
+      "atributo_singular"
+    ],
+    "esperado_cfg": false,
+    "gramatical_espanol": false,
+    "tokens_esperados": [
+      "La",
+      "niña",
+      "y",
+      "la",
+      "mujer",
+      "son",
+      "alto"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "CCONJ",
+      "DET",
+      "NOUN",
+      "VERB",
+      "ADJ"
+    ],
+    "grammar_version": "f3ec163d055725d7d16dcb286f115958271a70e14f9e6f5b538f8d0ed2e95ff6",
+    "revision_humana": "pendiente_del_grupo",
+    "referencia": "Expectativas y POS declarados manualmente antes de ejecutar la variante."
+  },
+  {
+    "id": "AMP-013",
+    "texto": "La niña come fruta",
+    "nivel": "intermedio",
+    "fenomenos": [
+      "objeto_masa"
+    ],
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "tokens_esperados": [
+      "La",
+      "niña",
+      "come",
+      "fruta"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "VERB",
+      "NOUN"
+    ],
+    "grammar_version": "f3ec163d055725d7d16dcb286f115958271a70e14f9e6f5b538f8d0ed2e95ff6",
+    "revision_humana": "pendiente_del_grupo",
+    "referencia": "Expectativas y POS declarados manualmente antes de ejecutar la variante."
+  },
+  {
+    "id": "AMP-014",
+    "texto": "La niña come la fruta",
+    "nivel": "intermedio",
+    "fenomenos": [
+      "objeto_masa_determinante"
+    ],
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "tokens_esperados": [
+      "La",
+      "niña",
+      "come",
+      "la",
+      "fruta"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "VERB",
+      "DET",
+      "NOUN"
+    ],
+    "grammar_version": "f3ec163d055725d7d16dcb286f115958271a70e14f9e6f5b538f8d0ed2e95ff6",
+    "revision_humana": "pendiente_del_grupo",
+    "referencia": "Expectativas y POS declarados manualmente antes de ejecutar la variante."
+  },
+  {
+    "id": "AMP-015",
+    "texto": "La niña lee el libro",
+    "nivel": "intermedio",
+    "fenomenos": [
+      "objeto_nominal"
+    ],
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "tokens_esperados": [
+      "La",
+      "niña",
+      "lee",
+      "el",
+      "libro"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "VERB",
+      "DET",
+      "NOUN"
+    ],
+    "grammar_version": "f3ec163d055725d7d16dcb286f115958271a70e14f9e6f5b538f8d0ed2e95ff6",
+    "revision_humana": "pendiente_del_grupo",
+    "referencia": "Expectativas y POS declarados manualmente antes de ejecutar la variante."
+  },
+  {
+    "id": "AMP-016",
+    "texto": "El niño lee libro",
+    "nivel": "intermedio",
+    "fenomenos": [
+      "contable_sin_determinante"
+    ],
+    "esperado_cfg": false,
+    "gramatical_espanol": false,
+    "tokens_esperados": [
+      "El",
+      "niño",
+      "lee",
+      "libro"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "VERB",
+      "NOUN"
+    ],
+    "grammar_version": "f3ec163d055725d7d16dcb286f115958271a70e14f9e6f5b538f8d0ed2e95ff6",
+    "revision_humana": "pendiente_del_grupo",
+    "referencia": "Expectativas y POS declarados manualmente antes de ejecutar la variante."
+  },
+  {
+    "id": "AMP-017",
+    "texto": "Come la niña pequeña",
+    "nivel": "intermedio",
+    "fenomenos": [
+      "inversion_singular"
+    ],
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "tokens_esperados": [
+      "Come",
+      "la",
+      "niña",
+      "pequeña"
+    ],
+    "pos_esperado": [
+      "VERB",
+      "DET",
+      "NOUN",
+      "ADJ"
+    ],
+    "grammar_version": "f3ec163d055725d7d16dcb286f115958271a70e14f9e6f5b538f8d0ed2e95ff6",
+    "revision_humana": "pendiente_del_grupo",
+    "referencia": "Expectativas y POS declarados manualmente antes de ejecutar la variante."
+  },
+  {
+    "id": "AMP-018",
+    "texto": "Comen las niñas pequeñas",
+    "nivel": "intermedio",
+    "fenomenos": [
+      "inversion_plural"
+    ],
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "tokens_esperados": [
+      "Comen",
+      "las",
+      "niñas",
+      "pequeñas"
+    ],
+    "pos_esperado": [
+      "VERB",
+      "DET",
+      "NOUN",
+      "ADJ"
+    ],
+    "grammar_version": "f3ec163d055725d7d16dcb286f115958271a70e14f9e6f5b538f8d0ed2e95ff6",
+    "revision_humana": "pendiente_del_grupo",
+    "referencia": "Expectativas y POS declarados manualmente antes de ejecutar la variante."
+  },
+  {
+    "id": "AMP-019",
+    "texto": "Come las niñas pequeñas",
+    "nivel": "intermedio",
+    "fenomenos": [
+      "inversion_discordante"
+    ],
+    "esperado_cfg": false,
+    "gramatical_espanol": false,
+    "tokens_esperados": [
+      "Come",
+      "las",
+      "niñas",
+      "pequeñas"
+    ],
+    "pos_esperado": [
+      "VERB",
+      "DET",
+      "NOUN",
+      "ADJ"
+    ],
+    "grammar_version": "f3ec163d055725d7d16dcb286f115958271a70e14f9e6f5b538f8d0ed2e95ff6",
+    "revision_humana": "pendiente_del_grupo",
+    "referencia": "Expectativas y POS declarados manualmente antes de ejecutar la variante."
+  },
+  {
+    "id": "AMP-020",
+    "texto": "La profesora sabe que la niña y el niño comen fruta",
+    "nivel": "complejo",
+    "fenomenos": [
+      "subordinada_coordinada"
+    ],
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "tokens_esperados": [
+      "La",
+      "profesora",
+      "sabe",
+      "que",
+      "la",
+      "niña",
+      "y",
+      "el",
+      "niño",
+      "comen",
+      "fruta"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "VERB",
+      "SCONJ",
+      "DET",
+      "NOUN",
+      "CCONJ",
+      "DET",
+      "NOUN",
+      "VERB",
+      "NOUN"
+    ],
+    "grammar_version": "f3ec163d055725d7d16dcb286f115958271a70e14f9e6f5b538f8d0ed2e95ff6",
+    "revision_humana": "pendiente_del_grupo",
+    "referencia": "Expectativas y POS declarados manualmente antes de ejecutar la variante."
+  },
+  {
+    "id": "AMP-021",
+    "texto": "La niña y el niño comieron fruta",
+    "nivel": "complejo",
+    "fenomenos": [
+      "pasado_coordinado"
+    ],
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "tokens_esperados": [
+      "La",
+      "niña",
+      "y",
+      "el",
+      "niño",
+      "comieron",
+      "fruta"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "CCONJ",
+      "DET",
+      "NOUN",
+      "VERB",
+      "NOUN"
+    ],
+    "grammar_version": "f3ec163d055725d7d16dcb286f115958271a70e14f9e6f5b538f8d0ed2e95ff6",
+    "revision_humana": "pendiente_del_grupo",
+    "referencia": "Expectativas y POS declarados manualmente antes de ejecutar la variante."
+  },
+  {
+    "id": "AMP-022",
+    "texto": "La niña y el niño comió fruta",
+    "nivel": "complejo",
+    "fenomenos": [
+      "pasado_coordinado_singular"
+    ],
+    "esperado_cfg": false,
+    "gramatical_espanol": false,
+    "tokens_esperados": [
+      "La",
+      "niña",
+      "y",
+      "el",
+      "niño",
+      "comió",
+      "fruta"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "CCONJ",
+      "DET",
+      "NOUN",
+      "VERB",
+      "NOUN"
+    ],
+    "grammar_version": "f3ec163d055725d7d16dcb286f115958271a70e14f9e6f5b538f8d0ed2e95ff6",
+    "revision_humana": "pendiente_del_grupo",
+    "referencia": "Expectativas y POS declarados manualmente antes de ejecutar la variante."
+  },
+  {
+    "id": "AMP-023",
+    "texto": "El niño leyó el libro",
+    "nivel": "intermedio",
+    "fenomenos": [
+      "pasado_objeto"
+    ],
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "tokens_esperados": [
+      "El",
+      "niño",
+      "leyó",
+      "el",
+      "libro"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "VERB",
+      "DET",
+      "NOUN"
+    ],
+    "grammar_version": "f3ec163d055725d7d16dcb286f115958271a70e14f9e6f5b538f8d0ed2e95ff6",
+    "revision_humana": "pendiente_del_grupo",
+    "referencia": "Expectativas y POS declarados manualmente antes de ejecutar la variante."
+  },
+  {
+    "id": "AMP-024",
+    "texto": "Comieron las niñas pequeñas",
+    "nivel": "intermedio",
+    "fenomenos": [
+      "pasado_invertido"
+    ],
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "tokens_esperados": [
+      "Comieron",
+      "las",
+      "niñas",
+      "pequeñas"
+    ],
+    "pos_esperado": [
+      "VERB",
+      "DET",
+      "NOUN",
+      "ADJ"
+    ],
+    "grammar_version": "f3ec163d055725d7d16dcb286f115958271a70e14f9e6f5b538f8d0ed2e95ff6",
+    "revision_humana": "pendiente_del_grupo",
+    "referencia": "Expectativas y POS declarados manualmente antes de ejecutar la variante."
+  },
+  {
+    "id": "AMP-025",
+    "texto": "La niña y la mujer fueron altas",
+    "nivel": "complejo",
+    "fenomenos": [
+      "pasado_copula_femenina"
+    ],
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "tokens_esperados": [
+      "La",
+      "niña",
+      "y",
+      "la",
+      "mujer",
+      "fueron",
+      "altas"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "CCONJ",
+      "DET",
+      "NOUN",
+      "VERB",
+      "ADJ"
+    ],
+    "grammar_version": "f3ec163d055725d7d16dcb286f115958271a70e14f9e6f5b538f8d0ed2e95ff6",
+    "revision_humana": "pendiente_del_grupo",
+    "referencia": "Expectativas y POS declarados manualmente antes de ejecutar la variante."
+  },
+  {
+    "id": "AMP-026",
+    "texto": "La niña y el niño estuvieron altos",
+    "nivel": "complejo",
+    "fenomenos": [
+      "pasado_copula_mixta"
+    ],
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "tokens_esperados": [
+      "La",
+      "niña",
+      "y",
+      "el",
+      "niño",
+      "estuvieron",
+      "altos"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "CCONJ",
+      "DET",
+      "NOUN",
+      "VERB",
+      "ADJ"
+    ],
+    "grammar_version": "f3ec163d055725d7d16dcb286f115958271a70e14f9e6f5b538f8d0ed2e95ff6",
+    "revision_humana": "pendiente_del_grupo",
+    "referencia": "Expectativas y POS declarados manualmente antes de ejecutar la variante."
+  },
+  {
+    "id": "AMP-027",
+    "texto": "La niña y el niño estuvo alto",
+    "nivel": "complejo",
+    "fenomenos": [
+      "pasado_copula_discordante"
+    ],
+    "esperado_cfg": false,
+    "gramatical_espanol": false,
+    "tokens_esperados": [
+      "La",
+      "niña",
+      "y",
+      "el",
+      "niño",
+      "estuvo",
+      "alto"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "CCONJ",
+      "DET",
+      "NOUN",
+      "VERB",
+      "ADJ"
+    ],
+    "grammar_version": "f3ec163d055725d7d16dcb286f115958271a70e14f9e6f5b538f8d0ed2e95ff6",
+    "revision_humana": "pendiente_del_grupo",
+    "referencia": "Expectativas y POS declarados manualmente antes de ejecutar la variante."
+  },
+  {
+    "id": "AMP-028",
+    "texto": "El niño lee la casa blanco",
+    "nivel": "intermedio",
+    "fenomenos": [
+      "objeto_adjetivo_discordante"
+    ],
+    "esperado_cfg": false,
+    "gramatical_espanol": false,
+    "tokens_esperados": [
+      "El",
+      "niño",
+      "lee",
+      "la",
+      "casa",
+      "blanco"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "VERB",
+      "DET",
+      "NOUN",
+      "ADJ"
+    ],
+    "grammar_version": "f3ec163d055725d7d16dcb286f115958271a70e14f9e6f5b538f8d0ed2e95ff6",
+    "revision_humana": "pendiente_del_grupo",
+    "referencia": "Expectativas y POS declarados manualmente antes de ejecutar la variante."
+  },
+  {
+    "id": "AMP-029",
+    "texto": "El niño mira la casa blanca",
+    "nivel": "intermedio",
+    "fenomenos": [
+      "objeto_adjetivo"
+    ],
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "tokens_esperados": [
+      "El",
+      "niño",
+      "mira",
+      "la",
+      "casa",
+      "blanca"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "VERB",
+      "DET",
+      "NOUN",
+      "ADJ"
+    ],
+    "grammar_version": "f3ec163d055725d7d16dcb286f115958271a70e14f9e6f5b538f8d0ed2e95ff6",
+    "revision_humana": "pendiente_del_grupo",
+    "referencia": "Expectativas y POS declarados manualmente antes de ejecutar la variante."
+  },
+  {
+    "id": "AMP-030",
+    "texto": "La niña come fruta nueva",
+    "nivel": "intermedio",
+    "fenomenos": [
+      "masa_adjetivo"
+    ],
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "tokens_esperados": [
+      "La",
+      "niña",
+      "come",
+      "fruta",
+      "nueva"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "VERB",
+      "NOUN",
+      "ADJ"
+    ],
+    "grammar_version": "f3ec163d055725d7d16dcb286f115958271a70e14f9e6f5b538f8d0ed2e95ff6",
+    "revision_humana": "pendiente_del_grupo",
+    "referencia": "Expectativas y POS declarados manualmente antes de ejecutar la variante."
+  },
+  {
+    "id": "AMP-031",
+    "texto": "La niña come fruta nuevo",
+    "nivel": "intermedio",
+    "fenomenos": [
+      "masa_adjetivo_discordante"
+    ],
+    "esperado_cfg": false,
+    "gramatical_espanol": false,
+    "tokens_esperados": [
+      "La",
+      "niña",
+      "come",
+      "fruta",
+      "nuevo"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "VERB",
+      "NOUN",
+      "ADJ"
+    ],
+    "grammar_version": "f3ec163d055725d7d16dcb286f115958271a70e14f9e6f5b538f8d0ed2e95ff6",
+    "revision_humana": "pendiente_del_grupo",
+    "referencia": "Expectativas y POS declarados manualmente antes de ejecutar la variante."
+  },
+  {
+    "id": "AMP-032",
+    "texto": "La niña compra las frutas",
+    "nivel": "intermedio",
+    "fenomenos": [
+      "frutas_determinante"
+    ],
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "tokens_esperados": [
+      "La",
+      "niña",
+      "compra",
+      "las",
+      "frutas"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "VERB",
+      "DET",
+      "NOUN"
+    ],
+    "grammar_version": "f3ec163d055725d7d16dcb286f115958271a70e14f9e6f5b538f8d0ed2e95ff6",
+    "revision_humana": "pendiente_del_grupo",
+    "referencia": "Expectativas y POS declarados manualmente antes de ejecutar la variante."
+  },
+  {
+    "id": "AMP-033",
+    "texto": "La niña compra frutas",
+    "nivel": "intermedio",
+    "fenomenos": [
+      "plural_sin_determinante"
+    ],
+    "esperado_cfg": false,
+    "gramatical_espanol": true,
+    "tokens_esperados": [
+      "La",
+      "niña",
+      "compra",
+      "frutas"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "VERB",
+      "NOUN"
+    ],
+    "grammar_version": "f3ec163d055725d7d16dcb286f115958271a70e14f9e6f5b538f8d0ed2e95ff6",
+    "revision_humana": "pendiente_del_grupo",
+    "referencia": "Expectativas y POS declarados manualmente antes de ejecutar la variante."
+  },
+  {
+    "id": "AMP-034",
+    "texto": "Fruta es nueva",
+    "nivel": "intermedio",
+    "fenomenos": [
+      "sujeto_sin_determinante"
+    ],
+    "esperado_cfg": false,
+    "gramatical_espanol": true,
+    "tokens_esperados": [
+      "Fruta",
+      "es",
+      "nueva"
+    ],
+    "pos_esperado": [
+      "NOUN",
+      "VERB",
+      "ADJ"
+    ],
+    "grammar_version": "f3ec163d055725d7d16dcb286f115958271a70e14f9e6f5b538f8d0ed2e95ff6",
+    "revision_humana": "pendiente_del_grupo",
+    "referencia": "Expectativas y POS declarados manualmente antes de ejecutar la variante."
+  },
+  {
+    "id": "AMP-035",
+    "texto": "Lee la niña el libro",
+    "nivel": "intermedio",
+    "fenomenos": [
+      "inversion_objeto_fuera_alcance"
+    ],
+    "esperado_cfg": false,
+    "gramatical_espanol": true,
+    "tokens_esperados": [
+      "Lee",
+      "la",
+      "niña",
+      "el",
+      "libro"
+    ],
+    "pos_esperado": [
+      "VERB",
+      "DET",
+      "NOUN",
+      "DET",
+      "NOUN"
+    ],
+    "grammar_version": "f3ec163d055725d7d16dcb286f115958271a70e14f9e6f5b538f8d0ed2e95ff6",
+    "revision_humana": "pendiente_del_grupo",
+    "referencia": "Expectativas y POS declarados manualmente antes de ejecutar la variante."
+  },
+  {
+    "id": "AMP-036",
+    "texto": "Comen la niña y el niño",
+    "nivel": "complejo",
+    "fenomenos": [
+      "inversion_coordinada_fuera_alcance"
+    ],
+    "esperado_cfg": false,
+    "gramatical_espanol": true,
+    "tokens_esperados": [
+      "Comen",
+      "la",
+      "niña",
+      "y",
+      "el",
+      "niño"
+    ],
+    "pos_esperado": [
+      "VERB",
+      "DET",
+      "NOUN",
+      "CCONJ",
+      "DET",
+      "NOUN"
+    ],
+    "grammar_version": "f3ec163d055725d7d16dcb286f115958271a70e14f9e6f5b538f8d0ed2e95ff6",
+    "revision_humana": "pendiente_del_grupo",
+    "referencia": "Expectativas y POS declarados manualmente antes de ejecutar la variante."
+  },
+  {
+    "id": "AMP-037",
+    "texto": "La niña come fruta.",
+    "nivel": "intermedio",
+    "fenomenos": [
+      "punto_fuera_alcance"
+    ],
+    "esperado_cfg": false,
+    "gramatical_espanol": true,
+    "tokens_esperados": [
+      "La",
+      "niña",
+      "come",
+      "fruta",
+      "."
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "VERB",
+      "NOUN",
+      "PUNCT"
+    ],
+    "grammar_version": "f3ec163d055725d7d16dcb286f115958271a70e14f9e6f5b538f8d0ed2e95ff6",
+    "revision_humana": "pendiente_del_grupo",
+    "referencia": "Expectativas y POS declarados manualmente antes de ejecutar la variante."
+  },
+  {
+    "id": "AMP-038",
+    "texto": "El astronauta come fruta",
+    "nivel": "intermedio",
+    "fenomenos": [
+      "vocabulario_desconocido"
+    ],
+    "esperado_cfg": false,
+    "gramatical_espanol": true,
+    "tokens_esperados": [
+      "El",
+      "astronauta",
+      "come",
+      "fruta"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "VERB",
+      "NOUN"
+    ],
+    "grammar_version": "f3ec163d055725d7d16dcb286f115958271a70e14f9e6f5b538f8d0ed2e95ff6",
+    "revision_humana": "pendiente_del_grupo",
+    "referencia": "Expectativas y POS declarados manualmente antes de ejecutar la variante."
+  },
+  {
+    "id": "AMP-039",
+    "texto": "La niña comía fruta",
+    "nivel": "intermedio",
+    "fenomenos": [
+      "imperfecto_fuera_alcance"
+    ],
+    "esperado_cfg": false,
+    "gramatical_espanol": true,
+    "tokens_esperados": [
+      "La",
+      "niña",
+      "comía",
+      "fruta"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "VERB",
+      "NOUN"
+    ],
+    "grammar_version": "f3ec163d055725d7d16dcb286f115958271a70e14f9e6f5b538f8d0ed2e95ff6",
+    "revision_humana": "pendiente_del_grupo",
+    "referencia": "Expectativas y POS declarados manualmente antes de ejecutar la variante."
+  },
+  {
+    "id": "AMP-040",
+    "texto": "La niña pequeño y el niño comen fruta",
+    "nivel": "complejo",
+    "fenomenos": [
+      "adjetivo_miembro_discordante"
+    ],
+    "esperado_cfg": false,
+    "gramatical_espanol": false,
+    "tokens_esperados": [
+      "La",
+      "niña",
+      "pequeño",
+      "y",
+      "el",
+      "niño",
+      "comen",
+      "fruta"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "ADJ",
+      "CCONJ",
+      "DET",
+      "NOUN",
+      "VERB",
+      "NOUN"
+    ],
+    "grammar_version": "f3ec163d055725d7d16dcb286f115958271a70e14f9e6f5b538f8d0ed2e95ff6",
+    "revision_humana": "pendiente_del_grupo",
+    "referencia": "Expectativas y POS declarados manualmente antes de ejecutar la variante."
+  },
+  {
+    "id": "AMP-041",
+    "texto": "La niña y el niño comen fruta despacio en la casa",
+    "nivel": "complejo",
+    "fenomenos": [
+      "coordinacion_modificadores"
+    ],
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "tokens_esperados": [
+      "La",
+      "niña",
+      "y",
+      "el",
+      "niño",
+      "comen",
+      "fruta",
+      "despacio",
+      "en",
+      "la",
+      "casa"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "CCONJ",
+      "DET",
+      "NOUN",
+      "VERB",
+      "NOUN",
+      "ADV",
+      "ADP",
+      "DET",
+      "NOUN"
+    ],
+    "grammar_version": "f3ec163d055725d7d16dcb286f115958271a70e14f9e6f5b538f8d0ed2e95ff6",
+    "revision_humana": "pendiente_del_grupo",
+    "referencia": "Expectativas y POS declarados manualmente antes de ejecutar la variante."
+  },
+  {
+    "id": "AMP-042",
+    "texto": "La profesora dijo que la niña y el niño comieron fruta",
+    "nivel": "complejo",
+    "fenomenos": [
+      "pasado_subordinada"
+    ],
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "tokens_esperados": [
+      "La",
+      "profesora",
+      "dijo",
+      "que",
+      "la",
+      "niña",
+      "y",
+      "el",
+      "niño",
+      "comieron",
+      "fruta"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "VERB",
+      "SCONJ",
+      "DET",
+      "NOUN",
+      "CCONJ",
+      "DET",
+      "NOUN",
+      "VERB",
+      "NOUN"
+    ],
+    "grammar_version": "f3ec163d055725d7d16dcb286f115958271a70e14f9e6f5b538f8d0ed2e95ff6",
+    "revision_humana": "pendiente_del_grupo",
+    "referencia": "Expectativas y POS declarados manualmente antes de ejecutar la variante."
+  },
+  {
+    "id": "AMP-043",
+    "texto": "Los niños y la niña comen fruta",
+    "nivel": "complejo",
+    "fenomenos": [
+      "miembro_plural"
+    ],
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "tokens_esperados": [
+      "Los",
+      "niños",
+      "y",
+      "la",
+      "niña",
+      "comen",
+      "fruta"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "CCONJ",
+      "DET",
+      "NOUN",
+      "VERB",
+      "NOUN"
+    ],
+    "grammar_version": "f3ec163d055725d7d16dcb286f115958271a70e14f9e6f5b538f8d0ed2e95ff6",
+    "revision_humana": "pendiente_del_grupo",
+    "referencia": "Expectativas y POS declarados manualmente antes de ejecutar la variante."
+  },
+  {
+    "id": "AMP-044",
+    "texto": "Las niñas y la mujer son altas",
+    "nivel": "complejo",
+    "fenomenos": [
+      "miembro_femenino_plural"
+    ],
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "tokens_esperados": [
+      "Las",
+      "niñas",
+      "y",
+      "la",
+      "mujer",
+      "son",
+      "altas"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "CCONJ",
+      "DET",
+      "NOUN",
+      "VERB",
+      "ADJ"
+    ],
+    "grammar_version": "f3ec163d055725d7d16dcb286f115958271a70e14f9e6f5b538f8d0ed2e95ff6",
+    "revision_humana": "pendiente_del_grupo",
+    "referencia": "Expectativas y POS declarados manualmente antes de ejecutar la variante."
+  },
+  {
+    "id": "AMP-045",
+    "texto": "La niña y la mujer y el niño son altos",
+    "nivel": "complejo",
+    "fenomenos": [
+      "masculino_ultimo"
+    ],
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "tokens_esperados": [
+      "La",
+      "niña",
+      "y",
+      "la",
+      "mujer",
+      "y",
+      "el",
+      "niño",
+      "son",
+      "altos"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "CCONJ",
+      "DET",
+      "NOUN",
+      "CCONJ",
+      "DET",
+      "NOUN",
+      "VERB",
+      "ADJ"
+    ],
+    "grammar_version": "f3ec163d055725d7d16dcb286f115958271a70e14f9e6f5b538f8d0ed2e95ff6",
+    "revision_humana": "pendiente_del_grupo",
+    "referencia": "Expectativas y POS declarados manualmente antes de ejecutar la variante."
+  },
+  {
+    "id": "AMP-046",
+    "texto": "La niña comen fruta",
+    "nivel": "intermedio",
+    "fenomenos": [
+      "singular_verbo_plural"
+    ],
+    "esperado_cfg": false,
+    "gramatical_espanol": false,
+    "tokens_esperados": [
+      "La",
+      "niña",
+      "comen",
+      "fruta"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "VERB",
+      "NOUN"
+    ],
+    "grammar_version": "f3ec163d055725d7d16dcb286f115958271a70e14f9e6f5b538f8d0ed2e95ff6",
+    "revision_humana": "pendiente_del_grupo",
+    "referencia": "Expectativas y POS declarados manualmente antes de ejecutar la variante."
+  },
+  {
+    "id": "AMP-047",
+    "texto": "Las niñas comen la fruta",
+    "nivel": "intermedio",
+    "fenomenos": [
+      "plural_objeto"
+    ],
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "tokens_esperados": [
+      "Las",
+      "niñas",
+      "comen",
+      "la",
+      "fruta"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "VERB",
+      "DET",
+      "NOUN"
+    ],
+    "grammar_version": "f3ec163d055725d7d16dcb286f115958271a70e14f9e6f5b538f8d0ed2e95ff6",
+    "revision_humana": "pendiente_del_grupo",
+    "referencia": "Expectativas y POS declarados manualmente antes de ejecutar la variante."
+  },
+  {
+    "id": "AMP-048",
+    "texto": "Las niñas comió fruta",
+    "nivel": "intermedio",
+    "fenomenos": [
+      "pasado_plural_discordante"
+    ],
+    "esperado_cfg": false,
+    "gramatical_espanol": false,
+    "tokens_esperados": [
+      "Las",
+      "niñas",
+      "comió",
+      "fruta"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "VERB",
+      "NOUN"
+    ],
+    "grammar_version": "f3ec163d055725d7d16dcb286f115958271a70e14f9e6f5b538f8d0ed2e95ff6",
+    "revision_humana": "pendiente_del_grupo",
+    "referencia": "Expectativas y POS declarados manualmente antes de ejecutar la variante."
+  },
+  {
+    "id": "AMP-049",
+    "texto": "La niña come fruta el libro",
+    "nivel": "intermedio",
+    "fenomenos": [
+      "dos_objetos_fuera_alcance"
+    ],
+    "esperado_cfg": false,
+    "gramatical_espanol": false,
+    "tokens_esperados": [
+      "La",
+      "niña",
+      "come",
+      "fruta",
+      "el",
+      "libro"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "VERB",
+      "NOUN",
+      "DET",
+      "NOUN"
+    ],
+    "grammar_version": "f3ec163d055725d7d16dcb286f115958271a70e14f9e6f5b538f8d0ed2e95ff6",
+    "revision_humana": "pendiente_del_grupo",
+    "referencia": "Expectativas y POS declarados manualmente antes de ejecutar la variante."
+  },
+  {
+    "id": "AMP-050",
+    "texto": "La niña come la fruta y el libro",
+    "nivel": "complejo",
+    "fenomenos": [
+      "objeto_coordinado_fuera_alcance"
+    ],
+    "esperado_cfg": false,
+    "gramatical_espanol": true,
+    "tokens_esperados": [
+      "La",
+      "niña",
+      "come",
+      "la",
+      "fruta",
+      "y",
+      "el",
+      "libro"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "VERB",
+      "DET",
+      "NOUN",
+      "CCONJ",
+      "DET",
+      "NOUN"
+    ],
+    "grammar_version": "f3ec163d055725d7d16dcb286f115958271a70e14f9e6f5b538f8d0ed2e95ff6",
+    "revision_humana": "pendiente_del_grupo",
+    "referencia": "Expectativas y POS declarados manualmente antes de ejecutar la variante."
+  },
+  {
+    "id": "AMP-051",
+    "texto": "Come",
+    "nivel": "intermedio",
+    "fenomenos": [
+      "sujeto_omitido_fuera_alcance"
+    ],
+    "esperado_cfg": false,
+    "gramatical_espanol": true,
+    "tokens_esperados": [
+      "Come"
+    ],
+    "pos_esperado": [
+      "VERB"
+    ],
+    "grammar_version": "f3ec163d055725d7d16dcb286f115958271a70e14f9e6f5b538f8d0ed2e95ff6",
+    "revision_humana": "pendiente_del_grupo",
+    "referencia": "Expectativas y POS declarados manualmente antes de ejecutar la variante."
+  },
+  {
+    "id": "AMP-052",
+    "texto": "Come la niña pequeña despacio en la casa",
+    "nivel": "intermedio",
+    "fenomenos": [
+      "inversion_modificadores"
+    ],
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "tokens_esperados": [
+      "Come",
+      "la",
+      "niña",
+      "pequeña",
+      "despacio",
+      "en",
+      "la",
+      "casa"
+    ],
+    "pos_esperado": [
+      "VERB",
+      "DET",
+      "NOUN",
+      "ADJ",
+      "ADV",
+      "ADP",
+      "DET",
+      "NOUN"
+    ],
+    "grammar_version": "f3ec163d055725d7d16dcb286f115958271a70e14f9e6f5b538f8d0ed2e95ff6",
+    "revision_humana": "pendiente_del_grupo",
+    "referencia": "Expectativas y POS declarados manualmente antes de ejecutar la variante."
+  }
+]

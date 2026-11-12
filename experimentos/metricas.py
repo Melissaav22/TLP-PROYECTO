@@ -74,9 +74,9 @@ def summarize(data, corpus):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--input', default=str(ROOT / 'resultados/fase1/comparacion.json'))
-    parser.add_argument('--corpus', default=str(ROOT / 'datos/fase1.json'))
-    parser.add_argument('--output', default=str(ROOT / 'resultados/fase1/resumen.json'))
+    parser.add_argument('--input', default=str(ROOT / 'resultados/ampliacion/comparacion.json'))
+    parser.add_argument('--corpus', default=str(ROOT / 'datos/ampliacion_es.json'))
+    parser.add_argument('--output', default=str(ROOT / 'resultados/ampliacion/resumen.json'))
     args = parser.parse_args()
     data = read_json(args.input)
     if data['metadata']['corpus_sha256'] != digest(args.corpus):

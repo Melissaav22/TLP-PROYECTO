@@ -1,9 +1,9 @@
 {
   "parser": {
     "tool": "parser",
-    "model": "CFG LL(1)",
-    "version": "41d4805f8d9d3176c9c5ff61e728f7a13ce17e027abcdd43f90040d3f53ba5df",
-    "initialization_seconds": 0.0020019999938085675
+    "model": "CFG LL(1) ampliacion",
+    "version": "f3ec163d055725d7d16dcb286f115958271a70e14f9e6f5b538f8d0ed2e95ff6",
+    "baseline_commit": "f1ccab6c223625f45af2313911eb0dca7aa2b61b"
   },
   "nltk": {
     "tool": "nltk",

@@ -22,7 +22,8 @@ def token_pos(token_type):
         return 'ADJ'
     if token_type.startswith(('VERB_', 'COP_')):
         return 'VERB'
-    return {'ADV': 'ADV', 'PREP': 'ADP', 'QUE': 'SCONJ', 'NUM': 'NUM'}.get(token_type, 'X')
+    return {'ADV': 'ADV', 'PREP': 'ADP', 'QUE': 'SCONJ',
+            'CONJ_Y': 'CCONJ', 'NUM': 'NUM'}.get(token_type, 'X')
 
 
 class OwnParser:

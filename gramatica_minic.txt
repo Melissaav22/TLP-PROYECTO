@@ -47,16 +47,36 @@ Factor      -> LPAREN Expr RPAREN | ID | NUM
 # Para analizar una oracion hay que activar el lexico espanol con --es.
 # ------------------------------------------------------------
 
-Oracion     -> OracionSG | OracionPL
-OracionSG   -> SN_MS SV_MS | SN_FS SV_FS
-OracionPL   -> SN_MP SV_MP | SN_FP SV_FP
+Oracion     -> OracionSG | OracionPL | InvertidaSG | InvertidaPL
+OracionSG   -> SN_MS SigueMS | SN_FS SigueFS
+OracionPL   -> SN_MP SigueMP | SN_FP SigueFP
+
+# Se lee el primer miembro antes de decidir entre sujeto simple y coordinado.
+# La coordinacion exige plural. Solo la coordinacion enteramente femenina
+# conserva femenino en el atributo; un miembro masculino selecciona SV_MP.
+SigueMS     -> SV_MS | CONJ_Y CoordinadoM
+SigueFS     -> SV_FS | CONJ_Y CoordinadoF
+SigueMP     -> SV_MP | CONJ_Y CoordinadoM
+SigueFP     -> SV_FP | CONJ_Y CoordinadoF
+CoordinadoM -> SN ColaCoordM
+CoordinadoF -> SN_MS ColaCoordM | SN_FS ColaCoordF | SN_MP ColaCoordM | SN_FP ColaCoordF
+ColaCoordM  -> CONJ_Y CoordinadoM | SV_MP
+ColaCoordF  -> CONJ_Y CoordinadoF | SV_FP
+
+# Inversion acotada: verbo pleno + sujeto simple concordado + modificadores.
+# No se admiten objeto adicional, sujeto coordinado ni copula en esta rama.
+InvertidaSG -> VerboSG SujetoInvSG ModsS
+InvertidaPL -> VerboPL SujetoInvPL ModsP
+SujetoInvSG -> SN_MS | SN_FS
+SujetoInvPL -> SN_MP | SN_FP
 
 # sintagma nominal (con determinante obligatorio)
 SN          -> SN_MS | SN_FS | SN_MP | SN_FP
 SN_MS       -> DET_MS SUST_MS AdjMS
-SN_FS       -> DET_FS SUST_FS AdjFS
+SN_FS       -> DET_FS NombreFS AdjFS
 SN_MP       -> DET_MP SUST_MP AdjMP
 SN_FP       -> DET_FP SUST_FP AdjFP
+NombreFS    -> SUST_FS | SUST_MASA_FS
 
 # adjetivos pospuestos
 AdjMS       -> ADJ_MS AdjMS | eps
@@ -69,16 +89,23 @@ PP          -> PREP SN
 
 # sintagma verbal: verbo pleno (+ subordinada o modificadores) o copula
 # (+ atributo y modificadores). El verbo concuerda en numero con el sujeto.
-SV_MS       -> VERB_3S Cpl_MS | COP_3S PredCpl_MS
-SV_FS       -> VERB_3S Cpl_FS | COP_3S PredCpl_FS
-SV_MP       -> VERB_3P Cpl_MP | COP_3P PredCpl_MP
-SV_FP       -> VERB_3P Cpl_FP | COP_3P PredCpl_FP
+SV_MS       -> VerboSG Cpl_MS | CopulaSG PredCpl_MS
+SV_FS       -> VerboSG Cpl_FS | CopulaSG PredCpl_FS
+SV_MP       -> VerboPL Cpl_MP | CopulaPL PredCpl_MP
+SV_FP       -> VerboPL Cpl_FP | CopulaPL PredCpl_FP
+VerboSG     -> VERB_3S | VERB_PAST_3S
+VerboPL     -> VERB_3P | VERB_PAST_3P
+CopulaSG    -> COP_3S | COP_PAST_3S
+CopulaPL    -> COP_3P | COP_PAST_3P
 
-# complemento del verbo: subordinada con "que" o solo modificadores
-Cpl_MS      -> QUE Oracion | ModsS
-Cpl_FS      -> QUE Oracion | ModsS
-Cpl_MP      -> QUE Oracion | ModsP
-Cpl_FP      -> QUE Oracion | ModsP
+# Complemento: subordinada o un objeto opcional seguido de modificadores.
+# Solo los nombres de masa habilitados admiten objeto singular sin articulo.
+Cpl_MS      -> QUE Oracion | Objeto ModsS
+Cpl_FS      -> QUE Oracion | Objeto ModsS
+Cpl_MP      -> QUE Oracion | Objeto ModsP
+Cpl_FP      -> QUE Oracion | Objeto ModsP
+Objeto      -> SN | MasaObjeto | eps
+MasaObjeto  -> SUST_MASA_FS AdjFS
 
 # complemento de la copula: atributo (adjetivo concordado) y modificadores
 PredCpl_MS  -> PredMS ModsS | ModsS
