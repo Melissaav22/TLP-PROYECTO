@@ -18,7 +18,7 @@
       "NOUN",
       "VERB"
     ],
-    "grammar_version": "e7147cb30ece6bbd64c7d401151c4bcb6e83a2e23f48654d49e4a0a8984aebc0",
+    "grammar_version": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
     "revision_humana": "pendiente_del_grupo"
   },
   {
@@ -27,9 +27,9 @@
     "nivel": "simple",
     "fenomenos": [
       "SVO",
-      "objeto_fuera_del_subconjunto_fase1"
+      "objeto_directo"
     ],
-    "esperado_cfg": false,
+    "esperado_cfg": true,
     "gramatical_espanol": true,
     "tokens_esperados": [
       "El",
@@ -45,7 +45,7 @@
       "DET",
       "NOUN"
     ],
-    "grammar_version": "e7147cb30ece6bbd64c7d401151c4bcb6e83a2e23f48654d49e4a0a8984aebc0",
+    "grammar_version": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
     "revision_humana": "pendiente_del_grupo"
   },
   {
@@ -67,7 +67,7 @@
       "NOUN",
       "VERB"
     ],
-    "grammar_version": "e7147cb30ece6bbd64c7d401151c4bcb6e83a2e23f48654d49e4a0a8984aebc0",
+    "grammar_version": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
     "revision_humana": "pendiente_del_grupo"
   },
   {
@@ -89,7 +89,7 @@
       "NOUN",
       "VERB"
     ],
-    "grammar_version": "e7147cb30ece6bbd64c7d401151c4bcb6e83a2e23f48654d49e4a0a8984aebc0",
+    "grammar_version": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
     "revision_humana": "pendiente_del_grupo"
   },
   {
@@ -111,7 +111,7 @@
       "NOUN",
       "VERB"
     ],
-    "grammar_version": "e7147cb30ece6bbd64c7d401151c4bcb6e83a2e23f48654d49e4a0a8984aebc0",
+    "grammar_version": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
     "revision_humana": "pendiente_del_grupo"
   },
   {
@@ -143,7 +143,7 @@
       "DET",
       "NOUN"
     ],
-    "grammar_version": "e7147cb30ece6bbd64c7d401151c4bcb6e83a2e23f48654d49e4a0a8984aebc0",
+    "grammar_version": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
     "revision_humana": "pendiente_del_grupo"
   },
   {
@@ -177,7 +177,7 @@
       "DET",
       "NOUN"
     ],
-    "grammar_version": "e7147cb30ece6bbd64c7d401151c4bcb6e83a2e23f48654d49e4a0a8984aebc0",
+    "grammar_version": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
     "revision_humana": "pendiente_del_grupo"
   },
   {
@@ -201,7 +201,7 @@
       "ADJ",
       "VERB"
     ],
-    "grammar_version": "e7147cb30ece6bbd64c7d401151c4bcb6e83a2e23f48654d49e4a0a8984aebc0",
+    "grammar_version": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
     "revision_humana": "pendiente_del_grupo"
   },
   {
@@ -210,9 +210,9 @@
     "nivel": "complejo",
     "fenomenos": [
       "subordinada_SVO",
-      "objeto_fuera_del_subconjunto_fase1"
+      "objeto_directo"
     ],
-    "esperado_cfg": false,
+    "esperado_cfg": true,
     "gramatical_espanol": true,
     "tokens_esperados": [
       "La",
@@ -236,7 +236,7 @@
       "DET",
       "NOUN"
     ],
-    "grammar_version": "e7147cb30ece6bbd64c7d401151c4bcb6e83a2e23f48654d49e4a0a8984aebc0",
+    "grammar_version": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
     "revision_humana": "pendiente_del_grupo"
   },
   {
@@ -270,7 +270,7 @@
       "DET",
       "NOUN"
     ],
-    "grammar_version": "e7147cb30ece6bbd64c7d401151c4bcb6e83a2e23f48654d49e4a0a8984aebc0",
+    "grammar_version": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
     "revision_humana": "pendiente_del_grupo"
   },
   {
@@ -298,7 +298,7 @@
       "NOUN",
       "VERB"
     ],
-    "grammar_version": "e7147cb30ece6bbd64c7d401151c4bcb6e83a2e23f48654d49e4a0a8984aebc0",
+    "grammar_version": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
     "revision_humana": "pendiente_del_grupo"
   },
   {
@@ -324,7 +324,7 @@
       "DET",
       "NOUN"
     ],
-    "grammar_version": "e7147cb30ece6bbd64c7d401151c4bcb6e83a2e23f48654d49e4a0a8984aebc0",
+    "grammar_version": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
     "revision_humana": "pendiente_del_grupo"
   },
   {
@@ -352,7 +352,7 @@
       "NOUN",
       "PUNCT"
     ],
-    "grammar_version": "e7147cb30ece6bbd64c7d401151c4bcb6e83a2e23f48654d49e4a0a8984aebc0",
+    "grammar_version": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
     "revision_humana": "pendiente_del_grupo"
   }
 ]

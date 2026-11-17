@@ -34,7 +34,7 @@ python -m unittest discover -s tests -p "test_*.py" -v
 ```
 
 - `python tests/run_tests.py` corre los 20 casos de MiniC y debe terminar con `20/20 casos pasan.`
-- `python tests/run_tests.py --es` corre los 19 casos del español y debe terminar con `19/19 casos pasan.`
+- `python tests/run_tests.py --es` corre los 29 casos del español y debe terminar con `29/29 casos pasan.`
 - `python -m unittest ...` corre las 11 pruebas unitarias y debe terminar con `OK`.
 
 Con el entorno activado, los comandos de la sección "Uso" también pueden ejecutarse como `python main.py ...`. Para reproducir exactamente las versiones verificadas existe `requirements-core.lock` (con hashes), instalable con `uv pip sync --require-hashes requirements-core.lock`.
@@ -64,7 +64,7 @@ main.py                       línea de comandos: analiza un archivo y muestra e
 gramatica_minic.txt           gramática LL(1) de MiniC y del español, en un solo archivo
 minic/
   lexer.py                    análisis léxico (PLY)
-  lexicon_es.py               diccionario del español con género y número
+  lexicon_es.py               diccionario del español con género, número y tiempo verbal
   grammar.py                  lee la gramática y calcula FIRST, FOLLOW y la tabla LL(1)
   parser.py                   parser predictivo con pila, árbol y modo pánico
   trees.py                    árbol en corchetes, en consola y como SVG
@@ -83,10 +83,10 @@ scripts/preparar_modelos.py   descarga el corpus de NLTK
 
 ## Casos de prueba
 
-Hay 39 casos de aceptación y rechazo, y 11 pruebas unitarias.
+Hay 49 casos de aceptación y rechazo, y 11 pruebas unitarias.
 
 - `tests/validos/` tiene 9 programas MiniC que el parser debe aceptar, y `tests/invalidos/` tiene 11 que debe rechazar. En los inválidos, la primera línea indica dónde se espera el primer error: `// ESPERA: error en linea N`.
-- `tests/es/validos/` tiene 11 oraciones que debe aceptar, y `tests/es/invalidos/` tiene 8 que debe rechazar (concordancia de género y número, falta de `que`, orden del adjetivo). La línea `// ESPERA` funciona igual.
+- `tests/es/validos/` tiene 17 oraciones que debe aceptar, y `tests/es/invalidos/` tiene 12 que debe rechazar (concordancia de género y número, falta de `que`, orden del adjetivo, objeto directo mal formado). La línea `// ESPERA` funciona igual.
 - `tests/run_tests.py` imprime una fila por caso con lo esperado, lo obtenido y `OK`. Sin argumentos corre MiniC, y con `--es` corre el español.
 - `test_contratos.py` y `test_experimentos.py` verifican posiciones de errores, números y palabras reservadas, que el español no acepte código MiniC, los árboles y la demo.
 
@@ -96,11 +96,11 @@ MiniC contiene declaraciones `int`, asignaciones, aritmética, comparaciones, `i
 
 Se aceptan decimales ASCII `0` o `[1-9][0-9]*`, de hasta 4.096 dígitos, conservando el lexema. Se excluyen octales, ceros iniciales, números Unicode, funciones, operadores lógicos, comentarios de bloque y asignaciones encadenadas. Se impide usar palabras clave C como identificadores.
 
-El español se valida desde `Oracion`. Requiere determinante, sujeto nominal y verbo de tercera persona. Incluye presente, adjetivos concordados, adverbios, PP y subordinadas con `que`. El objeto directo nominal y el pasado se incorporan en fase 2.
+El español se valida desde `Oracion`. Requiere determinante, sujeto nominal y verbo de tercera persona. Incluye presente y pretérito perfecto simple, objeto directo nominal opcional, adjetivos concordados, adverbios, PP y subordinadas con `que`. El objeto directo es un solo `SN` y no concuerda con el sujeto; los verbos concuerdan en número con el sujeto, también en pretérito.
 
-Las PP sucesivas modifican al sintagma verbal. El fixture histórico `v06_pp_anidada.txt` contiene dos PP hermanas. `experimentos.ambiguedad` contrasta esa política con dos adjunciones de una CFG auxiliar. Los verbos plenos comparten las posibilidades de complemento. La valencia semántica es una limitación declarada.
+Las PP sucesivas modifican al sintagma verbal y el objeto directo puede ir seguido de adverbios o PP. Los verbos plenos comparten las posibilidades de complemento. La valencia semántica es una limitación declarada.
 
-El lexicón está en `minic/lexicon_es.py` y admite consulta normalizada NFC. Se excluyen coordinación, pronombres, relativas, imperfecto y punto final. La pertenencia al subconjunto se etiqueta separada de la corrección general del español.
+El lexicón está en `minic/lexicon_es.py` y admite consulta normalizada NFC. Se excluyen coordinación, pronombres, relativas, imperfecto, tiempos compuestos y punto final. La pertenencia al subconjunto se etiqueta separada de la corrección general del español.
 
 `parse(source, grammar, spanish=False)` conserva `(nltk.Tree, list[str])`. `parse_detailed` añade tokens, diagnósticos estructurados y producciones. `Grammar(path, start=...)` y `for_start` calculan FOLLOW y tabla para la raíz elegida.
 
@@ -125,7 +125,7 @@ El lock incluye spaCy 3.8.18, es_core_news_sm 3.8.0, NLTK 3.10.4 y Matplotlib 3.
 .\.venv-nlp\Scripts\python.exe -m experimentos.metricas
 ```
 
-`datos/fase1.json` guarda 13 frases con etiquetas específicas de esta gramática. Dos casos SVO se rechazan aquí por estar fuera del subconjunto; en fase 2 se amplía la gramática y se actualiza su referencia. Los resultados conservan hashes normalizados de texto UTF-8 con saltos LF, además del commit base.
+`datos/fase1.json` guarda 13 frases con etiquetas específicas de esta gramática. Los dos casos SVO se aceptan con el objeto directo; `ES-057` sigue rechazado por el punto final. Los resultados conservan hashes normalizados de texto UTF-8 con saltos LF, además del commit base.
 
 ## Tareas y métricas
 

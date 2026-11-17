@@ -19,7 +19,7 @@ C_KEYWORDS = set('auto break case char const continue default do double enum '
                  '_Imaginary _Noreturn _Static_assert _Thread_local'.split())
 MAX_NUM_DIGITS = 4096     # máximo de dígitos de un literal numérico
 
-# lista de tokens que PLY exige; incluye los del léxico del español
+# lista de tokens que incluye los del léxico del español
 tokens = ['ID', 'NUM', 'PLUS', 'MINUS', 'TIMES', 'DIVIDE', 'LPAREN',
           'RPAREN', 'LBRACE', 'RBRACE', 'SEMI', 'ASSIGN', 'EQ', 'LT',
           'GT', 'LE', 'GE', 'NE', 'C_KEYWORD'] + list(reserved.values()) + lexicon_es.TOKENS

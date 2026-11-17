@@ -67,18 +67,29 @@ AdjFP       -> ADJ_FP AdjFP | eps
 # frase preposicional
 PP          -> PREP SN
 
-# sintagma verbal: verbo pleno (+ subordinada o modificadores) o copula
-# (+ atributo y modificadores). El verbo concuerda en numero con el sujeto.
-SV_MS       -> VERB_3S Cpl_MS | COP_3S PredCpl_MS
-SV_FS       -> VERB_3S Cpl_FS | COP_3S PredCpl_FS
-SV_MP       -> VERB_3P Cpl_MP | COP_3P PredCpl_MP
-SV_FP       -> VERB_3P Cpl_FP | COP_3P PredCpl_FP
+# sintagma verbal: verbo pleno (+ complemento directo, subordinada o
+# modificadores) o copula (+ atributo y modificadores). El verbo concuerda
+# en numero con el sujeto.
+SV_MS       -> VFormS Cpl_MS | CopS PredCpl_MS
+SV_FS       -> VFormS Cpl_FS | CopS PredCpl_FS
+SV_MP       -> VFormP Cpl_MP | CopP PredCpl_MP
+SV_FP       -> VFormP Cpl_FP | CopP PredCpl_FP
 
-# complemento del verbo: subordinada con "que" o solo modificadores
-Cpl_MS      -> QUE Oracion | ModsS
-Cpl_FS      -> QUE Oracion | ModsS
-Cpl_MP      -> QUE Oracion | ModsP
-Cpl_FP      -> QUE Oracion | ModsP
+# formas verbales: presente y preterito perfecto simple (tercera persona)
+VFormS      -> VERB_3S | VERB_PRET_3S
+VFormP      -> VERB_3P | VERB_PRET_3P
+CopS        -> COP_3S | COP_PRET_3S
+CopP        -> COP_3P | COP_PRET_3P
+
+# complemento del verbo: objeto directo (+ modificadores), subordinada con
+# "que" o solo modificadores
+Cpl_MS      -> CD ModsS | QUE Oracion | ModsS
+Cpl_FS      -> CD ModsS | QUE Oracion | ModsS
+Cpl_MP      -> CD ModsP | QUE Oracion | ModsP
+Cpl_FP      -> CD ModsP | QUE Oracion | ModsP
+
+# objeto directo: un solo sintagma nominal; no concuerda con el sujeto
+CD          -> SN
 
 # complemento de la copula: atributo (adjetivo concordado) y modificadores
 PredCpl_MS  -> PredMS ModsS | ModsS

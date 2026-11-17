@@ -2,7 +2,8 @@
 
 Cada entrada asocia una palabra (en minusculas) con un token que ya codifica
 sus rasgos morfologicos: numero y genero para sustantivos, adjetivos y
-determinantes, y numero para los verbos en tercera persona.
+determinantes, y numero y tiempo (presente o preterito perfecto simple) para
+los verbos en tercera persona.
 
 El lexer consulta este diccionario antes de emitir un ID; asi la concordancia
 se decide en la gramatica, no en un chequeo posterior.
@@ -25,8 +26,12 @@ ADJ_FP = 'ADJ_FP'
 
 VERB_3S = 'VERB_3S'
 VERB_3P = 'VERB_3P'
+VERB_PRET_3S = 'VERB_PRET_3S'
+VERB_PRET_3P = 'VERB_PRET_3P'
 COP_3S = 'COP_3S'
 COP_3P = 'COP_3P'
+COP_PRET_3S = 'COP_PRET_3S'
+COP_PRET_3P = 'COP_PRET_3P'
 
 ADV = 'ADV'
 PREP = 'PREP'
@@ -36,7 +41,8 @@ TOKENS = [
     DET_MS, DET_FS, DET_MP, DET_FP,
     SUST_MS, SUST_FS, SUST_MP, SUST_FP,
     ADJ_MS, ADJ_FS, ADJ_MP, ADJ_FP,
-    VERB_3S, VERB_3P, COP_3S, COP_3P,
+    VERB_3S, VERB_3P, VERB_PRET_3S, VERB_PRET_3P,
+    COP_3S, COP_3P, COP_PRET_3S, COP_PRET_3P,
     ADV, PREP, QUE,
 ]
 
@@ -104,9 +110,32 @@ LEXICON = {
     'abre': VERB_3S, 'abren': VERB_3P,
     'cierra': VERB_3S, 'cierran': VERB_3P,
 
+    # verbos en preterito perfecto simple (singular / plural)
+    'corrió': VERB_PRET_3S, 'corrieron': VERB_PRET_3P,
+    'caminó': VERB_PRET_3S, 'caminaron': VERB_PRET_3P,
+    'compró': VERB_PRET_3S, 'compraron': VERB_PRET_3P,
+    'leyó': VERB_PRET_3S, 'leyeron': VERB_PRET_3P,
+    'escribió': VERB_PRET_3S, 'escribieron': VERB_PRET_3P,
+    'comió': VERB_PRET_3S, 'comieron': VERB_PRET_3P,
+    'vivió': VERB_PRET_3S, 'vivieron': VERB_PRET_3P,
+    'estudió': VERB_PRET_3S, 'estudiaron': VERB_PRET_3P,
+    'trabajó': VERB_PRET_3S, 'trabajaron': VERB_PRET_3P,
+    'cantó': VERB_PRET_3S, 'cantaron': VERB_PRET_3P,
+    'bailó': VERB_PRET_3S, 'bailaron': VERB_PRET_3P,
+    'supo': VERB_PRET_3S, 'supieron': VERB_PRET_3P,
+    'dijo': VERB_PRET_3S, 'dijeron': VERB_PRET_3P,
+    'miró': VERB_PRET_3S, 'miraron': VERB_PRET_3P,
+    'buscó': VERB_PRET_3S, 'buscaron': VERB_PRET_3P,
+    'quiso': VERB_PRET_3S, 'quisieron': VERB_PRET_3P,
+    'durmió': VERB_PRET_3S, 'durmieron': VERB_PRET_3P,
+    'abrió': VERB_PRET_3S, 'abrieron': VERB_PRET_3P,
+    'cerró': VERB_PRET_3S, 'cerraron': VERB_PRET_3P,
+
     # copulas (ser / estar)
     'es': COP_3S, 'son': COP_3P,
     'está': COP_3S, 'están': COP_3P,
+    'fue': COP_PRET_3S, 'fueron': COP_PRET_3P,
+    'estuvo': COP_PRET_3S, 'estuvieron': COP_PRET_3P,
 
     # adverbios
     'rápidamente': ADV, 'despacio': ADV, 'bien': ADV, 'mal': ADV,
@@ -117,8 +146,8 @@ LEXICON = {
     # preposiciones
     'en': PREP, 'de': PREP, 'por': PREP, 'con': PREP, 'para': PREP,
     'sin': PREP, 'sobre': PREP, 'entre': PREP, 'hasta': PREP,
-    'desde': PREP,
+    'desde': PREP, 'a': PREP,
 
-    # complementizador / relativo
+    # nexo
     'que': QUE,
 }
