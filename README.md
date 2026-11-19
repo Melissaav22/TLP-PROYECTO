@@ -12,7 +12,7 @@ La corrida de Gemini sobre este corpus está en `resultados/llm/corpus-ordenado/
 
 La corrida oficial de spaCy y NLTK con `criterios-v1` usó el corpus congelado `datos/corpus_fase2.csv`. Su registro y sus metadatos están en [`resultados/fase2/`](resultados/fase2/).
 
-La corrida histórica usó `datos/corpus_es.json` con 60 oraciones y la CFG anterior, disponible en `4b73411`. Sus 120 respuestas reales, prompts y métricas están en `resultados/llm/`. Las salidas de NLTK, spaCy y el parser sobre ese corpus están en `resultados/nlp/` y `resultados/metricas/`. El PDF en `docs/` precede a la corrida de Gemini.
+La corrida histórica usó `datos/corpus_es.json` con 60 oraciones y la CFG anterior, disponible en `4b73411`. Sus 120 respuestas reales, prompts y métricas están en `resultados/llm/`. Las salidas de NLTK, spaCy y el parser sobre ese corpus están en `resultados/nlp/` y `resultados/metricas/`.
 
 ## Instalación del parser
 
@@ -144,9 +144,9 @@ Para cambiar de proveedor, configura la clave del perfil y cambia `LLM_PROVIDER`
 
 Puedes definir el tiempo de espera, límite de llamadas, tokens, carpeta y tarifas por perfil con su prefijo. Los argumentos del comando tienen prioridad sobre la configuración del perfil. Una variable de entorno reemplaza la misma variable del archivo `.env`. Usa `--provider nombre` para una corrida puntual con otro perfil y pásalo también a `experimentos.resumir_llm` para leer sus resultados.
 
-## Informes y defensa
+## Informes históricos
 
-Los borradores históricos de la Fase 2 están en `docs/`. La evaluación de la Fase 2 requiere el informe escrito y sus anexos de evidencia. Al citar las métricas, identifica el corpus y la versión de la CFG que se usaron.
+Los informes y la presentación históricos se pueden consultar en el commit `77fccf2`. Al citar las métricas, identifica el corpus y la versión de la CFG que se usaron.
 
 Fuentes de adaptadores y cliente:
 - [NLTK](https://www.nltk.org/api/nltk.tag.sequential.html)
