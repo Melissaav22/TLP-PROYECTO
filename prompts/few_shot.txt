@@ -1,0 +1,3 @@
+Aplica exactamente las mismas reglas de zero-shot.
+Antes de la oración evaluada se incluyen ejemplos resueltos que pertenecen a un archivo separado del corpus.
+Devuelve únicamente el objeto JSON de la oración evaluada.

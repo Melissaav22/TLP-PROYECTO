@@ -1,0 +1,1684 @@
+[
+  {
+    "id": "ES-001",
+    "texto": "El niño corre",
+    "nivel": "simple",
+    "fenomenos": [
+      "sujeto_verbo"
+    ],
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "tokens_esperados": [
+      "El",
+      "niño",
+      "corre"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "VERB"
+    ],
+    "grammar_version": "cf1d5f630a2d49dd0cfdeedd4ac9b14cdae1209ee714a2b84b94f5f880df5c81",
+    "revision_humana": "pendiente_del_grupo"
+  },
+  {
+    "id": "ES-002",
+    "texto": "Los niños corren",
+    "nivel": "simple",
+    "fenomenos": [
+      "numero_plural"
+    ],
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "tokens_esperados": [
+      "Los",
+      "niños",
+      "corren"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "VERB"
+    ],
+    "grammar_version": "cf1d5f630a2d49dd0cfdeedd4ac9b14cdae1209ee714a2b84b94f5f880df5c81",
+    "revision_humana": "pendiente_del_grupo"
+  },
+  {
+    "id": "ES-003",
+    "texto": "La niña canta",
+    "nivel": "simple",
+    "fenomenos": [
+      "genero_femenino"
+    ],
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "tokens_esperados": [
+      "La",
+      "niña",
+      "canta"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "VERB"
+    ],
+    "grammar_version": "cf1d5f630a2d49dd0cfdeedd4ac9b14cdae1209ee714a2b84b94f5f880df5c81",
+    "revision_humana": "pendiente_del_grupo"
+  },
+  {
+    "id": "ES-004",
+    "texto": "Las niñas cantan",
+    "nivel": "simple",
+    "fenomenos": [
+      "numero_plural"
+    ],
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "tokens_esperados": [
+      "Las",
+      "niñas",
+      "cantan"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "VERB"
+    ],
+    "grammar_version": "cf1d5f630a2d49dd0cfdeedd4ac9b14cdae1209ee714a2b84b94f5f880df5c81",
+    "revision_humana": "pendiente_del_grupo"
+  },
+  {
+    "id": "ES-005",
+    "texto": "El niño lee el libro",
+    "nivel": "simple",
+    "fenomenos": [
+      "SVO"
+    ],
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "tokens_esperados": [
+      "El",
+      "niño",
+      "lee",
+      "el",
+      "libro"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "VERB",
+      "DET",
+      "NOUN"
+    ],
+    "grammar_version": "cf1d5f630a2d49dd0cfdeedd4ac9b14cdae1209ee714a2b84b94f5f880df5c81",
+    "revision_humana": "pendiente_del_grupo"
+  },
+  {
+    "id": "ES-006",
+    "texto": "Los niños leen los libros",
+    "nivel": "simple",
+    "fenomenos": [
+      "SVO_plural"
+    ],
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "tokens_esperados": [
+      "Los",
+      "niños",
+      "leen",
+      "los",
+      "libros"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "VERB",
+      "DET",
+      "NOUN"
+    ],
+    "grammar_version": "cf1d5f630a2d49dd0cfdeedd4ac9b14cdae1209ee714a2b84b94f5f880df5c81",
+    "revision_humana": "pendiente_del_grupo"
+  },
+  {
+    "id": "ES-007",
+    "texto": "La mujer compró la flor",
+    "nivel": "simple",
+    "fenomenos": [
+      "SVO_pasado"
+    ],
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "tokens_esperados": [
+      "La",
+      "mujer",
+      "compró",
+      "la",
+      "flor"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "VERB",
+      "DET",
+      "NOUN"
+    ],
+    "grammar_version": "cf1d5f630a2d49dd0cfdeedd4ac9b14cdae1209ee714a2b84b94f5f880df5c81",
+    "revision_humana": "pendiente_del_grupo"
+  },
+  {
+    "id": "ES-008",
+    "texto": "Las mujeres compraron las flores",
+    "nivel": "simple",
+    "fenomenos": [
+      "SVO_pasado_plural"
+    ],
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "tokens_esperados": [
+      "Las",
+      "mujeres",
+      "compraron",
+      "las",
+      "flores"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "VERB",
+      "DET",
+      "NOUN"
+    ],
+    "grammar_version": "cf1d5f630a2d49dd0cfdeedd4ac9b14cdae1209ee714a2b84b94f5f880df5c81",
+    "revision_humana": "pendiente_del_grupo"
+  },
+  {
+    "id": "ES-009",
+    "texto": "El perro corrió",
+    "nivel": "simple",
+    "fenomenos": [
+      "pasado"
+    ],
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "tokens_esperados": [
+      "El",
+      "perro",
+      "corrió"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "VERB"
+    ],
+    "grammar_version": "cf1d5f630a2d49dd0cfdeedd4ac9b14cdae1209ee714a2b84b94f5f880df5c81",
+    "revision_humana": "pendiente_del_grupo"
+  },
+  {
+    "id": "ES-010",
+    "texto": "Los gatos durmieron",
+    "nivel": "simple",
+    "fenomenos": [
+      "pasado_plural"
+    ],
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "tokens_esperados": [
+      "Los",
+      "gatos",
+      "durmieron"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "VERB"
+    ],
+    "grammar_version": "cf1d5f630a2d49dd0cfdeedd4ac9b14cdae1209ee714a2b84b94f5f880df5c81",
+    "revision_humana": "pendiente_del_grupo"
+  },
+  {
+    "id": "ES-011",
+    "texto": "La casa es blanca",
+    "nivel": "simple",
+    "fenomenos": [
+      "atributo"
+    ],
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "tokens_esperados": [
+      "La",
+      "casa",
+      "es",
+      "blanca"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "VERB",
+      "ADJ"
+    ],
+    "grammar_version": "cf1d5f630a2d49dd0cfdeedd4ac9b14cdae1209ee714a2b84b94f5f880df5c81",
+    "revision_humana": "pendiente_del_grupo"
+  },
+  {
+    "id": "ES-012",
+    "texto": "Las casas fueron nuevas",
+    "nivel": "simple",
+    "fenomenos": [
+      "atributo_pasado"
+    ],
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "tokens_esperados": [
+      "Las",
+      "casas",
+      "fueron",
+      "nuevas"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "VERB",
+      "ADJ"
+    ],
+    "grammar_version": "cf1d5f630a2d49dd0cfdeedd4ac9b14cdae1209ee714a2b84b94f5f880df5c81",
+    "revision_humana": "pendiente_del_grupo"
+  },
+  {
+    "id": "ES-013",
+    "texto": "El niños corre",
+    "nivel": "simple",
+    "fenomenos": [
+      "numero_determinante"
+    ],
+    "esperado_cfg": false,
+    "gramatical_espanol": false,
+    "tokens_esperados": [
+      "El",
+      "niños",
+      "corre"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "VERB"
+    ],
+    "grammar_version": "cf1d5f630a2d49dd0cfdeedd4ac9b14cdae1209ee714a2b84b94f5f880df5c81",
+    "revision_humana": "pendiente_del_grupo"
+  },
+  {
+    "id": "ES-014",
+    "texto": "La niño corre",
+    "nivel": "simple",
+    "fenomenos": [
+      "genero_determinante"
+    ],
+    "esperado_cfg": false,
+    "gramatical_espanol": false,
+    "tokens_esperados": [
+      "La",
+      "niño",
+      "corre"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "VERB"
+    ],
+    "grammar_version": "cf1d5f630a2d49dd0cfdeedd4ac9b14cdae1209ee714a2b84b94f5f880df5c81",
+    "revision_humana": "pendiente_del_grupo"
+  },
+  {
+    "id": "ES-015",
+    "texto": "Los niños corre",
+    "nivel": "simple",
+    "fenomenos": [
+      "numero_verbo"
+    ],
+    "esperado_cfg": false,
+    "gramatical_espanol": false,
+    "tokens_esperados": [
+      "Los",
+      "niños",
+      "corre"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "VERB"
+    ],
+    "grammar_version": "cf1d5f630a2d49dd0cfdeedd4ac9b14cdae1209ee714a2b84b94f5f880df5c81",
+    "revision_humana": "pendiente_del_grupo"
+  },
+  {
+    "id": "ES-016",
+    "texto": "La niña cantaron",
+    "nivel": "simple",
+    "fenomenos": [
+      "numero_verbo_pasado"
+    ],
+    "esperado_cfg": false,
+    "gramatical_espanol": false,
+    "tokens_esperados": [
+      "La",
+      "niña",
+      "cantaron"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "VERB"
+    ],
+    "grammar_version": "cf1d5f630a2d49dd0cfdeedd4ac9b14cdae1209ee714a2b84b94f5f880df5c81",
+    "revision_humana": "pendiente_del_grupo"
+  },
+  {
+    "id": "ES-017",
+    "texto": "El niño lee las libro",
+    "nivel": "simple",
+    "fenomenos": [
+      "numero_objeto"
+    ],
+    "esperado_cfg": false,
+    "gramatical_espanol": false,
+    "tokens_esperados": [
+      "El",
+      "niño",
+      "lee",
+      "las",
+      "libro"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "VERB",
+      "DET",
+      "NOUN"
+    ],
+    "grammar_version": "cf1d5f630a2d49dd0cfdeedd4ac9b14cdae1209ee714a2b84b94f5f880df5c81",
+    "revision_humana": "pendiente_del_grupo"
+  },
+  {
+    "id": "ES-018",
+    "texto": "La casa es blancos",
+    "nivel": "simple",
+    "fenomenos": [
+      "concordancia_atributo"
+    ],
+    "esperado_cfg": false,
+    "gramatical_espanol": false,
+    "tokens_esperados": [
+      "La",
+      "casa",
+      "es",
+      "blancos"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "VERB",
+      "ADJ"
+    ],
+    "grammar_version": "cf1d5f630a2d49dd0cfdeedd4ac9b14cdae1209ee714a2b84b94f5f880df5c81",
+    "revision_humana": "pendiente_del_grupo"
+  },
+  {
+    "id": "ES-019",
+    "texto": "La niña es alto",
+    "nivel": "simple",
+    "fenomenos": [
+      "genero_atributo"
+    ],
+    "esperado_cfg": false,
+    "gramatical_espanol": false,
+    "tokens_esperados": [
+      "La",
+      "niña",
+      "es",
+      "alto"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "VERB",
+      "ADJ"
+    ],
+    "grammar_version": "cf1d5f630a2d49dd0cfdeedd4ac9b14cdae1209ee714a2b84b94f5f880df5c81",
+    "revision_humana": "pendiente_del_grupo"
+  },
+  {
+    "id": "ES-020",
+    "texto": "Los perro corrieron",
+    "nivel": "simple",
+    "fenomenos": [
+      "numero_sustantivo"
+    ],
+    "esperado_cfg": false,
+    "gramatical_espanol": false,
+    "tokens_esperados": [
+      "Los",
+      "perro",
+      "corrieron"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "VERB"
+    ],
+    "grammar_version": "cf1d5f630a2d49dd0cfdeedd4ac9b14cdae1209ee714a2b84b94f5f880df5c81",
+    "revision_humana": "pendiente_del_grupo"
+  },
+  {
+    "id": "ES-021",
+    "texto": "El niño alto corre rápidamente en el parque",
+    "nivel": "intermedio",
+    "fenomenos": [
+      "adjetivo_adverbio_PP"
+    ],
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "tokens_esperados": [
+      "El",
+      "niño",
+      "alto",
+      "corre",
+      "rápidamente",
+      "en",
+      "el",
+      "parque"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "ADJ",
+      "VERB",
+      "ADV",
+      "ADP",
+      "DET",
+      "NOUN"
+    ],
+    "grammar_version": "cf1d5f630a2d49dd0cfdeedd4ac9b14cdae1209ee714a2b84b94f5f880df5c81",
+    "revision_humana": "pendiente_del_grupo"
+  },
+  {
+    "id": "ES-022",
+    "texto": "La niña pequeña cantó bien",
+    "nivel": "intermedio",
+    "fenomenos": [
+      "adjetivo_pasado_adverbio"
+    ],
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "tokens_esperados": [
+      "La",
+      "niña",
+      "pequeña",
+      "cantó",
+      "bien"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "ADJ",
+      "VERB",
+      "ADV"
+    ],
+    "grammar_version": "cf1d5f630a2d49dd0cfdeedd4ac9b14cdae1209ee714a2b84b94f5f880df5c81",
+    "revision_humana": "pendiente_del_grupo"
+  },
+  {
+    "id": "ES-023",
+    "texto": "Los niños altos leyeron los libros nuevos",
+    "nivel": "intermedio",
+    "fenomenos": [
+      "SVO_adjetivos"
+    ],
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "tokens_esperados": [
+      "Los",
+      "niños",
+      "altos",
+      "leyeron",
+      "los",
+      "libros",
+      "nuevos"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "ADJ",
+      "VERB",
+      "DET",
+      "NOUN",
+      "ADJ"
+    ],
+    "grammar_version": "cf1d5f630a2d49dd0cfdeedd4ac9b14cdae1209ee714a2b84b94f5f880df5c81",
+    "revision_humana": "pendiente_del_grupo"
+  },
+  {
+    "id": "ES-024",
+    "texto": "Las niñas pequeñas compraron las flores rojas",
+    "nivel": "intermedio",
+    "fenomenos": [
+      "SVO_adjetivos_plural"
+    ],
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "tokens_esperados": [
+      "Las",
+      "niñas",
+      "pequeñas",
+      "compraron",
+      "las",
+      "flores",
+      "rojas"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "ADJ",
+      "VERB",
+      "DET",
+      "NOUN",
+      "ADJ"
+    ],
+    "grammar_version": "cf1d5f630a2d49dd0cfdeedd4ac9b14cdae1209ee714a2b84b94f5f880df5c81",
+    "revision_humana": "pendiente_del_grupo"
+  },
+  {
+    "id": "ES-025",
+    "texto": "La mujer vive en la casa de la ciudad",
+    "nivel": "intermedio",
+    "fenomenos": [
+      "PP_sucesivas"
+    ],
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "tokens_esperados": [
+      "La",
+      "mujer",
+      "vive",
+      "en",
+      "la",
+      "casa",
+      "de",
+      "la",
+      "ciudad"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "VERB",
+      "ADP",
+      "DET",
+      "NOUN",
+      "ADP",
+      "DET",
+      "NOUN"
+    ],
+    "grammar_version": "cf1d5f630a2d49dd0cfdeedd4ac9b14cdae1209ee714a2b84b94f5f880df5c81",
+    "revision_humana": "pendiente_del_grupo"
+  },
+  {
+    "id": "ES-026",
+    "texto": "El profesor escribió el libro en la escuela",
+    "nivel": "intermedio",
+    "fenomenos": [
+      "SVO_pasado_PP"
+    ],
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "tokens_esperados": [
+      "El",
+      "profesor",
+      "escribió",
+      "el",
+      "libro",
+      "en",
+      "la",
+      "escuela"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "VERB",
+      "DET",
+      "NOUN",
+      "ADP",
+      "DET",
+      "NOUN"
+    ],
+    "grammar_version": "cf1d5f630a2d49dd0cfdeedd4ac9b14cdae1209ee714a2b84b94f5f880df5c81",
+    "revision_humana": "pendiente_del_grupo"
+  },
+  {
+    "id": "ES-027",
+    "texto": "Los profesores estudiaron temprano en el parque",
+    "nivel": "intermedio",
+    "fenomenos": [
+      "adverbio_PP"
+    ],
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "tokens_esperados": [
+      "Los",
+      "profesores",
+      "estudiaron",
+      "temprano",
+      "en",
+      "el",
+      "parque"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "VERB",
+      "ADV",
+      "ADP",
+      "DET",
+      "NOUN"
+    ],
+    "grammar_version": "cf1d5f630a2d49dd0cfdeedd4ac9b14cdae1209ee714a2b84b94f5f880df5c81",
+    "revision_humana": "pendiente_del_grupo"
+  },
+  {
+    "id": "ES-028",
+    "texto": "La casa blanca estuvo en la ciudad",
+    "nivel": "intermedio",
+    "fenomenos": [
+      "copula_pasado_PP"
+    ],
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "tokens_esperados": [
+      "La",
+      "casa",
+      "blanca",
+      "estuvo",
+      "en",
+      "la",
+      "ciudad"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "ADJ",
+      "VERB",
+      "ADP",
+      "DET",
+      "NOUN"
+    ],
+    "grammar_version": "cf1d5f630a2d49dd0cfdeedd4ac9b14cdae1209ee714a2b84b94f5f880df5c81",
+    "revision_humana": "pendiente_del_grupo"
+  },
+  {
+    "id": "ES-029",
+    "texto": "Las casas pequeñas son nuevas hoy",
+    "nivel": "intermedio",
+    "fenomenos": [
+      "atributo_adverbio"
+    ],
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "tokens_esperados": [
+      "Las",
+      "casas",
+      "pequeñas",
+      "son",
+      "nuevas",
+      "hoy"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "ADJ",
+      "VERB",
+      "ADJ",
+      "ADV"
+    ],
+    "grammar_version": "cf1d5f630a2d49dd0cfdeedd4ac9b14cdae1209ee714a2b84b94f5f880df5c81",
+    "revision_humana": "pendiente_del_grupo"
+  },
+  {
+    "id": "ES-030",
+    "texto": "El hombre caminó despacio por el parque",
+    "nivel": "intermedio",
+    "fenomenos": [
+      "pasado_adverbio_PP"
+    ],
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "tokens_esperados": [
+      "El",
+      "hombre",
+      "caminó",
+      "despacio",
+      "por",
+      "el",
+      "parque"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "VERB",
+      "ADV",
+      "ADP",
+      "DET",
+      "NOUN"
+    ],
+    "grammar_version": "cf1d5f630a2d49dd0cfdeedd4ac9b14cdae1209ee714a2b84b94f5f880df5c81",
+    "revision_humana": "pendiente_del_grupo"
+  },
+  {
+    "id": "ES-031",
+    "texto": "La niña pequeña leyó el libro viejo ayer",
+    "nivel": "intermedio",
+    "fenomenos": [
+      "SVO_pasado_modificadores"
+    ],
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "tokens_esperados": [
+      "La",
+      "niña",
+      "pequeña",
+      "leyó",
+      "el",
+      "libro",
+      "viejo",
+      "ayer"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "ADJ",
+      "VERB",
+      "DET",
+      "NOUN",
+      "ADJ",
+      "ADV"
+    ],
+    "grammar_version": "cf1d5f630a2d49dd0cfdeedd4ac9b14cdae1209ee714a2b84b94f5f880df5c81",
+    "revision_humana": "pendiente_del_grupo"
+  },
+  {
+    "id": "ES-032",
+    "texto": "Las mujeres trabajan despacio en la escuela",
+    "nivel": "intermedio",
+    "fenomenos": [
+      "adverbio_PP_plural"
+    ],
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "tokens_esperados": [
+      "Las",
+      "mujeres",
+      "trabajan",
+      "despacio",
+      "en",
+      "la",
+      "escuela"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "VERB",
+      "ADV",
+      "ADP",
+      "DET",
+      "NOUN"
+    ],
+    "grammar_version": "cf1d5f630a2d49dd0cfdeedd4ac9b14cdae1209ee714a2b84b94f5f880df5c81",
+    "revision_humana": "pendiente_del_grupo"
+  },
+  {
+    "id": "ES-033",
+    "texto": "El niño alta corre",
+    "nivel": "intermedio",
+    "fenomenos": [
+      "genero_adjetivo"
+    ],
+    "esperado_cfg": false,
+    "gramatical_espanol": false,
+    "tokens_esperados": [
+      "El",
+      "niño",
+      "alta",
+      "corre"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "ADJ",
+      "VERB"
+    ],
+    "grammar_version": "cf1d5f630a2d49dd0cfdeedd4ac9b14cdae1209ee714a2b84b94f5f880df5c81",
+    "revision_humana": "pendiente_del_grupo"
+  },
+  {
+    "id": "ES-034",
+    "texto": "La niña pequeños cantó",
+    "nivel": "intermedio",
+    "fenomenos": [
+      "numero_adjetivo"
+    ],
+    "esperado_cfg": false,
+    "gramatical_espanol": false,
+    "tokens_esperados": [
+      "La",
+      "niña",
+      "pequeños",
+      "cantó"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "ADJ",
+      "VERB"
+    ],
+    "grammar_version": "cf1d5f630a2d49dd0cfdeedd4ac9b14cdae1209ee714a2b84b94f5f880df5c81",
+    "revision_humana": "pendiente_del_grupo"
+  },
+  {
+    "id": "ES-035",
+    "texto": "Los profesores escribió el libro",
+    "nivel": "intermedio",
+    "fenomenos": [
+      "numero_pasado"
+    ],
+    "esperado_cfg": false,
+    "gramatical_espanol": false,
+    "tokens_esperados": [
+      "Los",
+      "profesores",
+      "escribió",
+      "el",
+      "libro"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "VERB",
+      "DET",
+      "NOUN"
+    ],
+    "grammar_version": "cf1d5f630a2d49dd0cfdeedd4ac9b14cdae1209ee714a2b84b94f5f880df5c81",
+    "revision_humana": "pendiente_del_grupo"
+  },
+  {
+    "id": "ES-036",
+    "texto": "Las casas blancas fue nuevas",
+    "nivel": "intermedio",
+    "fenomenos": [
+      "numero_copula_pasado"
+    ],
+    "esperado_cfg": false,
+    "gramatical_espanol": false,
+    "tokens_esperados": [
+      "Las",
+      "casas",
+      "blancas",
+      "fue",
+      "nuevas"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "ADJ",
+      "VERB",
+      "ADJ"
+    ],
+    "grammar_version": "cf1d5f630a2d49dd0cfdeedd4ac9b14cdae1209ee714a2b84b94f5f880df5c81",
+    "revision_humana": "pendiente_del_grupo"
+  },
+  {
+    "id": "ES-037",
+    "texto": "El niño corre en la parques",
+    "nivel": "intermedio",
+    "fenomenos": [
+      "concordancia_PP"
+    ],
+    "esperado_cfg": false,
+    "gramatical_espanol": false,
+    "tokens_esperados": [
+      "El",
+      "niño",
+      "corre",
+      "en",
+      "la",
+      "parques"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "VERB",
+      "ADP",
+      "DET",
+      "NOUN"
+    ],
+    "grammar_version": "cf1d5f630a2d49dd0cfdeedd4ac9b14cdae1209ee714a2b84b94f5f880df5c81",
+    "revision_humana": "pendiente_del_grupo"
+  },
+  {
+    "id": "ES-038",
+    "texto": "La mujer compró los flores rojas",
+    "nivel": "intermedio",
+    "fenomenos": [
+      "genero_objeto"
+    ],
+    "esperado_cfg": false,
+    "gramatical_espanol": false,
+    "tokens_esperados": [
+      "La",
+      "mujer",
+      "compró",
+      "los",
+      "flores",
+      "rojas"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "VERB",
+      "DET",
+      "NOUN",
+      "ADJ"
+    ],
+    "grammar_version": "cf1d5f630a2d49dd0cfdeedd4ac9b14cdae1209ee714a2b84b94f5f880df5c81",
+    "revision_humana": "pendiente_del_grupo"
+  },
+  {
+    "id": "ES-039",
+    "texto": "Los niños leyeron la libro",
+    "nivel": "intermedio",
+    "fenomenos": [
+      "genero_objeto"
+    ],
+    "esperado_cfg": false,
+    "gramatical_espanol": false,
+    "tokens_esperados": [
+      "Los",
+      "niños",
+      "leyeron",
+      "la",
+      "libro"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "VERB",
+      "DET",
+      "NOUN"
+    ],
+    "grammar_version": "cf1d5f630a2d49dd0cfdeedd4ac9b14cdae1209ee714a2b84b94f5f880df5c81",
+    "revision_humana": "pendiente_del_grupo"
+  },
+  {
+    "id": "ES-040",
+    "texto": "Las niñas cantaron en el parque blanco",
+    "nivel": "intermedio",
+    "fenomenos": [
+      "adjetivo_en_PP"
+    ],
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "tokens_esperados": [
+      "Las",
+      "niñas",
+      "cantaron",
+      "en",
+      "el",
+      "parque",
+      "blanco"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "VERB",
+      "ADP",
+      "DET",
+      "NOUN",
+      "ADJ"
+    ],
+    "grammar_version": "cf1d5f630a2d49dd0cfdeedd4ac9b14cdae1209ee714a2b84b94f5f880df5c81",
+    "revision_humana": "pendiente_del_grupo"
+  },
+  {
+    "id": "ES-041",
+    "texto": "La profesora sabe que el niño lee el libro",
+    "nivel": "complejo",
+    "fenomenos": [
+      "subordinada_SVO"
+    ],
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "tokens_esperados": [
+      "La",
+      "profesora",
+      "sabe",
+      "que",
+      "el",
+      "niño",
+      "lee",
+      "el",
+      "libro"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "VERB",
+      "SCONJ",
+      "DET",
+      "NOUN",
+      "VERB",
+      "DET",
+      "NOUN"
+    ],
+    "grammar_version": "cf1d5f630a2d49dd0cfdeedd4ac9b14cdae1209ee714a2b84b94f5f880df5c81",
+    "revision_humana": "pendiente_del_grupo"
+  },
+  {
+    "id": "ES-042",
+    "texto": "Los profesores dijeron que las niñas compraron las flores",
+    "nivel": "complejo",
+    "fenomenos": [
+      "subordinada_pasado"
+    ],
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "tokens_esperados": [
+      "Los",
+      "profesores",
+      "dijeron",
+      "que",
+      "las",
+      "niñas",
+      "compraron",
+      "las",
+      "flores"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "VERB",
+      "SCONJ",
+      "DET",
+      "NOUN",
+      "VERB",
+      "DET",
+      "NOUN"
+    ],
+    "grammar_version": "cf1d5f630a2d49dd0cfdeedd4ac9b14cdae1209ee714a2b84b94f5f880df5c81",
+    "revision_humana": "pendiente_del_grupo"
+  },
+  {
+    "id": "ES-043",
+    "texto": "El niño dice que la mujer sabe que los gatos duermen",
+    "nivel": "complejo",
+    "fenomenos": [
+      "subordinada_doble"
+    ],
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "tokens_esperados": [
+      "El",
+      "niño",
+      "dice",
+      "que",
+      "la",
+      "mujer",
+      "sabe",
+      "que",
+      "los",
+      "gatos",
+      "duermen"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "VERB",
+      "SCONJ",
+      "DET",
+      "NOUN",
+      "VERB",
+      "SCONJ",
+      "DET",
+      "NOUN",
+      "VERB"
+    ],
+    "grammar_version": "cf1d5f630a2d49dd0cfdeedd4ac9b14cdae1209ee714a2b84b94f5f880df5c81",
+    "revision_humana": "pendiente_del_grupo"
+  },
+  {
+    "id": "ES-044",
+    "texto": "Las mujeres saben que las casas son blancas",
+    "nivel": "complejo",
+    "fenomenos": [
+      "subordinada_atributo"
+    ],
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "tokens_esperados": [
+      "Las",
+      "mujeres",
+      "saben",
+      "que",
+      "las",
+      "casas",
+      "son",
+      "blancas"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "VERB",
+      "SCONJ",
+      "DET",
+      "NOUN",
+      "VERB",
+      "ADJ"
+    ],
+    "grammar_version": "cf1d5f630a2d49dd0cfdeedd4ac9b14cdae1209ee714a2b84b94f5f880df5c81",
+    "revision_humana": "pendiente_del_grupo"
+  },
+  {
+    "id": "ES-045",
+    "texto": "La profesora supo que el niño dijo que las niñas cantaron",
+    "nivel": "complejo",
+    "fenomenos": [
+      "subordinada_doble_pasado"
+    ],
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "tokens_esperados": [
+      "La",
+      "profesora",
+      "supo",
+      "que",
+      "el",
+      "niño",
+      "dijo",
+      "que",
+      "las",
+      "niñas",
+      "cantaron"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "VERB",
+      "SCONJ",
+      "DET",
+      "NOUN",
+      "VERB",
+      "SCONJ",
+      "DET",
+      "NOUN",
+      "VERB"
+    ],
+    "grammar_version": "cf1d5f630a2d49dd0cfdeedd4ac9b14cdae1209ee714a2b84b94f5f880df5c81",
+    "revision_humana": "pendiente_del_grupo"
+  },
+  {
+    "id": "ES-046",
+    "texto": "Los niños dicen que la casa estuvo en la ciudad",
+    "nivel": "complejo",
+    "fenomenos": [
+      "subordinada_PP"
+    ],
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "tokens_esperados": [
+      "Los",
+      "niños",
+      "dicen",
+      "que",
+      "la",
+      "casa",
+      "estuvo",
+      "en",
+      "la",
+      "ciudad"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "VERB",
+      "SCONJ",
+      "DET",
+      "NOUN",
+      "VERB",
+      "ADP",
+      "DET",
+      "NOUN"
+    ],
+    "grammar_version": "cf1d5f630a2d49dd0cfdeedd4ac9b14cdae1209ee714a2b84b94f5f880df5c81",
+    "revision_humana": "pendiente_del_grupo"
+  },
+  {
+    "id": "ES-047",
+    "texto": "La niña alta dijo que los perros corrieron rápidamente en el parque",
+    "nivel": "complejo",
+    "fenomenos": [
+      "subordinada_modificadores"
+    ],
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "tokens_esperados": [
+      "La",
+      "niña",
+      "alta",
+      "dijo",
+      "que",
+      "los",
+      "perros",
+      "corrieron",
+      "rápidamente",
+      "en",
+      "el",
+      "parque"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "ADJ",
+      "VERB",
+      "SCONJ",
+      "DET",
+      "NOUN",
+      "VERB",
+      "ADV",
+      "ADP",
+      "DET",
+      "NOUN"
+    ],
+    "grammar_version": "cf1d5f630a2d49dd0cfdeedd4ac9b14cdae1209ee714a2b84b94f5f880df5c81",
+    "revision_humana": "pendiente_del_grupo"
+  },
+  {
+    "id": "ES-048",
+    "texto": "Las profesoras saben que el niño leyó el libro nuevo",
+    "nivel": "complejo",
+    "fenomenos": [
+      "subordinada_objeto_adjetivo"
+    ],
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "tokens_esperados": [
+      "Las",
+      "profesoras",
+      "saben",
+      "que",
+      "el",
+      "niño",
+      "leyó",
+      "el",
+      "libro",
+      "nuevo"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "VERB",
+      "SCONJ",
+      "DET",
+      "NOUN",
+      "VERB",
+      "DET",
+      "NOUN",
+      "ADJ"
+    ],
+    "grammar_version": "cf1d5f630a2d49dd0cfdeedd4ac9b14cdae1209ee714a2b84b94f5f880df5c81",
+    "revision_humana": "pendiente_del_grupo"
+  },
+  {
+    "id": "ES-049",
+    "texto": "El profesor sabe que los niños lee el libro",
+    "nivel": "complejo",
+    "fenomenos": [
+      "concordancia_subordinada"
+    ],
+    "esperado_cfg": false,
+    "gramatical_espanol": false,
+    "tokens_esperados": [
+      "El",
+      "profesor",
+      "sabe",
+      "que",
+      "los",
+      "niños",
+      "lee",
+      "el",
+      "libro"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "VERB",
+      "SCONJ",
+      "DET",
+      "NOUN",
+      "VERB",
+      "DET",
+      "NOUN"
+    ],
+    "grammar_version": "cf1d5f630a2d49dd0cfdeedd4ac9b14cdae1209ee714a2b84b94f5f880df5c81",
+    "revision_humana": "pendiente_del_grupo"
+  },
+  {
+    "id": "ES-050",
+    "texto": "Las mujeres dijeron que la casa fueron blancas",
+    "nivel": "complejo",
+    "fenomenos": [
+      "concordancia_copula_subordinada"
+    ],
+    "esperado_cfg": false,
+    "gramatical_espanol": false,
+    "tokens_esperados": [
+      "Las",
+      "mujeres",
+      "dijeron",
+      "que",
+      "la",
+      "casa",
+      "fueron",
+      "blancas"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "VERB",
+      "SCONJ",
+      "DET",
+      "NOUN",
+      "VERB",
+      "ADJ"
+    ],
+    "grammar_version": "cf1d5f630a2d49dd0cfdeedd4ac9b14cdae1209ee714a2b84b94f5f880df5c81",
+    "revision_humana": "pendiente_del_grupo"
+  },
+  {
+    "id": "ES-051",
+    "texto": "El niño dice la mujer corre",
+    "nivel": "complejo",
+    "fenomenos": [
+      "falta_que"
+    ],
+    "esperado_cfg": false,
+    "gramatical_espanol": false,
+    "tokens_esperados": [
+      "El",
+      "niño",
+      "dice",
+      "la",
+      "mujer",
+      "corre"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "VERB",
+      "DET",
+      "NOUN",
+      "VERB"
+    ],
+    "grammar_version": "cf1d5f630a2d49dd0cfdeedd4ac9b14cdae1209ee714a2b84b94f5f880df5c81",
+    "revision_humana": "pendiente_del_grupo"
+  },
+  {
+    "id": "ES-052",
+    "texto": "La profesora sabe que los gatos duerme",
+    "nivel": "complejo",
+    "fenomenos": [
+      "concordancia_distante"
+    ],
+    "esperado_cfg": false,
+    "gramatical_espanol": false,
+    "tokens_esperados": [
+      "La",
+      "profesora",
+      "sabe",
+      "que",
+      "los",
+      "gatos",
+      "duerme"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "VERB",
+      "SCONJ",
+      "DET",
+      "NOUN",
+      "VERB"
+    ],
+    "grammar_version": "cf1d5f630a2d49dd0cfdeedd4ac9b14cdae1209ee714a2b84b94f5f880df5c81",
+    "revision_humana": "pendiente_del_grupo"
+  },
+  {
+    "id": "ES-053",
+    "texto": "El niño y la niña corren",
+    "nivel": "complejo",
+    "fenomenos": [
+      "coordinacion_fuera_del_subconjunto"
+    ],
+    "esperado_cfg": false,
+    "gramatical_espanol": true,
+    "tokens_esperados": [
+      "El",
+      "niño",
+      "y",
+      "la",
+      "niña",
+      "corren"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "CCONJ",
+      "DET",
+      "NOUN",
+      "VERB"
+    ],
+    "grammar_version": "cf1d5f630a2d49dd0cfdeedd4ac9b14cdae1209ee714a2b84b94f5f880df5c81",
+    "revision_humana": "pendiente_del_grupo"
+  },
+  {
+    "id": "ES-054",
+    "texto": "Él lee el libro",
+    "nivel": "complejo",
+    "fenomenos": [
+      "pronombre_fuera_del_vocabulario"
+    ],
+    "esperado_cfg": false,
+    "gramatical_espanol": true,
+    "tokens_esperados": [
+      "Él",
+      "lee",
+      "el",
+      "libro"
+    ],
+    "pos_esperado": [
+      "PRON",
+      "VERB",
+      "DET",
+      "NOUN"
+    ],
+    "grammar_version": "cf1d5f630a2d49dd0cfdeedd4ac9b14cdae1209ee714a2b84b94f5f880df5c81",
+    "revision_humana": "pendiente_del_grupo"
+  },
+  {
+    "id": "ES-055",
+    "texto": "El niño que corre lee el libro",
+    "nivel": "complejo",
+    "fenomenos": [
+      "relativa_fuera_de_gramatica"
+    ],
+    "esperado_cfg": false,
+    "gramatical_espanol": true,
+    "tokens_esperados": [
+      "El",
+      "niño",
+      "que",
+      "corre",
+      "lee",
+      "el",
+      "libro"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "SCONJ",
+      "VERB",
+      "VERB",
+      "DET",
+      "NOUN"
+    ],
+    "grammar_version": "cf1d5f630a2d49dd0cfdeedd4ac9b14cdae1209ee714a2b84b94f5f880df5c81",
+    "revision_humana": "pendiente_del_grupo"
+  },
+  {
+    "id": "ES-056",
+    "texto": "El astronauta lee el libro",
+    "nivel": "complejo",
+    "fenomenos": [
+      "sustantivo_fuera_del_vocabulario"
+    ],
+    "esperado_cfg": false,
+    "gramatical_espanol": true,
+    "tokens_esperados": [
+      "El",
+      "astronauta",
+      "lee",
+      "el",
+      "libro"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "VERB",
+      "DET",
+      "NOUN"
+    ],
+    "grammar_version": "cf1d5f630a2d49dd0cfdeedd4ac9b14cdae1209ee714a2b84b94f5f880df5c81",
+    "revision_humana": "pendiente_del_grupo"
+  },
+  {
+    "id": "ES-057",
+    "texto": "El niño leyó el libro.",
+    "nivel": "complejo",
+    "fenomenos": [
+      "puntuacion_fuera_de_gramatica"
+    ],
+    "esperado_cfg": false,
+    "gramatical_espanol": true,
+    "tokens_esperados": [
+      "El",
+      "niño",
+      "leyó",
+      "el",
+      "libro",
+      "."
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "VERB",
+      "DET",
+      "NOUN",
+      "PUNCT"
+    ],
+    "grammar_version": "cf1d5f630a2d49dd0cfdeedd4ac9b14cdae1209ee714a2b84b94f5f880df5c81",
+    "revision_humana": "pendiente_del_grupo"
+  },
+  {
+    "id": "ES-058",
+    "texto": "La niña cantaba",
+    "nivel": "complejo",
+    "fenomenos": [
+      "imperfecto_fuera_del_vocabulario"
+    ],
+    "esperado_cfg": false,
+    "gramatical_espanol": true,
+    "tokens_esperados": [
+      "La",
+      "niña",
+      "cantaba"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "VERB"
+    ],
+    "grammar_version": "cf1d5f630a2d49dd0cfdeedd4ac9b14cdae1209ee714a2b84b94f5f880df5c81",
+    "revision_humana": "pendiente_del_grupo"
+  },
+  {
+    "id": "ES-059",
+    "texto": "El niño lee el libro que compró la mujer",
+    "nivel": "complejo",
+    "fenomenos": [
+      "relativa_objeto"
+    ],
+    "esperado_cfg": false,
+    "gramatical_espanol": true,
+    "tokens_esperados": [
+      "El",
+      "niño",
+      "lee",
+      "el",
+      "libro",
+      "que",
+      "compró",
+      "la",
+      "mujer"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "VERB",
+      "DET",
+      "NOUN",
+      "SCONJ",
+      "VERB",
+      "DET",
+      "NOUN"
+    ],
+    "grammar_version": "cf1d5f630a2d49dd0cfdeedd4ac9b14cdae1209ee714a2b84b94f5f880df5c81",
+    "revision_humana": "pendiente_del_grupo"
+  },
+  {
+    "id": "ES-060",
+    "texto": "El niño lee el libro y la niña canta",
+    "nivel": "complejo",
+    "fenomenos": [
+      "coordinacion_oraciones"
+    ],
+    "esperado_cfg": false,
+    "gramatical_espanol": true,
+    "tokens_esperados": [
+      "El",
+      "niño",
+      "lee",
+      "el",
+      "libro",
+      "y",
+      "la",
+      "niña",
+      "canta"
+    ],
+    "pos_esperado": [
+      "DET",
+      "NOUN",
+      "VERB",
+      "DET",
+      "NOUN",
+      "CCONJ",
+      "DET",
+      "NOUN",
+      "VERB"
+    ],
+    "grammar_version": "cf1d5f630a2d49dd0cfdeedd4ac9b14cdae1209ee714a2b84b94f5f880df5c81",
+    "revision_humana": "pendiente_del_grupo"
+  }
+]

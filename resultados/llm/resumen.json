@@ -1,0 +1,90 @@
+{
+  "metadata": {
+    "created_utc": "2026-11-19T03:09:21.068574+00:00",
+    "commit": "b807e518011ed1f3e599113db3067e9741b5d1a8",
+    "hash_policy": "SHA-256; texto UTF-8 con saltos LF, binarios sin transformacion",
+    "source_hashes": {
+      "experimentos\\__init__.py": "1af49503f294837ba9215f0a0f3c41925111d28b2ea1130ce5b04d9dc2d84c7f",
+      "experimentos\\adaptadores.py": "33f7e133ff470c38d00b0cad93f3a6df7e05e3e3862bfaf6e68fb22c8eb99fde",
+      "experimentos\\ambiguedad.py": "6be7a7a1a9af9465b0a0b0532bbbcd16daf17f6727878702e71aaefaa7b3e17a",
+      "experimentos\\common.py": "40523eaefc18210d446c505b588791d20c213c803e4ee09e53ab2b7488beba87",
+      "experimentos\\comparar_nlp.py": "277d5e225d503185520110b5bb0590886c49f730f5c546d3df277cafdfaea106",
+      "experimentos\\demo_fase1.py": "3f780a85516024d9bb2009d4f3ed54b9a3ea8779b4b73298ccc0a831c90179a1",
+      "experimentos\\graficas.py": "1b451855de1573b3b91c0e1773782f3b9de64ab316aadea6ab73bcefe31424ee",
+      "experimentos\\llm.py": "b5e0ecdca3c3e8e6b3d0c6647c0d8359388f3ee299eab373cc01c9a5cf9e765e",
+      "experimentos\\llm_config.py": "2b43e9e02100b545ad5d02ed101e205cfaf5bf1e269d4e8c99accd4396a3c5c9",
+      "experimentos\\metricas.py": "ed773557e0049db0bdea33a25c69bb3378584d408a65891ba9a660845ea1a5a5",
+      "experimentos\\registro_fallos.py": "07808652e58c77274eafb402bc34de1bcd2477210a0aee273f7a676a3dff1845",
+      "experimentos\\rendimiento.py": "dac932dfeb990425cadcb9a6f7f395c4517e07b6201471e1116a96809e213752",
+      "experimentos\\resumir_llm.py": "8e38337ab4f7c6972c87b7fb63b39086ecb1331f90c9c7f5878295a5c633c71f",
+      "experimentos\\validar_corpus.py": "d8ff90742a522a9fbb775b9315c4b86368048f26bed10297c5560136b34c2778",
+      "experimentos\\validar_derivacion.py": "af7b53af685d181a1937a8453353f0b25c784ea29c513405d6e27de7b04b3f2e",
+      "main.py": "8e40b3cfbd7dc94e6f008d49caca37f24f4384747d47eb28f68e0485678beb93",
+      "minic\\__init__.py": "acf5d7d08e80102a69942e0ca6b238232c063b7772748533da274c3fe32ddda3",
+      "minic\\diagnostics.py": "2047c88075a8b6fbeb496288abf8a93ae667a62b81b3713f779e65d513a40a2f",
+      "minic\\grammar.py": "50d2346daffe58561f08b16d274cc92c2cf638a48d58d25653b92d5b0a45e2df",
+      "minic\\lexer.py": "7614c895a8ce8d545764d0f9daf48004c95f148160af4c902b616ec180f63720",
+      "minic\\lexicon_es.py": "eec0049a3b0968207b15c002a8ce88d12a445cbbaf855a2e33556a84abd49ad8",
+      "minic\\parser.py": "772e085c5d8442eac57953a6a11508964d9e37d4e7a1d396dc11ed21072835ac",
+      "minic\\trees.py": "5c18d6b216bb6b85a1d8c1eb711281ecab2202be5efb9a14ed510c00eeab4161"
+    },
+    "tracked_changes": true,
+    "grammar_sha256": "cf1d5f630a2d49dd0cfdeedd4ac9b14cdae1209ee714a2b84b94f5f880df5c81",
+    "corpus_sha256": "1fc01159e4092094da171078c81523121a4ed23c4b33ab2ecf5fbfd33f3d1b0d"
+  },
+  "summaries": [
+    {
+      "variant": "zero_shot",
+      "completed": 60,
+      "execution_errors": 0,
+      "cfg": {
+        "n": 60,
+        "tp": 33,
+        "fp": 4,
+        "tn": 23,
+        "fn": 0,
+        "precision": 0.8918918918918919,
+        "recall": 1.0,
+        "correct_rejection": 0.8518518518518519,
+        "accuracy": 0.9333333333333333
+      },
+      "formal_adherence": 48,
+      "adherence_denominator": 60,
+      "deviations": {
+        "Expansion fuera de orden en AdjMS": 3,
+        "Expansion fuera de orden en AdjMP": 2,
+        "Expansion fuera de orden en Oracion": 2,
+        "Expansion fuera de orden en AdjFS": 1,
+        "Terminales diferentes de la entrada": 3,
+        "Acepta una entrada con errores lexicos": 1
+      },
+      "estimated_usd": null
+    },
+    {
+      "variant": "few_shot",
+      "completed": 60,
+      "execution_errors": 0,
+      "cfg": {
+        "n": 60,
+        "tp": 32,
+        "fp": 2,
+        "tn": 25,
+        "fn": 1,
+        "precision": 0.9411764705882353,
+        "recall": 0.9696969696969697,
+        "correct_rejection": 0.9259259259259259,
+        "accuracy": 0.95
+      },
+      "formal_adherence": 42,
+      "adherence_denominator": 60,
+      "deviations": {
+        "Expansion fuera de orden en Oracion": 14,
+        "Rechaza una derivacion existente": 1,
+        "Produccion inexistente en SV_FP": 1,
+        "Acepta una entrada con errores lexicos": 1,
+        "Terminales diferentes de la entrada": 1
+      },
+      "estimated_usd": null
+    }
+  ]
+}

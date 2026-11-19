@@ -1,0 +1,592 @@
+{
+  "evaluation_tasks": {
+    "cfg": "Pertenencia a la CFG controlada, solo sistemas que emiten esa decisión.",
+    "noun_detection": "Clasificación binaria por token: NOUN frente al resto, POS común.",
+    "pos": "Exactitud de etiquetas gruesas, AUX/VERB y PROPN/NOUN unificados."
+  },
+  "reports": [
+    {
+      "tool": "nltk",
+      "level": "complejo",
+      "sentences": 20,
+      "execution_errors": 0,
+      "alignment_errors": 0,
+      "cfg": null,
+      "noun_detection": {
+        "n": 159,
+        "tp": 45,
+        "fp": 1,
+        "tn": 110,
+        "fn": 3,
+        "precision": 0.9782608695652174,
+        "recall": 0.9375,
+        "correct_rejection": 0.990990990990991,
+        "accuracy": 0.9748427672955975
+      },
+      "pos_accuracy": 0.8805031446540881,
+      "mean_seconds": 1.3419997412711381e-05
+    },
+    {
+      "tool": "nltk",
+      "level": "intermedio",
+      "sentences": 20,
+      "execution_errors": 0,
+      "alignment_errors": 0,
+      "cfg": null,
+      "noun_detection": {
+        "n": 128,
+        "tp": 37,
+        "fp": 0,
+        "tn": 91,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "correct_rejection": 1.0,
+        "accuracy": 1.0
+      },
+      "pos_accuracy": 1.0,
+      "mean_seconds": 1.1920001998078079e-05
+    },
+    {
+      "tool": "nltk",
+      "level": "simple",
+      "sentences": 20,
+      "execution_errors": 0,
+      "alignment_errors": 0,
+      "cfg": null,
+      "noun_detection": {
+        "n": 74,
+        "tp": 25,
+        "fp": 2,
+        "tn": 47,
+        "fn": 0,
+        "precision": 0.9259259259259259,
+        "recall": 1.0,
+        "correct_rejection": 0.9591836734693877,
+        "accuracy": 0.972972972972973
+      },
+      "pos_accuracy": 0.972972972972973,
+      "mean_seconds": 1.476500037824735e-05
+    },
+    {
+      "tool": "nltk",
+      "level": "todos",
+      "sentences": 60,
+      "execution_errors": 0,
+      "alignment_errors": 0,
+      "cfg": null,
+      "noun_detection": {
+        "n": 361,
+        "tp": 107,
+        "fp": 3,
+        "tn": 248,
+        "fn": 3,
+        "precision": 0.9727272727272728,
+        "recall": 0.9727272727272728,
+        "correct_rejection": 0.9880478087649402,
+        "accuracy": 0.9833795013850416
+      },
+      "pos_accuracy": 0.9418282548476454,
+      "mean_seconds": 1.336833326301227e-05
+    },
+    {
+      "tool": "parser",
+      "level": "complejo",
+      "sentences": 20,
+      "execution_errors": 0,
+      "alignment_errors": 0,
+      "cfg": {
+        "n": 20,
+        "tp": 8,
+        "fp": 0,
+        "tn": 12,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "correct_rejection": 1.0,
+        "accuracy": 1.0
+      },
+      "noun_detection": {
+        "n": 159,
+        "tp": 47,
+        "fp": 0,
+        "tn": 111,
+        "fn": 1,
+        "precision": 1.0,
+        "recall": 0.9791666666666666,
+        "correct_rejection": 1.0,
+        "accuracy": 0.9937106918238994
+      },
+      "pos_accuracy": 0.9622641509433962,
+      "mean_seconds": 0.0006854499966721051
+    },
+    {
+      "tool": "parser",
+      "level": "intermedio",
+      "sentences": 20,
+      "execution_errors": 0,
+      "alignment_errors": 0,
+      "cfg": {
+        "n": 20,
+        "tp": 13,
+        "fp": 0,
+        "tn": 7,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "correct_rejection": 1.0,
+        "accuracy": 1.0
+      },
+      "noun_detection": {
+        "n": 128,
+        "tp": 37,
+        "fp": 0,
+        "tn": 91,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "correct_rejection": 1.0,
+        "accuracy": 1.0
+      },
+      "pos_accuracy": 1.0,
+      "mean_seconds": 0.0007044099984341301
+    },
+    {
+      "tool": "parser",
+      "level": "simple",
+      "sentences": 20,
+      "execution_errors": 0,
+      "alignment_errors": 0,
+      "cfg": {
+        "n": 20,
+        "tp": 12,
+        "fp": 0,
+        "tn": 8,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "correct_rejection": 1.0,
+        "accuracy": 1.0
+      },
+      "noun_detection": {
+        "n": 74,
+        "tp": 25,
+        "fp": 0,
+        "tn": 49,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "correct_rejection": 1.0,
+        "accuracy": 1.0
+      },
+      "pos_accuracy": 1.0,
+      "mean_seconds": 0.0006656549987383187
+    },
+    {
+      "tool": "parser",
+      "level": "todos",
+      "sentences": 60,
+      "execution_errors": 0,
+      "alignment_errors": 0,
+      "cfg": {
+        "n": 60,
+        "tp": 33,
+        "fp": 0,
+        "tn": 27,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "correct_rejection": 1.0,
+        "accuracy": 1.0
+      },
+      "noun_detection": {
+        "n": 361,
+        "tp": 109,
+        "fp": 0,
+        "tn": 251,
+        "fn": 1,
+        "precision": 1.0,
+        "recall": 0.990909090909091,
+        "correct_rejection": 1.0,
+        "accuracy": 0.997229916897507
+      },
+      "pos_accuracy": 0.9833795013850416,
+      "mean_seconds": 0.0006851716646148513
+    },
+    {
+      "tool": "spacy",
+      "level": "complejo",
+      "sentences": 20,
+      "execution_errors": 0,
+      "alignment_errors": 0,
+      "cfg": null,
+      "noun_detection": {
+        "n": 159,
+        "tp": 48,
+        "fp": 0,
+        "tn": 111,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "correct_rejection": 1.0,
+        "accuracy": 1.0
+      },
+      "pos_accuracy": 0.9811320754716981,
+      "mean_seconds": 0.005266259997733868
+    },
+    {
+      "tool": "spacy",
+      "level": "intermedio",
+      "sentences": 20,
+      "execution_errors": 0,
+      "alignment_errors": 0,
+      "cfg": null,
+      "noun_detection": {
+        "n": 128,
+        "tp": 37,
+        "fp": 2,
+        "tn": 89,
+        "fn": 0,
+        "precision": 0.9487179487179487,
+        "recall": 1.0,
+        "correct_rejection": 0.978021978021978,
+        "accuracy": 0.984375
+      },
+      "pos_accuracy": 0.984375,
+      "mean_seconds": 0.004725394998968113
+    },
+    {
+      "tool": "spacy",
+      "level": "simple",
+      "sentences": 20,
+      "execution_errors": 0,
+      "alignment_errors": 0,
+      "cfg": null,
+      "noun_detection": {
+        "n": 74,
+        "tp": 25,
+        "fp": 0,
+        "tn": 49,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "correct_rejection": 1.0,
+        "accuracy": 1.0
+      },
+      "pos_accuracy": 1.0,
+      "mean_seconds": 0.005574120001983829
+    },
+    {
+      "tool": "spacy",
+      "level": "todos",
+      "sentences": 60,
+      "execution_errors": 0,
+      "alignment_errors": 0,
+      "cfg": null,
+      "noun_detection": {
+        "n": 361,
+        "tp": 110,
+        "fp": 2,
+        "tn": 249,
+        "fn": 0,
+        "precision": 0.9821428571428571,
+        "recall": 1.0,
+        "correct_rejection": 0.9920318725099602,
+        "accuracy": 0.9944598337950139
+      },
+      "pos_accuracy": 0.9861495844875346,
+      "mean_seconds": 0.005188591666228604
+    }
+  ],
+  "errors": [
+    {
+      "id": "ES-006",
+      "tool": "nltk",
+      "type": "tagging_error",
+      "word": "leen",
+      "expected": "VERB",
+      "predicted": "NOUN"
+    },
+    {
+      "id": "ES-018",
+      "tool": "nltk",
+      "type": "tagging_error",
+      "word": "blancos",
+      "expected": "ADJ",
+      "predicted": "NOUN"
+    },
+    {
+      "id": "ES-041",
+      "tool": "nltk",
+      "type": "tagging_error",
+      "word": "profesora",
+      "expected": "NOUN",
+      "predicted": "ADV"
+    },
+    {
+      "id": "ES-041",
+      "tool": "nltk",
+      "type": "tagging_error",
+      "word": "que",
+      "expected": "SCONJ",
+      "predicted": "PRON"
+    },
+    {
+      "id": "ES-042",
+      "tool": "nltk",
+      "type": "tagging_error",
+      "word": "que",
+      "expected": "SCONJ",
+      "predicted": "PRON"
+    },
+    {
+      "id": "ES-043",
+      "tool": "nltk",
+      "type": "tagging_error",
+      "word": "que",
+      "expected": "SCONJ",
+      "predicted": "PRON"
+    },
+    {
+      "id": "ES-043",
+      "tool": "nltk",
+      "type": "tagging_error",
+      "word": "que",
+      "expected": "SCONJ",
+      "predicted": "PRON"
+    },
+    {
+      "id": "ES-043",
+      "tool": "nltk",
+      "type": "tagging_error",
+      "word": "duermen",
+      "expected": "VERB",
+      "predicted": "NOUN"
+    },
+    {
+      "id": "ES-044",
+      "tool": "nltk",
+      "type": "tagging_error",
+      "word": "que",
+      "expected": "SCONJ",
+      "predicted": "PRON"
+    },
+    {
+      "id": "ES-045",
+      "tool": "nltk",
+      "type": "tagging_error",
+      "word": "profesora",
+      "expected": "NOUN",
+      "predicted": "ADV"
+    },
+    {
+      "id": "ES-045",
+      "tool": "nltk",
+      "type": "tagging_error",
+      "word": "que",
+      "expected": "SCONJ",
+      "predicted": "PRON"
+    },
+    {
+      "id": "ES-045",
+      "tool": "nltk",
+      "type": "tagging_error",
+      "word": "que",
+      "expected": "SCONJ",
+      "predicted": "PRON"
+    },
+    {
+      "id": "ES-046",
+      "tool": "nltk",
+      "type": "tagging_error",
+      "word": "que",
+      "expected": "SCONJ",
+      "predicted": "PRON"
+    },
+    {
+      "id": "ES-047",
+      "tool": "nltk",
+      "type": "tagging_error",
+      "word": "que",
+      "expected": "SCONJ",
+      "predicted": "PRON"
+    },
+    {
+      "id": "ES-048",
+      "tool": "nltk",
+      "type": "tagging_error",
+      "word": "que",
+      "expected": "SCONJ",
+      "predicted": "PRON"
+    },
+    {
+      "id": "ES-049",
+      "tool": "nltk",
+      "type": "tagging_error",
+      "word": "que",
+      "expected": "SCONJ",
+      "predicted": "PRON"
+    },
+    {
+      "id": "ES-050",
+      "tool": "nltk",
+      "type": "tagging_error",
+      "word": "que",
+      "expected": "SCONJ",
+      "predicted": "PRON"
+    },
+    {
+      "id": "ES-052",
+      "tool": "nltk",
+      "type": "tagging_error",
+      "word": "profesora",
+      "expected": "NOUN",
+      "predicted": "ADV"
+    },
+    {
+      "id": "ES-052",
+      "tool": "nltk",
+      "type": "tagging_error",
+      "word": "que",
+      "expected": "SCONJ",
+      "predicted": "PRON"
+    },
+    {
+      "id": "ES-055",
+      "tool": "nltk",
+      "type": "tagging_error",
+      "word": "que",
+      "expected": "SCONJ",
+      "predicted": "PRON"
+    },
+    {
+      "id": "ES-059",
+      "tool": "nltk",
+      "type": "tagging_error",
+      "word": "que",
+      "expected": "SCONJ",
+      "predicted": "PRON"
+    },
+    {
+      "id": "ES-053",
+      "tool": "parser",
+      "type": "tagging_error",
+      "word": "y",
+      "expected": "CCONJ",
+      "predicted": "X"
+    },
+    {
+      "id": "ES-054",
+      "tool": "parser",
+      "type": "tagging_error",
+      "word": "Él",
+      "expected": "PRON",
+      "predicted": "X"
+    },
+    {
+      "id": "ES-056",
+      "tool": "parser",
+      "type": "tagging_error",
+      "word": "astronauta",
+      "expected": "NOUN",
+      "predicted": "X"
+    },
+    {
+      "id": "ES-057",
+      "tool": "parser",
+      "type": "tagging_error",
+      "word": ".",
+      "expected": "PUNCT",
+      "predicted": "X"
+    },
+    {
+      "id": "ES-058",
+      "tool": "parser",
+      "type": "tagging_error",
+      "word": "cantaba",
+      "expected": "VERB",
+      "predicted": "X"
+    },
+    {
+      "id": "ES-060",
+      "tool": "parser",
+      "type": "tagging_error",
+      "word": "y",
+      "expected": "CCONJ",
+      "predicted": "X"
+    },
+    {
+      "id": "ES-028",
+      "tool": "spacy",
+      "type": "tagging_error",
+      "word": "blanca",
+      "expected": "ADJ",
+      "predicted": "NOUN"
+    },
+    {
+      "id": "ES-033",
+      "tool": "spacy",
+      "type": "tagging_error",
+      "word": "alta",
+      "expected": "ADJ",
+      "predicted": "NOUN"
+    },
+    {
+      "id": "ES-055",
+      "tool": "spacy",
+      "type": "tagging_error",
+      "word": "que",
+      "expected": "SCONJ",
+      "predicted": "PRON"
+    },
+    {
+      "id": "ES-059",
+      "tool": "spacy",
+      "type": "tagging_error",
+      "word": "que",
+      "expected": "SCONJ",
+      "predicted": "PRON"
+    },
+    {
+      "id": "ES-060",
+      "tool": "spacy",
+      "type": "tagging_error",
+      "word": "canta",
+      "expected": "VERB",
+      "predicted": "ADJ"
+    }
+  ],
+  "source_metadata": {
+    "created_utc": "2026-11-06T15:42:59.382666+00:00",
+    "commit": "c2dcd47f3d173a148cf3ecc9d9c2a68c13983bc3",
+    "hash_policy": "SHA-256; texto UTF-8 con saltos LF, binarios sin transformacion",
+    "source_hashes": {
+      "experimentos\\__init__.py": "1af49503f294837ba9215f0a0f3c41925111d28b2ea1130ce5b04d9dc2d84c7f",
+      "experimentos\\adaptadores.py": "33f7e133ff470c38d00b0cad93f3a6df7e05e3e3862bfaf6e68fb22c8eb99fde",
+      "experimentos\\ambiguedad.py": "6be7a7a1a9af9465b0a0b0532bbbcd16daf17f6727878702e71aaefaa7b3e17a",
+      "experimentos\\common.py": "40523eaefc18210d446c505b588791d20c213c803e4ee09e53ab2b7488beba87",
+      "experimentos\\comparar_nlp.py": "277d5e225d503185520110b5bb0590886c49f730f5c546d3df277cafdfaea106",
+      "experimentos\\demo_fase1.py": "3f780a85516024d9bb2009d4f3ed54b9a3ea8779b4b73298ccc0a831c90179a1",
+      "experimentos\\graficas.py": "1b451855de1573b3b91c0e1773782f3b9de64ab316aadea6ab73bcefe31424ee",
+      "experimentos\\llm.py": "77aa7ea90e65db9fae5499d3dba0a14824b38654019de3b1491bcb3eba1add6b",
+      "experimentos\\metricas.py": "ed773557e0049db0bdea33a25c69bb3378584d408a65891ba9a660845ea1a5a5",
+      "experimentos\\registro_fallos.py": "07808652e58c77274eafb402bc34de1bcd2477210a0aee273f7a676a3dff1845",
+      "experimentos\\rendimiento.py": "dac932dfeb990425cadcb9a6f7f395c4517e07b6201471e1116a96809e213752",
+      "experimentos\\resumir_llm.py": "c143e195488e8dd2314f2db003a3efdf15dca95ceb39a0f9b6871ac5a84a4574",
+      "experimentos\\validar_corpus.py": "d8ff90742a522a9fbb775b9315c4b86368048f26bed10297c5560136b34c2778",
+      "experimentos\\validar_derivacion.py": "4dbe3dc1ac86ef3f9abf77c891d1b43bc1fb2f5569964a8a40636a881bcdbfcd",
+      "main.py": "8e40b3cfbd7dc94e6f008d49caca37f24f4384747d47eb28f68e0485678beb93",
+      "minic\\__init__.py": "acf5d7d08e80102a69942e0ca6b238232c063b7772748533da274c3fe32ddda3",
+      "minic\\diagnostics.py": "2047c88075a8b6fbeb496288abf8a93ae667a62b81b3713f779e65d513a40a2f",
+      "minic\\grammar.py": "50d2346daffe58561f08b16d274cc92c2cf638a48d58d25653b92d5b0a45e2df",
+      "minic\\lexer.py": "7614c895a8ce8d545764d0f9daf48004c95f148160af4c902b616ec180f63720",
+      "minic\\lexicon_es.py": "eec0049a3b0968207b15c002a8ce88d12a445cbbaf855a2e33556a84abd49ad8",
+      "minic\\parser.py": "772e085c5d8442eac57953a6a11508964d9e37d4e7a1d396dc11ed21072835ac",
+      "minic\\trees.py": "5c18d6b216bb6b85a1d8c1eb711281ecab2202be5efb9a14ed510c00eeab4161"
+    },
+    "tracked_changes": true,
+    "grammar_sha256": "cf1d5f630a2d49dd0cfdeedd4ac9b14cdae1209ee714a2b84b94f5f880df5c81",
+    "corpus_sha256": "1fc01159e4092094da171078c81523121a4ed23c4b33ab2ecf5fbfd33f3d1b0d"
+  },
+  "input_sha256": "e972757351fd2fbeee42ff17354344b44a5156e97acd805d6985ae32673db8ab"
+}

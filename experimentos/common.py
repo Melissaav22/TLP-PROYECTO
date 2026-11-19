@@ -6,6 +6,7 @@ from pathlib import Path
 import subprocess
 
 ROOT = Path(__file__).resolve().parents[1]
+CURRENT_CORPUS = ROOT / 'datos/corpus_ordenado.json'
 
 
 def digest(path):

@@ -1,0 +1,17 @@
+[
+  {
+    "id": "DEMO-01",
+    "texto": "El hombre lee el libro",
+    "esperado_cfg": true
+  },
+  {
+    "id": "DEMO-02",
+    "texto": "Las mujeres canta",
+    "esperado_cfg": false
+  },
+  {
+    "id": "DEMO-03",
+    "texto": "La niña dijo que el gato duerme",
+    "esperado_cfg": true
+  }
+]

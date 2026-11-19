@@ -1,0 +1,1208 @@
+[
+  {
+    "id": "C2-001",
+    "texto": "El niño corre",
+    "nivel": "simple",
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "estructura_esperada": "(Oracion (OracionSG (SN_MS El niño (AdjMS eps)) (SV_MS (VFormS corre) (Cpl_MS (ModsS eps)))))",
+    "fenomenos": [
+      "sujeto_verbo"
+    ],
+    "motivo_rechazo_esperado": null,
+    "categoria_error": "ninguna",
+    "par_minimo_de": null,
+    "en_vocabulario": true,
+    "nota": null,
+    "fila_excel": 2,
+    "grammar_version": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9"
+  },
+  {
+    "id": "C2-002",
+    "texto": "Los niños corren",
+    "nivel": "simple",
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "estructura_esperada": "(Oracion (OracionPL (SN_MP Los niños (AdjMP eps)) (SV_MP (VFormP corren) (Cpl_MP (ModsP eps)))))",
+    "fenomenos": [
+      "sujeto_verbo"
+    ],
+    "motivo_rechazo_esperado": null,
+    "categoria_error": "ninguna",
+    "par_minimo_de": null,
+    "en_vocabulario": true,
+    "nota": null,
+    "fila_excel": 3,
+    "grammar_version": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9"
+  },
+  {
+    "id": "C2-003",
+    "texto": "La niña canta",
+    "nivel": "simple",
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "estructura_esperada": "(Oracion (OracionSG (SN_FS La niña (AdjFS eps)) (SV_FS (VFormS canta) (Cpl_FS (ModsS eps)))))",
+    "fenomenos": [
+      "sujeto_verbo"
+    ],
+    "motivo_rechazo_esperado": null,
+    "categoria_error": "ninguna",
+    "par_minimo_de": null,
+    "en_vocabulario": true,
+    "nota": null,
+    "fila_excel": 4,
+    "grammar_version": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9"
+  },
+  {
+    "id": "C2-004",
+    "texto": "Las niñas cantan",
+    "nivel": "simple",
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "estructura_esperada": "(Oracion (OracionPL (SN_FP Las niñas (AdjFP eps)) (SV_FP (VFormP cantan) (Cpl_FP (ModsP eps)))))",
+    "fenomenos": [
+      "sujeto_verbo"
+    ],
+    "motivo_rechazo_esperado": null,
+    "categoria_error": "ninguna",
+    "par_minimo_de": null,
+    "en_vocabulario": true,
+    "nota": null,
+    "fila_excel": 5,
+    "grammar_version": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9"
+  },
+  {
+    "id": "C2-005",
+    "texto": "El perro duerme",
+    "nivel": "simple",
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "estructura_esperada": "(Oracion (OracionSG (SN_MS El perro (AdjMS eps)) (SV_MS (VFormS duerme) (Cpl_MS (ModsS eps)))))",
+    "fenomenos": [
+      "sujeto_verbo"
+    ],
+    "motivo_rechazo_esperado": null,
+    "categoria_error": "ninguna",
+    "par_minimo_de": null,
+    "en_vocabulario": true,
+    "nota": null,
+    "fila_excel": 6,
+    "grammar_version": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9"
+  },
+  {
+    "id": "C2-006",
+    "texto": "Las mujeres trabajan",
+    "nivel": "simple",
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "estructura_esperada": "(Oracion (OracionPL (SN_FP Las mujeres (AdjFP eps)) (SV_FP (VFormP trabajan) (Cpl_FP (ModsP eps)))))",
+    "fenomenos": [
+      "sujeto_verbo"
+    ],
+    "motivo_rechazo_esperado": null,
+    "categoria_error": "ninguna",
+    "par_minimo_de": null,
+    "en_vocabulario": true,
+    "nota": null,
+    "fila_excel": 7,
+    "grammar_version": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9"
+  },
+  {
+    "id": "C2-007",
+    "texto": "El niño lee el libro",
+    "nivel": "simple",
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "estructura_esperada": "(Oracion (OracionSG (SN_MS El niño (AdjMS eps)) (SV_MS (VFormS lee) (Cpl_MS (CD (SN (SN_MS el libro (AdjMS eps)))) (ModsS eps)))))",
+    "fenomenos": [
+      "objeto_directo"
+    ],
+    "motivo_rechazo_esperado": null,
+    "categoria_error": "ninguna",
+    "par_minimo_de": null,
+    "en_vocabulario": true,
+    "nota": null,
+    "fila_excel": 8,
+    "grammar_version": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9"
+  },
+  {
+    "id": "C2-008",
+    "texto": "La profesora compra las flores",
+    "nivel": "simple",
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "estructura_esperada": "(Oracion (OracionSG (SN_FS La profesora (AdjFS eps)) (SV_FS (VFormS compra) (Cpl_FS (CD (SN (SN_FP las flores (AdjFP eps)))) (ModsS eps)))))",
+    "fenomenos": [
+      "objeto_directo"
+    ],
+    "motivo_rechazo_esperado": null,
+    "categoria_error": "ninguna",
+    "par_minimo_de": null,
+    "en_vocabulario": true,
+    "nota": null,
+    "fila_excel": 9,
+    "grammar_version": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9"
+  },
+  {
+    "id": "C2-009",
+    "texto": "El niño leyó el libro",
+    "nivel": "simple",
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "estructura_esperada": "(Oracion (OracionSG (SN_MS El niño (AdjMS eps)) (SV_MS (VFormS leyó) (Cpl_MS (CD (SN (SN_MS el libro (AdjMS eps)))) (ModsS eps)))))",
+    "fenomenos": [
+      "pretérito+objeto"
+    ],
+    "motivo_rechazo_esperado": null,
+    "categoria_error": "ninguna",
+    "par_minimo_de": null,
+    "en_vocabulario": true,
+    "nota": null,
+    "fila_excel": 10,
+    "grammar_version": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9"
+  },
+  {
+    "id": "C2-010",
+    "texto": "Las mujeres trabajaron",
+    "nivel": "simple",
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "estructura_esperada": "(Oracion (OracionPL (SN_FP Las mujeres (AdjFP eps)) (SV_FP (VFormP trabajaron) (Cpl_FP (ModsP eps)))))",
+    "fenomenos": [
+      "pretérito"
+    ],
+    "motivo_rechazo_esperado": null,
+    "categoria_error": "ninguna",
+    "par_minimo_de": null,
+    "en_vocabulario": true,
+    "nota": null,
+    "fila_excel": 11,
+    "grammar_version": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9"
+  },
+  {
+    "id": "C2-011",
+    "texto": "La casa es blanca",
+    "nivel": "simple",
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "estructura_esperada": "(Oracion (OracionSG (SN_FS La casa (AdjFS eps)) (SV_FS (CopS es) (PredCpl_FS (PredFS blanca) (ModsS eps)))))",
+    "fenomenos": [
+      "cópula+atributo"
+    ],
+    "motivo_rechazo_esperado": null,
+    "categoria_error": "ninguna",
+    "par_minimo_de": null,
+    "en_vocabulario": true,
+    "nota": null,
+    "fila_excel": 12,
+    "grammar_version": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9"
+  },
+  {
+    "id": "C2-012",
+    "texto": "Las casas son nuevas",
+    "nivel": "simple",
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "estructura_esperada": "(Oracion (OracionPL (SN_FP Las casas (AdjFP eps)) (SV_FP (CopP son) (PredCpl_FP (PredFP nuevas) (ModsP eps)))))",
+    "fenomenos": [
+      "cópula+atributo"
+    ],
+    "motivo_rechazo_esperado": null,
+    "categoria_error": "ninguna",
+    "par_minimo_de": null,
+    "en_vocabulario": true,
+    "nota": null,
+    "fila_excel": 13,
+    "grammar_version": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9"
+  },
+  {
+    "id": "C2-013",
+    "texto": "La niña pequeña canta",
+    "nivel": "simple",
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "estructura_esperada": "(Oracion (OracionSG (SN_FS La niña (AdjFS pequeña (AdjFS eps))) (SV_FS (VFormS canta) (Cpl_FS (ModsS eps)))))",
+    "fenomenos": [
+      "sustantivo+adjetivo"
+    ],
+    "motivo_rechazo_esperado": null,
+    "categoria_error": "ninguna",
+    "par_minimo_de": null,
+    "en_vocabulario": true,
+    "nota": null,
+    "fila_excel": 14,
+    "grammar_version": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9"
+  },
+  {
+    "id": "C2-041",
+    "texto": "Los gatos duermen",
+    "nivel": "simple",
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "estructura_esperada": "(Oracion (OracionPL (SN_MP Los gatos (AdjMP eps)) (SV_MP (VFormP duermen) (Cpl_MP (ModsP eps)))))",
+    "fenomenos": [
+      "sujeto_verbo"
+    ],
+    "motivo_rechazo_esperado": null,
+    "categoria_error": "ninguna",
+    "par_minimo_de": null,
+    "en_vocabulario": true,
+    "nota": null,
+    "fila_excel": 15,
+    "grammar_version": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9"
+  },
+  {
+    "id": "C2-042",
+    "texto": "La niña cantó",
+    "nivel": "simple",
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "estructura_esperada": "(Oracion (OracionSG (SN_FS La niña (AdjFS eps)) (SV_FS (VFormS cantó) (Cpl_FS (ModsS eps)))))",
+    "fenomenos": [
+      "pretérito"
+    ],
+    "motivo_rechazo_esperado": null,
+    "categoria_error": "ninguna",
+    "par_minimo_de": null,
+    "en_vocabulario": true,
+    "nota": null,
+    "fila_excel": 16,
+    "grammar_version": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9"
+  },
+  {
+    "id": "C2-043",
+    "texto": "Los niños leen los libros",
+    "nivel": "simple",
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "estructura_esperada": "(Oracion (OracionPL (SN_MP Los niños (AdjMP eps)) (SV_MP (VFormP leen) (Cpl_MP (CD (SN (SN_MP los libros (AdjMP eps)))) (ModsP eps)))))",
+    "fenomenos": [
+      "objeto_directo"
+    ],
+    "motivo_rechazo_esperado": null,
+    "categoria_error": "ninguna",
+    "par_minimo_de": null,
+    "en_vocabulario": true,
+    "nota": null,
+    "fila_excel": 17,
+    "grammar_version": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9"
+  },
+  {
+    "id": "C2-044",
+    "texto": "Las niñas compraron las flores",
+    "nivel": "simple",
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "estructura_esperada": "(Oracion (OracionPL (SN_FP Las niñas (AdjFP eps)) (SV_FP (VFormP compraron) (Cpl_FP (CD (SN (SN_FP las flores (AdjFP eps)))) (ModsP eps)))))",
+    "fenomenos": [
+      "pretérito+objeto"
+    ],
+    "motivo_rechazo_esperado": null,
+    "categoria_error": "ninguna",
+    "par_minimo_de": null,
+    "en_vocabulario": true,
+    "nota": null,
+    "fila_excel": 18,
+    "grammar_version": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9"
+  },
+  {
+    "id": "C2-014",
+    "texto": "El niño alto corre rápidamente en el parque",
+    "nivel": "intermedio",
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "estructura_esperada": "(Oracion (OracionSG (SN_MS El niño (AdjMS alto (AdjMS eps))) (SV_MS (VFormS corre) (Cpl_MS (ModsS rápidamente (ModsS (PP en (SN (SN_MS el parque (AdjMS eps)))) (ModsS eps)))))))",
+    "fenomenos": [
+      "adjetivo+adverbio+PP"
+    ],
+    "motivo_rechazo_esperado": null,
+    "categoria_error": "ninguna",
+    "par_minimo_de": null,
+    "en_vocabulario": true,
+    "nota": null,
+    "fila_excel": 19,
+    "grammar_version": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9"
+  },
+  {
+    "id": "C2-015",
+    "texto": "La casa blanca está en la ciudad",
+    "nivel": "intermedio",
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "estructura_esperada": "(Oracion (OracionSG (SN_FS La casa (AdjFS blanca (AdjFS eps))) (SV_FS (CopS está) (PredCpl_FS (ModsS (PP en (SN (SN_FS la ciudad (AdjFS eps)))) (ModsS eps))))))",
+    "fenomenos": [
+      "adjetivo+PP"
+    ],
+    "motivo_rechazo_esperado": null,
+    "categoria_error": "ninguna",
+    "par_minimo_de": null,
+    "en_vocabulario": true,
+    "nota": null,
+    "fila_excel": 20,
+    "grammar_version": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9"
+  },
+  {
+    "id": "C2-016",
+    "texto": "El profesor dice que el niño corre",
+    "nivel": "intermedio",
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "estructura_esperada": "(Oracion (OracionSG (SN_MS El profesor (AdjMS eps)) (SV_MS (VFormS dice) (Cpl_MS que (Oracion (OracionSG (SN_MS el niño (AdjMS eps)) (SV_MS (VFormS corre) (Cpl_MS (ModsS eps)))))))))",
+    "fenomenos": [
+      "subordinada"
+    ],
+    "motivo_rechazo_esperado": null,
+    "categoria_error": "ninguna",
+    "par_minimo_de": null,
+    "en_vocabulario": true,
+    "nota": null,
+    "fila_excel": 21,
+    "grammar_version": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9"
+  },
+  {
+    "id": "C2-017",
+    "texto": "La profesora sabe que las casas son blancas",
+    "nivel": "intermedio",
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "estructura_esperada": "(Oracion (OracionSG (SN_FS La profesora (AdjFS eps)) (SV_FS (VFormS sabe) (Cpl_FS que (Oracion (OracionPL (SN_FP las casas (AdjFP eps)) (SV_FP (CopP son) (PredCpl_FP (PredFP blancas) (ModsP eps)))))))))",
+    "fenomenos": [
+      "subordinada+cópula"
+    ],
+    "motivo_rechazo_esperado": null,
+    "categoria_error": "ninguna",
+    "par_minimo_de": null,
+    "en_vocabulario": true,
+    "nota": null,
+    "fila_excel": 22,
+    "grammar_version": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9"
+  },
+  {
+    "id": "C2-018",
+    "texto": "El hombre compró el coche rojo ayer",
+    "nivel": "intermedio",
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "estructura_esperada": "(Oracion (OracionSG (SN_MS El hombre (AdjMS eps)) (SV_MS (VFormS compró) (Cpl_MS (CD (SN (SN_MS el coche (AdjMS rojo (AdjMS eps))))) (ModsS ayer (ModsS eps))))))",
+    "fenomenos": [
+      "pretérito+objeto+adjetivo+adverbio"
+    ],
+    "motivo_rechazo_esperado": null,
+    "categoria_error": "ninguna",
+    "par_minimo_de": null,
+    "en_vocabulario": true,
+    "nota": null,
+    "fila_excel": 23,
+    "grammar_version": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9"
+  },
+  {
+    "id": "C2-019",
+    "texto": "La profesora dijo que el niño leyó el libro",
+    "nivel": "intermedio",
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "estructura_esperada": "(Oracion (OracionSG (SN_FS La profesora (AdjFS eps)) (SV_FS (VFormS dijo) (Cpl_FS que (Oracion (OracionSG (SN_MS el niño (AdjMS eps)) (SV_MS (VFormS leyó) (Cpl_MS (CD (SN (SN_MS el libro (AdjMS eps)))) (ModsS eps)))))))))",
+    "fenomenos": [
+      "subordinada+pretérito"
+    ],
+    "motivo_rechazo_esperado": null,
+    "categoria_error": "ninguna",
+    "par_minimo_de": null,
+    "en_vocabulario": true,
+    "nota": null,
+    "fila_excel": 24,
+    "grammar_version": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9"
+  },
+  {
+    "id": "C2-020",
+    "texto": "Los profesores dicen que los niños estudian en la escuela",
+    "nivel": "intermedio",
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "estructura_esperada": "(Oracion (OracionPL (SN_MP Los profesores (AdjMP eps)) (SV_MP (VFormP dicen) (Cpl_MP que (Oracion (OracionPL (SN_MP los niños (AdjMP eps)) (SV_MP (VFormP estudian) (Cpl_MP (ModsP (PP en (SN (SN_FS la escuela (AdjFS eps)))) (ModsP eps))))))))))",
+    "fenomenos": [
+      "subordinada+PP"
+    ],
+    "motivo_rechazo_esperado": null,
+    "categoria_error": "ninguna",
+    "par_minimo_de": null,
+    "en_vocabulario": true,
+    "nota": null,
+    "fila_excel": 25,
+    "grammar_version": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9"
+  },
+  {
+    "id": "C2-021",
+    "texto": "La niño corre",
+    "nivel": "intermedio",
+    "esperado_cfg": false,
+    "gramatical_espanol": false,
+    "estructura_esperada": null,
+    "fenomenos": [
+      "concordancia_det_sust"
+    ],
+    "motivo_rechazo_esperado": "violación de concordancia",
+    "categoria_error": "concordancia",
+    "par_minimo_de": "C2-001",
+    "en_vocabulario": true,
+    "nota": "género",
+    "fila_excel": 26,
+    "grammar_version": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9"
+  },
+  {
+    "id": "C2-022",
+    "texto": "El niños corre",
+    "nivel": "intermedio",
+    "esperado_cfg": false,
+    "gramatical_espanol": false,
+    "estructura_esperada": null,
+    "fenomenos": [
+      "concordancia_det_sust"
+    ],
+    "motivo_rechazo_esperado": "violación de concordancia",
+    "categoria_error": "concordancia",
+    "par_minimo_de": "C2-001",
+    "en_vocabulario": true,
+    "nota": "número",
+    "fila_excel": 27,
+    "grammar_version": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9"
+  },
+  {
+    "id": "C2-023",
+    "texto": "Los niños corre",
+    "nivel": "intermedio",
+    "esperado_cfg": false,
+    "gramatical_espanol": false,
+    "estructura_esperada": null,
+    "fenomenos": [
+      "concordancia_sujeto_verbo"
+    ],
+    "motivo_rechazo_esperado": "violación de concordancia",
+    "categoria_error": "concordancia",
+    "par_minimo_de": "C2-002",
+    "en_vocabulario": true,
+    "nota": "número",
+    "fila_excel": 28,
+    "grammar_version": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9"
+  },
+  {
+    "id": "C2-024",
+    "texto": "La casa blanco está en la ciudad",
+    "nivel": "intermedio",
+    "esperado_cfg": false,
+    "gramatical_espanol": false,
+    "estructura_esperada": null,
+    "fenomenos": [
+      "concordancia_sust_adj"
+    ],
+    "motivo_rechazo_esperado": "violación de concordancia",
+    "categoria_error": "concordancia",
+    "par_minimo_de": "C2-015",
+    "en_vocabulario": true,
+    "nota": "género; texto cambiado (antes: \"La casa blanco está en el parque\") para ser pareja mínima de C2-015",
+    "fila_excel": 29,
+    "grammar_version": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9"
+  },
+  {
+    "id": "C2-025",
+    "texto": "El niño leyó el libro blanca",
+    "nivel": "intermedio",
+    "esperado_cfg": false,
+    "gramatical_espanol": false,
+    "estructura_esperada": null,
+    "fenomenos": [
+      "concordancia_sust_adj"
+    ],
+    "motivo_rechazo_esperado": "violación de concordancia",
+    "categoria_error": "concordancia",
+    "par_minimo_de": "C2-045",
+    "en_vocabulario": true,
+    "nota": "género en el objeto",
+    "fila_excel": 30,
+    "grammar_version": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9"
+  },
+  {
+    "id": "C2-026",
+    "texto": "Los niños leyó el libro",
+    "nivel": "intermedio",
+    "esperado_cfg": false,
+    "gramatical_espanol": false,
+    "estructura_esperada": null,
+    "fenomenos": [
+      "concordancia_sujeto_verbo"
+    ],
+    "motivo_rechazo_esperado": "violación de concordancia",
+    "categoria_error": "concordancia",
+    "par_minimo_de": "C2-046",
+    "en_vocabulario": true,
+    "nota": "pretérito, número",
+    "fila_excel": 31,
+    "grammar_version": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9"
+  },
+  {
+    "id": "C2-045",
+    "texto": "El niño leyó el libro blanco",
+    "nivel": "intermedio",
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "estructura_esperada": "(Oracion (OracionSG (SN_MS El niño (AdjMS eps)) (SV_MS (VFormS leyó) (Cpl_MS (CD (SN (SN_MS el libro (AdjMS blanco (AdjMS eps))))) (ModsS eps)))))",
+    "fenomenos": [
+      "pretérito+objeto+adjetivo"
+    ],
+    "motivo_rechazo_esperado": null,
+    "categoria_error": "ninguna",
+    "par_minimo_de": null,
+    "en_vocabulario": true,
+    "nota": "pareja positiva de C2-025",
+    "fila_excel": 32,
+    "grammar_version": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9"
+  },
+  {
+    "id": "C2-046",
+    "texto": "Los niños leyeron el libro",
+    "nivel": "intermedio",
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "estructura_esperada": "(Oracion (OracionPL (SN_MP Los niños (AdjMP eps)) (SV_MP (VFormP leyeron) (Cpl_MP (CD (SN (SN_MS el libro (AdjMS eps)))) (ModsP eps)))))",
+    "fenomenos": [
+      "pretérito+objeto"
+    ],
+    "motivo_rechazo_esperado": null,
+    "categoria_error": "ninguna",
+    "par_minimo_de": null,
+    "en_vocabulario": true,
+    "nota": "pareja positiva de C2-026",
+    "fila_excel": 33,
+    "grammar_version": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9"
+  },
+  {
+    "id": "C2-047",
+    "texto": "El niño dice que la casa es blanca",
+    "nivel": "intermedio",
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "estructura_esperada": "(Oracion (OracionSG (SN_MS El niño (AdjMS eps)) (SV_MS (VFormS dice) (Cpl_MS que (Oracion (OracionSG (SN_FS la casa (AdjFS eps)) (SV_FS (CopS es) (PredCpl_FS (PredFS blanca) (ModsS eps)))))))))",
+    "fenomenos": [
+      "subordinada+cópula"
+    ],
+    "motivo_rechazo_esperado": null,
+    "categoria_error": "ninguna",
+    "par_minimo_de": null,
+    "en_vocabulario": true,
+    "nota": "pareja positiva de C2-038",
+    "fila_excel": 34,
+    "grammar_version": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9"
+  },
+  {
+    "id": "C2-048",
+    "texto": "La profesora compra las",
+    "nivel": "intermedio",
+    "esperado_cfg": false,
+    "gramatical_espanol": false,
+    "estructura_esperada": null,
+    "fenomenos": [
+      "sintagma_nominal_incompleto"
+    ],
+    "motivo_rechazo_esperado": "determinante sin sustantivo",
+    "categoria_error": "estructura",
+    "par_minimo_de": "C2-008",
+    "en_vocabulario": true,
+    "nota": null,
+    "fila_excel": 35,
+    "grammar_version": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9"
+  },
+  {
+    "id": "C2-049",
+    "texto": "El profesor dice el niño corre",
+    "nivel": "intermedio",
+    "esperado_cfg": false,
+    "gramatical_espanol": false,
+    "estructura_esperada": null,
+    "fenomenos": [
+      "falta_que"
+    ],
+    "motivo_rechazo_esperado": "falta el complementizador \"que\"",
+    "categoria_error": "estructura",
+    "par_minimo_de": "C2-016",
+    "en_vocabulario": true,
+    "nota": "sin signos de puntuación; con dos puntos sería otra oración",
+    "fila_excel": 36,
+    "grammar_version": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9"
+  },
+  {
+    "id": "C2-050",
+    "texto": "La niña pequeña",
+    "nivel": "intermedio",
+    "esperado_cfg": false,
+    "gramatical_espanol": false,
+    "estructura_esperada": null,
+    "fenomenos": [
+      "sin_verbo"
+    ],
+    "motivo_rechazo_esperado": "sin verbo: no es una oración",
+    "categoria_error": "estructura",
+    "par_minimo_de": "C2-013",
+    "en_vocabulario": true,
+    "nota": "es un sintagma nominal válido, pero no una oración",
+    "fila_excel": 37,
+    "grammar_version": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9"
+  },
+  {
+    "id": "C2-051",
+    "texto": "El el niño corre",
+    "nivel": "intermedio",
+    "esperado_cfg": false,
+    "gramatical_espanol": false,
+    "estructura_esperada": null,
+    "fenomenos": [
+      "determinante_duplicado"
+    ],
+    "motivo_rechazo_esperado": "determinante repetido",
+    "categoria_error": "estructura",
+    "par_minimo_de": "C2-001",
+    "en_vocabulario": true,
+    "nota": null,
+    "fila_excel": 38,
+    "grammar_version": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9"
+  },
+  {
+    "id": "C2-052",
+    "texto": "El corre niño",
+    "nivel": "intermedio",
+    "esperado_cfg": false,
+    "gramatical_espanol": false,
+    "estructura_esperada": null,
+    "fenomenos": [
+      "orden_de_palabras"
+    ],
+    "motivo_rechazo_esperado": "orden de palabras imposible",
+    "categoria_error": "estructura",
+    "par_minimo_de": "C2-001",
+    "en_vocabulario": true,
+    "nota": "sustantivo y verbo intercambiados",
+    "fila_excel": 39,
+    "grammar_version": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9"
+  },
+  {
+    "id": "C2-053",
+    "texto": "El niño lee el libro el",
+    "nivel": "intermedio",
+    "esperado_cfg": false,
+    "gramatical_espanol": false,
+    "estructura_esperada": null,
+    "fenomenos": [
+      "determinante_sobrante"
+    ],
+    "motivo_rechazo_esperado": "determinante final sin sustantivo",
+    "categoria_error": "estructura",
+    "par_minimo_de": "C2-007",
+    "en_vocabulario": true,
+    "nota": null,
+    "fila_excel": 40,
+    "grammar_version": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9"
+  },
+  {
+    "id": "C2-054",
+    "texto": "La casa blanca está en",
+    "nivel": "intermedio",
+    "esperado_cfg": false,
+    "gramatical_espanol": false,
+    "estructura_esperada": null,
+    "fenomenos": [
+      "preposicion_sin_complemento"
+    ],
+    "motivo_rechazo_esperado": "preposición sin complemento",
+    "categoria_error": "estructura",
+    "par_minimo_de": "C2-015",
+    "en_vocabulario": true,
+    "nota": null,
+    "fila_excel": 41,
+    "grammar_version": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9"
+  },
+  {
+    "id": "C2-055",
+    "texto": "Los profesores dicen que los niños estudia en la escuela",
+    "nivel": "intermedio",
+    "esperado_cfg": false,
+    "gramatical_espanol": false,
+    "estructura_esperada": null,
+    "fenomenos": [
+      "concordancia_sujeto_verbo_subordinada"
+    ],
+    "motivo_rechazo_esperado": "violación de concordancia",
+    "categoria_error": "concordancia",
+    "par_minimo_de": "C2-020",
+    "en_vocabulario": true,
+    "nota": "número, dentro de la subordinada",
+    "fila_excel": 42,
+    "grammar_version": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9"
+  },
+  {
+    "id": "C2-056",
+    "texto": "La profesora sabe que las casas son blanca",
+    "nivel": "intermedio",
+    "esperado_cfg": false,
+    "gramatical_espanol": false,
+    "estructura_esperada": null,
+    "fenomenos": [
+      "concordancia_atributo_subordinada"
+    ],
+    "motivo_rechazo_esperado": "violación de concordancia",
+    "categoria_error": "concordancia",
+    "par_minimo_de": "C2-017",
+    "en_vocabulario": true,
+    "nota": "número, atributo de la cópula",
+    "fila_excel": 43,
+    "grammar_version": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9"
+  },
+  {
+    "id": "C2-057",
+    "texto": "El hombre compró el coche roja ayer",
+    "nivel": "intermedio",
+    "esperado_cfg": false,
+    "gramatical_espanol": false,
+    "estructura_esperada": null,
+    "fenomenos": [
+      "concordancia_sust_adj"
+    ],
+    "motivo_rechazo_esperado": "violación de concordancia",
+    "categoria_error": "concordancia",
+    "par_minimo_de": "C2-018",
+    "en_vocabulario": true,
+    "nota": "género en el objeto",
+    "fila_excel": 44,
+    "grammar_version": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9"
+  },
+  {
+    "id": "C2-058",
+    "texto": "Las mujeres trabajó",
+    "nivel": "intermedio",
+    "esperado_cfg": false,
+    "gramatical_espanol": false,
+    "estructura_esperada": null,
+    "fenomenos": [
+      "concordancia_sujeto_verbo"
+    ],
+    "motivo_rechazo_esperado": "violación de concordancia",
+    "categoria_error": "concordancia",
+    "par_minimo_de": "C2-010",
+    "en_vocabulario": true,
+    "nota": "pretérito, número",
+    "fila_excel": 45,
+    "grammar_version": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9"
+  },
+  {
+    "id": "C2-059",
+    "texto": "La casa es blanco",
+    "nivel": "intermedio",
+    "esperado_cfg": false,
+    "gramatical_espanol": false,
+    "estructura_esperada": null,
+    "fenomenos": [
+      "concordancia_atributo"
+    ],
+    "motivo_rechazo_esperado": "violación de concordancia",
+    "categoria_error": "concordancia",
+    "par_minimo_de": "C2-011",
+    "en_vocabulario": true,
+    "nota": "género en el atributo",
+    "fila_excel": 46,
+    "grammar_version": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9"
+  },
+  {
+    "id": "C2-060",
+    "texto": "Las casas es nuevas",
+    "nivel": "intermedio",
+    "esperado_cfg": false,
+    "gramatical_espanol": false,
+    "estructura_esperada": null,
+    "fenomenos": [
+      "concordancia_sujeto_copula"
+    ],
+    "motivo_rechazo_esperado": "violación de concordancia",
+    "categoria_error": "concordancia",
+    "par_minimo_de": "C2-012",
+    "en_vocabulario": true,
+    "nota": "número en la cópula",
+    "fila_excel": 47,
+    "grammar_version": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9"
+  },
+  {
+    "id": "C2-061",
+    "texto": "El niño lee el libros",
+    "nivel": "intermedio",
+    "esperado_cfg": false,
+    "gramatical_espanol": false,
+    "estructura_esperada": null,
+    "fenomenos": [
+      "concordancia_det_sust"
+    ],
+    "motivo_rechazo_esperado": "violación de concordancia",
+    "categoria_error": "concordancia",
+    "par_minimo_de": "C2-007",
+    "en_vocabulario": true,
+    "nota": "número en el objeto",
+    "fila_excel": 48,
+    "grammar_version": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9"
+  },
+  {
+    "id": "C2-027",
+    "texto": "Corre rápidamente",
+    "nivel": "complejo",
+    "esperado_cfg": false,
+    "gramatical_espanol": true,
+    "estructura_esperada": null,
+    "fenomenos": [
+      "sujeto_omitido"
+    ],
+    "motivo_rechazo_esperado": "fuera de alcance: sujeto obligatorio",
+    "categoria_error": "fuera_de_alcance",
+    "par_minimo_de": null,
+    "en_vocabulario": true,
+    "nota": "pro-drop",
+    "fila_excel": 49,
+    "grammar_version": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9"
+  },
+  {
+    "id": "C2-028",
+    "texto": "Corre el niño",
+    "nivel": "complejo",
+    "esperado_cfg": false,
+    "gramatical_espanol": true,
+    "estructura_esperada": null,
+    "fenomenos": [
+      "inversión_verbo_sujeto"
+    ],
+    "motivo_rechazo_esperado": "fuera de alcance: orden fijo sujeto-verbo",
+    "categoria_error": "fuera_de_alcance",
+    "par_minimo_de": null,
+    "en_vocabulario": true,
+    "nota": null,
+    "fila_excel": 50,
+    "grammar_version": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9"
+  },
+  {
+    "id": "C2-029",
+    "texto": "El niño la compra",
+    "nivel": "complejo",
+    "esperado_cfg": false,
+    "gramatical_espanol": true,
+    "estructura_esperada": null,
+    "fenomenos": [
+      "clítico"
+    ],
+    "motivo_rechazo_esperado": "fuera de alcance: sin pronombres",
+    "categoria_error": "fuera_de_alcance",
+    "par_minimo_de": null,
+    "en_vocabulario": true,
+    "nota": null,
+    "fila_excel": 51,
+    "grammar_version": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9"
+  },
+  {
+    "id": "C2-030",
+    "texto": "El niño y la niña corren",
+    "nivel": "complejo",
+    "esperado_cfg": false,
+    "gramatical_espanol": true,
+    "estructura_esperada": null,
+    "fenomenos": [
+      "coordinación_SN"
+    ],
+    "motivo_rechazo_esperado": "fuera de alcance: sin coordinación",
+    "categoria_error": "fuera_de_alcance",
+    "par_minimo_de": null,
+    "en_vocabulario": false,
+    "nota": "Palabras fuera del vocabulario: y",
+    "fila_excel": 52,
+    "grammar_version": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9"
+  },
+  {
+    "id": "C2-031",
+    "texto": "El niño que corre es alto",
+    "nivel": "complejo",
+    "esperado_cfg": false,
+    "gramatical_espanol": true,
+    "estructura_esperada": null,
+    "fenomenos": [
+      "relativa_sujeto"
+    ],
+    "motivo_rechazo_esperado": "fuera de alcance: sin relativas",
+    "categoria_error": "fuera_de_alcance",
+    "par_minimo_de": null,
+    "en_vocabulario": true,
+    "nota": null,
+    "fila_excel": 53,
+    "grammar_version": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9"
+  },
+  {
+    "id": "C2-032",
+    "texto": "El niño que la mujer que el hombre mira busca corre",
+    "nivel": "complejo",
+    "esperado_cfg": false,
+    "gramatical_espanol": true,
+    "estructura_esperada": null,
+    "fenomenos": [
+      "relativas_centro_embebidas"
+    ],
+    "motivo_rechazo_esperado": "fuera de alcance: sin relativas",
+    "categoria_error": "fuera_de_alcance",
+    "par_minimo_de": null,
+    "en_vocabulario": true,
+    "nota": "dependencias anidadas",
+    "fila_excel": 54,
+    "grammar_version": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9"
+  },
+  {
+    "id": "C2-033",
+    "texto": "La buena mujer canta",
+    "nivel": "complejo",
+    "esperado_cfg": false,
+    "gramatical_espanol": true,
+    "estructura_esperada": null,
+    "fenomenos": [
+      "adjetivo_antepuesto"
+    ],
+    "motivo_rechazo_esperado": "fuera de alcance: adjetivos solo pospuestos",
+    "categoria_error": "fuera_de_alcance",
+    "par_minimo_de": null,
+    "en_vocabulario": true,
+    "nota": null,
+    "fila_excel": 55,
+    "grammar_version": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9"
+  },
+  {
+    "id": "C2-034",
+    "texto": "Pedro, María y los niños son alto, alta y pequeños respectivamente",
+    "nivel": "complejo",
+    "esperado_cfg": false,
+    "gramatical_espanol": true,
+    "estructura_esperada": null,
+    "fenomenos": [
+      "dependencias_cruzadas"
+    ],
+    "motivo_rechazo_esperado": "fuera de alcance: sin coordinación ni nombres propios (límite teórico de las CFG)",
+    "categoria_error": "fuera_de_alcance",
+    "par_minimo_de": null,
+    "en_vocabulario": false,
+    "nota": "concordancia a distancia (respectivamente); Palabras fuera del vocabulario: Pedro, María, y, respectivamente",
+    "fila_excel": 56,
+    "grammar_version": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9"
+  },
+  {
+    "id": "C2-035",
+    "texto": "La mujer baja corre",
+    "nivel": "complejo",
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "estructura_esperada": "(Oracion (OracionSG (SN_FS La mujer (AdjFS baja (AdjFS eps))) (SV_FS (VFormS corre) (Cpl_FS (ModsS eps)))))",
+    "fenomenos": [
+      "ambigüedad_léxica"
+    ],
+    "motivo_rechazo_esperado": null,
+    "categoria_error": "ninguna",
+    "par_minimo_de": null,
+    "en_vocabulario": true,
+    "nota": "baja: adjetivo o verbo; el léxico solo tiene el adjetivo; lectura B (no producible): baja como verbo (ella baja corriendo); el léxico solo tiene baja como adjetivo",
+    "fila_excel": 57,
+    "grammar_version": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9"
+  },
+  {
+    "id": "C2-036",
+    "texto": "La mujer vive en la casa con la hermana",
+    "nivel": "complejo",
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "estructura_esperada": "(Oracion (OracionSG (SN_FS La mujer (AdjFS eps)) (SV_FS (VFormS vive) (Cpl_FS (ModsS (PP en (SN (SN_FS la casa (AdjFS eps)))) (ModsS (PP con (SN (SN_FS la hermana (AdjFS eps)))) (ModsS eps)))))))",
+    "fenomenos": [
+      "ambigüedad_estructural_PP"
+    ],
+    "motivo_rechazo_esperado": null,
+    "categoria_error": "ninguna",
+    "par_minimo_de": null,
+    "en_vocabulario": true,
+    "nota": "la PP se une a vive o a la casa; el parser LL(1) da una sola lectura; lectura B (no producible): con la hermana modifica a \"la casa\"",
+    "fila_excel": 58,
+    "grammar_version": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9"
+  },
+  {
+    "id": "C2-037",
+    "texto": "El profesor dice que el hombre corre hoy",
+    "nivel": "complejo",
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "estructura_esperada": "(Oracion (OracionSG (SN_MS El profesor (AdjMS eps)) (SV_MS (VFormS dice) (Cpl_MS que (Oracion (OracionSG (SN_MS el hombre (AdjMS eps)) (SV_MS (VFormS corre) (Cpl_MS (ModsS hoy (ModsS eps))))))))))",
+    "fenomenos": [
+      "ambigüedad_estructural_ADV"
+    ],
+    "motivo_rechazo_esperado": null,
+    "categoria_error": "ninguna",
+    "par_minimo_de": null,
+    "en_vocabulario": true,
+    "nota": "hoy se une a dice o a corre; el parser da una sola lectura; lectura B (no producible): hoy modifica a \"dice\"",
+    "fila_excel": 59,
+    "grammar_version": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9"
+  },
+  {
+    "id": "C2-038",
+    "texto": "El niño corre que la casa es blanca",
+    "nivel": "complejo",
+    "esperado_cfg": true,
+    "gramatical_espanol": false,
+    "estructura_esperada": "(Oracion (OracionSG (SN_MS El niño (AdjMS eps)) (SV_MS (VFormS corre) (Cpl_MS que (Oracion (OracionSG (SN_FS la casa (AdjFS eps)) (SV_FS (CopS es) (PredCpl_FS (PredFS blanca) (ModsS eps)))))))))",
+    "fenomenos": [
+      "sobregeneración"
+    ],
+    "motivo_rechazo_esperado": "sobregeneración: la gramática acepta lo que el español rechaza",
+    "categoria_error": "sobregeneracion",
+    "par_minimo_de": "C2-047",
+    "en_vocabulario": true,
+    "nota": "la gramática acepta cualquier verbo con que",
+    "fila_excel": 60,
+    "grammar_version": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9"
+  },
+  {
+    "id": "C2-039",
+    "texto": "Los niños que la mujer mira corre",
+    "nivel": "complejo",
+    "esperado_cfg": false,
+    "gramatical_espanol": false,
+    "estructura_esperada": null,
+    "fenomenos": [
+      "concordancia_a_distancia"
+    ],
+    "motivo_rechazo_esperado": "violación de concordancia",
+    "categoria_error": "concordancia",
+    "par_minimo_de": "C2-062",
+    "en_vocabulario": true,
+    "nota": "el verbo debe ser plural aunque otro sujeto esté en medio",
+    "fila_excel": 61,
+    "grammar_version": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9"
+  },
+  {
+    "id": "C2-040",
+    "texto": "El niño que las niñas miran corren",
+    "nivel": "complejo",
+    "esperado_cfg": false,
+    "gramatical_espanol": false,
+    "estructura_esperada": null,
+    "fenomenos": [
+      "concordancia_a_distancia"
+    ],
+    "motivo_rechazo_esperado": "violación de concordancia",
+    "categoria_error": "concordancia",
+    "par_minimo_de": "C2-063",
+    "en_vocabulario": true,
+    "nota": "el verbo debe ser singular aunque otro sujeto esté en medio",
+    "fila_excel": 62,
+    "grammar_version": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9"
+  },
+  {
+    "id": "C2-062",
+    "texto": "Los niños que la mujer mira corren",
+    "nivel": "complejo",
+    "esperado_cfg": false,
+    "gramatical_espanol": true,
+    "estructura_esperada": null,
+    "fenomenos": [
+      "relativa+concordancia_a_distancia"
+    ],
+    "motivo_rechazo_esperado": "fuera de alcance: sin relativas",
+    "categoria_error": "fuera_de_alcance",
+    "par_minimo_de": null,
+    "en_vocabulario": true,
+    "nota": "pareja positiva de C2-039",
+    "fila_excel": 63,
+    "grammar_version": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9"
+  },
+  {
+    "id": "C2-063",
+    "texto": "El niño que las niñas miran corre",
+    "nivel": "complejo",
+    "esperado_cfg": false,
+    "gramatical_espanol": true,
+    "estructura_esperada": null,
+    "fenomenos": [
+      "relativa+concordancia_a_distancia"
+    ],
+    "motivo_rechazo_esperado": "fuera de alcance: sin relativas",
+    "categoria_error": "fuera_de_alcance",
+    "par_minimo_de": null,
+    "en_vocabulario": true,
+    "nota": "pareja positiva de C2-040",
+    "fila_excel": 64,
+    "grammar_version": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9"
+  },
+  {
+    "id": "C2-064",
+    "texto": "El niño dice que la mujer sabe que los gatos duermen",
+    "nivel": "complejo",
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "estructura_esperada": "(Oracion (OracionSG (SN_MS El niño (AdjMS eps)) (SV_MS (VFormS dice) (Cpl_MS que (Oracion (OracionSG (SN_FS la mujer (AdjFS eps)) (SV_FS (VFormS sabe) (Cpl_FS que (Oracion (OracionPL (SN_MP los gatos (AdjMP eps)) (SV_MP (VFormP duermen) (Cpl_MP (ModsP eps)))))))))))))",
+    "fenomenos": [
+      "subordinadas_anidadas"
+    ],
+    "motivo_rechazo_esperado": null,
+    "categoria_error": "ninguna",
+    "par_minimo_de": null,
+    "en_vocabulario": true,
+    "nota": "dos niveles de subordinación",
+    "fila_excel": 65,
+    "grammar_version": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9"
+  },
+  {
+    "id": "C2-065",
+    "texto": "El niño dice que la mujer sabe que los gatos duerme",
+    "nivel": "complejo",
+    "esperado_cfg": false,
+    "gramatical_espanol": false,
+    "estructura_esperada": null,
+    "fenomenos": [
+      "concordancia_a_distancia_anidada"
+    ],
+    "motivo_rechazo_esperado": "violación de concordancia",
+    "categoria_error": "concordancia",
+    "par_minimo_de": "C2-064",
+    "en_vocabulario": true,
+    "nota": "el verbo más profundo no concuerda con su sujeto",
+    "fila_excel": 66,
+    "grammar_version": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9"
+  },
+  {
+    "id": "C2-066",
+    "texto": "La profesora supo que el niño dijo que las niñas cantaron",
+    "nivel": "complejo",
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "estructura_esperada": "(Oracion (OracionSG (SN_FS La profesora (AdjFS eps)) (SV_FS (VFormS supo) (Cpl_FS que (Oracion (OracionSG (SN_MS el niño (AdjMS eps)) (SV_MS (VFormS dijo) (Cpl_MS que (Oracion (OracionPL (SN_FP las niñas (AdjFP eps)) (SV_FP (VFormP cantaron) (Cpl_FP (ModsP eps)))))))))))))",
+    "fenomenos": [
+      "subordinadas_anidadas+pretérito"
+    ],
+    "motivo_rechazo_esperado": null,
+    "categoria_error": "ninguna",
+    "par_minimo_de": null,
+    "en_vocabulario": true,
+    "nota": "dos niveles de subordinación en pasado",
+    "fila_excel": 67,
+    "grammar_version": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9"
+  },
+  {
+    "id": "C2-067",
+    "texto": "El niño lee el libro de la mujer en la casa",
+    "nivel": "complejo",
+    "esperado_cfg": true,
+    "gramatical_espanol": true,
+    "estructura_esperada": "(Oracion (OracionSG (SN_MS El niño (AdjMS eps)) (SV_MS (VFormS lee) (Cpl_MS (CD (SN (SN_MS el libro (AdjMS eps)))) (ModsS (PP de (SN (SN_FS la mujer (AdjFS eps)))) (ModsS (PP en (SN (SN_FS la casa (AdjFS eps)))) (ModsS eps)))))))",
+    "fenomenos": [
+      "ambigüedad_estructural_PP_doble"
+    ],
+    "motivo_rechazo_esperado": null,
+    "categoria_error": "ninguna",
+    "par_minimo_de": null,
+    "en_vocabulario": true,
+    "nota": "\"de la mujer\" puede modificar a \"libro\" y \"en la casa\" a \"libro\", \"mujer\" o \"lee\"; el parser da una sola lectura",
+    "fila_excel": 68,
+    "grammar_version": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9"
+  }
+]

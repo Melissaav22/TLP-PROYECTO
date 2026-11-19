@@ -1,0 +1,94 @@
+{
+  "metadata": {
+    "created_utc": "2026-11-19T05:02:06.653009+00:00",
+    "commit": "778c5c887936b28ced9d3fc8056103aa2a189cff",
+    "hash_policy": "SHA-256; texto UTF-8 con saltos LF, binarios sin transformacion",
+    "source_hashes": {
+      "experimentos\\__init__.py": "1af49503f294837ba9215f0a0f3c41925111d28b2ea1130ce5b04d9dc2d84c7f",
+      "experimentos\\adaptadores.py": "33f7e133ff470c38d00b0cad93f3a6df7e05e3e3862bfaf6e68fb22c8eb99fde",
+      "experimentos\\ambiguedad.py": "6be7a7a1a9af9465b0a0b0532bbbcd16daf17f6727878702e71aaefaa7b3e17a",
+      "experimentos\\common.py": "f51458d324cc1c3ffeacdae175952c87e9dc30a246f37d6edffba66172c7f5fe",
+      "experimentos\\comparar_nlp.py": "277d5e225d503185520110b5bb0590886c49f730f5c546d3df277cafdfaea106",
+      "experimentos\\demo_fase1.py": "3f780a85516024d9bb2009d4f3ed54b9a3ea8779b4b73298ccc0a831c90179a1",
+      "experimentos\\graficas.py": "1b451855de1573b3b91c0e1773782f3b9de64ab316aadea6ab73bcefe31424ee",
+      "experimentos\\llm.py": "e8f0528842746513d428dcbb76deef825c216eb164fc10a703228432d33d7286",
+      "experimentos\\llm_config.py": "732f86e7ff73e0e7578b09e5c3ef6c7e1417bbfb8bfe55b11b39cd678d43f913",
+      "experimentos\\metricas.py": "ed773557e0049db0bdea33a25c69bb3378584d408a65891ba9a660845ea1a5a5",
+      "experimentos\\registro_fallos.py": "07808652e58c77274eafb402bc34de1bcd2477210a0aee273f7a676a3dff1845",
+      "experimentos\\rendimiento.py": "dac932dfeb990425cadcb9a6f7f395c4517e07b6201471e1116a96809e213752",
+      "experimentos\\resumir_llm.py": "8c88ca6569e4533d6eee2b1eb3f8349a1a361f1f3e569f605f5caa0449cf3c3f",
+      "experimentos\\validar_corpus.py": "2a671e8187f5d2ad7ae7fb562a0b5436e9625a8fe26506892f88ea8d79b5cc1d",
+      "experimentos\\validar_derivacion.py": "af7b53af685d181a1937a8453353f0b25c784ea29c513405d6e27de7b04b3f2e",
+      "main.py": "8e40b3cfbd7dc94e6f008d49caca37f24f4384747d47eb28f68e0485678beb93",
+      "minic\\__init__.py": "acf5d7d08e80102a69942e0ca6b238232c063b7772748533da274c3fe32ddda3",
+      "minic\\diagnostics.py": "fc88d37cc1c749c782bb353751938ad1e1ead59ee295f731d724e96419e474ab",
+      "minic\\grammar.py": "e353f235b813211c759bdfc7f9c9caeac4d1ae84671578fd2af2be154d5aa0d9",
+      "minic\\lexer.py": "263c169305c2df25468617a1a1307cd7bd4f1aff80f6e3b4e476130a31c95c87",
+      "minic\\lexicon_es.py": "e878155297d8174b3e4b2e95d8c46519b4ed66fd301fd56919d78b9beab3366c",
+      "minic\\parser.py": "22e2304f4a15bfbc5d4c465fd2f86437c1283acd422212567878af34e025672e",
+      "minic\\trees.py": "d0ae18536ad4abdf49af5b811724dda28b97bf602de5696900569317600a0832"
+    },
+    "tracked_changes": false,
+    "grammar_sha256": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+    "corpus_sha256": "18d84733a70a6938c84614802a60fd64de7affd9800fd6d3cecc125239bf622a",
+    "batch_size": 10
+  },
+  "summaries": [
+    {
+      "variant": "zero_shot",
+      "completed": 67,
+      "execution_errors": 0,
+      "cfg": {
+        "n": 67,
+        "tp": 33,
+        "fp": 4,
+        "tn": 29,
+        "fn": 1,
+        "precision": 0.8918918918918919,
+        "recall": 0.9705882352941176,
+        "correct_rejection": 0.8787878787878788,
+        "accuracy": 0.9253731343283582
+      },
+      "formal_adherence": 32,
+      "adherence_denominator": 67,
+      "deviations": {
+        "Expansion fuera de orden en AdjMS": 9,
+        "Expansion fuera de orden en AdjMP": 3,
+        "Expansion fuera de orden en AdjFS": 3,
+        "Expansion fuera de orden en AdjFP": 3,
+        "Expansion fuera de orden en Oracion": 14,
+        "Terminales diferentes de la entrada": 2,
+        "Rechaza una derivacion existente": 1
+      },
+      "estimated_usd": null
+    },
+    {
+      "variant": "few_shot",
+      "completed": 67,
+      "execution_errors": 0,
+      "cfg": {
+        "n": 67,
+        "tp": 33,
+        "fp": 4,
+        "tn": 29,
+        "fn": 1,
+        "precision": 0.8918918918918919,
+        "recall": 0.9705882352941176,
+        "correct_rejection": 0.8787878787878788,
+        "accuracy": 0.9253731343283582
+      },
+      "formal_adherence": 53,
+      "adherence_denominator": 67,
+      "deviations": {
+        "Expansion fuera de orden en AdjMS": 1,
+        "Expansion fuera de orden en SN": 2,
+        "Terminales diferentes de la entrada": 3,
+        "Expansion fuera de orden en AdjFS": 1,
+        "Expansion fuera de orden en ModsS": 1,
+        "Rechaza una derivacion existente": 1,
+        "Expansion fuera de orden en Oracion": 5
+      },
+      "estimated_usd": null
+    }
+  ]
+}
