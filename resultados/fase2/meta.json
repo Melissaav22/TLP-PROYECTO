@@ -1,0 +1,56 @@
+{
+  "ensayo": false,
+  "problemas_git": [],
+  "git": {
+    "es_repositorio": true,
+    "commit": "cac7aa726fb9f606d4127ab577aabd2a83cfdf94",
+    "sucio": false,
+    "archivos_sucios": [],
+    "etiqueta_commit": "cac7aa726fb9f606d4127ab577aabd2a83cfdf94"
+  },
+  "inicio_utc": "2026-11-19T05:17:51.380418+00:00",
+  "fin_utc": "2026-11-19T05:17:53.617541+00:00",
+  "corpus": "datos\\corpus_fase2.csv",
+  "corpus_sha256": "5b158aa89381186dcc7360141a1f152563489b112af89d5e34de79197c31ef16",
+  "n_oraciones": 67,
+  "repeticiones": 3,
+  "criterios_version": "criterios-v1",
+  "criterios_sha256": "6accdfe14aebb0c70da41f2784bed385c0c24dcca5b99772f5d3de01a00c87d1",
+  "herramientas": {
+    "spacy": {
+      "tool": "spacy",
+      "version": "3.8.18",
+      "model": "es_core_news_sm",
+      "model_version": "3.8.0"
+    },
+    "nltk": {
+      "tool": "nltk",
+      "version": "3.10.4",
+      "model": "CESS-ESP unigram + sufijos -3 + NOUN",
+      "training_sentences": 6030,
+      "training_tokens": 192686,
+      "training_sha256": "ae5b12898039e51911ae16d25c4822cb92adcfc034a2e12b57676d21d3c94884"
+    },
+    "nltk_full": {
+      "tool": "nltk_full",
+      "version": "3.10.4",
+      "model": "CESS-ESP unigram + sufijos -3 + nc00000 (etiquetas EAGLES completas)",
+      "training_sentences": 6030,
+      "training_tokens": 192686,
+      "training_source": "C:\\Users\\natal_5bvjz7f\\Videos\\parser_formal\\.models\\nltk\\corpora\\cess_esp.zip",
+      "training_sha256": "ae5b12898039e51911ae16d25c4822cb92adcfc034a2e12b57676d21d3c94884"
+    }
+  },
+  "herramientas_no_disponibles": {},
+  "registros_con_error": 0,
+  "registro_sha256": "ebd44d2e358c8190b8954ec79271f63b3223739b7074f0bffa30a5bff9f05028",
+  "python": "3.12.6",
+  "plataforma": "Windows-11-10.0.26200-SP0",
+  "verificacion": {
+    "registros_verificados": 1608,
+    "veredictos_distintos": 0,
+    "ejemplos_distintos": [],
+    "pares_con_salida_inestable": 0,
+    "correcta": true
+  }
+}
