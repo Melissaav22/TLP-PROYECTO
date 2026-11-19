@@ -9,8 +9,8 @@ def validate(corpus, examples=()):
     errors = []
     if len(corpus) < 60:
         errors.append('Se requieren al menos 60 oraciones')
-    ids = [row.get('id') for row in corpus]
-    if None in ids or len(ids) != len(set(ids)):
+    ids = {row['id'] for row in corpus if isinstance(row.get('id'), str) and row['id']}
+    if len(ids) != len(corpus):
         errors.append('IDs ausentes o duplicados')
     texts = [unicodedata.normalize('NFC', row.get('texto', '')).casefold().strip() for row in corpus]
     if '' in texts or len(texts) != len(set(texts)):
@@ -28,10 +28,13 @@ def validate(corpus, examples=()):
             errors.append(f'{row.get("id")}: version de gramatica desactualizada')
         if len(row.get('tokens_esperados', [])) != len(row.get('pos_esperado', [])):
             errors.append(f'{row.get("id")}: etiquetas POS desalineadas')
+        pair = row.get('par_minimo_de')
+        if pair is not None and (not isinstance(pair, str) or pair not in ids or pair == row.get('id')):
+            errors.append(f'{row.get("id")}: par mínimo sin un ID válido distinto')
     sample_texts = {unicodedata.normalize('NFC', row['texto']).casefold().strip() for row in examples}
     if set(texts) & sample_texts:
         errors.append('Hay ejemplos few-shot dentro de la evaluacion')
-    if set(ids) & {row['id'] for row in examples}:
+    if ids & {row['id'] for row in examples}:
         errors.append('IDs de ejemplos se superponen a la evaluacion')
     return errors
 

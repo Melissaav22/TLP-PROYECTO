@@ -35,10 +35,13 @@ class Experiments(unittest.TestCase):
         examples = read_json(ROOT / 'datos/ejemplos_few_shot.json')
         self.assertEqual(validate(corpus, examples), [])
         self.assertEqual(len(corpus), 67)
+        self.assertEqual({row['id'] for row in corpus}, {f'C2-{i:03d}' for i in range(1, 68)})
         self.assertTrue(validate(corpus[:59], examples))
         changed = [dict(row) for row in corpus]
         changed[1]['id'] = changed[0]['id']
         self.assertTrue(validate(changed, examples))
+        changed[1] = dict(corpus[1], par_minimo_de='C2-999')
+        self.assertEqual(validate(changed, examples), ['C2-002: par mínimo sin un ID válido distinto'])
 
     def test_corpus_expected_acceptance(self):
         grammar = Grammar(ROOT / 'gramatica_minic.txt')

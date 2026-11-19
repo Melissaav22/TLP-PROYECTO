@@ -6,7 +6,7 @@ El parser usa la gramática y el léxico integrados en `master`. La Fase 2 incor
 
 ## Estado
 
-El corpus de la gramática actual contiene 67 oraciones, con 34 aceptadas y 33 rechazadas. El Excel original está en `datos/corpus_ordenado.xlsx`, el archivo para ejecutar el benchmark en `datos/corpus_ordenado.json` y el anexo en `datos/corpus_ordenado.csv`. Los 34 árboles esperados coinciden con el parser de `master` en `40fcd2e`.
+El corpus de la gramática actual contiene 67 oraciones, con 34 aceptadas y 33 rechazadas. El Excel está en `datos/corpus_ordenado.xlsx`, el archivo para ejecutar el benchmark en `datos/corpus_ordenado.json` y el anexo en `datos/corpus_ordenado.csv`. Los tres conservan el orden de la hoja `corpus_fase2` y sus IDs oficiales `C2-*`, que también identifican los pares mínimos. Los 34 árboles esperados coinciden con el parser de `master` en `40fcd2e`.
 
 La corrida histórica usó `datos/corpus_es.json` con 60 oraciones y la CFG anterior, disponible en `4b73411`. Sus 120 respuestas reales, prompts y métricas están en `resultados/llm/`. Las salidas de NLTK, spaCy y el parser sobre ese corpus están en `resultados/nlp/` y `resultados/metricas/`. El PDF en `docs/` precede a la corrida de Gemini.
 
