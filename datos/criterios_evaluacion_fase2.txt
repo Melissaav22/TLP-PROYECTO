@@ -1,0 +1,174 @@
+# Criterios de evaluación de la Fase 2
+
+## 1. Objetivo
+
+Establecer criterios uniformes y reproducibles para evaluar las salidas del parser propio, spaCy, NLTK y el modelo de lenguaje grande (LLM), utilizando el mismo corpus de prueba.
+
+La evaluación busca medir tanto la capacidad de cada herramienta para reconocer estructuras gramaticales como su correspondencia con las etiquetas esperadas del español. También permite identificar los errores y comparar el comportamiento de los diferentes enfoques.
+
+Los criterios deben definirse antes de ejecutar los experimentos y mantenerse sin modificaciones después de conocer los resultados.
+
+## 2. Etiquetas de referencia del corpus
+
+Cada oración cuenta con dos etiquetas de referencia independientes:
+
+- **esperado_espanol:** indica si la oración es correcta o incorrecta según las reglas generales del español.
+- **esperado_gramatica:** indica si la oración pertenece al subconjunto del español descrito por la CFG del proyecto.
+
+Las etiquetas posibles son:
+
+- `aceptada`: la oración cumple el criterio correspondiente.
+- `rechazada`: la oración no cumple el criterio correspondiente.
+
+Esta distinción es fundamental porque una oración puede ser correcta en español, pero no pertenecer a la gramática implementada.
+
+Por ejemplo:
+
+Una oración con una construcción relativa puede ser perfectamente correcta en español, pero ser rechazada por el parser propio si las producciones de la CFG no contemplan ese tipo de estructura.
+
+Por consiguiente, no se debe considerar automáticamente incorrecta una oración por el simple hecho de que el parser propio no pueda analizarla.
+
+## 3. Criterios aplicados a las herramientas NLP
+
+Debido a que spaCy y NLTK son herramientas de procesamiento lingüístico que generan etiquetas y estructuras de análisis, pero no funcionan como validadores de pertenencia a la CFG del proyecto, se establecen tres criterios para interpretar sus salidas.
+
+### Criterio C0: Aceptación general
+
+La oración se considera aceptada cuando la herramienta produce una salida procesable.
+
+Este criterio funciona como línea base y permite observar qué sucede cuando no se exige una validación estructural o de concordancia.
+
+### Criterio C1: Validación estructural
+
+La oración se considera aceptada cuando presenta evidencia de una estructura oracional mínima, de acuerdo con la salida de cada herramienta.
+
+**Para spaCy:**
+
+- Debe existir una única raíz sintáctica.
+- La raíz debe corresponder a un verbo (`VERB` o `AUX`).
+- Se permite también una estructura copulativa en la que la raíz sea un adjetivo y exista una dependencia `cop` correspondiente a la cópula.
+
+**Para NLTK:**
+
+- La secuencia de etiquetas gramaticales debe contener al menos un sustantivo (`NOUN`) y un verbo (`VERB`).
+- Para la variante que conserva etiquetas EAGLES completas, se identifican las categorías correspondientes a sustantivos y verbos.
+
+Este criterio permite comparar la evidencia estructural mínima que proporciona cada herramienta, aunque no garantiza que la oración sea gramaticalmente correcta.
+
+### Criterio C2: Validación estructural y concordancia
+
+La oración debe cumplir el criterio C1 y, adicionalmente, no presentar violaciones de concordancia identificables mediante las etiquetas y características morfológicas disponibles.
+
+Se verifican las siguientes relaciones:
+
+- Concordancia de género entre determinante y sustantivo.
+- Concordancia de número entre determinante y sustantivo.
+- Concordancia de género y número entre sustantivo y adjetivo.
+- Concordancia de número entre sujeto y verbo.
+- Concordancia entre sujeto y atributo en las construcciones copulativas, cuando corresponda.
+
+**Para spaCy:**
+
+Se utilizan las dependencias sintácticas y los atributos morfológicos proporcionados por el modelo para identificar las relaciones y comparar los rasgos de las palabras.
+
+**Para NLTK:**
+
+Se utilizan las etiquetas morfológicas EAGLES del corpus CESS-ESP, conservando la información de género y número. Se comprueban las posiciones de estos rasgos dentro de las etiquetas y se comparan las relaciones identificables.
+
+Cuando NLTK utiliza únicamente etiquetas gramaticales generales, sin información morfológica de género y número, C2 se considera no aplicable. No se debe interpretar la ausencia de información como concordancia correcta.
+
+## 4. Evaluación del parser propio
+
+El parser propio se evalúa mediante su capacidad para determinar si una oración pertenece a la CFG implementada.
+
+La salida se compara con la etiqueta `esperado_gramatica` del corpus.
+
+- Verdadero positivo: acepta una oración que pertenece a la gramática.
+- Verdadero negativo: rechaza una oración que no pertenece a la gramática.
+- Falso positivo: acepta una oración que no pertenece a la gramática.
+- Falso negativo: rechaza una oración que sí pertenece a la gramática.
+
+Además de la decisión, se considera la estructura sintáctica generada para comprobar que la derivación corresponda con las producciones de la gramática.
+
+## 5. Evaluación del LLM
+
+El LLM se evalúa mediante dos modalidades:
+
+**Zero-shot:** se proporciona al modelo la definición de la gramática, sus reglas de producción y las instrucciones para analizar las oraciones, sin incluir ejemplos de resolución.
+
+**Few-shot:** se proporciona la misma información del zero-shot, pero se agregan ejemplos de oraciones y sus correspondientes análisis para orientar al modelo.
+
+En ambas modalidades se solicita que el modelo determine si la oración puede generarse mediante las producciones de la CFG y que entregue una respuesta estructurada.
+
+La respuesta del LLM se compara con las etiquetas de referencia del corpus. También se verifica si respeta las reglas de producción o si acepta construcciones basándose en su conocimiento general del español.
+
+Las dos modalidades deben evaluarse por separado para identificar si el uso de ejemplos mejora la capacidad del modelo para seguir las especificaciones formales.
+
+## 6. Métricas de evaluación
+
+Se utilizan las siguientes métricas:
+
+**Precisión (Precision):**
+
+Mide qué proporción de las oraciones aceptadas por la herramienta realmente debía ser aceptada.
+
+Precisión = VP / (VP + FP)
+
+**Cobertura (Recall):**
+
+Mide qué proporción de las oraciones que debían aceptarse fueron identificadas correctamente.
+
+Recall = VP / (VP + FN)
+
+**Tasa de rechazo correcto:**
+
+Mide qué proporción de las oraciones que debían rechazarse fueron efectivamente rechazadas.
+
+Tasa de rechazo correcto = VN / (VN + FP)
+
+**Exactitud (Accuracy):**
+
+Mide la proporción total de decisiones correctas.
+
+Exactitud = (VP + VN) / (VP + VN + FP + FN)
+
+Donde:
+
+- VP: verdaderos positivos.
+- VN: verdaderos negativos.
+- FP: falsos positivos.
+- FN: falsos negativos.
+
+Si el denominador de alguna métrica es cero, se reportará como no aplicable (N/A), en lugar de asignarle un valor artificial.
+
+## 7. Clasificación de errores
+
+Los errores se clasifican de la siguiente manera:
+
+**Falso positivo:** la herramienta acepta una oración que debía rechazarse según la etiqueta de referencia utilizada.
+
+**Falso negativo:** la herramienta rechaza una oración que debía aceptarse según la etiqueta de referencia utilizada.
+
+**Error de etiquetado:** la herramienta asigna una categoría gramatical o morfológica diferente de la etiqueta esperada para una palabra.
+
+**Error de ejecución:** la herramienta presenta un fallo durante el procesamiento o produce una respuesta que no puede interpretarse como una decisión válida de aceptación o rechazo.
+
+Los errores de etiquetado se contabilizan de forma independiente de los errores de clasificación de oraciones, ya que corresponden a tareas diferentes.
+
+## 8. Consideraciones para garantizar la reproducibilidad
+
+- Todas las herramientas deben procesar los mismos identificadores de oraciones del corpus.
+- Los criterios de aceptación y rechazo deben permanecer constantes durante el experimento.
+- Las respuestas originales deben conservarse en los logs.
+- Las llamadas al LLM deben registrar fecha, hora, modelo, prompt y respuesta completa.
+- Los errores de ejecución y las respuestas no interpretables deben identificarse por separado.
+- Las métricas deben calcularse mediante un script de Python que lea el corpus y los archivos de resultados.
+- Los resultados deben poder reproducirse utilizando los mismos archivos de entrada.
+
+La evaluación debe presentar resultados generales y desglosados por nivel de complejidad, permitiendo identificar cómo cambia el desempeño de cada enfoque ante oraciones simples, intermedias y complejas.
+
+## 9. Consideración final
+
+Los resultados de las herramientas no deben interpretarse como equivalentes cuando realizan tareas diferentes. El parser propio y el LLM pueden evaluarse por pertenencia a la CFG, mientras que spaCy y NLTK requieren criterios operacionales para interpretar sus salidas.
+
+Por esta razón, los resultados deben presentarse indicando qué criterio y qué etiqueta de referencia se utilizaron en cada comparación. Esto permite evitar conclusiones incorrectas y realizar una comparación experimental transparente.
