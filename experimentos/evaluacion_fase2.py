@@ -358,6 +358,32 @@ def make_run_summary(metric_rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
     return summary
 
 
+def make_comparison_table(summary, gold_target):
+    rows = [
+        r for r in summary
+        if r["scope"] == "general"
+        and r["gold_target"] == gold_target
+    ]
+
+    columns = [
+        "tool",
+        "variant",
+        "criterion",
+        "n_corridas",
+        "n_evaluables_suma_corridas",
+        "precision_promedio_corridas",
+        "recall_promedio_corridas",
+        "tasa_rechazo_correcto_promedio_corridas",
+        "exactitud_promedio_corridas",
+    ]
+
+    return [
+        {column: row.get(column) for column in columns}
+        for row in rows
+    ]
+
+
+
 def make_error_rows(enriched: list[dict[str, Any]]) -> list[dict[str, Any]]:
     errors = []
     for row in enriched:
@@ -504,6 +530,21 @@ def main() -> int:
     write_csv(out / "registros_normalizados.csv", enriched)
     write_csv(out / "metricas_por_corrida.csv", per_run)
     write_csv(out / "resumen_metricas.csv", summary)
+
+# Tablas comparativas para cada etiqueta GOLD
+    tabla_espanol = make_comparison_table(summary, "espanol")
+    tabla_gramatica = make_comparison_table(summary, "gramatica")
+
+    write_csv(
+    out / "tabla_comparativa_espanol.csv",
+    tabla_espanol
+    )
+
+    write_csv(
+    out / "tabla_comparativa_gramatica.csv",
+    tabla_gramatica
+    )
+
     write_csv(out / "clasificacion_errores.csv", errors)
     make_plots(summary, out)
 
