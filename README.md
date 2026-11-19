@@ -6,7 +6,7 @@ El parser usa la gramática y el léxico integrados en `master`. La Fase 2 incor
 
 ## Estado
 
-El corpus de la gramática actual contiene 67 oraciones, con 34 aceptadas y 33 rechazadas. El Excel está en `datos/corpus_ordenado.xlsx`, el archivo para ejecutar el benchmark en `datos/corpus_ordenado.json` y el anexo en `datos/corpus_ordenado.csv`. Los tres conservan el orden de la hoja `corpus_fase2` y sus IDs oficiales `C2-*`, que también identifican los pares mínimos. Los 34 árboles esperados coinciden con el parser de `master` en `40fcd2e`.
+El corpus de la gramática actual contiene 67 oraciones, con 34 aceptadas y 33 rechazadas. El corpus congelado es `datos/corpus_fase2.csv` (lo leen los experimentos de spaCy y NLTK). `datos/corpus_ordenado.json` es una copia convertida del mismo corpus y es la que lee el benchmark del LLM. `datos/corpus_ordenado.xlsx` y `datos/corpus_ordenado.csv` se conservan como archivos de trabajo: ningún script los lee. La prueba `tests/test_corpus_equivalente.py` comprueba que el CSV congelado y el JSON coinciden en IDs, orden, textos, etiquetas y árboles esperados. Todos conservan el orden de la hoja `corpus_fase2` y sus IDs oficiales `C2-*`, que también identifican los pares mínimos. Los 34 árboles esperados coinciden con el parser de `master` en `40fcd2e`.
 
 La corrida de Gemini sobre este corpus está en `resultados/llm/corpus-ordenado/`. Hay 67 evaluaciones por variante y 14 lotes exitosos. El log conserva también el intento con HTTP 503 que se reintentó.
 
