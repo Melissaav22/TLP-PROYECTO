@@ -1,0 +1,9 @@
+{
+  "status": "complete",
+  "requested": 14,
+  "real_responses": 14,
+  "new_calls": 1,
+  "batch_size": 10,
+  "expected_pairs": 134,
+  "evaluable_pairs": 134
+}
