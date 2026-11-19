@@ -77,6 +77,27 @@ El lock incluye spaCy 3.8.18, es_core_news_sm 3.8.0, NLTK 3.10.4 y Matplotlib 3.
 .\.venv-nlp\Scripts\python.exe -m experimentos.correr_fase2 --ensayo --salida .build/fase2
 ```
 
+### Fase 2: logs y métricas
+
+Los logs originales de los cuatro enfoques están en `resultados/evaluacion/logs/`. El evaluador lee solo esos logs y el corpus; no vuelve a ejecutar spaCy, NLTK ni el LLM. Con los mismos archivos de entrada produce las mismas tablas de `resultados/evaluacion/`. Para ejecutar solo el evaluador basta Python 3.12 o superior. Para `generar_log_parser` se necesita además `pip install ply==3.11 nltk==3.10.4`.
+
+```powershell
+.\.venv-nlp\Scripts\python.exe -m experimentos.evaluacion_fase2 --corpus datos/corpus_fase2.csv --criteria-file datos/criterios_evaluacion_fase2.txt --logs resultados/evaluacion/logs/parser_propio.jsonl resultados/evaluacion/logs/spacy_nltk.jsonl resultados/evaluacion/logs/llm_gemini.jsonl --out .build/evaluacion
+```
+
+Las tablas del informe son `tabla_comparativa_espanol.csv` y `tabla_comparativa_gramatica.csv`. Para regenerar los logs a partir de las salidas guardadas:
+
+```powershell
+.\.venv-nlp\Scripts\python.exe -m experimentos.generar_log_parser --output .build/logs/parser_propio.jsonl
+.\.venv-nlp\Scripts\python.exe -m experimentos.convertir_logs_fase2 --out .build/logs
+```
+
+`generar_log_parser` ejecuta el parser propio sobre las 67 oraciones. `convertir_logs_fase2` convierte `resultados/fase2/registro.jsonl` (spaCy y NLTK) y `resultados/llm/corpus-ordenado/respuestas.jsonl` (Gemini) al formato común del evaluador. Las pruebas del evaluador se ejecutan con:
+
+```powershell
+.\.venv-nlp\Scripts\python.exe -m unittest tests.test_evaluacion_fase2 -v
+```
+
 `.build/` es la carpeta ignorada por Git para salidas locales de pruebas, árboles y ensayos.
 
 `datos/fase1.json` conserva las oraciones de demostración de `master`. Las pruebas nuevas usan `datos/corpus_ordenado.json`. Para reproducir la gramática y los experimentos del corpus histórico, abre otra copia con `git worktree add --detach ../tlp-fase-dos-historica 4b73411` y sigue su README.
