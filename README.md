@@ -8,6 +8,8 @@ El parser usa la gramática y el léxico integrados en `master`. La Fase 2 incor
 
 El corpus de la gramática actual contiene 67 oraciones, con 34 aceptadas y 33 rechazadas. El Excel está en `datos/corpus_ordenado.xlsx`, el archivo para ejecutar el benchmark en `datos/corpus_ordenado.json` y el anexo en `datos/corpus_ordenado.csv`. Los tres conservan el orden de la hoja `corpus_fase2` y sus IDs oficiales `C2-*`, que también identifican los pares mínimos. Los 34 árboles esperados coinciden con el parser de `master` en `40fcd2e`.
 
+La corrida de Gemini sobre este corpus está en `resultados/llm/corpus-ordenado/`. Hay 67 evaluaciones por variante y 14 lotes exitosos. El log conserva también el intento con HTTP 503 que se reintentó.
+
 La corrida histórica usó `datos/corpus_es.json` con 60 oraciones y la CFG anterior, disponible en `4b73411`. Sus 120 respuestas reales, prompts y métricas están en `resultados/llm/`. Las salidas de NLTK, spaCy y el parser sobre ese corpus están en `resultados/nlp/` y `resultados/metricas/`. El PDF en `docs/` precede a la corrida de Gemini.
 
 ## Instalación del parser
@@ -116,6 +118,12 @@ if ($LASTEXITCODE -eq 0) {
 ```
 
 `respuestas.jsonl` conserva el prompt, la respuesta completa y la fecha y hora UTC de cada llamada. `resumen.json` contiene las métricas por variante. La corrida actual de Gemini se guarda bajo `resultados/llm/corpus-ordenado/`. Para reanudar, usa el mismo modelo, parámetros y comando. El script comprueba la versión de la CFG antes de cargar o escribir evidencia.
+
+Agrega `--reporte` a `experimentos.resumir_llm` para generar `comparacion_llm.png`, `comparacion_llm.csv` y `detalle_llm.csv` en la carpeta de resultados. La tabla de detalle vincula cada oración con su decisión, el motivo de adherencia y el hash de su llamada. Los errores de ejecución y las oraciones sin registro aparecen por separado y quedan fuera de las métricas de aceptación. La gráfica indica cuántas oraciones fueron evaluables en cada variante.
+
+```powershell
+.\.venv-nlp\Scripts\python.exe -m experimentos.resumir_llm --corpus datos/corpus_ordenado.json --input resultados/llm/corpus-ordenado/resultados.json --reporte
+```
 
 El perfil de Gemini separa el inicio de cada llamada por al menos `GEMINI_MIN_SECONDS_BETWEEN_CALLS=5.5` segundos. Si el proveedor devuelve HTTP 429, el script guarda el error y detiene la corrida. Revisa la cuota indicada en el último registro y repite el comando cuando se restablezca. Las respuestas guardadas se reutilizan.
 

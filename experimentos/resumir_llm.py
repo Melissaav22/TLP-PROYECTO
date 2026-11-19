@@ -13,6 +13,7 @@ def main():
     parser.add_argument('--input', type=Path)
     parser.add_argument('--corpus', type=Path, default=CURRENT_CORPUS,
                         help='mismo JSON etiquetado utilizado para generar los resultados')
+    parser.add_argument('--reporte', action='store_true', help='exportar la gráfica y las tablas CSV')
     args = parser.parse_args()
     if args.input is None:
         try:
@@ -42,6 +43,10 @@ def main():
                               if cost_rows and all(row.get('estimated_usd') is not None for row in cost_rows)
                               else None))
     write_json(args.input.with_name('resumen.json'), dict(metadata=data['metadata'], summaries=summaries))
+    if args.reporte:
+        from .graficas_llm import export_report
+
+        export_report(args.input.parent, summaries, data['results'], gold)
 
 
 if __name__ == '__main__':
