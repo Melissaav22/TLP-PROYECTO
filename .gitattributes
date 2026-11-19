@@ -1,6 +1,7 @@
 # Texto portable; las huellas de texto normalizan también CRLF a LF.
 *.py text eol=lf
 *.json text eol=lf
+*.jsonl text eol=lf
 *.md text eol=lf
 gramatica_minic.txt text eol=lf
 *.pdf binary
