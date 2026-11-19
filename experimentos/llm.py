@@ -1,14 +1,18 @@
-"""Experimento reanudable con una API Chat Completions compatible.
+"""Experimento reanudable con Gemini o una API Chat Completions compatible.
 
 La preparación produce solicitudes revisables. --execute requiere configuración
 explícita y una clave local. Las pruebas de transporte usan un servidor local.
 """
 import argparse
+from datetime import datetime, timezone
+from getpass import getpass
 import hashlib
 import json
+from math import isfinite
 import os
 from pathlib import Path
-from time import perf_counter
+import sys
+from time import perf_counter, sleep
 from urllib.error import HTTPError, URLError
 from urllib.parse import urlparse
 from urllib.request import Request, urlopen
@@ -16,6 +20,7 @@ from minic.grammar import Grammar
 from minic.lexicon_es import LEXICON
 from minic.parser import parse_detailed
 from .common import ROOT, metadata, read_json, write_json
+from .llm_config import configure
 from .validar_derivacion import validate_answer
 
 
@@ -48,65 +53,190 @@ def make_messages(row, variant, grammar, examples):
     return messages
 
 
-def send(endpoint, key, payload):
+def make_requests(corpus, config, grammar, examples):
+    for variant in ['zero_shot', 'few_shot']:
+        if config.batch_size == 1:
+            for row in corpus:
+                messages = make_messages(row, variant, grammar, examples)
+                yield dict(id=row['id'], text=row['texto'], level=row['nivel'], variant=variant,
+                           payload=make_payload(messages, config))
+            continue
+        for offset in range(0, len(corpus), config.batch_size):
+            items = [dict(id=row['id'], texto=row['texto'])
+                     for row in corpus[offset:offset + config.batch_size]]
+            messages = make_messages(dict(texto=json.dumps(items, ensure_ascii=False)),
+                                     variant, grammar, examples)
+            messages[0]['content'] += (
+                '\nPara el último mensaje, analiza cada elemento de la lista de forma independiente. '
+                'Las otras oraciones del lote tampoco son ejemplos resueltos. '
+                'Devuelve un único objeto JSON {"results": [...]}. '
+                'En cada elemento de results, copia su id y aplica el formato de respuesta '
+                'con accepted, productions y reason cuando corresponda. '
+                'Devuelve exactamente un elemento por id de entrada.'
+            )
+            yield dict(id=f'lote-{offset // config.batch_size + 1:03d}', items=items, variant=variant,
+                       payload=make_payload(messages, config))
+
+
+def make_payload(messages, config):
+    max_tokens = config.max_completion_tokens
+    if config.protocol == 'gemini':
+        roles = {'user': 'user', 'assistant': 'model'}
+        generation = dict(responseMimeType='application/json', maxOutputTokens=max_tokens)
+        if config.thinking_level:
+            generation['thinkingConfig'] = dict(thinkingLevel=config.thinking_level)
+        return dict(
+            systemInstruction=dict(parts=[dict(text=messages[0]['content'])]),
+            contents=[dict(role=roles[message['role']], parts=[dict(text=message['content'])])
+                      for message in messages[1:]],
+            generationConfig=generation,
+        )
+    if config.protocol == 'anthropic':
+        return dict(model=config.model, system=messages[0]['content'], messages=messages[1:], max_tokens=max_tokens)
+    payload = dict(model=config.model, messages=messages)
+    payload[config.token_field] = max_tokens
+    if config.json_mode:
+        payload['response_format'] = dict(type='json_object')
+    return payload
+
+
+def send(key, payload, config):
+    endpoint = config.endpoint
     url = urlparse(endpoint)
     if url.scheme != 'https' and not (url.scheme == 'http' and url.hostname in {'127.0.0.1', 'localhost', '::1'}):
         raise ValueError('La API requiere HTTPS; HTTP se permite para pruebas locales')
     request = Request(endpoint, data=json.dumps(payload).encode('utf-8'),
-                      headers={'Content-Type': 'application/json', 'Authorization': 'Bearer ' + key},
-                      method='POST')
-    with urlopen(request, timeout=120) as response:
+                      headers={'Content-Type': 'application/json'}, method='POST')
+    if config.protocol == 'gemini':
+        request.add_unredirected_header('x-goog-api-key', key)
+    elif config.protocol == 'anthropic':
+        request.add_unredirected_header('x-api-key', key)
+        request.add_header('anthropic-version', config.api_version)
+    else:
+        request.add_unredirected_header('Authorization', 'Bearer ' + key)
+    with urlopen(request, timeout=config.timeout_seconds) as response:
         return json.load(response)
 
 
-def parse_response(raw):
-    content = raw['choices'][0]['message']['content']
+def parse_response(raw, protocol):
+    if protocol == 'gemini':
+        candidate = (raw.get('candidates') or [{}])[0]
+        parts = (candidate.get('content') or {}).get('parts', [])
+        content = ''.join(part.get('text', '') for part in parts if not part.get('thought'))
+        if not content.strip():
+            reason = candidate.get('finishReason') or raw.get('promptFeedback', {}).get('blockReason')
+            raise ValueError(f'Gemini no devolvió texto: {reason or "sin motivo informado"}')
+    elif protocol == 'anthropic':
+        content = ''.join(part['text'] for part in raw['content'] if part['type'] == 'text')
+    else:
+        content = raw['choices'][0]['message']['content']
+    if not isinstance(content, str):
+        raise ValueError('La API no devolvió texto')
+    content = content.strip()
     if content.startswith('```'):
-        content = content.strip().split('\n', 1)[1].rsplit('```', 1)[0]
-    answer = json.loads(content)
+        content = content.partition('\n')[2].rsplit('```', 1)[0]
+    return json.loads(content)
+
+
+def score_answer(answer, text, grammar):
     if not isinstance(answer, dict) or type(answer.get('accepted')) is not bool:
         raise ValueError('La respuesta no contiene accepted booleano')
-    return answer
+    return dict(answer=answer, accepted=answer['accepted'],
+                adherence=validate_answer(answer, text, grammar), execution_error=None)
+
+
+def score_batch(answer, items, grammar):
+    if not isinstance(answer, dict) or not isinstance(answer.get('results'), list):
+        raise ValueError('El lote debe devolver un objeto JSON con una lista results')
+    expected_ids = {item['id'] for item in items}
+    by_id = {}
+    for row in answer['results']:
+        if not isinstance(row, dict) or not isinstance(row.get('id'), str) or row['id'] not in expected_ids:
+            raise ValueError('El lote devolvió un elemento con un id ajeno o inválido')
+        if row['id'] in by_id:
+            raise ValueError(f'El lote devolvió el id {row["id"]} más de una vez')
+        by_id[row['id']] = row
+    results = []
+    for item in items:
+        item_id = item['id']
+        try:
+            if item_id not in by_id:
+                raise ValueError('La respuesta del lote omitió esta oración')
+            result = score_answer(by_id[item_id], item['texto'], grammar)
+        except ValueError as exc:
+            result = dict(execution_error=str(exc))
+        results.append(dict(id=item_id, **result))
+    return results
+
+
+def sentence_results(call):
+    if 'item_ids' not in call:
+        return [call]
+    scores = call.get('evaluations')
+    if scores is None:
+        scores = [dict(id=item_id, execution_error=call['execution_error']) for item_id in call['item_ids']]
+    return [dict(variant=call['variant'], request_sha256=call['request_sha256'],
+                 timestamp_utc=call['timestamp_utc'], **score) for score in scores]
 
 
 def main(argv=None):
     parser = argparse.ArgumentParser()
     parser.add_argument('--execute', action='store_true', help='realizar llamadas API')
-    parser.add_argument('--model', default=os.getenv('LLM_MODEL'))
-    parser.add_argument('--endpoint', default=os.getenv('LLM_ENDPOINT'))
+    parser.add_argument('--provider', help='perfil a usar en lugar de LLM_PROVIDER en .env')
+    parser.add_argument('--ask-api-key', action='store_true', help='pedir la clave en la terminal sin mostrarla')
+    parser.add_argument('--model')
+    parser.add_argument('--endpoint')
     parser.add_argument('--corpus', default=str(ROOT / 'datos/corpus_es.json'))
-    parser.add_argument('--limit', type=int, default=60)
-    parser.add_argument('--max-new-calls', type=int, default=120)
-    parser.add_argument('--max-completion-tokens', type=int, default=4096)
+    parser.add_argument('--limit', type=int)
+    parser.add_argument('--batch-size', type=int, help='oraciones por llamada, por cada variante')
+    parser.add_argument('--max-new-calls', type=int)
+    parser.add_argument('--max-completion-tokens', type=int)
     parser.add_argument('--input-usd-per-million', type=float)
     parser.add_argument('--output-usd-per-million', type=float)
-    parser.add_argument('--output-dir', type=Path, default=ROOT / 'resultados/llm')
+    parser.add_argument('--output-dir', type=Path)
     args = parser.parse_args(argv)
-    if args.limit < 1 or args.max_new_calls < 0 or args.max_completion_tokens < 1:
-        parser.error('Los limites deben ser positivos')
+    explicit_output_dir = args.output_dir is not None
+    try:
+        key = configure(args)
+    except (ValueError, OSError) as exc:
+        parser.error(str(exc))
+    if min(args.limit, args.batch_size, args.max_completion_tokens, args.timeout_seconds) < 1 or args.max_new_calls < 0:
+        parser.error('Los límites y el tiempo de espera deben ser positivos')
+    if args.batch_size > 1 and not explicit_output_dir:
+        args.output_dir = args.output_dir / f'lotes-{args.batch_size}'
+    status_path = args.output_dir / 'estado.json'
+    if status_path.exists() and read_json(status_path).get('batch_size', 1) != args.batch_size:
+        parser.error('La carpeta ya contiene una corrida con otro tamaño de lote. Usa --output-dir.')
+    interval = args.min_seconds_between_calls
+    if not isfinite(interval) or interval < 0:
+        parser.error('MIN_SECONDS_BETWEEN_CALLS debe ser un número no negativo')
+
+    if args.execute:
+        if args.ask_api_key:
+            if not sys.stdin.isatty():
+                parser.error('--ask-api-key requiere una terminal interactiva')
+            key = getpass(f'{args.key_var}: ').strip()
+        missing = [name for name, value in [(args.key_var, key), ('modelo', args.model),
+                                            ('endpoint', args.endpoint)] if not value]
+        if args.protocol == 'anthropic' and not args.api_version:
+            missing.append('versión de API de Anthropic')
+        if missing:
+            parser.error(f'Completa el perfil {args.provider} en .env: {", ".join(missing)}')
+
     grammar = Grammar(ROOT / 'gramatica_minic.txt')
     examples = read_json(ROOT / 'datos/ejemplos_few_shot.json')
     corpus = read_json(args.corpus)[:args.limit]
-    requests = [dict(id=row['id'], text=row['texto'], level=row['nivel'], variant=variant,
-                     payload=dict(model=args.model, messages=make_messages(row, variant, grammar, examples),
-                                  response_format=dict(type='json_object'),
-                                  max_completion_tokens=args.max_completion_tokens))
-                for variant in ['zero_shot', 'few_shot'] for row in corpus]
+    requests = list(make_requests(corpus, args, grammar, examples))
     meta = metadata(args.corpus)
+    if args.batch_size > 1:
+        meta['batch_size'] = args.batch_size
     write_json(args.output_dir / 'solicitudes.json', dict(metadata=meta, requests=requests))
     if not args.execute:
-        write_json(args.output_dir / 'estado.json', dict(status='prepared',
+        write_json(status_path, dict(status='prepared', batch_size=args.batch_size,
                    pending='Ejecucion API real con proveedor, modelo, clave y presupuesto definidos',
                    requests=len(requests), real_responses=0))
         print(f'{len(requests)} solicitudes preparadas. Ejecucion real pendiente.')
         return 0
-    key = os.getenv('LLM_API_KEY')
-    if not key or not args.model or not args.endpoint:
-        write_json(args.output_dir / 'estado.json', dict(status='configuration_required',
-                   missing=[name for name, value in [('LLM_API_KEY', key), ('LLM_MODEL', args.model),
-                                                    ('LLM_ENDPOINT', args.endpoint)] if not value]))
-        print('Configura LLM_API_KEY, LLM_MODEL y LLM_ENDPOINT.')
-        return 1
     log = args.output_dir / 'respuestas.jsonl'
     cached = {}
     if log.exists():
@@ -117,47 +247,93 @@ def main(argv=None):
                 raise ValueError('El log contiene una linea incompleta; revisar antes de reanudar')
             if record.get('transport_completed'):
                 cached[record['request_sha256']] = record
-    results, new_calls = [], 0
+    calls, new_calls = [], 0
+    previous_start = None
     for row in requests:
-        signature = request_id(dict(endpoint=args.endpoint, request=row,
-                                    grammar=meta['grammar_sha256'], corpus=meta['corpus_sha256']))
+        request_details = dict(endpoint=args.endpoint, request=row,
+                               grammar=meta['grammar_sha256'], corpus=meta['corpus_sha256'])
+        if args.api_version:
+            request_details['api_version'] = args.api_version
+        signature = request_id(request_details)
         if signature in cached:
-            results.append(cached[signature])
+            calls.append(cached[signature])
             continue
         if new_calls >= args.max_new_calls:
             continue
+        if previous_start is not None:
+            remaining = interval - (perf_counter() - previous_start)
+            if remaining > 0:
+                sleep(remaining)
         new_calls += 1
         start = perf_counter()
+        previous_start = start
         record = dict(id=row['id'], variant=row['variant'], tool='llm_' + row['variant'],
-                      request_sha256=signature, model=args.model, endpoint=args.endpoint,
+                      timestamp_utc=datetime.now(timezone.utc).isoformat(),
+                      request_sha256=signature, model=args.model, endpoint=args.endpoint, provider=args.provider,
+                      protocol=args.protocol, api_version=args.api_version, timeout_seconds=args.timeout_seconds,
+                      min_seconds_between_calls=interval,
                       metadata=meta, request=row['payload'], transport_completed=False)
+        if 'items' in row:
+            record['item_ids'] = [item['id'] for item in row['items']]
+        stop_status = None
         try:
-            raw = send(args.endpoint, key, row['payload'])
+            raw = send(key, row['payload'], args)
             record.update(raw_response=raw, transport_completed=True)
-            answer = parse_response(raw)
-            record.update(answer=answer, accepted=answer.get('accepted'),
-                          adherence=validate_answer(answer, row['text'], grammar), execution_error=None)
-            usage = raw.get('usage', {})
+            answer = parse_response(raw, args.protocol)
+            if 'items' in row:
+                record.update(evaluations=score_batch(answer, row['items'], grammar), execution_error=None)
+            else:
+                record.update(score_answer(answer, row['text'], grammar))
             if args.input_usd_per_million is not None and args.output_usd_per_million is not None:
-                record['estimated_usd'] = (usage.get('prompt_tokens', 0) * args.input_usd_per_million +
-                                           usage.get('completion_tokens', 0) * args.output_usd_per_million) / 1_000_000
-        except (HTTPError, URLError, OSError, ValueError, KeyError, TypeError) as exc:
+                if args.protocol == 'gemini':
+                    usage = raw.get('usageMetadata', {})
+                    input_tokens = usage.get('promptTokenCount', 0)
+                    output_tokens = usage.get('candidatesTokenCount', 0) + usage.get('thoughtsTokenCount', 0)
+                elif args.protocol == 'anthropic':
+                    usage = raw.get('usage', {})
+                    input_tokens = usage.get('input_tokens', 0)
+                    output_tokens = usage.get('output_tokens', 0)
+                else:
+                    usage = raw.get('usage', {})
+                    input_tokens = usage.get('prompt_tokens', 0)
+                    output_tokens = usage.get('completion_tokens', 0)
+                record['estimated_usd'] = (input_tokens * args.input_usd_per_million +
+                                           output_tokens * args.output_usd_per_million) / 1_000_000
+        except (URLError, OSError, ValueError, KeyError, TypeError, IndexError) as exc:
             record['execution_error'] = f'{type(exc).__name__}: {exc}'.replace(key, '[REDACTED]')
             record['adherence'] = dict(valid=False, reason='Respuesta no evaluable')
+            if isinstance(exc, HTTPError):
+                record['http_status'] = exc.code
+                with exc:
+                    record['raw_error_response'] = exc.read().decode('utf-8', errors='replace')
+                if exc.code in {400, 401, 403, 404, 429}:
+                    stop_status = exc.code
         record['seconds'] = perf_counter() - start
         serialized = json.dumps(record, ensure_ascii=False).replace(key, '[REDACTED]')
         with log.open('a', encoding='utf-8') as stream:
             stream.write(serialized + '\n')
             stream.flush()
             os.fsync(stream.fileno())
-        results.append(json.loads(serialized))
-    write_json(args.output_dir / 'resultados.json', dict(metadata=meta, results=results))
-    completed = sum(row.get('transport_completed', False) for row in results)
-    write_json(args.output_dir / 'estado.json', dict(status='complete' if len(results) == len(requests) and
-               all(not row.get('execution_error') for row in results) else 'partial',
-               requested=len(requests), real_responses=completed, new_calls=new_calls))
+        calls.append(json.loads(serialized))
+        if stop_status is not None:
+            print(f'La API respondió HTTP {stop_status}. Consulta el último registro de {log} antes de reanudar.')
+            break
+    results = [row for call in calls for row in sentence_results(call)]
+    payload = dict(metadata=meta, results=results)
+    complete = len(results) == 2 * len(corpus) and all(not row.get('execution_error') for row in results)
+    completed = sum(call['transport_completed'] for call in calls)
+    status = dict(status='complete' if complete else 'partial',
+                  requested=len(requests), real_responses=completed, new_calls=new_calls)
+    if args.batch_size > 1:
+        payload['calls'] = [dict(variant=call['variant'], estimated_usd=call.get('estimated_usd'))
+                            for call in calls]
+        status.update(batch_size=args.batch_size, expected_pairs=2 * len(corpus),
+                      evaluable_pairs=sum(not row.get('execution_error') for row in results))
+        print(f'{status["evaluable_pairs"]}/{status["expected_pairs"]} pares oración-variante evaluables.')
+    write_json(args.output_dir / 'resultados.json', payload)
+    write_json(status_path, status)
     print(f'{completed}/{len(requests)} respuestas recibidas; {new_calls} llamadas nuevas.')
-    return 0 if len(results) == len(requests) and all(not row.get('execution_error') for row in results) else 1
+    return 0 if complete else 1
 
 
 if __name__ == '__main__':

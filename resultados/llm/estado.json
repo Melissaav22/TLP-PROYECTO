@@ -1,6 +1,6 @@
 {
-  "status": "prepared",
-  "pending": "Ejecucion API real con proveedor, modelo, clave y presupuesto definidos",
-  "requests": 120,
-  "real_responses": 0
+  "status": "complete",
+  "requested": 120,
+  "real_responses": 120,
+  "new_calls": 1
 }

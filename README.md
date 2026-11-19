@@ -6,7 +6,9 @@ La rama `feat/fase-uno` parte de `ExtensionEspañol` y conserva el alcance de la
 
 ## Estado
 
-Los 39 fixtures originales se conservan. El corpus experimental contiene 60 frases, 20 por nivel, con 33 positivas y 27 negativas para la CFG. Hay análisis reales de los tres sistemas, métricas y gráficas. La ejecución API del LLM queda pendiente por decisión del usuario. Las etiquetas iniciales y los documentos requieren revisión del grupo. Consulta `docs/ESTADO_IMPLEMENTACION.md`.
+El corpus experimental tiene 60 frases, 20 por nivel, con 33 aceptadas y 27 rechazadas por la CFG. Se conservan las salidas de los tres analizadores y las 120 respuestas reales de Gemini. Los prompts completos, las marcas de tiempo y el resumen por variante están en `resultados/llm/`. Los informes en `docs/` corresponden a una versión anterior a la corrida de Gemini.
+
+El Excel original del corpus ordenado de 67 oraciones está en `datos/corpus_ordenado.xlsx`. Se incluye `datos/corpus_ordenado.json` para ejecutar el benchmark y `datos/corpus_ordenado.csv` como anexo. Sus árboles de referencia corresponden a la gramática de `master` en `40fcd2e`. Los resultados publicados de Gemini corresponden al corpus original de 60 oraciones y a la gramática de esta rama.
 
 ## Instalación del parser
 
@@ -89,17 +91,47 @@ Los adaptadores NLTK/spaCy devuelven `accepted=null` porque entregan POS o depen
 
 ## LLM vía API
 
-La preparación produce 120 solicitudes sobre las 60 frases y dos variantes. El usuario indicó dejar pendiente la ejecución real. No hay respuestas de proveedor guardadas.
+El experimento produce 120 solicitudes, una por cada una de las 60 oraciones en cada variante. Ambas reciben las producciones y el lexicón. La variante `few_shot` agrega ejemplos de un archivo separado del corpus.
 
-Para ejecutar posteriormente, configurar `LLM_API_KEY`, `LLM_MODEL` y `LLM_ENDPOINT` en el entorno. El endpoint debe ser HTTPS Chat Completions compatible con JSON y `max_completion_tokens`. `.env.example` documenta los nombres, pero el programa no carga archivos .env automáticamente.
+Si todavía no existe `.env`, créalo desde PowerShell en la raíz del proyecto.
 
 ```powershell
-.\.venv-nlp\Scripts\python.exe -m experimentos.llm --execute --max-new-calls 2
-.\.venv-nlp\Scripts\python.exe -m experimentos.llm --execute --max-new-calls 120
+Copy-Item .env.example .env
+```
+
+El perfil activo se elige con `LLM_PROVIDER`. Para Gemini, deja `LLM_PROVIDER=gemini` y completa `GEMINI_API_KEY` con tu clave de [Google AI Studio](https://aistudio.google.com/api-keys). El archivo ya contiene el modelo, el endpoint y los parámetros de la corrida. Guarda las claves en el `.env` local, que Git ignora. También puedes dejar la clave vacía y pasar `--ask-api-key` para ingresarla sin mostrarla en la terminal.
+
+Para probar una oración en ambas variantes, ejecuta:
+
+```powershell
+.\.venv-nlp\Scripts\python.exe -m experimentos.llm --execute --limit 1 --output-dir .build/llm-prueba
+```
+
+Si la prueba devuelve `2/2` y el comando termina correctamente, consulta la cuota de tu proveedor y ejecuta el corpus completo.
+
+```powershell
+.\.venv-nlp\Scripts\python.exe -m experimentos.llm --execute
 .\.venv-nlp\Scripts\python.exe -m experimentos.resumir_llm
 ```
 
-Se guardan prompts, respuestas, configuración, uso y validación de derivaciones. El hash permite reanudar sin duplicar llamadas completadas. Los argumentos `--input-usd-per-million` y `--output-usd-per-million` permiten estimar costo con tarifas del responsable. Ajustar límite de llamadas y tokens al presupuesto. Las claves quedan fuera de logs y Git.
+`respuestas.jsonl` conserva el prompt, la respuesta completa y la fecha y hora UTC de cada llamada. `resumen.json` contiene las métricas por variante. Gemini escribe en `resultados/llm/` y los demás perfiles configurados tienen su propia subcarpeta. Para reanudar, usa el mismo modelo, parámetros y comando.
+
+El perfil de Gemini separa el inicio de cada llamada por al menos `GEMINI_MIN_SECONDS_BETWEEN_CALLS=5.5` segundos. Si el proveedor devuelve HTTP 429, el script guarda el error y detiene la corrida. Revisa la cuota indicada en el último registro y repite el comando cuando se restablezca. Las respuestas guardadas se reutilizan.
+
+Para una corrida por lotes, fija `--batch-size` o `LLM_BATCH_SIZE` en `.env`. Cada llamada recibe las reglas y el lexicón una vez, con una lista de oraciones e identificadores. Las dos variantes usan los mismos lotes y el mismo orden. Solo `few_shot` recibe ejemplos resueltos. El log conserva un registro por llamada y el evaluador calcula las métricas por oración. Con un lote de 10 se necesitan 12 llamadas para las 60 oraciones.
+
+```powershell
+.\.venv-nlp\Scripts\python.exe -m experimentos.llm --execute --batch-size 10 --max-completion-tokens 8192
+.\.venv-nlp\Scripts\python.exe -m experimentos.resumir_llm --input resultados/llm/lotes-10/resultados.json
+```
+
+Para preparar una sola llamada por variante con Gemini, usa `--batch-size 60 --max-completion-tokens 32768`. Sin `--execute` se preparan los prompts localmente. Una respuesta truncada puede dejar un lote incompleto, y las oraciones omitidas se registran como errores de ejecución. Si realizas una corrida por lotes, reporta el tamaño del lote y el límite de salida en la metodología. Usa su propio log y resumen porque las oraciones comparten contexto dentro de cada llamada.
+
+Para evaluar otro corpus, pasa el mismo `--corpus ruta.json` tanto a `experimentos.llm` como a `experimentos.resumir_llm`. En la corrida fija `--limit` al número de oraciones y usa un `--output-dir` propio. El evaluador comprueba que el hash del corpus coincida con el de los resultados.
+
+Para cambiar de proveedor, configura la clave del perfil y cambia `LLM_PROVIDER` a `openai`, `anthropic` o `custom`. También puedes definir otro perfil, por ejemplo `mi-proveedor`, con las variables `MI_PROVEEDOR_PROTOCOL`, `MI_PROVEEDOR_API_KEY`, `MI_PROVEEDOR_MODEL` y `MI_PROVEEDOR_ENDPOINT`. El protocolo determina el formato de la API. Los formatos disponibles son Chat Completions (`chat-completions`), Gemini GenerateContent (`gemini`) y Claude Messages (`anthropic`, con `*_API_VERSION`). Para endpoints compatibles con Chat Completions, usa `*_TOKEN_FIELD` y `*_JSON_MODE` si el proveedor exige parámetros distintos. En el archivo usa una asignación `NOMBRE=valor` por línea y coloca los comentarios en líneas separadas.
+
+Puedes definir el tiempo de espera, límite de llamadas, tokens, carpeta y tarifas por perfil con su prefijo. Los argumentos del comando tienen prioridad sobre la configuración del perfil. Una variable de entorno reemplaza la misma variable del archivo `.env`. Usa `--provider nombre` para una corrida puntual con otro perfil y pásalo también a `experimentos.resumir_llm` para leer sus resultados.
 
 ## Informes y defensa
 
