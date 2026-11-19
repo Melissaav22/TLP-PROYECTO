@@ -113,7 +113,7 @@ parser | 361 | 98.34% | 0.685
 
 spacy | 361 | 98.61% | 5.189
 
-![resultados/metricas/exactitud_pos.png](resultados/metricas/exactitud_pos.png)
+![Exactitud POS por sistema](../resultados/metricas/exactitud_pos.png)
 
 En pertenencia CFG el parser obtuvo TP=33, TN=27, FP=0 y FN=0 en la anotación inicial. Precisión, recall y rechazo correcto son 1,00 en ese conjunto. La selección controlada y la revisión humana pendiente limitan la interpretación externa de este resultado.
 

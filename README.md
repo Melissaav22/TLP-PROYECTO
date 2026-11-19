@@ -10,6 +10,8 @@ El corpus de la gramática actual contiene 67 oraciones, con 34 aceptadas y 33 r
 
 La corrida de Gemini sobre este corpus está en `resultados/llm/corpus-ordenado/`. Hay 67 evaluaciones por variante y 14 lotes exitosos. El log conserva también el intento con HTTP 503 que se reintentó.
 
+La corrida oficial de spaCy y NLTK con `criterios-v1` usó el corpus congelado `datos/corpus_fase2.csv`. Su registro y sus metadatos están en [`resultados/fase2/`](resultados/fase2/).
+
 La corrida histórica usó `datos/corpus_es.json` con 60 oraciones y la CFG anterior, disponible en `4b73411`. Sus 120 respuestas reales, prompts y métricas están en `resultados/llm/`. Las salidas de NLTK, spaCy y el parser sobre ese corpus están en `resultados/nlp/` y `resultados/metricas/`. El PDF en `docs/` precede a la corrida de Gemini.
 
 ## Instalación del parser
@@ -28,12 +30,14 @@ En Linux/macOS, sustituye `.venv\Scripts\python.exe` por `.venv/bin/python`.
 
 Si prefieres instalar sin `uv`, ejecuta `python -m venv .venv` y `.\.venv\Scripts\python.exe -m pip install -r requirements.txt`. También puedes activar el entorno con `.\.venv\Scripts\Activate.ps1` y usar `python` directamente. Las pruebas de archivos esperan 20 casos MiniC y 29 casos de español.
 
+Las capturas históricas de las pruebas están en `resultados/verificacion/` del commit `77fccf2`.
+
 ## Uso
 
 ```powershell
 .\.venv\Scripts\python.exe main.py tests/validos/v01_declaraciones.c --compacto
 .\.venv\Scripts\python.exe main.py tests/es/validos/v07_subordinada.txt --es
-.\.venv\Scripts\python.exe main.py tests/es/validos/v07_subordinada.txt --es --svg resultados/arbol.svg
+.\.venv\Scripts\python.exe main.py tests/es/validos/v07_subordinada.txt --es --svg .build/arbol.svg
 .\.venv\Scripts\python.exe main.py --tabla
 ```
 
@@ -69,8 +73,11 @@ El lock incluye spaCy 3.8.18, es_core_news_sm 3.8.0, NLTK 3.10.4 y Matplotlib 3.
 
 ```powershell
 .\.venv-nlp\Scripts\python.exe -m experimentos.validar_corpus
-.\.venv-nlp\Scripts\python.exe -m experimentos.comparar_nlp --corpus datos/corpus_ordenado.json --output resultados/nlp/corpus-ordenado.json
+.\.venv-nlp\Scripts\python.exe -m experimentos.comparar_nlp --corpus datos/corpus_ordenado.json --output .build/nlp/corpus-ordenado.json
+.\.venv-nlp\Scripts\python.exe -m experimentos.correr_fase2 --ensayo --salida .build/fase2
 ```
+
+`.build/` es la carpeta ignorada por Git para salidas locales de pruebas, árboles y ensayos.
 
 `datos/fase1.json` conserva las oraciones de demostración de `master`. Las pruebas nuevas usan `datos/corpus_ordenado.json`. Para reproducir la gramática y los experimentos del corpus histórico, abre otra copia con `git worktree add --detach ../tlp-fase-dos-historica 4b73411` y sigue su README.
 
