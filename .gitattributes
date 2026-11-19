@@ -6,3 +6,8 @@ gramatica_minic.txt text eol=lf
 *.pdf binary
 *.pptx binary
 *.png binary
+
+# Textos de datos y pruebas: mismo contenido (y mismas huellas) en Windows, Linux y macOS.
+*.txt text eol=lf
+*.csv text eol=lf
+*.c text eol=lf
