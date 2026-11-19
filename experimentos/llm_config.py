@@ -46,7 +46,7 @@ def output_directory(profile, prefix, env):
     path = env.get(f'{prefix}_OUTPUT_DIR') or env.get('LLM_OUTPUT_DIR')
     if path:
         return ROOT / Path(path)
-    base = ROOT / 'resultados/llm'
+    base = ROOT / 'resultados/llm/corpus-ordenado'
     return base if profile in {'chat-completions', 'gemini'} else base / profile
 
 
@@ -65,7 +65,7 @@ def configure(args):
     args.output_dir = args.output_dir or output_directory(name, prefix, env)
 
     for param, convert, default in [
-        ('limit', int, 60), ('batch_size', int, 1), ('max_new_calls', int, 120), ('max_completion_tokens', int, 4096),
+        ('limit', int, None), ('batch_size', int, 1), ('max_new_calls', int, None), ('max_completion_tokens', int, 4096),
         ('timeout_seconds', int, 120), ('min_seconds_between_calls', float, 0),
         ('input_usd_per_million', float, None),
         ('output_usd_per_million', float, None),

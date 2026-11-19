@@ -67,23 +67,29 @@ AdjFP       -> ADJ_FP AdjFP | eps
 # frase preposicional
 PP          -> PREP SN
 
-# sintagma verbal: verbo pleno (+ subordinada o modificadores) o copula
-# (+ atributo y modificadores). El verbo concuerda en numero con el sujeto.
-SV_MS       -> VerboSG Cpl_MS | CopulaSG PredCpl_MS
-SV_FS       -> VerboSG Cpl_FS | CopulaSG PredCpl_FS
-SV_MP       -> VerboPL Cpl_MP | CopulaPL PredCpl_MP
-SV_FP       -> VerboPL Cpl_FP | CopulaPL PredCpl_FP
-VerboSG     -> VERB_3S | VERB_PAST_3S
-VerboPL     -> VERB_3P | VERB_PAST_3P
-CopulaSG    -> COP_3S | COP_PAST_3S
-CopulaPL    -> COP_3P | COP_PAST_3P
+# sintagma verbal: verbo pleno (+ complemento directo, subordinada o
+# modificadores) o copula (+ atributo y modificadores). El verbo concuerda
+# en numero con el sujeto.
+SV_MS       -> VFormS Cpl_MS | CopS PredCpl_MS
+SV_FS       -> VFormS Cpl_FS | CopS PredCpl_FS
+SV_MP       -> VFormP Cpl_MP | CopP PredCpl_MP
+SV_FP       -> VFormP Cpl_FP | CopP PredCpl_FP
 
-# complemento del verbo: subordinada con "que" o solo modificadores
-Cpl_MS      -> QUE Oracion | Objeto ModsS
-Cpl_FS      -> QUE Oracion | Objeto ModsS
-Cpl_MP      -> QUE Oracion | Objeto ModsP
-Cpl_FP      -> QUE Oracion | Objeto ModsP
-Objeto      -> SN | eps
+# formas verbales: presente y preterito perfecto simple (tercera persona)
+VFormS      -> VERB_3S | VERB_PRET_3S
+VFormP      -> VERB_3P | VERB_PRET_3P
+CopS        -> COP_3S | COP_PRET_3S
+CopP        -> COP_3P | COP_PRET_3P
+
+# complemento del verbo: objeto directo (+ modificadores), subordinada con
+# "que" o solo modificadores
+Cpl_MS      -> CD ModsS | QUE Oracion | ModsS
+Cpl_FS      -> CD ModsS | QUE Oracion | ModsS
+Cpl_MP      -> CD ModsP | QUE Oracion | ModsP
+Cpl_FP      -> CD ModsP | QUE Oracion | ModsP
+
+# objeto directo: un solo sintagma nominal; no concuerda con el sujeto
+CD          -> SN
 
 # complemento de la copula: atributo (adjetivo concordado) y modificadores
 PredCpl_MS  -> PredMS ModsS | ModsS

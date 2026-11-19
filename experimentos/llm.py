@@ -19,7 +19,7 @@ from urllib.request import Request, urlopen
 from minic.grammar import Grammar
 from minic.lexicon_es import LEXICON
 from minic.parser import parse_detailed
-from .common import ROOT, metadata, read_json, write_json
+from .common import CURRENT_CORPUS, ROOT, metadata, read_json, write_json
 from .llm_config import configure
 from .validar_derivacion import validate_answer
 
@@ -186,7 +186,7 @@ def main(argv=None):
     parser.add_argument('--ask-api-key', action='store_true', help='pedir la clave en la terminal sin mostrarla')
     parser.add_argument('--model')
     parser.add_argument('--endpoint')
-    parser.add_argument('--corpus', default=str(ROOT / 'datos/corpus_es.json'))
+    parser.add_argument('--corpus', type=Path, default=CURRENT_CORPUS)
     parser.add_argument('--limit', type=int)
     parser.add_argument('--batch-size', type=int, help='oraciones por llamada, por cada variante')
     parser.add_argument('--max-new-calls', type=int)
@@ -200,8 +200,11 @@ def main(argv=None):
         key = configure(args)
     except (ValueError, OSError) as exc:
         parser.error(str(exc))
-    if min(args.limit, args.batch_size, args.max_completion_tokens, args.timeout_seconds) < 1 or args.max_new_calls < 0:
+    limits = (args.batch_size, args.max_completion_tokens, args.timeout_seconds)
+    if min(limits) < 1 or (args.limit is not None and args.limit < 1):
         parser.error('Los límites y el tiempo de espera deben ser positivos')
+    if args.max_new_calls is not None and args.max_new_calls < 0:
+        parser.error('--max-new-calls debe ser un número no negativo')
     if args.batch_size > 1 and not explicit_output_dir:
         args.output_dir = args.output_dir / f'lotes-{args.batch_size}'
     status_path = args.output_dir / 'estado.json'
@@ -210,6 +213,16 @@ def main(argv=None):
     interval = args.min_seconds_between_calls
     if not isfinite(interval) or interval < 0:
         parser.error('MIN_SECONDS_BETWEEN_CALLS debe ser un número no negativo')
+
+    meta = metadata(args.corpus)
+    corpus = read_json(args.corpus)[:args.limit]
+    if any(row.get('grammar_version') not in (None, meta['grammar_sha256']) for row in corpus):
+        parser.error('El corpus declara otra versión de la CFG. Usa el corpus de la versión actual.')
+    manifest_path = args.output_dir / 'solicitudes.json'
+    if manifest_path.exists():
+        recorded = read_json(manifest_path)['metadata']
+        if any(recorded[key] != meta[key] for key in ('corpus_sha256', 'grammar_sha256')):
+            parser.error('La carpeta contiene evidencia de otro corpus o CFG. Usa --output-dir.')
 
     if args.execute:
         if args.ask_api_key:
@@ -225,12 +238,10 @@ def main(argv=None):
 
     grammar = Grammar(ROOT / 'gramatica_minic.txt')
     examples = read_json(ROOT / 'datos/ejemplos_few_shot.json')
-    corpus = read_json(args.corpus)[:args.limit]
     requests = list(make_requests(corpus, args, grammar, examples))
-    meta = metadata(args.corpus)
     if args.batch_size > 1:
         meta['batch_size'] = args.batch_size
-    write_json(args.output_dir / 'solicitudes.json', dict(metadata=meta, requests=requests))
+    write_json(manifest_path, dict(metadata=meta, requests=requests))
     if not args.execute:
         write_json(status_path, dict(status='prepared', batch_size=args.batch_size,
                    pending='Ejecucion API real con proveedor, modelo, clave y presupuesto definidos',
@@ -258,7 +269,7 @@ def main(argv=None):
         if signature in cached:
             calls.append(cached[signature])
             continue
-        if new_calls >= args.max_new_calls:
+        if args.max_new_calls is not None and new_calls >= args.max_new_calls:
             continue
         if previous_start is not None:
             remaining = interval - (perf_counter() - previous_start)

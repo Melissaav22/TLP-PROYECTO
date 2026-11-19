@@ -18,7 +18,7 @@
       "NOUN",
       "VERB"
     ],
-    "grammar_version": "cf1d5f630a2d49dd0cfdeedd4ac9b14cdae1209ee714a2b84b94f5f880df5c81",
+    "grammar_version": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
     "revision_humana": "pendiente_del_grupo"
   },
   {
@@ -26,7 +26,8 @@
     "texto": "El niño lee el libro",
     "nivel": "simple",
     "fenomenos": [
-      "SVO"
+      "SVO",
+      "objeto_directo"
     ],
     "esperado_cfg": true,
     "gramatical_espanol": true,
@@ -44,7 +45,7 @@
       "DET",
       "NOUN"
     ],
-    "grammar_version": "cf1d5f630a2d49dd0cfdeedd4ac9b14cdae1209ee714a2b84b94f5f880df5c81",
+    "grammar_version": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
     "revision_humana": "pendiente_del_grupo"
   },
   {
@@ -66,7 +67,7 @@
       "NOUN",
       "VERB"
     ],
-    "grammar_version": "cf1d5f630a2d49dd0cfdeedd4ac9b14cdae1209ee714a2b84b94f5f880df5c81",
+    "grammar_version": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
     "revision_humana": "pendiente_del_grupo"
   },
   {
@@ -88,7 +89,7 @@
       "NOUN",
       "VERB"
     ],
-    "grammar_version": "cf1d5f630a2d49dd0cfdeedd4ac9b14cdae1209ee714a2b84b94f5f880df5c81",
+    "grammar_version": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
     "revision_humana": "pendiente_del_grupo"
   },
   {
@@ -110,7 +111,7 @@
       "NOUN",
       "VERB"
     ],
-    "grammar_version": "cf1d5f630a2d49dd0cfdeedd4ac9b14cdae1209ee714a2b84b94f5f880df5c81",
+    "grammar_version": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
     "revision_humana": "pendiente_del_grupo"
   },
   {
@@ -142,7 +143,7 @@
       "DET",
       "NOUN"
     ],
-    "grammar_version": "cf1d5f630a2d49dd0cfdeedd4ac9b14cdae1209ee714a2b84b94f5f880df5c81",
+    "grammar_version": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
     "revision_humana": "pendiente_del_grupo"
   },
   {
@@ -176,7 +177,7 @@
       "DET",
       "NOUN"
     ],
-    "grammar_version": "cf1d5f630a2d49dd0cfdeedd4ac9b14cdae1209ee714a2b84b94f5f880df5c81",
+    "grammar_version": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
     "revision_humana": "pendiente_del_grupo"
   },
   {
@@ -200,7 +201,7 @@
       "ADJ",
       "VERB"
     ],
-    "grammar_version": "cf1d5f630a2d49dd0cfdeedd4ac9b14cdae1209ee714a2b84b94f5f880df5c81",
+    "grammar_version": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
     "revision_humana": "pendiente_del_grupo"
   },
   {
@@ -208,7 +209,8 @@
     "texto": "La profesora sabe que el niño lee el libro",
     "nivel": "complejo",
     "fenomenos": [
-      "subordinada_SVO"
+      "subordinada_SVO",
+      "objeto_directo"
     ],
     "esperado_cfg": true,
     "gramatical_espanol": true,
@@ -234,7 +236,7 @@
       "DET",
       "NOUN"
     ],
-    "grammar_version": "cf1d5f630a2d49dd0cfdeedd4ac9b14cdae1209ee714a2b84b94f5f880df5c81",
+    "grammar_version": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
     "revision_humana": "pendiente_del_grupo"
   },
   {
@@ -268,7 +270,7 @@
       "DET",
       "NOUN"
     ],
-    "grammar_version": "cf1d5f630a2d49dd0cfdeedd4ac9b14cdae1209ee714a2b84b94f5f880df5c81",
+    "grammar_version": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
     "revision_humana": "pendiente_del_grupo"
   },
   {
@@ -296,7 +298,7 @@
       "NOUN",
       "VERB"
     ],
-    "grammar_version": "cf1d5f630a2d49dd0cfdeedd4ac9b14cdae1209ee714a2b84b94f5f880df5c81",
+    "grammar_version": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
     "revision_humana": "pendiente_del_grupo"
   },
   {
@@ -322,7 +324,7 @@
       "DET",
       "NOUN"
     ],
-    "grammar_version": "cf1d5f630a2d49dd0cfdeedd4ac9b14cdae1209ee714a2b84b94f5f880df5c81",
+    "grammar_version": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
     "revision_humana": "pendiente_del_grupo"
   },
   {
@@ -350,7 +352,7 @@
       "NOUN",
       "PUNCT"
     ],
-    "grammar_version": "cf1d5f630a2d49dd0cfdeedd4ac9b14cdae1209ee714a2b84b94f5f880df5c81",
+    "grammar_version": "1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
     "revision_humana": "pendiente_del_grupo"
   }
 ]

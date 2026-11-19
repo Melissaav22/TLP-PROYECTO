@@ -10,7 +10,7 @@ import threading
 import unittest
 from unittest.mock import patch
 
-from experimentos.common import ROOT, digest, read_json
+from experimentos.common import CURRENT_CORPUS, ROOT, digest, read_json
 from experimentos.llm import main as llm_main, score_batch
 from experimentos.metricas import binary_metrics
 from experimentos.resumir_llm import main as summarize_llm
@@ -18,6 +18,7 @@ from experimentos.validar_corpus import validate
 from experimentos.validar_derivacion import validate_answer
 from minic.grammar import Grammar
 from minic.parser import parse_detailed
+from minic.trees import bracketed
 
 
 class Experiments(unittest.TestCase):
@@ -30,20 +31,23 @@ class Experiments(unittest.TestCase):
             self.assertEqual(digest(lf), digest(crlf))
 
     def test_corpus_integrity(self):
-        corpus = read_json(ROOT / 'datos/corpus_es.json')
+        corpus = read_json(CURRENT_CORPUS)
         examples = read_json(ROOT / 'datos/ejemplos_few_shot.json')
         self.assertEqual(validate(corpus, examples), [])
-        self.assertEqual(len(corpus), 60)
-        self.assertTrue(validate(corpus[:-1], examples))
+        self.assertEqual(len(corpus), 67)
+        self.assertTrue(validate(corpus[:59], examples))
         changed = [dict(row) for row in corpus]
         changed[1]['id'] = changed[0]['id']
         self.assertTrue(validate(changed, examples))
 
     def test_corpus_expected_acceptance(self):
         grammar = Grammar(ROOT / 'gramatica_minic.txt')
-        for row in read_json(ROOT / 'datos/corpus_es.json'):
+        for row in read_json(CURRENT_CORPUS):
             with self.subTest(id=row['id']):
-                self.assertEqual(parse_detailed(row['texto'], grammar, True).accepted, row['esperado_cfg'])
+                result = parse_detailed(row['texto'], grammar, True)
+                self.assertEqual(result.accepted, row['esperado_cfg'])
+                if row['estructura_esperada']:
+                    self.assertEqual(bracketed(result.tree), row['estructura_esperada'])
 
     def test_confusion_matrix(self):
         result = binary_metrics([True, True, False, False], [True, False, True, False])
@@ -70,7 +74,7 @@ class Experiments(unittest.TestCase):
 
     def test_api_transport_and_resume_local_fixture(self):
         grammar = Grammar(ROOT / 'gramatica_minic.txt')
-        text = read_json(ROOT / 'datos/corpus_es.json')[0]['texto']
+        text = read_json(CURRENT_CORPUS)[0]['texto']
         proof = parse_detailed(text, grammar, True).productions
         answer = dict(accepted=True, productions=proof)
         calls = []
@@ -169,7 +173,7 @@ class Experiments(unittest.TestCase):
 
     def test_grouped_calls_are_scored_by_sentence_id(self):
         grammar = Grammar(ROOT / 'gramatica_minic.txt')
-        gold = read_json(ROOT / 'datos/corpus_es.json')[:3]
+        gold = read_json(CURRENT_CORPUS)[:3]
 
         def simulate_call(_key, request, _config):
             items = json.loads(request['contents'][-1]['parts'][0]['text'])

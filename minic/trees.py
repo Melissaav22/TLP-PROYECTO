@@ -1,10 +1,15 @@
-"""Serialización iterativa y visualización SVG sin dependencias adicionales."""
+"""Serialización iterativa y visualización SVG sin dependencias adicionales.
+
+Los recorridos usan una pila propia y no recursión, para no depender del
+límite de recursión de Python en árboles muy profundos.
+"""
 from html import escape
 from pathlib import Path
 from nltk import Tree
 
 
 def bracketed(tree):
+    """Devuelve el árbol en una sola línea con corchetes, por ejemplo (A x (B y))."""
     parts = []
     pending = [tree]
     while pending:
@@ -47,6 +52,12 @@ def tree_data(tree):
 
 
 def print_tree(tree):
+    """Imprime el árbol dibujado en consola.
+
+    Si tiene más de 60 niveles o más de 500 nodos el dibujo deja de ser
+    legible, y en su lugar se imprime en formato de corchetes.
+    """
+    # se mide el tamaño del árbol antes de dibujarlo
     pending = [(tree, 0)]
     visited = 0
     while pending:
@@ -61,6 +72,13 @@ def print_tree(tree):
 
 
 def write_svg(tree, path, max_nodes=2000):
+    """Guarda el árbol como imagen SVG en `path`.
+
+    Cada hoja ocupa una columna de 110 px, cada nivel baja 65 px y los nodos
+    internos se centran sobre sus hijos. Lanza ValueError si el árbol tiene
+    más de `max_nodes` nodos.
+    """
+    # 1) se recorre el árbol y se numera cada nodo, el padre antes que sus hijos
     nodes = []
     pending = [(tree, None, 0)]
     while pending:
@@ -74,23 +92,28 @@ def write_svg(tree, path, max_nodes=2000):
             nodes[parent]['children'].append(index)
         if isinstance(item, Tree):
             pending.extend((child, index, depth + 1) for child in reversed(item))
+    # 2) cada hoja recibe su columna; la altura depende de la profundidad
     next_leaf = 0
     for node in nodes:
         if not node['children']:
             node['x'] = 65 + next_leaf * 110
             next_leaf += 1
         node['y'] = 35 + node['depth'] * 65
+    # 3) los nodos internos se centran sobre sus hijos; se recorre al revés
+    #    porque los hijos tienen número mayor que su padre
     for node in reversed(nodes):
         if node['children']:
             node['x'] = sum(nodes[i]['x'] for i in node['children']) / len(node['children'])
     width = max(250, next_leaf * 110 + 30)
     height = max(node['y'] for node in nodes) + 50
+    # 4) se arma el SVG: una línea por arista y una etiqueta por nodo
     body = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">',
             '<rect width="100%" height="100%" fill="white"/>']
     for node in nodes:
         if node['parent'] is not None:
             parent = nodes[node['parent']]
             body.append(f'<line x1="{parent["x"]}" y1="{parent["y"] + 7}" x2="{node["x"]}" y2="{node["y"] - 18}" stroke="#93a5ba"/>')
+        # la etiqueta se corta a 32 caracteres; el texto completo queda en <title>
         body.append(f'<text x="{node["x"]}" y="{node["y"]}" text-anchor="middle" font-family="Arial" font-size="13" fill="#172a45"><title>{escape(node["label"])}</title>{escape(node["label"][:32])}</text>')
     body.append('</svg>')
     path = Path(path)

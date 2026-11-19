@@ -2,7 +2,7 @@
 import argparse
 from collections import Counter
 import unicodedata
-from .common import ROOT, digest, read_json
+from .common import CURRENT_CORPUS, ROOT, digest, read_json
 
 
 def validate(corpus, examples=()):
@@ -38,7 +38,7 @@ def validate(corpus, examples=()):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--corpus', type=str, default=str(ROOT / 'datos/corpus_es.json'))
+    parser.add_argument('--corpus', type=str, default=str(CURRENT_CORPUS))
     args = parser.parse_args()
     corpus = read_json(args.corpus)
     examples = read_json(ROOT / 'datos/ejemplos_few_shot.json')

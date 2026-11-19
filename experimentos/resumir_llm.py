@@ -2,7 +2,7 @@
 import argparse
 from collections import Counter
 from pathlib import Path
-from .common import ROOT, digest, read_json, write_json
+from .common import CURRENT_CORPUS, digest, read_json, write_json
 from .llm_config import load_profile, output_directory
 from .metricas import binary_metrics
 
@@ -11,7 +11,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--provider', help='perfil a usar en lugar de LLM_PROVIDER en .env')
     parser.add_argument('--input', type=Path)
-    parser.add_argument('--corpus', type=Path, default=ROOT / 'datos/corpus_es.json',
+    parser.add_argument('--corpus', type=Path, default=CURRENT_CORPUS,
                         help='mismo JSON etiquetado utilizado para generar los resultados')
     args = parser.parse_args()
     if args.input is None:

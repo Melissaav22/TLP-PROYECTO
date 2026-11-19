@@ -2,13 +2,13 @@
 
 Parser LL(1) para fragmentos MiniC y español controlado, árboles SVG y experimentos reproducibles con NLTK y spaCy.
 
-La rama `feat/fase-uno` parte de `ExtensionEspañol` y conserva el alcance de la primera fase. Esta rama, `feat/fase-dos`, deriva de `feat/fase-uno` e incorpora SVO, pasado, el corpus completo y la integración LLM. Contiene ambas fases y actualiza la demo de fase 1 para la gramática ampliada.
+El parser usa la gramática y el léxico integrados en `master`. La Fase 2 incorpora los comandos del benchmark, el corpus ordenado y el registro de Gemini.
 
 ## Estado
 
-El corpus experimental tiene 60 frases, 20 por nivel, con 33 aceptadas y 27 rechazadas por la CFG. Se conservan las salidas de los tres analizadores y las 120 respuestas reales de Gemini. Los prompts completos, las marcas de tiempo y el resumen por variante están en `resultados/llm/`. Los informes en `docs/` corresponden a una versión anterior a la corrida de Gemini.
+El corpus de la gramática actual contiene 67 oraciones, con 34 aceptadas y 33 rechazadas. El Excel original está en `datos/corpus_ordenado.xlsx`, el archivo para ejecutar el benchmark en `datos/corpus_ordenado.json` y el anexo en `datos/corpus_ordenado.csv`. Los 34 árboles esperados coinciden con el parser de `master` en `40fcd2e`.
 
-El Excel original del corpus ordenado de 67 oraciones está en `datos/corpus_ordenado.xlsx`. Se incluye `datos/corpus_ordenado.json` para ejecutar el benchmark y `datos/corpus_ordenado.csv` como anexo. Sus árboles de referencia corresponden a la gramática de `master` en `40fcd2e`. Los resultados publicados de Gemini corresponden al corpus original de 60 oraciones y a la gramática de esta rama.
+La corrida histórica usó `datos/corpus_es.json` con 60 oraciones y la CFG anterior, disponible en `4b73411`. Sus 120 respuestas reales, prompts y métricas están en `resultados/llm/`. Las salidas de NLTK, spaCy y el parser sobre ese corpus están en `resultados/nlp/` y `resultados/metricas/`. El PDF en `docs/` precede a la corrida de Gemini.
 
 ## Instalación del parser
 
@@ -23,6 +23,8 @@ uv pip sync --python .venv/Scripts/python.exe --require-hashes requirements-core
 ```
 
 En Linux/macOS, sustituye `.venv\Scripts\python.exe` por `.venv/bin/python`.
+
+Si prefieres instalar sin `uv`, ejecuta `python -m venv .venv` y `.\.venv\Scripts\python.exe -m pip install -r requirements.txt`. También puedes activar el entorno con `.\.venv\Scripts\Activate.ps1` y usar `python` directamente. Las pruebas de archivos esperan 20 casos MiniC y 29 casos de español.
 
 ## Uso
 
@@ -65,17 +67,10 @@ El lock incluye spaCy 3.8.18, es_core_news_sm 3.8.0, NLTK 3.10.4 y Matplotlib 3.
 
 ```powershell
 .\.venv-nlp\Scripts\python.exe -m experimentos.validar_corpus
-.\.venv-nlp\Scripts\python.exe -m experimentos.registro_fallos
-.\.venv-nlp\Scripts\python.exe -m experimentos.demo_fase1
-.\.venv-nlp\Scripts\python.exe -m experimentos.ambiguedad
-.\.venv-nlp\Scripts\python.exe -m experimentos.comparar_nlp
-.\.venv-nlp\Scripts\python.exe -m experimentos.metricas
-.\.venv-nlp\Scripts\python.exe -m experimentos.graficas
-.\.venv-nlp\Scripts\python.exe -m experimentos.rendimiento
-.\.venv-nlp\Scripts\python.exe -m experimentos.llm
+.\.venv-nlp\Scripts\python.exe -m experimentos.comparar_nlp --corpus datos/corpus_ordenado.json --output resultados/nlp/corpus-ordenado.json
 ```
 
-`datos/corpus_es.json` es el conjunto versionado. `scripts/preparar_datos.py` reconstruye deliberadamente la anotación inicial y sobrescribe esos datos. Después de revisar manualmente el oro se deben conservar las modificaciones en Git.
+`datos/fase1.json` conserva las oraciones de demostración de `master`. Las pruebas nuevas usan `datos/corpus_ordenado.json`. Para reproducir la gramática y los experimentos del corpus histórico, abre otra copia con `git worktree add --detach ../tlp-fase-dos-historica 4b73411` y sigue su README.
 
 `resultados/` conserva salidas, hashes de fuentes, gramática y corpus. Los tiempos por oración excluyen entrenamiento y carga, registrados por separado. Los cambios locales quedan identificados mediante los hashes además del commit base.
 
@@ -85,13 +80,17 @@ Esto conserva la verificación al clonar el proyecto con otros saltos de línea.
 
 ## Tareas y métricas
 
-La pertenencia CFG se evalúa para parser y, cuando se ejecute, LLM. Los tres analizadores se comparan en POS grueso, unificando AUX con VERB y PROPN con NOUN. Se reportan exactitud POS y precisión, recall y rechazo correcto de NOUN frente al resto. Cada tabla conserva sus denominadores. Un denominador cero produce null.
+La pertenencia CFG se evalúa para el parser y el LLM. En el corpus histórico los tres analizadores se compararon también en POS grueso, unificando AUX con VERB y PROPN con NOUN. El corpus del Excel tiene etiquetas de aceptación y árboles, y requiere anotación POS por token para ese cálculo.
 
 Los adaptadores NLTK/spaCy devuelven `accepted=null` porque entregan POS o dependencias, sin una decisión propia de pertenencia a esta CFG. La anotación de referencia es inicial y necesita revisión del grupo.
 
 ## LLM vía API
 
-El experimento produce 120 solicitudes, una por cada una de las 60 oraciones en cada variante. Ambas reciben las producciones y el lexicón. La variante `few_shot` agrega ejemplos de un archivo separado del corpus.
+Ambas variantes reciben las producciones y el léxico. La variante `few_shot` agrega ejemplos de un archivo separado del corpus. Para recalcular las métricas históricas desde los archivos guardados, ejecuta:
+
+```powershell
+.\.venv-nlp\Scripts\python.exe -m experimentos.resumir_llm --corpus datos/corpus_es.json --input resultados/llm/resultados.json
+```
 
 Si todavía no existe `.env`, créalo desde PowerShell en la raíz del proyecto.
 
@@ -110,22 +109,19 @@ Para probar una oración en ambas variantes, ejecuta:
 Si la prueba devuelve `2/2` y el comando termina correctamente, consulta la cuota de tu proveedor y ejecuta el corpus completo.
 
 ```powershell
-.\.venv-nlp\Scripts\python.exe -m experimentos.llm --execute
-.\.venv-nlp\Scripts\python.exe -m experimentos.resumir_llm
+.\.venv-nlp\Scripts\python.exe -m experimentos.llm --execute --limit 67 --batch-size 10 --max-completion-tokens 8192 --output-dir resultados/llm/corpus-ordenado
+if ($LASTEXITCODE -eq 0) {
+    .\.venv-nlp\Scripts\python.exe -m experimentos.resumir_llm --input resultados/llm/corpus-ordenado/resultados.json
+}
 ```
 
-`respuestas.jsonl` conserva el prompt, la respuesta completa y la fecha y hora UTC de cada llamada. `resumen.json` contiene las métricas por variante. Gemini escribe en `resultados/llm/` y los demás perfiles configurados tienen su propia subcarpeta. Para reanudar, usa el mismo modelo, parámetros y comando.
+`respuestas.jsonl` conserva el prompt, la respuesta completa y la fecha y hora UTC de cada llamada. `resumen.json` contiene las métricas por variante. La corrida actual de Gemini se guarda bajo `resultados/llm/corpus-ordenado/`. Para reanudar, usa el mismo modelo, parámetros y comando. El script comprueba la versión de la CFG antes de cargar o escribir evidencia.
 
 El perfil de Gemini separa el inicio de cada llamada por al menos `GEMINI_MIN_SECONDS_BETWEEN_CALLS=5.5` segundos. Si el proveedor devuelve HTTP 429, el script guarda el error y detiene la corrida. Revisa la cuota indicada en el último registro y repite el comando cuando se restablezca. Las respuestas guardadas se reutilizan.
 
-Para una corrida por lotes, fija `--batch-size` o `LLM_BATCH_SIZE` en `.env`. Cada llamada recibe las reglas y el lexicón una vez, con una lista de oraciones e identificadores. Las dos variantes usan los mismos lotes y el mismo orden. Solo `few_shot` recibe ejemplos resueltos. El log conserva un registro por llamada y el evaluador calcula las métricas por oración. Con un lote de 10 se necesitan 12 llamadas para las 60 oraciones.
+Para una corrida por lotes, fija `--batch-size` o `LLM_BATCH_SIZE` en `.env`. Cada llamada recibe las reglas y el léxico una vez, con una lista de oraciones e identificadores. Las dos variantes usan los mismos lotes y el mismo orden. El log conserva un registro por llamada y el evaluador calcula las métricas por oración. Con un lote de 10 se necesitan 14 llamadas para las 67 oraciones.
 
-```powershell
-.\.venv-nlp\Scripts\python.exe -m experimentos.llm --execute --batch-size 10 --max-completion-tokens 8192
-.\.venv-nlp\Scripts\python.exe -m experimentos.resumir_llm --input resultados/llm/lotes-10/resultados.json
-```
-
-Para preparar una sola llamada por variante con Gemini, usa `--batch-size 60 --max-completion-tokens 32768`. Sin `--execute` se preparan los prompts localmente. Una respuesta truncada puede dejar un lote incompleto, y las oraciones omitidas se registran como errores de ejecución. Si realizas una corrida por lotes, reporta el tamaño del lote y el límite de salida en la metodología. Usa su propio log y resumen porque las oraciones comparten contexto dentro de cada llamada.
+Para preparar una sola llamada por variante con Gemini, usa `--limit 67 --batch-size 67 --max-completion-tokens 32768`. Sin `--execute` se preparan los prompts localmente. Una respuesta truncada puede dejar un lote incompleto, y las oraciones omitidas se registran como errores de ejecución. Si realizas una corrida por lotes, reporta el tamaño del lote y el límite de salida en la metodología. Usa su propio log y resumen porque las oraciones comparten contexto dentro de cada llamada.
 
 Para evaluar otro corpus, pasa el mismo `--corpus ruta.json` tanto a `experimentos.llm` como a `experimentos.resumir_llm`. En la corrida fija `--limit` al número de oraciones y usa un `--output-dir` propio. El evaluador comprueba que el hash del corpus coincida con el de los resultados.
 
@@ -135,7 +131,7 @@ Puedes definir el tiempo de espera, límite de llamadas, tokens, carpeta y tarif
 
 ## Informes y defensa
 
-Los informes y sus fuentes editables están en `docs/`, junto con las presentaciones y sus notas de exposición. La Fase 2 identifica la sección LLM pendiente. El grupo debe revisar el oro, registrar integrantes, ensayar 15–20 minutos por presentación y verificar entrega/compartición.
+Los borradores históricos de la Fase 2 están en `docs/`. La evaluación de la Fase 2 requiere el informe escrito y sus anexos de evidencia. Al citar las métricas, identifica el corpus y la versión de la CFG que se usaron.
 
 Fuentes de adaptadores y cliente:
 - [NLTK](https://www.nltk.org/api/nltk.tag.sequential.html)

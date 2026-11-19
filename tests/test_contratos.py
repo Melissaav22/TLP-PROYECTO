@@ -45,9 +45,9 @@ class Contracts(unittest.TestCase):
         for source in ['Los niños leyó el libro', 'La niña compraron la flor',
                        'Las casas fue blanca', 'El niño lee las libro']:
             self.assertTrue(parse(source, self.g, True)[1], source)
-        self.assertEqual(tokenize('leyó', True)[0][0][0], 'VERB_PAST_3S')
+        self.assertEqual(tokenize('leyó', True)[0][0][0], 'VERB_PRET_3S')
         tree, _ = parse('El niño lee el libro', self.g, True)
-        self.assertTrue(any(n.label() == 'Objeto' and n[0].label() == 'SN' for n in tree.subtrees() if n.label() == 'Objeto'))
+        self.assertTrue(any(n.label() == 'CD' and n[0].label() == 'SN' for n in tree.subtrees()))
 
     def test_structure(self):
         tree, _ = parse('int x=1+2*3;', self.g)
