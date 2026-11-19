@@ -31,6 +31,11 @@ def main(argv=None):
 
     out = Path(args.output)
     out.parent.mkdir(parents=True, exist_ok=True)
+    if out.exists():
+        previas = {json.loads(l).get("run") for l in out.read_text(encoding="utf-8").splitlines() if l.strip()}
+        if args.run in previas:
+            raise SystemExit(f"{out} ya tiene registros de la corrida {args.run}. "
+                             "Usa --run con otro número o borra el archivo.")
     errores = 0
     with out.open("a", encoding="utf-8", newline="\n") as log:
         for row in rows:

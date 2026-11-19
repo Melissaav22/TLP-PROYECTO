@@ -475,7 +475,7 @@ def main() -> int:
     parser.add_argument("--corpus", required=True, help="CSV canónico congelado del corpus")
     parser.add_argument("--criteria-file", required=True, help="Archivo con criterios compartidos")
     parser.add_argument("--logs", nargs="+", required=True, help="Archivos JSONL originales")
-    parser.add_argument("--out", default="resultados/fase2", help="Carpeta de salida")
+    parser.add_argument("--out", default="resultados/evaluacion", help="Carpeta de salida")
     args = parser.parse_args()
 
     corpus_path = Path(args.corpus)

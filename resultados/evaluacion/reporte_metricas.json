@@ -2,7 +2,7 @@
   "corpus_file": "corpus_fase2.csv",
   "corpus_sha256": "5b158aa89381186dcc7360141a1f152563489b112af89d5e34de79197c31ef16",
   "criteria_file": "criterios_evaluacion_fase2.txt",
-  "criteria_sha256": "0a2f2140864633996daf1b3d0fbc31932441a56654c8f3f900303893240cee65",
+  "criteria_sha256": "1ef076de533f8c5ab1cffe89e048623ca2e40125629846c079470907f663332f",
   "metricas_por_corrida": [
     {
       "FN": 6,
@@ -48579,9 +48579,9 @@
       "scope": "general",
       "tasa_rechazo_correcto": 0.9583333333333334,
       "tasa_seguimiento_cfg_diagnostico": 1.0,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -48607,9 +48607,9 @@
       "scope": "nivel",
       "tasa_rechazo_correcto": null,
       "tasa_seguimiento_cfg_diagnostico": null,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -48635,9 +48635,9 @@
       "scope": "nivel",
       "tasa_rechazo_correcto": 1.0,
       "tasa_seguimiento_cfg_diagnostico": null,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -48663,9 +48663,9 @@
       "scope": "nivel",
       "tasa_rechazo_correcto": 0.75,
       "tasa_seguimiento_cfg_diagnostico": 1.0,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -48691,9 +48691,9 @@
       "scope": "fenomeno",
       "tasa_rechazo_correcto": null,
       "tasa_seguimiento_cfg_diagnostico": null,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -48719,9 +48719,9 @@
       "scope": "fenomeno",
       "tasa_rechazo_correcto": null,
       "tasa_seguimiento_cfg_diagnostico": null,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -48747,9 +48747,9 @@
       "scope": "fenomeno",
       "tasa_rechazo_correcto": null,
       "tasa_seguimiento_cfg_diagnostico": 1.0,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -48775,9 +48775,9 @@
       "scope": "fenomeno",
       "tasa_rechazo_correcto": null,
       "tasa_seguimiento_cfg_diagnostico": null,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -48803,9 +48803,9 @@
       "scope": "fenomeno",
       "tasa_rechazo_correcto": null,
       "tasa_seguimiento_cfg_diagnostico": null,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -48831,9 +48831,9 @@
       "scope": "fenomeno",
       "tasa_rechazo_correcto": null,
       "tasa_seguimiento_cfg_diagnostico": null,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -48859,9 +48859,9 @@
       "scope": "fenomeno",
       "tasa_rechazo_correcto": null,
       "tasa_seguimiento_cfg_diagnostico": null,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -48887,9 +48887,9 @@
       "scope": "fenomeno",
       "tasa_rechazo_correcto": null,
       "tasa_seguimiento_cfg_diagnostico": 1.0,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -48915,9 +48915,9 @@
       "scope": "fenomeno",
       "tasa_rechazo_correcto": 1.0,
       "tasa_seguimiento_cfg_diagnostico": null,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -48943,9 +48943,9 @@
       "scope": "fenomeno",
       "tasa_rechazo_correcto": 1.0,
       "tasa_seguimiento_cfg_diagnostico": null,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -48971,9 +48971,9 @@
       "scope": "fenomeno",
       "tasa_rechazo_correcto": 1.0,
       "tasa_seguimiento_cfg_diagnostico": null,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -48999,9 +48999,9 @@
       "scope": "fenomeno",
       "tasa_rechazo_correcto": 1.0,
       "tasa_seguimiento_cfg_diagnostico": null,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -49027,9 +49027,9 @@
       "scope": "fenomeno",
       "tasa_rechazo_correcto": 1.0,
       "tasa_seguimiento_cfg_diagnostico": null,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -49055,9 +49055,9 @@
       "scope": "fenomeno",
       "tasa_rechazo_correcto": 1.0,
       "tasa_seguimiento_cfg_diagnostico": null,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -49083,9 +49083,9 @@
       "scope": "fenomeno",
       "tasa_rechazo_correcto": 1.0,
       "tasa_seguimiento_cfg_diagnostico": null,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -49111,9 +49111,9 @@
       "scope": "fenomeno",
       "tasa_rechazo_correcto": 1.0,
       "tasa_seguimiento_cfg_diagnostico": null,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -49139,9 +49139,9 @@
       "scope": "fenomeno",
       "tasa_rechazo_correcto": 1.0,
       "tasa_seguimiento_cfg_diagnostico": null,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -49167,9 +49167,9 @@
       "scope": "fenomeno",
       "tasa_rechazo_correcto": null,
       "tasa_seguimiento_cfg_diagnostico": 1.0,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -49195,9 +49195,9 @@
       "scope": "fenomeno",
       "tasa_rechazo_correcto": null,
       "tasa_seguimiento_cfg_diagnostico": null,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -49223,9 +49223,9 @@
       "scope": "fenomeno",
       "tasa_rechazo_correcto": null,
       "tasa_seguimiento_cfg_diagnostico": 1.0,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -49251,9 +49251,9 @@
       "scope": "fenomeno",
       "tasa_rechazo_correcto": 1.0,
       "tasa_seguimiento_cfg_diagnostico": null,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -49279,9 +49279,9 @@
       "scope": "fenomeno",
       "tasa_rechazo_correcto": 1.0,
       "tasa_seguimiento_cfg_diagnostico": null,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -49307,9 +49307,9 @@
       "scope": "fenomeno",
       "tasa_rechazo_correcto": 1.0,
       "tasa_seguimiento_cfg_diagnostico": null,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -49335,9 +49335,9 @@
       "scope": "fenomeno",
       "tasa_rechazo_correcto": null,
       "tasa_seguimiento_cfg_diagnostico": 1.0,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -49363,9 +49363,9 @@
       "scope": "fenomeno",
       "tasa_rechazo_correcto": null,
       "tasa_seguimiento_cfg_diagnostico": null,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -49391,9 +49391,9 @@
       "scope": "fenomeno",
       "tasa_rechazo_correcto": 1.0,
       "tasa_seguimiento_cfg_diagnostico": null,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -49419,9 +49419,9 @@
       "scope": "fenomeno",
       "tasa_rechazo_correcto": 1.0,
       "tasa_seguimiento_cfg_diagnostico": null,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -49447,9 +49447,9 @@
       "scope": "fenomeno",
       "tasa_rechazo_correcto": null,
       "tasa_seguimiento_cfg_diagnostico": null,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -49475,9 +49475,9 @@
       "scope": "fenomeno",
       "tasa_rechazo_correcto": null,
       "tasa_seguimiento_cfg_diagnostico": null,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -49503,9 +49503,9 @@
       "scope": "fenomeno",
       "tasa_rechazo_correcto": null,
       "tasa_seguimiento_cfg_diagnostico": null,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -49531,9 +49531,9 @@
       "scope": "fenomeno",
       "tasa_rechazo_correcto": null,
       "tasa_seguimiento_cfg_diagnostico": null,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -49559,9 +49559,9 @@
       "scope": "fenomeno",
       "tasa_rechazo_correcto": null,
       "tasa_seguimiento_cfg_diagnostico": 1.0,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -49587,9 +49587,9 @@
       "scope": "fenomeno",
       "tasa_rechazo_correcto": null,
       "tasa_seguimiento_cfg_diagnostico": 1.0,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -49615,9 +49615,9 @@
       "scope": "fenomeno",
       "tasa_rechazo_correcto": null,
       "tasa_seguimiento_cfg_diagnostico": 1.0,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -49643,9 +49643,9 @@
       "scope": "fenomeno",
       "tasa_rechazo_correcto": 1.0,
       "tasa_seguimiento_cfg_diagnostico": null,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -49671,9 +49671,9 @@
       "scope": "fenomeno",
       "tasa_rechazo_correcto": 1.0,
       "tasa_seguimiento_cfg_diagnostico": null,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -49699,9 +49699,9 @@
       "scope": "fenomeno",
       "tasa_rechazo_correcto": 0.0,
       "tasa_seguimiento_cfg_diagnostico": 1.0,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -49727,9 +49727,9 @@
       "scope": "fenomeno",
       "tasa_rechazo_correcto": null,
       "tasa_seguimiento_cfg_diagnostico": null,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -49755,9 +49755,9 @@
       "scope": "fenomeno",
       "tasa_rechazo_correcto": null,
       "tasa_seguimiento_cfg_diagnostico": null,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -49783,9 +49783,9 @@
       "scope": "fenomeno",
       "tasa_rechazo_correcto": null,
       "tasa_seguimiento_cfg_diagnostico": null,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -49811,9 +49811,9 @@
       "scope": "fenomeno",
       "tasa_rechazo_correcto": null,
       "tasa_seguimiento_cfg_diagnostico": null,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -49839,9 +49839,9 @@
       "scope": "fenomeno",
       "tasa_rechazo_correcto": null,
       "tasa_seguimiento_cfg_diagnostico": null,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -49867,9 +49867,9 @@
       "scope": "fenomeno",
       "tasa_rechazo_correcto": null,
       "tasa_seguimiento_cfg_diagnostico": null,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -49895,9 +49895,9 @@
       "scope": "fenomeno",
       "tasa_rechazo_correcto": null,
       "tasa_seguimiento_cfg_diagnostico": 1.0,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -49923,9 +49923,9 @@
       "scope": "fenomeno",
       "tasa_rechazo_correcto": null,
       "tasa_seguimiento_cfg_diagnostico": null,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -49951,9 +49951,9 @@
       "scope": "fenomeno",
       "tasa_rechazo_correcto": null,
       "tasa_seguimiento_cfg_diagnostico": null,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -49979,9 +49979,9 @@
       "scope": "diagnostico",
       "tasa_rechazo_correcto": 0.0,
       "tasa_seguimiento_cfg_diagnostico": 1.0,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -50007,9 +50007,9 @@
       "scope": "general",
       "tasa_rechazo_correcto": 1.0,
       "tasa_seguimiento_cfg_diagnostico": 1.0,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -50035,9 +50035,9 @@
       "scope": "nivel",
       "tasa_rechazo_correcto": null,
       "tasa_seguimiento_cfg_diagnostico": null,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -50063,9 +50063,9 @@
       "scope": "nivel",
       "tasa_rechazo_correcto": 1.0,
       "tasa_seguimiento_cfg_diagnostico": null,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -50091,9 +50091,9 @@
       "scope": "nivel",
       "tasa_rechazo_correcto": 1.0,
       "tasa_seguimiento_cfg_diagnostico": 1.0,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -50119,9 +50119,9 @@
       "scope": "fenomeno",
       "tasa_rechazo_correcto": null,
       "tasa_seguimiento_cfg_diagnostico": null,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -50147,9 +50147,9 @@
       "scope": "fenomeno",
       "tasa_rechazo_correcto": null,
       "tasa_seguimiento_cfg_diagnostico": null,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -50175,9 +50175,9 @@
       "scope": "fenomeno",
       "tasa_rechazo_correcto": 1.0,
       "tasa_seguimiento_cfg_diagnostico": 1.0,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -50203,9 +50203,9 @@
       "scope": "fenomeno",
       "tasa_rechazo_correcto": null,
       "tasa_seguimiento_cfg_diagnostico": null,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -50231,9 +50231,9 @@
       "scope": "fenomeno",
       "tasa_rechazo_correcto": null,
       "tasa_seguimiento_cfg_diagnostico": null,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -50259,9 +50259,9 @@
       "scope": "fenomeno",
       "tasa_rechazo_correcto": null,
       "tasa_seguimiento_cfg_diagnostico": null,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -50287,9 +50287,9 @@
       "scope": "fenomeno",
       "tasa_rechazo_correcto": null,
       "tasa_seguimiento_cfg_diagnostico": null,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -50315,9 +50315,9 @@
       "scope": "fenomeno",
       "tasa_rechazo_correcto": 1.0,
       "tasa_seguimiento_cfg_diagnostico": 1.0,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -50343,9 +50343,9 @@
       "scope": "fenomeno",
       "tasa_rechazo_correcto": 1.0,
       "tasa_seguimiento_cfg_diagnostico": null,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -50371,9 +50371,9 @@
       "scope": "fenomeno",
       "tasa_rechazo_correcto": 1.0,
       "tasa_seguimiento_cfg_diagnostico": null,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -50399,9 +50399,9 @@
       "scope": "fenomeno",
       "tasa_rechazo_correcto": 1.0,
       "tasa_seguimiento_cfg_diagnostico": null,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -50427,9 +50427,9 @@
       "scope": "fenomeno",
       "tasa_rechazo_correcto": 1.0,
       "tasa_seguimiento_cfg_diagnostico": null,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -50455,9 +50455,9 @@
       "scope": "fenomeno",
       "tasa_rechazo_correcto": 1.0,
       "tasa_seguimiento_cfg_diagnostico": null,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -50483,9 +50483,9 @@
       "scope": "fenomeno",
       "tasa_rechazo_correcto": 1.0,
       "tasa_seguimiento_cfg_diagnostico": null,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -50511,9 +50511,9 @@
       "scope": "fenomeno",
       "tasa_rechazo_correcto": 1.0,
       "tasa_seguimiento_cfg_diagnostico": null,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -50539,9 +50539,9 @@
       "scope": "fenomeno",
       "tasa_rechazo_correcto": 1.0,
       "tasa_seguimiento_cfg_diagnostico": null,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -50567,9 +50567,9 @@
       "scope": "fenomeno",
       "tasa_rechazo_correcto": 1.0,
       "tasa_seguimiento_cfg_diagnostico": null,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -50595,9 +50595,9 @@
       "scope": "fenomeno",
       "tasa_rechazo_correcto": 1.0,
       "tasa_seguimiento_cfg_diagnostico": 1.0,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -50623,9 +50623,9 @@
       "scope": "fenomeno",
       "tasa_rechazo_correcto": null,
       "tasa_seguimiento_cfg_diagnostico": null,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -50651,9 +50651,9 @@
       "scope": "fenomeno",
       "tasa_rechazo_correcto": 1.0,
       "tasa_seguimiento_cfg_diagnostico": 1.0,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -50679,9 +50679,9 @@
       "scope": "fenomeno",
       "tasa_rechazo_correcto": 1.0,
       "tasa_seguimiento_cfg_diagnostico": null,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -50707,9 +50707,9 @@
       "scope": "fenomeno",
       "tasa_rechazo_correcto": 1.0,
       "tasa_seguimiento_cfg_diagnostico": null,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -50735,9 +50735,9 @@
       "scope": "fenomeno",
       "tasa_rechazo_correcto": 1.0,
       "tasa_seguimiento_cfg_diagnostico": null,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -50763,9 +50763,9 @@
       "scope": "fenomeno",
       "tasa_rechazo_correcto": 1.0,
       "tasa_seguimiento_cfg_diagnostico": 1.0,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -50791,9 +50791,9 @@
       "scope": "fenomeno",
       "tasa_rechazo_correcto": null,
       "tasa_seguimiento_cfg_diagnostico": null,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -50819,9 +50819,9 @@
       "scope": "fenomeno",
       "tasa_rechazo_correcto": 1.0,
       "tasa_seguimiento_cfg_diagnostico": null,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -50847,9 +50847,9 @@
       "scope": "fenomeno",
       "tasa_rechazo_correcto": 1.0,
       "tasa_seguimiento_cfg_diagnostico": null,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -50875,9 +50875,9 @@
       "scope": "fenomeno",
       "tasa_rechazo_correcto": null,
       "tasa_seguimiento_cfg_diagnostico": null,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -50903,9 +50903,9 @@
       "scope": "fenomeno",
       "tasa_rechazo_correcto": null,
       "tasa_seguimiento_cfg_diagnostico": null,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -50931,9 +50931,9 @@
       "scope": "fenomeno",
       "tasa_rechazo_correcto": null,
       "tasa_seguimiento_cfg_diagnostico": null,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -50959,9 +50959,9 @@
       "scope": "fenomeno",
       "tasa_rechazo_correcto": null,
       "tasa_seguimiento_cfg_diagnostico": null,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -50987,9 +50987,9 @@
       "scope": "fenomeno",
       "tasa_rechazo_correcto": 1.0,
       "tasa_seguimiento_cfg_diagnostico": 1.0,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -51015,9 +51015,9 @@
       "scope": "fenomeno",
       "tasa_rechazo_correcto": 1.0,
       "tasa_seguimiento_cfg_diagnostico": 1.0,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -51043,9 +51043,9 @@
       "scope": "fenomeno",
       "tasa_rechazo_correcto": 1.0,
       "tasa_seguimiento_cfg_diagnostico": 1.0,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -51071,9 +51071,9 @@
       "scope": "fenomeno",
       "tasa_rechazo_correcto": 1.0,
       "tasa_seguimiento_cfg_diagnostico": null,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -51099,9 +51099,9 @@
       "scope": "fenomeno",
       "tasa_rechazo_correcto": 1.0,
       "tasa_seguimiento_cfg_diagnostico": null,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -51127,9 +51127,9 @@
       "scope": "fenomeno",
       "tasa_rechazo_correcto": null,
       "tasa_seguimiento_cfg_diagnostico": 1.0,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -51155,9 +51155,9 @@
       "scope": "fenomeno",
       "tasa_rechazo_correcto": null,
       "tasa_seguimiento_cfg_diagnostico": null,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -51183,9 +51183,9 @@
       "scope": "fenomeno",
       "tasa_rechazo_correcto": null,
       "tasa_seguimiento_cfg_diagnostico": null,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -51211,9 +51211,9 @@
       "scope": "fenomeno",
       "tasa_rechazo_correcto": null,
       "tasa_seguimiento_cfg_diagnostico": null,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -51239,9 +51239,9 @@
       "scope": "fenomeno",
       "tasa_rechazo_correcto": null,
       "tasa_seguimiento_cfg_diagnostico": null,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -51267,9 +51267,9 @@
       "scope": "fenomeno",
       "tasa_rechazo_correcto": null,
       "tasa_seguimiento_cfg_diagnostico": null,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -51295,9 +51295,9 @@
       "scope": "fenomeno",
       "tasa_rechazo_correcto": null,
       "tasa_seguimiento_cfg_diagnostico": null,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -51323,9 +51323,9 @@
       "scope": "fenomeno",
       "tasa_rechazo_correcto": 1.0,
       "tasa_seguimiento_cfg_diagnostico": 1.0,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -51351,9 +51351,9 @@
       "scope": "fenomeno",
       "tasa_rechazo_correcto": null,
       "tasa_seguimiento_cfg_diagnostico": null,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -51379,9 +51379,9 @@
       "scope": "fenomeno",
       "tasa_rechazo_correcto": null,
       "tasa_seguimiento_cfg_diagnostico": null,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
@@ -51407,9 +51407,9 @@
       "scope": "diagnostico",
       "tasa_rechazo_correcto": 1.0,
       "tasa_seguimiento_cfg_diagnostico": 1.0,
-      "timestamp_utc": "2026-11-19T06:51:56Z",
+      "timestamp_utc": "2026-11-19T08:57:23Z",
       "tool": "parser_propio",
-      "tool_version": "commit 77fccf2344eb18d95c72284423dc96d2a4c89fbd; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
+      "tool_version": "commit bbfbd34bab842f8c2d8e68a521cdf0372c66fe8e; gramatica_sha256 1f0b35c961bc25f798ba3232a9aa79712b98084809209a567ab5934fe654e0e9",
       "variant": "principal"
     },
     {
